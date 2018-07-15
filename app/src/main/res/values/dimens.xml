@@ -1,0 +1,17 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="font_size_text_22dp">15sp</dimen>
+    <dimen name="font_size_text_20dp">13sp</dimen>
+    <dimen name="font_size_text_18dp">11sp</dimen>
+    <dimen name="font_size_text_16dp">9sp</dimen>
+    <dimen name="font_size_text_14dp">7sp</dimen>
+    <dimen name="font_size_text_13dp">6sp</dimen>
+    <dimen name="font_size_text_12dp">5sp</dimen>
+    <dimen name="font_size_text_11dp">4sp</dimen>
+    <dimen name="font_size_text_10dp">3sp</dimen>
+
+    <!--common screen-->
+    <dimen name="width_of_screen_design">414px</dimen>
+    <dimen name="height_of_screen_design">736px</dimen>
+
+</resources>
