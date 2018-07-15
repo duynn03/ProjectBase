@@ -4,10 +4,14 @@ import android.app.Activity;
 import android.util.Log;
 
 import com.example.nguyenduy.projectbase.application.MyApplication;
+import com.example.nguyenduy.projectbase.utils.LogUtils;
 import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.analytics.Analytics;
 import com.microsoft.appcenter.crashes.Crashes;
 import com.microsoft.appcenter.distribute.Distribute;
+import com.microsoft.appcenter.utils.async.AppCenterConsumer;
+
+import java.util.UUID;
 
 public class AppCenterUtils {
 
@@ -27,10 +31,18 @@ public class AppCenterUtils {
     public AppCenterUtils(Activity activity, CrashUtils.ICrashListener listenerCrash) {
         mActivity = activity;
         AppCenter.start(MyApplication.getInstance(), APP_SCRET, Analytics.class, Crashes.class, Distribute.class);
+        AppCenter.setEnabled(true);
         AppCenter.setLogLevel(Log.VERBOSE);
         mCrash = new CrashUtils(mActivity, listenerCrash);
         mAnalytic = new AnalyticUtils();
         mDistribute = new DistributeUtils();
+
+        AppCenter.getInstallId().thenAccept(new AppCenterConsumer<UUID>() {
+            @Override
+            public void accept(UUID uuid) {
+                LogUtils.e("getInstallId(): " + uuid);
+            }
+        });
     }
 
     public void onActivityResult(int requestCode) {
