@@ -7,4 +7,8 @@ public class DistributeUtils {
     public DistributeUtils() {
         Distribute.setEnabled(true);
     }
+
+    private void setup(){
+        
+    }
 }
