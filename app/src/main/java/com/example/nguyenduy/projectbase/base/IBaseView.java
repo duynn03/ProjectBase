@@ -1,7 +1,5 @@
 package com.example.nguyenduy.projectbase.base;
 
-import android.content.Context;
-
 public interface IBaseView {
 
     int getIdLayout();

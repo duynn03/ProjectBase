@@ -33,6 +33,14 @@
         <activity android:name=".screen.start.crash.CrashActivity"></activity>
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".screen.start.StartActivity"></activity>
+
+        <!-- Set default notification icon and color. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_stat_notify_dot" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
     </application>
 
 </manifest>

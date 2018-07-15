@@ -10,7 +10,7 @@ import com.microsoft.appcenter.distribute.DistributeListener;
 import com.microsoft.appcenter.distribute.ReleaseDetails;
 import com.microsoft.appcenter.distribute.UpdateAction;
 
-public class MyDistributeListener implements DistributeListener {
+public class CustomDistributeListener implements DistributeListener {
 
     @Override
     public boolean onReleaseAvailable(Activity activity, ReleaseDetails releaseDetails) {
