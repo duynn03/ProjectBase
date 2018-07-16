@@ -21,8 +21,8 @@ android {
         applicationId "com.example.nguyenduy.projectbase"
         minSdkVersion 15
         targetSdkVersion 27
-        versionCode 10
-        versionName "1.0"
+        versionCode 20
+        versionName '2.0'
         multiDexEnabled true
     }
     buildTypes {
