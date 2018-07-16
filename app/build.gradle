@@ -7,12 +7,12 @@ android {
             keyAlias 'keystoredebug'
             keyPassword 'nguyenduy1'
             storePassword 'nguyenduy1'
-            storeFile file('KeyStoreDebug')
+            storeFile file('KeyStoreDebug.jks')
         }
         release {
             keyAlias 'keystore'
             keyPassword 'nguyenduy1'
-            storeFile file('KeyStore')
+            storeFile file('KeyStore.jks')
             storePassword 'nguyenduy1'
         }
     }
@@ -27,9 +27,9 @@ android {
     }
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
         }
         debug {
             debuggable true
