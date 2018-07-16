@@ -7,12 +7,12 @@ android {
             keyAlias 'keystoredebug'
             keyPassword 'nguyenduy1'
             storePassword 'nguyenduy1'
-            storeFile file('KeyStoreDebug')
+            storeFile file('KeyStoreDebug.jks')
         }
         release {
             keyAlias 'keystore'
             keyPassword 'nguyenduy1'
-            storeFile file('KeyStore')
+            storeFile file('KeyStore.jks')
             storePassword 'nguyenduy1'
         }
     }
@@ -21,19 +21,21 @@ android {
         applicationId "com.example.nguyenduy.projectbase"
         minSdkVersion 15
         targetSdkVersion 27
-        versionCode 10
-        versionName "1.0"
+        versionCode 1
+        versionName '1.0'
         multiDexEnabled true
     }
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
+            applicationIdSuffix '.release'
         }
         debug {
             debuggable true
             applicationIdSuffix '.debug'
+            signingConfig signingConfigs.debug
         }
     }
     dexOptions {
@@ -44,19 +46,20 @@ android {
     productFlavors {
         Uat {
             applicationIdSuffix ".uat"
-            versionNameSuffix "-uat-#$System.env.BUILD_NUMBER"
+            versionNameSuffix " Uat"
             dimension "mode"
         }
         Product {
+            dimension "mode"
         }
         Develop {
             applicationIdSuffix ".develop"
-            versionNameSuffix "-develop-#$System.env.BUILD_NUMBER"
+            versionNameSuffix " Develop"
             dimension "mode"
         }
         Test {
             applicationIdSuffix ".test"
-            versionNameSuffix "-test-#$System.env.BUILD_NUMBER"
+            versionNameSuffix " Test"
             dimension "mode"
         }
     }
