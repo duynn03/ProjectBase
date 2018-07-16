@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.net.Uri;
 import android.widget.Toast;
 
+import com.example.nguyenduy.projectbase.utils.LogUtils;
 import com.microsoft.appcenter.distribute.Distribute;
 import com.microsoft.appcenter.distribute.DistributeListener;
 import com.microsoft.appcenter.distribute.ReleaseDetails;
