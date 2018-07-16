@@ -15,12 +15,12 @@ import android.widget.Button;
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.BaseFragment;
 import com.example.nguyenduy.projectbase.base.IBasePresenter;
+import com.example.nguyenduy.projectbase.base.firebase.FireBaseUtils;
 import com.example.nguyenduy.projectbase.base.listener.HandShakeListener;
 import com.example.nguyenduy.projectbase.base.listener.HandShakeListenerUtils;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreferenceUtils;
 import com.example.nguyenduy.projectbase.utils.permission.BasePermission;
 import com.example.nguyenduy.projectbase.utils.permission.PermissionUtils;
-import com.microsoft.appcenter.crashes.Crashes;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -56,7 +56,8 @@ public class LoginFragment extends BaseFragment<ILoginPresenter> implements ILog
 
     @Override
     public void prepareComplete() {
-        Crashes.generateTestCrash();
+//        AppCenterUtils.generateCrash();
+        FireBaseUtils.generateCrash();
     }
 
     @OnClick(R.id.btn_login)

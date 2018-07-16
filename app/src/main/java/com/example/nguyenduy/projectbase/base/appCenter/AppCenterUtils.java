@@ -54,4 +54,8 @@ public class AppCenterUtils {
         mCrash.onActivityResult(requestCode);
     }
 
+    public static void generateCrash(){
+        Crashes.generateTestCrash();
+    }
+
 }
