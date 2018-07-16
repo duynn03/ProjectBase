@@ -30,10 +30,12 @@ android {
             signingConfig signingConfigs.release
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            applicationIdSuffix '.release'
         }
         debug {
             debuggable true
             applicationIdSuffix '.debug'
+            signingConfig signingConfigs.debug
         }
     }
     dexOptions {
