@@ -6,6 +6,7 @@ public class DistributeUtils {
 
     public DistributeUtils() {
         Distribute.setEnabled(true);
+        Distribute.setListener(new CustomDistributeListener());
     }
 
     private void setup(){

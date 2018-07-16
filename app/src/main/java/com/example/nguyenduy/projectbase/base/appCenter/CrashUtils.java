@@ -9,6 +9,7 @@ import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.screen.start.crash.CrashActivity;
 import com.example.nguyenduy.projectbase.utils.LogUtils;
 import com.example.nguyenduy.projectbase.utils.method.ResourceUtils;
+import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.crashes.Crashes;
 import com.microsoft.appcenter.crashes.CrashesListener;
 import com.microsoft.appcenter.crashes.ingestion.models.ErrorAttachmentLog;
@@ -91,8 +92,28 @@ public class CrashUtils implements CrashesListener {
 
     private ErrorAttachmentLog attachmentFileText(final ErrorReport report) {
         // TODO
-        String content = "Thêm thông tin vào đây null";
-        return ErrorAttachmentLog.attachmentWithText(content, NAME_FILE_LOG_CRASH + ".txt");
+        StringBuilder content = new StringBuilder();
+        content
+                .append("InstallId: " + AppCenter.getInstallId())
+                .append("\n *****************************************")
+                .append("\n" + getInfoCrashApp(report));
+        return ErrorAttachmentLog.attachmentWithText(content.toString(), NAME_FILE_LOG_CRASH + ".txt");
+    }
+
+    public static String getInfoCrashApp(ErrorReport report) {
+        StackTraceElement[] stackTrace = null == report || null == report.getThrowable() ? null : report.getThrowable().getStackTrace();
+        StringBuilder stringBuilder = new StringBuilder();
+        if (null == stackTrace || stackTrace.length == 0) {
+            return "";
+        }
+        for (StackTraceElement stackTraceElement : stackTrace) {
+            stringBuilder.append("Class: ").append(stackTraceElement.getClassName()).append("\n");
+            stringBuilder.append("FileName: ").append(stackTraceElement.getFileName()).append("\n");
+            stringBuilder.append("Line: ").append(stackTraceElement.getLineNumber()).append("\n");
+            stringBuilder.append("Method: ").append(stackTraceElement.getMethodName()).append("\n");
+            stringBuilder.append(" ------------------------------------: ").append("\n");
+        }
+        return stringBuilder.toString();
     }
 
     private ErrorAttachmentLog attachmentIconApp(final ErrorReport report) {

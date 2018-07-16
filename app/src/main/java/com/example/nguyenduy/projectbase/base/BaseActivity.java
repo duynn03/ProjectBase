@@ -91,6 +91,7 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
         // Set up touch listener for non-text box views to hide keyboard.
         if (!(view instanceof EditText)) {
             view.setOnTouchListener(new View.OnTouchListener() {
+                @Override
                 public boolean onTouch(View v, MotionEvent event) {
                     hideSoftKeyboard();
                     return false;
