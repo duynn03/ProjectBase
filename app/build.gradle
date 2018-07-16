@@ -2,34 +2,75 @@ apply plugin: 'com.android.application'
 apply plugin: 'realm-android'
 
 android {
+    signingConfigs {
+        debug {
+            keyAlias 'keystoredebug'
+            keyPassword 'nguyenduy1'
+            storePassword 'nguyenduy1'
+            storeFile file('KeyStoreDebug')
+        }
+        release {
+            keyAlias 'keystore'
+            keyPassword 'nguyenduy1'
+            storeFile file('KeyStore')
+            storePassword 'nguyenduy1'
+        }
+    }
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.example.nguyenduy.projectbase"
         minSdkVersion 15
         targetSdkVersion 27
-        versionCode 11
-        versionName "1.1"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        versionCode 10
+        versionName "1.0"
+        multiDexEnabled true
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            debuggable true
+            applicationIdSuffix '.debug'
+        }
+    }
+    dexOptions {
+    }
+
+    flavorDimensions "mode"
+
+    productFlavors {
+        Uat {
+            applicationIdSuffix ".uat"
+            versionNameSuffix "-uat-#$System.env.BUILD_NUMBER"
+            dimension "mode"
+        }
+        Product {
+        }
+        Develop {
+            applicationIdSuffix ".develop"
+            versionNameSuffix "-develop-#$System.env.BUILD_NUMBER"
+            dimension "mode"
+        }
+        Test {
+            applicationIdSuffix ".test"
+            versionNameSuffix "-test-#$System.env.BUILD_NUMBER"
+            dimension "mode"
         }
     }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-
     implementation 'com.android.support:recyclerview-v7:27.1.1'
-
     //inject view
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
@@ -42,13 +83,11 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
     /*database Realm*/
     implementation 'io.realm:android-adapters:2.1.1'
-
     /*app center*/
     def appCenterSdkVersion = '1.6.1'
-    implementation  "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
-    implementation  "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
-    implementation  "com.microsoft.appcenter:appcenter-distribute:${appCenterSdkVersion}"
+    implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
+    implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
+    implementation "com.microsoft.appcenter:appcenter-distribute:${appCenterSdkVersion}"
     implementation "com.microsoft.appcenter:appcenter-push:${appCenterSdkVersion}"
-
 }
 
