@@ -21,8 +21,8 @@ android {
         applicationId "com.example.nguyenduy.projectbase"
         minSdkVersion 15
         targetSdkVersion 27
-        versionCode 20
-        versionName '2.0'
+        versionCode 1
+        versionName '1.0'
         multiDexEnabled true
     }
     buildTypes {
@@ -46,19 +46,20 @@ android {
     productFlavors {
         Uat {
             applicationIdSuffix ".uat"
-            versionNameSuffix "-uat-#$System.env.BUILD_NUMBER"
+            versionNameSuffix " Uat"
             dimension "mode"
         }
         Product {
+            dimension "mode"
         }
         Develop {
             applicationIdSuffix ".develop"
-            versionNameSuffix "-develop-#$System.env.BUILD_NUMBER"
+            versionNameSuffix " Develop"
             dimension "mode"
         }
         Test {
             applicationIdSuffix ".test"
-            versionNameSuffix "-test-#$System.env.BUILD_NUMBER"
+            versionNameSuffix " Test"
             dimension "mode"
         }
     }
