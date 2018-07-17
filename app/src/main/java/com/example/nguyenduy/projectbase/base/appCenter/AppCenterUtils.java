@@ -32,13 +32,15 @@ public class AppCenterUtils {
 
     public AppCenterUtils(Activity activity, CrashUtils.ICrashListener listenerCrash) {
         mActivity = activity;
-        mCrash = new CrashUtils(mActivity, listenerCrash);
-        mAnalytic = new AnalyticUtils();
         mDistribute = new DistributeUtils();
-        mPush = new PushUtils();
         AppCenter.start(MyApplication.getInstance(), APP_SCRET, Analytics.class, Crashes.class, Distribute.class, Push.class);
         AppCenter.setEnabled(true);
         AppCenter.setLogLevel(Log.VERBOSE);
+        mCrash = new CrashUtils(mActivity, listenerCrash);
+        mAnalytic = new AnalyticUtils();
+
+        mPush = new PushUtils();
+
 
         AppCenter.getInstallId().thenAccept(new AppCenterConsumer<UUID>() {
             @Override
@@ -50,6 +52,10 @@ public class AppCenterUtils {
 
     public void onActivityResult(int requestCode) {
         mCrash.onActivityResult(requestCode);
+    }
+
+    public static void generateCrash(){
+        Crashes.generateTestCrash();
     }
 
 }

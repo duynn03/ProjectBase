@@ -1,7 +1,9 @@
 apply plugin: 'com.android.application'
 apply plugin: 'realm-android'
+apply plugin: 'io.fabric'
 
 android {
+    /*config signature*/
     signingConfigs {
         debug {
             keyAlias 'keystoredebug'
@@ -27,10 +29,11 @@ android {
     }
     buildTypes {
         release {
-            signingConfig signingConfigs.release
             minifyEnabled true
+            debuggable true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             applicationIdSuffix '.release'
+            signingConfig signingConfigs.release
         }
         debug {
             debuggable true
@@ -41,8 +44,8 @@ android {
     dexOptions {
     }
 
+    /*config môi trường*/
     flavorDimensions "mode"
-
     productFlavors {
         Uat {
             applicationIdSuffix ".uat"
@@ -51,6 +54,8 @@ android {
         }
         Product {
             dimension "mode"
+            applicationIdSuffix ".product"
+            versionNameSuffix " Product"
         }
         Develop {
             applicationIdSuffix ".develop"
@@ -77,6 +82,7 @@ dependencies {
     //inject view
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    /*event bus*/
     implementation 'org.greenrobot:eventbus:3.1.1'
     //image
     implementation 'com.github.bumptech.glide:glide:4.7.1'
@@ -92,5 +98,10 @@ dependencies {
     implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
     implementation "com.microsoft.appcenter:appcenter-distribute:${appCenterSdkVersion}"
     implementation "com.microsoft.appcenter:appcenter-push:${appCenterSdkVersion}"
+
+    /*firebase*/
+    implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.4'
 }
 
+apply plugin: 'com.google.gms.google-services'

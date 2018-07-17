@@ -18,6 +18,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.nguyenduy.projectbase.R;
+import com.example.nguyenduy.projectbase.base.firebase.FireBaseUtils;
 import com.example.nguyenduy.projectbase.utils.LogUtils;
 import com.example.nguyenduy.projectbase.utils.method.MethodContextUtils;
 import com.example.nguyenduy.projectbase.utils.method.ResourceUtils;
@@ -31,6 +32,9 @@ import butterknife.Unbinder;
 
 public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatActivity implements IBaseView, IBaseIntent {
 
+    /*firebase*/
+    private FireBaseUtils mFireBase;
+
     private P mPresenter;
     private Unbinder bindView;
     private Intent mIntent;
@@ -40,6 +44,7 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mFireBase = new FireBaseUtils(this);
         mIntent = getIntent();
         setContentView(getIdLayout());
         initRootView();
