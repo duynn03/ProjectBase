@@ -1,5 +1,10 @@
 <resources>
-    <string name="app_name">ProjectBase</string>
+    <!--application name-->
+    <!--https://stackoverflow.com/questions/24785270/how-to-change-app-name-per-gradle-build-type-->
+    <string name="app_name_develop">ProjectBaseDevelop</string>
+    <string name="app_name_test">ProjectBaseTest</string>
+    <string name="app_name_uat">ProjectBaseUat</string>
+    <string name="app_name_production">ProjectBase</string>
 
     <!--Permission-->
     <string name="OK">OK</string>

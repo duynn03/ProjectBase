@@ -113,7 +113,7 @@ public class ValidateForm {
 
     private boolean isValidOldPassword(String password) {
         if (TextUtils.isEmpty(password)) {
-            showError(ResourceUtils.getString(R.string.app_name));
+            showError(ResourceUtils.getString(R.string.app_name_production));
             return false;
         }
         return isValidFormatOldPassword(password);
@@ -121,7 +121,7 @@ public class ValidateForm {
 
     private boolean isValidFormatOldPassword(String password) {
         if (password.length() < PASSWORD_LENGTH_MIN || password.length() > PASSWORD_LENGTH_MAX) {
-            showError(ResourceUtils.getString(R.string.app_name));
+            showError(ResourceUtils.getString(R.string.app_name_production));
             return false;
         }
         return true;
@@ -129,12 +129,12 @@ public class ValidateForm {
 
     private boolean isValidNewPassword(String password, String oldPassword) {
         if (TextUtils.isEmpty(password)) {
-            showError(ResourceUtils.getString(R.string.app_name));
+            showError(ResourceUtils.getString(R.string.app_name_production));
             return false;
         }
         // validate new password must != old password
         if (password.equals(oldPassword)) {
-            showError(ResourceUtils.getString(R.string.app_name));
+            showError(ResourceUtils.getString(R.string.app_name_production));
             return false;
         }
 
@@ -143,7 +143,7 @@ public class ValidateForm {
 
     private boolean isValidFormatNewPassword(String password) {
         if (password.length() < PASSWORD_LENGTH_MIN || password.length() > PASSWORD_LENGTH_MAX) {
-            showError(ResourceUtils.getString(R.string.app_name));
+            showError(ResourceUtils.getString(R.string.app_name_production));
             return false;
         }
         return true;
@@ -160,7 +160,7 @@ public class ValidateForm {
 
     private boolean isValidPassword(String password) {
         if (TextUtils.isEmpty(password)) {
-            showError(ResourceUtils.getString(R.string.app_name));
+            showError(ResourceUtils.getString(R.string.app_name_production));
             return false;
         }
         return isValidFormatPassword(password);
@@ -168,7 +168,7 @@ public class ValidateForm {
 
     private boolean isValidFormatPassword(String password) {
         if (password.length() < PASSWORD_LENGTH_MIN || password.length() > PASSWORD_LENGTH_MAX) {
-            showError(ResourceUtils.getString(R.string.app_name));
+            showError(ResourceUtils.getString(R.string.app_name_production));
             return false;
         }
         return true;
@@ -176,7 +176,7 @@ public class ValidateForm {
 
     private boolean isValidEmail(String email) {
         if (TextUtils.isEmpty(email)) {
-            showError(ResourceUtils.getString(R.string.app_name));
+            showError(ResourceUtils.getString(R.string.app_name_production));
             return false;
         }
         return isValidFormatEmail(email);
@@ -184,11 +184,11 @@ public class ValidateForm {
 
     private boolean isValidFormatEmail(String email) {
         if (email.length() < EMAIL_LENGTH_MIN || email.length() > EMAIL_LENGTH_MAX) {
-            showError(ResourceUtils.getString(R.string.app_name));
+            showError(ResourceUtils.getString(R.string.app_name_production));
             return false;
         }
         if (!isMatchPattern(email, android.util.Patterns.EMAIL_ADDRESS)) {
-            showError(ResourceUtils.getString(R.string.app_name));
+            showError(ResourceUtils.getString(R.string.app_name_production));
             return false;
         }
         return true;
@@ -196,7 +196,7 @@ public class ValidateForm {
 
     private boolean isValidFullName(String fullName) {
         if (TextUtils.isEmpty(fullName)) {
-            showError(ResourceUtils.getString(R.string.app_name));
+            showError(ResourceUtils.getString(R.string.app_name_production));
             return false;
         }
         return isValidFormatFullName(fullName);
@@ -204,11 +204,11 @@ public class ValidateForm {
 
     private boolean isValidFormatFullName(String fullName) {
         if (fullName.length() < FULL_NAME_LENGTH_MIN || fullName.length() > FULL_NAME_LENGTH_MAX) {
-            showError(ResourceUtils.getString(R.string.app_name));
+            showError(ResourceUtils.getString(R.string.app_name_production));
             return false;
         }
         if (isMatchPattern(fullName, FORMAT_SPECIAL_CHARACTERS)) {
-            showError(ResourceUtils.getString(R.string.app_name));
+            showError(ResourceUtils.getString(R.string.app_name_production));
             return false;
         }
         return true;
@@ -216,7 +216,7 @@ public class ValidateForm {
 
     private boolean isValidDateOfBirth(String dateOfBirth) {
         if (TextUtils.isEmpty(dateOfBirth)) {
-            showError(ResourceUtils.getString(R.string.app_name));
+            showError(ResourceUtils.getString(R.string.app_name_production));
             return false;
         }
 
@@ -226,11 +226,11 @@ public class ValidateForm {
             date.setTime(new SimpleDateFormat("MM/dd/yyyy", Locale.KOREA).parse(dateOfBirth));
         } catch (ParseException e) {
             e.printStackTrace();
-            showError(ResourceUtils.getString(R.string.app_name));
+            showError(ResourceUtils.getString(R.string.app_name_production));
             return false;
         }
         if (DateUtils.compare(date, Calendar.getInstance()) != DateUtils.PASSED_DAY) {
-            showError(ResourceUtils.getString(R.string.app_name));
+            showError(ResourceUtils.getString(R.string.app_name_production));
             return false;
         }
 
@@ -239,7 +239,7 @@ public class ValidateForm {
 
     private boolean isValidGender(String gender) {
         if (TextUtils.isEmpty(gender)) {
-            showError(ResourceUtils.getString(R.string.app_name));
+            showError(ResourceUtils.getString(R.string.app_name_production));
             return false;
         }
         return true;
@@ -247,11 +247,11 @@ public class ValidateForm {
 
     private boolean isValidPhoneNumber(String phoneNumber) {
         if (TextUtils.isEmpty(phoneNumber)) {
-            showError(ResourceUtils.getString(R.string.app_name));
+            showError(ResourceUtils.getString(R.string.app_name_production));
             return false;
         }
         if (!isValidFormatPhoneNumber(phoneNumber)) {
-            showError(ResourceUtils.getString(R.string.app_name));
+            showError(ResourceUtils.getString(R.string.app_name_production));
             return false;
         }
         return true;
@@ -266,7 +266,7 @@ public class ValidateForm {
 
     private boolean isValidConfirmPassword(String confirmPassword, String password) {
         if (!password.equals(confirmPassword)) {
-            showError(ResourceUtils.getString(R.string.app_name));
+            showError(ResourceUtils.getString(R.string.app_name_production));
             return false;
         }
         return true;

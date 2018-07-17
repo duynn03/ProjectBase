@@ -6,7 +6,7 @@ import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.utils.method.ResourceUtils;
 
 public class LogUtils {
-    private static final String tag = ResourceUtils.getString(R.string.app_name) + "." + LogUtils.class.getSimpleName();
+    private static final String tag = ResourceUtils.getString(R.string.app_name_production) + "." + LogUtils.class.getSimpleName();
 
     public final static void e(String message) {
         Log.e(tag, message);

@@ -46,23 +46,33 @@ android {
 
     /*config môi trường*/
     flavorDimensions "mode"
+    ext{
+        APP_NAME_DEVELOP = "@string/app_name_develop"
+        APP_NAME_TEST = "@string/app_name_test"
+        APP_NAME_UAT = "@string/app_name_uat"
+        APP_NAME_PRODUCTION = "@string/app_name_production"
+    }
     productFlavors {
         Uat {
+            manifestPlaceholders = [ applicationLabel: APP_NAME_UAT]
             applicationIdSuffix ".uat"
             versionNameSuffix " Uat"
             dimension "mode"
         }
         Product {
+            manifestPlaceholders = [ applicationLabel: APP_NAME_PRODUCTION]
             dimension "mode"
             applicationIdSuffix ".product"
             versionNameSuffix " Product"
         }
         Develop {
+            manifestPlaceholders = [ applicationLabel: APP_NAME_DEVELOP]
             applicationIdSuffix ".develop"
             versionNameSuffix " Develop"
             dimension "mode"
         }
         Test {
+            manifestPlaceholders = [ applicationLabel: APP_NAME_TEST]
             applicationIdSuffix ".test"
             versionNameSuffix " Test"
             dimension "mode"
