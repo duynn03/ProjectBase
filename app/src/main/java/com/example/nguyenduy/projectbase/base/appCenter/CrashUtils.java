@@ -9,6 +9,7 @@ import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.screen.start.crash.CrashActivity;
 import com.example.nguyenduy.projectbase.utils.LogUtils;
 import com.example.nguyenduy.projectbase.utils.method.ResourceUtils;
+import com.example.nguyenduy.projectbase.utils.method.SDKUtils;
 import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.crashes.Crashes;
 import com.microsoft.appcenter.crashes.CrashesListener;
@@ -29,7 +30,8 @@ public class CrashUtils implements CrashesListener {
     private final int ID_INTENT_START_ACTIVITY_CRASH = 1;
     private final String NAME_FILE_LOG_CRASH = "CrashInfor";
     private final String CONTENT_TYPE_IMAGE = "image/jpeg";
-    private final String CONTENT_TYPE_FILE_TO_BINARY = "binary/octet-stream";
+    private final String CONTENT_TYPE_FILE_TO_BINARY_GREATER_VERSION_M = "binary/octet-stream";
+    private final String CONTENT_TYPE_FILE_TO_BINARY_LESS_VERSION_M = "application/octet-stream";
 
     private ICrashListener mListener;
     private Activity mActivity;
@@ -131,7 +133,11 @@ public class CrashUtils implements CrashesListener {
 
     private ErrorAttachmentLog attachmentFileDatabase(final ErrorReport report) {
         String filePath = "/data/data/" + mActivity.getPackageName() + "/databases/Ezyhaul.db";
-        return ErrorAttachmentLog.attachmentWithBinary(convertFileToByte(new File(filePath)), "Ezyhaul.db", CONTENT_TYPE_FILE_TO_BINARY);
+        return ErrorAttachmentLog.attachmentWithBinary(convertFileToByte(new File(filePath)), "Ezyhaul.db", getContentTypeBinary());
+    }
+
+    private String getContentTypeBinary() {
+        return SDKUtils.isVersionSDKGreaterVersionM() ? CONTENT_TYPE_FILE_TO_BINARY_GREATER_VERSION_M : CONTENT_TYPE_FILE_TO_BINARY_LESS_VERSION_M;
     }
 
     private byte[] convertFileToByte(File file) {
