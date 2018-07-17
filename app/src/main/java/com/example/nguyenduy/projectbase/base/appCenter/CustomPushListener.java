@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.support.v7.app.AlertDialog;
 import android.widget.Toast;
 
+import com.example.nguyenduy.projectbase.utils.LogUtils;
 import com.microsoft.appcenter.push.PushListener;
 import com.microsoft.appcenter.push.PushNotification;
 
@@ -13,7 +14,7 @@ public class CustomPushListener implements PushListener {
 
     @Override
     public void onPushNotificationReceived(Activity activity, PushNotification pushNotification) {
-
+        LogUtils.e("Nhận được push notification");
         /* The following notification properties are available. */
         String title = pushNotification.getTitle();
         String message = pushNotification.getMessage();
