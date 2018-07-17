@@ -28,7 +28,8 @@ public class CrashUtils implements CrashesListener {
 
     private final int ID_INTENT_START_ACTIVITY_CRASH = 1;
     private final String NAME_FILE_LOG_CRASH = "CrashInfor";
-    private final String FORMAT_IMAGE_JPEG = "image/jpeg";
+    private final String CONTENT_TYPE_IMAGE = "image/jpeg";
+    private final String CONTENT_TYPE_FILE_TO_BINARY = "binary/octet-stream";
 
     private ICrashListener mListener;
     private Activity mActivity;
@@ -86,7 +87,8 @@ public class CrashUtils implements CrashesListener {
     public Iterable<ErrorAttachmentLog> getErrorAttachments(ErrorReport report) {
         return Arrays.asList(
                 attachmentFileText(report),
-                attachmentIconApp(report)
+                attachmentIconApp(report)//,
+                // attachmentFileDatabase(report)
         );
     }
 
@@ -117,7 +119,7 @@ public class CrashUtils implements CrashesListener {
     }
 
     private ErrorAttachmentLog attachmentIconApp(final ErrorReport report) {
-        return ErrorAttachmentLog.attachmentWithBinary(convertIconApplicationToByte(), "icon_app.jpeg", FORMAT_IMAGE_JPEG);
+        return ErrorAttachmentLog.attachmentWithBinary(convertIconApplicationToByte(), "icon_app.jpeg", CONTENT_TYPE_IMAGE);
     }
 
     private byte[] convertIconApplicationToByte() {
@@ -125,6 +127,11 @@ public class CrashUtils implements CrashesListener {
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
         return stream.toByteArray();
+    }
+
+    private ErrorAttachmentLog attachmentFileDatabase(final ErrorReport report) {
+        String filePath = "/data/data/" + mActivity.getPackageName() + "/databases/Ezyhaul.db";
+        return ErrorAttachmentLog.attachmentWithBinary(convertFileToByte(new File(filePath)), "Ezyhaul.db", CONTENT_TYPE_FILE_TO_BINARY);
     }
 
     private byte[] convertFileToByte(File file) {
