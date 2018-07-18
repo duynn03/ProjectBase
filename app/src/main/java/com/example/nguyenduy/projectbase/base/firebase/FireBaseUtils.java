@@ -3,7 +3,6 @@ package com.example.nguyenduy.projectbase.base.firebase;
 import android.content.Context;
 
 import com.crashlytics.android.Crashlytics;
-import com.example.nguyenduy.projectbase.application.MyApplication;
 
 public class FireBaseUtils {
 

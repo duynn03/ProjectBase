@@ -35,7 +35,7 @@
         <activity android:name=".screen.start.StartActivity" />
 
         <!--Firebase Cloud Message-->
-        <service android:name=".base.firebase.FCMService">
+        <service android:name=".base.firebase.FCM.FCMService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
@@ -46,13 +46,18 @@
             android:name="firebase_crashlytics_collection_enabled"
             android:value="false" />
         <!--Disable Firebase Clound Message auto initialization generates an Instance ID,-->
-        <meta-data android:name="firebase_messaging_auto_init_enabled"
+        <meta-data
+            android:name="firebase_messaging_auto_init_enabled"
             android:value="false" />
-        <!-- Set custom default icon. This is used when no icon is set for incoming notification messages.See README(https://goo.gl/l4GJaQ) for more. -->
+        <!--android sẽ custom cho các message
+                được gửi từ Notifications composer
+                và các message không đặt icon notification-->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/ic_launcher_background" />
-        <!-- Set color used with incoming notification messages. This is used when no color is set for the incomingnotification message. See README(https://goo.gl/6BKBk7) for more. -->
+        <!--android sẽ custom cho các message
+                được gửi từ Notifications composer
+                và các message không đặt color notification-->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/colorAccent" />

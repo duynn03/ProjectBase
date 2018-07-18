@@ -1,8 +1,10 @@
-package com.example.nguyenduy.projectbase.base.firebase;
+package com.example.nguyenduy.projectbase.base.firebase.FCM;
 
 import com.example.nguyenduy.projectbase.utils.LogUtils;
 import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.FirebaseMessagingService;
+import com.google.firebase.messaging.RemoteMessage;
 
 public class FCMService extends FirebaseMessagingService {
     /**
@@ -19,7 +21,6 @@ public class FCMService extends FirebaseMessagingService {
     @Override
     public void onNewToken(String token) {
         LogUtils.d("FCMService " + "Refreshed token: " + token);
-
         // send token to server
         sendRegistrationToServer(token);
         // https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId
@@ -31,5 +32,22 @@ public class FCMService extends FirebaseMessagingService {
 
     private void sendRegistrationToServer(String token) {
 
+    }
+
+    // xử lý onMessageReceived() trong vòng 10s, sau đó android sẽ terminate process bất kì lúc nào
+    // Nếu cần xử lý hơn 10s thì nghiên cứu thêm: https://github.com/firebase/firebase-jobdispatcher-android#user-content-firebase-jobdispatcher-
+    @Override
+    public void onMessageReceived(RemoteMessage remoteMessage) {
+        super.onMessageReceived(remoteMessage);
+    }
+
+
+    @Override
+    public void onDeletedMessages() {
+        super.onDeletedMessages();
+    }
+
+    private void setAutoInitEnable() {
+        FirebaseMessaging.getInstance().setAutoInitEnabled(true);
     }
 }

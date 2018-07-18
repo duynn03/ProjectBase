@@ -2,7 +2,6 @@ package com.example.nguyenduy.projectbase.base.firebase;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.Bundle;
 
 import com.example.nguyenduy.projectbase.utils.Constants;
 import com.example.nguyenduy.projectbase.utils.LogUtils;

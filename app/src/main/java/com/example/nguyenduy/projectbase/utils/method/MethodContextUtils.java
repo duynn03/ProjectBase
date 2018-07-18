@@ -14,7 +14,7 @@ public class MethodContextUtils {
         return view.getText().toString();
     }
 
-    public static void setVisibility(View view, int visibility){
+    public static void setVisibility(View view, int visibility) {
         view.setVisibility(visibility);
     }
 
