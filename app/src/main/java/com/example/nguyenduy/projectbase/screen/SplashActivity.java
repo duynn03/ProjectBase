@@ -5,15 +5,14 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.nguyenduy.projectbase.MainActivity;
+import com.example.nguyenduy.projectbase.screen.main.MainActivity;
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.appCenter.AppCenterUtils;
 import com.example.nguyenduy.projectbase.base.appCenter.CrashUtils;
 import com.example.nguyenduy.projectbase.screen.start.StartActivity;
+import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
 import com.example.nguyenduy.projectbase.utils.permission.BasePermission;
 import com.example.nguyenduy.projectbase.utils.permission.PermissionUtils;
-
-import java.util.Random;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -37,7 +36,6 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void initComponents() {
-
         // app center
         mAppCenter = new AppCenterUtils(
                 this,
@@ -61,12 +59,7 @@ public class SplashActivity extends AppCompatActivity {
 
     // TODO
     private boolean isUserLogin() {
-        Random random = new Random();
-        int a = random.nextInt();
-        if (a > 5) {
-            //return true;
-        }
-        return false;
+        return SharedPreferenceUtils.getInstance().getUserInformation() != null;
     }
 
     private void startActivity(Class<?> clazz) {

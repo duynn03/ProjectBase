@@ -12,13 +12,14 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Button;
 
+import com.example.nguyenduy.projectbase.screen.main.MainActivity;
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.BaseFragment;
 import com.example.nguyenduy.projectbase.base.IBasePresenter;
 import com.example.nguyenduy.projectbase.base.firebase.FireBaseUtils;
 import com.example.nguyenduy.projectbase.base.listener.HandShakeListener;
 import com.example.nguyenduy.projectbase.base.listener.HandShakeListenerUtils;
-import com.example.nguyenduy.projectbase.utils.data.SharedPreferenceUtils;
+import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
 import com.example.nguyenduy.projectbase.utils.permission.BasePermission;
 import com.example.nguyenduy.projectbase.utils.permission.PermissionUtils;
 
@@ -56,13 +57,26 @@ public class LoginFragment extends BaseFragment<ILoginPresenter> implements ILog
 
     @Override
     public void prepareComplete() {
-//        AppCenterUtils.generateCrash();
-        FireBaseUtils.generateCrash();
+
+    }
+
+    @OnClick(R.id.btn_generate_crash)
+    public void onClickCrash() {
+        // AppCenterUtils.generateCrash();
+        FireBaseUtils.testCrash();
     }
 
     @OnClick(R.id.btn_login)
     public void onClickLogin() {
         getPresenter().login();
+        startActivity(MainActivity.class);
+    }
+
+    private void startActivity(Class<?> clazz) {
+        Intent intent = new Intent(getContext(), clazz);
+        // root task
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 
     @OnClick(R.id.btn_forgot_password)

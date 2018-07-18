@@ -14,12 +14,13 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.nguyenduy.projectbase.screen.main.MainActivity;
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.BaseActivity;
 import com.example.nguyenduy.projectbase.base.listener.HandShakeListener;
 import com.example.nguyenduy.projectbase.base.listener.HandShakeListenerUtils;
 import com.example.nguyenduy.projectbase.screen.start.login.LoginFragment;
-import com.example.nguyenduy.projectbase.utils.data.SharedPreferenceUtils;
+import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
 import com.example.nguyenduy.projectbase.utils.permission.BasePermission;
 import com.example.nguyenduy.projectbase.utils.permission.PermissionUtils;
 
@@ -30,6 +31,7 @@ public class StartActivity extends BaseActivity<IStartActivityPresenter> impleme
 
     @BindView(R.id.im_gallery)
     ImageView imGallery;
+
     private HandShakeListener mHandShakeListener;
 
     @Override
@@ -69,13 +71,23 @@ public class StartActivity extends BaseActivity<IStartActivityPresenter> impleme
         PermissionUtils.checkPermissionInternet(this, new BasePermission.CallbackPermissionListener() {
             @Override
             public void onResult(boolean success) {
-                if (success) {
-                    showToast("get Permission Internet Success!");
+                if (!success) {
+                    showToast("get Permission Internet Fail");
+                }
+                if (SharedPreferenceUtils.getInstance().getUserInformation() == null) {
+                    addFragmentLogin();
                 } else {
-                    showToast("Not get Internet Location...");
+                    startActivity(MainActivity.class);
                 }
             }
         });
+    }
+
+    private void startActivity(Class<?> clazz) {
+        Intent intent = new Intent(this, clazz);
+        // root task
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 
     private void addFragmentLogin() {

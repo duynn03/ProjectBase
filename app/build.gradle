@@ -71,7 +71,7 @@ android {
             versionNameSuffix " Develop"
             dimension "mode"
         }
-        Test {
+        TTest {
             manifestPlaceholders = [ applicationLabel: APP_NAME_TEST]
             applicationIdSuffix ".test"
             versionNameSuffix " Test"

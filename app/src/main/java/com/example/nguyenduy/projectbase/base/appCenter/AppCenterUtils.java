@@ -41,7 +41,6 @@ public class AppCenterUtils {
 
         mPush = new PushUtils();
 
-
         AppCenter.getInstallId().thenAccept(new AppCenterConsumer<UUID>() {
             @Override
             public void accept(UUID uuid) {
@@ -54,7 +53,7 @@ public class AppCenterUtils {
         mCrash.onActivityResult(requestCode);
     }
 
-    public static void generateCrash(){
+    public static void generateCrash() {
         Crashes.generateTestCrash();
     }
 

@@ -3,17 +3,19 @@ package com.example.nguyenduy.projectbase.application;
 import android.app.Application;
 import android.content.Context;
 
+import com.example.nguyenduy.projectbase.base.firebase.FireBaseUtils;
 import com.example.nguyenduy.projectbase.database.Database;
 
 public class MyApplication extends Application {
 
-    private static Context context;
+    private static Context mContext;
     private static MyApplication instance;
 
     public void onCreate() {
         super.onCreate();
-        MyApplication.context = getApplicationContext();
+        mContext = getApplicationContext();
         instance = this;
+        FireBaseUtils.init();
         Database.configDefault(this);
     }
 
@@ -22,7 +24,7 @@ public class MyApplication extends Application {
     }
 
     public static Context getAppContext() {
-        return MyApplication.context;
+        return MyApplication.mContext;
     }
 
 }

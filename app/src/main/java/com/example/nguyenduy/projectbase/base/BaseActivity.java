@@ -234,10 +234,9 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
 
     @Override
     protected void onDestroy() {
-        if (bindView != null) {
-            bindView.unbind();
-        }
+        bindView.unbind();
         mPresenter.onDestroy();
+        mFireBase.onDestroy();
         super.onDestroy();
     }
 

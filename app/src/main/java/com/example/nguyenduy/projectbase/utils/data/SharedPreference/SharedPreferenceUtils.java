@@ -1,10 +1,11 @@
-package com.example.nguyenduy.projectbase.utils.data;
+package com.example.nguyenduy.projectbase.utils.data.SharedPreference;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 
 import com.example.nguyenduy.projectbase.application.MyApplication;
+import com.example.nguyenduy.projectbase.utils.Constants;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -74,12 +75,12 @@ public class SharedPreferenceUtils {
     }
 
     // https://stackoverflow.com/questions/7145606/how-android-sharedpreferences-save-store-object
-    public <T> void setValue(String key, T value) {
+    public <T> void setObject(String key, T value) {
         /*convert object to json*/
         setValue(key, gson.toJson(value));
     }
 
-    public <T> void setValue(String key, List<T> value) {
+    public <T> void setList(String key, List<T> value) {
         /*convert List<object> to json*/
         setValue(key, gson.toJson(value));
     }
@@ -104,19 +105,39 @@ public class SharedPreferenceUtils {
         return mPreferences.getBoolean(key, defaultValue);
     }
 
-    public <T> T getValue(String key, T defaultValue, Class<T> clazz) {
+    public <T> T getObject(String key, T defaultValue, Class<T> clazz) {
         String value = getValue(key);
         return TextUtils.isEmpty(value) ? defaultValue : gson.fromJson(value, clazz);
     }
 
+    public <T> T getObject(String key, Class<T> clazz) {
+        return getObject(key, null, clazz);
+    }
+
     // https://stackoverflow.com/questions/28107647/how-to-save-listobject-to-sharedpreferences/28107838
-    public <T> List<T> getValue(String key, List<T> defaultValue, Class<T> clazz) {
+    public <T> List<T> getList(String key, List<T> defaultValue, Class<T> clazz) {
         String value = getValue(key);
         if (TextUtils.isEmpty(value)) {
             return defaultValue;
         }
         return gson.fromJson(value, new TypeToken<List<T>>() {
         }.getType());
+    }
+
+    public <T> List<T> getList(String key, Class<T> clazz) {
+        return getList(key, null, clazz);
+    }
+
+    public void setUserInformation(UserInformation user) {
+        setObject(Constants.SharedPreference.USER_INFORMATION, user);
+    }
+
+    public UserInformation getUserInformation() {
+        return getObject(Constants.SharedPreference.USER_INFORMATION, UserInformation.class);
+    }
+
+    public void clearUserInformation() {
+        clear(Constants.SharedPreference.USER_INFORMATION);
     }
 
     public void clear(String key) {

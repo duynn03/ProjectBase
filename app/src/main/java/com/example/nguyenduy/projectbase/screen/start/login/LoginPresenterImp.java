@@ -1,6 +1,8 @@
 package com.example.nguyenduy.projectbase.screen.start.login;
 
 import com.example.nguyenduy.projectbase.base.BasePresenterImp;
+import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
+import com.example.nguyenduy.projectbase.utils.data.SharedPreference.UserInformation;
 
 public class LoginPresenterImp extends BasePresenterImp<ILoginView> implements ILoginPresenter {
 
@@ -10,6 +12,10 @@ public class LoginPresenterImp extends BasePresenterImp<ILoginView> implements I
 
     @Override
     public void login() {
-
+        UserInformation user = new UserInformation()
+                .setId("123")
+                .setUsername("Nguyễn Ngọc Duy")
+                .setEmail("duynn03@gmail.com");
+        SharedPreferenceUtils.getInstance().setUserInformation(user);
     }
 }
