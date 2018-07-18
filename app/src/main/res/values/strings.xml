@@ -17,6 +17,7 @@
     <string name="permission_msg_reason_read_external_storage">We need <b>read external storage permission</b> to write your file.</string>
     <string name="permission_msg_reject_read_external_storage">We <b>can\'t</b> read external storage <b>without permission</b>.</string>
 
+    <!--appcenter-->
     <!--Crash-->
     <string name="activity_crash_btn_back">Back to continue</string>
     <string name="base_activity_dialog_loading_message_loading">Loading...</string>
@@ -41,4 +42,8 @@
     <string name="appcenter_distribute_update_failed_dialog_reinstall">Reinstall app</string>
     <string name="appcenter_distribute_update_failed_dialog_message">This release was either side-loaded or downloaded using a browser in private mode.</string>
 
+
+    <!--firebase-->
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
 </resources>
+
