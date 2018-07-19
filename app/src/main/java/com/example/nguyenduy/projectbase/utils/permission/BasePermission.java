@@ -32,6 +32,7 @@ public class BasePermission {
             listener.onResult(true);
             return;
         }
+        // shouldShowRequestPermissionRationale return về true nếu user đã denied request trước đó
         boolean shouldShowReasonNeedPermission = ActivityCompat.shouldShowRequestPermissionRationale(activity, permission);
         PermissionBuilder builder = new PermissionBuilder(activity, permission, requestCode, messageReasonNeedPermission, messageReject, listener);
         if (shouldShowReasonNeedPermission && !TextUtils.isEmpty(messageReasonNeedPermission)) {
