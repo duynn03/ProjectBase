@@ -11,118 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4573f7e5-f288-444c-99de-022b1202d20c" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_common_1_1_0_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_common_1_1_0_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_solver_1_1_2_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_multidex_1_0_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_27_1_1_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_transition_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_crashlytics_sdk_android_answers_1_4_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_crashlytics_sdk_android_beta_1_2_9.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_crashlytics_sdk_android_crashlytics_2_9_4.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_crashlytics_sdk_android_crashlytics_core_2_6_3.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_getkeepsafe_relinker_relinker_1_2_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_annotations_4_7_1_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_disklrucache_4_7_1_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_gifdecoder_4_7_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_glide_4_7_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_identifier_15_0_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_base_15_0_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_15_0_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_base_16_0_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_stats_15_0_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_15_0_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_3_0_2_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_8_5_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_analytics_16_0_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_analytics_impl_16_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_common_16_0_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_core_16_0_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_iid_interop_16_0_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_measurement_connector_16_0_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_measurement_connector_impl_16_0_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_butterknife_8_8_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_butterknife_annotations_8_8_1_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_makeramen_roundedimageview_2_3_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_microsoft_appcenter_appcenter_1_6_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_microsoft_appcenter_appcenter_analytics_1_6_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_microsoft_appcenter_appcenter_crashes_1_6_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_microsoft_appcenter_appcenter_distribute_1_6_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_microsoft_appcenter_appcenter_push_1_6_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_fabric_sdk_android_fabric_1_4_3.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_realm_android_adapters_2_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_realm_realm_android_library_5_3_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_realm_realm_annotations_5_3_1_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_greenrobot_eventbus_3_1_1_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/Develop/debug/app-Develop-debug.apk" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/Develop/release/output.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/Product/debug/app-Product-debug.apk" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/Product/release/app-Product-release.apk" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/FCM/FCMService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/FCM/FCMUtils.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/FCM/GooglePlayService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/FCM/TopicUtils.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/FireBaseConstants.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/FireBaseIdUtils.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/IMainPresenter.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/IMainView.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/MainActivity.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/MainPresenterImp.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/data/SharedPreference/UserInformation.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/MainActivity.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/application/MyApplication.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/application/MyApplication.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/BaseActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/BaseActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/AppCenterUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/AppCenterUtils.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/CrashUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/CrashUtils.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/CustomDistributeListener.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/CustomDistributeListener.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/CustomPushListener.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/CustomPushListener.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/DistributeUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/DistributeUtils.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/AnalyticUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/AnalyticUtils.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/CrashUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/CrashUtils.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/FireBaseUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/FireBaseUtils.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/SplashActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/SplashActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/StartActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/StartActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/login/LoginFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/login/LoginFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/login/LoginPresenterImp.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/login/LoginPresenterImp.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/Constants.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/Constants.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/LogUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/LogUtils.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/ValidateForm.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/ValidateForm.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/data/SharedPreferenceUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/data/SharedPreference/SharedPreferenceUtils.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/method/MethodContextUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/method/MethodContextUtils.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/method/MethodUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/method/MethodUtils.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/method/SDKUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/method/SDKUtils.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/permission/BasePermission.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/permission/BasePermission.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/permission/PermissionUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/permission/PermissionUtils.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_start.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_start.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -188,7 +79,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomDistributeListener.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CustomDistributeListener.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/CustomDistributeListener.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
@@ -196,6 +87,16 @@
               <folding>
                 <element signature="e#1396#1483#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -6250,7 +6151,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="586" />
     <option name="y" value="48" />
     <option name="width" value="1523" />
@@ -6901,8 +6802,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41774893" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -6919,7 +6819,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30063966" sideWeight="0.5400433" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21536796" sideWeight="0.4936034" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21536796" sideWeight="0.4936034" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -7476,14 +7376,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="78" column="9" lean-forward="true" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/CustomDistributeListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -7491,6 +7383,14 @@
           <folding>
             <element signature="e#1396#1483#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
