@@ -1,7 +1,7 @@
 package com.example.nguyenduy.projectbase.base.firebase.FCM;
 
 import com.example.nguyenduy.projectbase.utils.LogUtils;
-import com.google.firebase.iid.FirebaseInstanceId;
+import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
@@ -25,6 +25,7 @@ public class FCMService extends FirebaseMessagingService {
     public void onNewToken(String token) {
         LogUtils.e("FCMService: " + "Refreshed token: " + token);
         // send token to server
+        SharedPreferenceUtils.getInstance().setToken(token);
         sendRegistrationToServer(token);
         // https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId
     }

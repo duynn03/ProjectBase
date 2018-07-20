@@ -2,6 +2,8 @@ package com.example.nguyenduy.projectbase.base.firebase;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.support.annotation.Keep;
+import android.support.annotation.RequiresPermission;
 
 import com.example.nguyenduy.projectbase.utils.Constants;
 import com.example.nguyenduy.projectbase.utils.LogUtils;
@@ -13,6 +15,10 @@ public class AnalyticUtils implements SharedPreferences.OnSharedPreferenceChange
 
     private FirebaseAnalytics mAnalytics;
 
+    @RequiresPermission(
+            allOf = {"android.permission.INTERNET", "android.permission.ACCESS_NETWORK_STATE", "android.permission.WAKE_LOCK"}
+    )
+    @Keep
     public AnalyticUtils(Context context) {
         mAnalytics = FirebaseAnalytics.getInstance(context);
         enableAnalyticsCollection();
@@ -31,7 +37,8 @@ public class AnalyticUtils implements SharedPreferences.OnSharedPreferenceChange
     }*/
 
     private void updateUserInformation() {
-        setUserProperty(FireBaseConstants.Analytic.KEY_APPLICATION_INSTANCE, FireBaseIdUtils.getIdAppInstance());
+        setUserProperty(FireBaseConstants.Analytic.TOKEN, SharedPreferenceUtils.getInstance().getToken());
+        setUserProperty(FireBaseConstants.Analytic.APPLICATION_INSTANCE, FireBaseIdUtils.getIdAppInstance());
         UserInformation user = SharedPreferenceUtils.getInstance().getUserInformation();
         if (null == user) {
             clearUserInformation();
@@ -57,6 +64,7 @@ public class AnalyticUtils implements SharedPreferences.OnSharedPreferenceChange
 
     /**
      * key chỉ bao gồm chữ, số, và dấu _
+     *
      * @param key
      * @param value
      */
@@ -80,7 +88,7 @@ public class AnalyticUtils implements SharedPreferences.OnSharedPreferenceChange
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        if (Constants.SharedPreference.USER_INFORMATION.equals(key)) {
+        if (Constants.SharedPreference.USER_INFORMATION.equals(key) || Constants.SharedPreference.TOKEN.equals(key)) {
             updateUserInformation();
         }
     }

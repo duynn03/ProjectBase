@@ -39,7 +39,8 @@ public class CrashUtils implements SharedPreferences.OnSharedPreferenceChangeLis
     }
 
     private static void updateUserInformation() {
-        addKey(FireBaseConstants.Crash.KEY_APPLICATION_INSTANCE, FireBaseIdUtils.getIdAppInstance());
+        addKey(FireBaseConstants.Crash.TOKEN, SharedPreferenceUtils.getInstance().getToken());
+        addKey(FireBaseConstants.Crash.APPLICATION_INSTANCE, FireBaseIdUtils.getIdAppInstance());
         UserInformation user = SharedPreferenceUtils.getInstance().getUserInformation();
         if (null == user) {
             clearUserInformation();
@@ -147,7 +148,7 @@ public class CrashUtils implements SharedPreferences.OnSharedPreferenceChangeLis
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        if (Constants.SharedPreference.USER_INFORMATION.equals(key)) {
+        if (Constants.SharedPreference.USER_INFORMATION.equals(key) || Constants.SharedPreference.TOKEN.equals(key)) {
             updateUserInformation();
         }
     }

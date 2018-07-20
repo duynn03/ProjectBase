@@ -12,12 +12,14 @@ public class FireBaseConstants {
         public static final String NEWS = "NEWS";
     }
 
-    public class Crash{
-        public static final String KEY_APPLICATION_INSTANCE = "application_instance";
+    public class Crash {
+        public static final String APPLICATION_INSTANCE = "ApplicationInstance";
+        public static final String TOKEN = "Token";
     }
 
-    public class Analytic{
-        public static final String KEY_APPLICATION_INSTANCE = "application_instance";
+    public class Analytic {
+        public static final String APPLICATION_INSTANCE = "ApplicationInstance";
+        public static final String TOKEN = "Token";
         public static final String EMAIL = "Email";
         public static final String USER_NAME = "Name";
     }

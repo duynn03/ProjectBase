@@ -128,6 +128,18 @@ public class SharedPreferenceUtils {
         return getList(key, null, clazz);
     }
 
+    public void setToken(String token) {
+        setValue(Constants.SharedPreference.TOKEN, token);
+    }
+
+    public String getToken() {
+        return getValue(Constants.SharedPreference.TOKEN);
+    }
+
+    public void clearToken() {
+        clear(Constants.SharedPreference.TOKEN);
+    }
+
     public void setUserInformation(UserInformation user) {
         setObject(Constants.SharedPreference.USER_INFORMATION, user);
     }
