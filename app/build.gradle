@@ -46,25 +46,35 @@ android {
 
     /*config môi trường*/
     flavorDimensions "mode"
+    ext{
+        APP_NAME_DEVELOP = "@string/app_name_develop"
+        APP_NAME_TEST = "@string/app_name_test"
+        APP_NAME_UAT = "@string/app_name_uat"
+        APP_NAME_PRODUCTION = "@string/app_name_production"
+    }
     productFlavors {
         Uat {
+            manifestPlaceholders = [ applicationLabel: APP_NAME_UAT]
             applicationIdSuffix ".uat"
             versionNameSuffix " Uat"
             dimension "mode"
         }
         Product {
+            manifestPlaceholders = [ applicationLabel: APP_NAME_PRODUCTION]
             dimension "mode"
             applicationIdSuffix ".product"
             versionNameSuffix " Product"
         }
         Develop {
+            manifestPlaceholders = [ applicationLabel: APP_NAME_DEVELOP]
             applicationIdSuffix ".develop"
             versionNameSuffix " Develop"
             dimension "mode"
         }
         TTest {
-            applicationIdSuffix ".ttest"
-            versionNameSuffix " TTest"
+            manifestPlaceholders = [ applicationLabel: APP_NAME_TEST]
+            applicationIdSuffix ".test"
+            versionNameSuffix " Test"
             dimension "mode"
         }
     }
@@ -102,6 +112,7 @@ dependencies {
     /*firebase*/
     implementation 'com.google.firebase:firebase-core:16.0.1'
     implementation 'com.crashlytics.sdk.android:crashlytics:2.9.4'
+    implementation 'com.google.firebase:firebase-messaging:17.1.0'
 }
 
 apply plugin: 'com.google.gms.google-services'

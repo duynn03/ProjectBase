@@ -162,11 +162,11 @@ public class CrashUtils implements CrashesListener {
 
     @Override
     public void onSendingFailed(ErrorReport report, Exception e) {
-        LogUtils.e("Crash onSendingFailed(): " + report.getThrowable().toString() + ", Exception: " + e.toString());
+        LogUtils.e("AppCenter: Crash onSendingFailed(): " + report.getThrowable().toString() + ", Exception: " + e.toString());
     }
 
     @Override
     public void onSendingSucceeded(ErrorReport report) {
-        LogUtils.e("Crash onSendingSucceeded(): " + report.getThrowable().toString());
+        LogUtils.e("AppCenter: Crash onSendingSucceeded(): " + report.getThrowable().toString());
     }
 }

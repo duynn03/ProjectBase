@@ -1,13 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     android:id="@+id/root_activity"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Main Activity"
-        android:layout_centerInParent="true" />
+        android:layout_centerInParent="true"
+        android:text="Main Activity" />
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Logout" />
+
+    <Button
+        android:id="@+id/btn_generate_crash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_logout"
+        android:text="Crash" />
+
+    <Button
+        android:id="@+id/btn_subscribe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_generate_crash"
+        android:text="Subscribe" />
+
+    <Button
+        android:id="@+id/btn_unsubscribe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_subscribe"
+        android:text="Unsubscribe" />
 
 </RelativeLayout>

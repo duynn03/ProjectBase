@@ -14,7 +14,7 @@ public class CustomPushListener implements PushListener {
 
     @Override
     public void onPushNotificationReceived(Activity activity, PushNotification pushNotification) {
-        LogUtils.e("Nhận được push notification");
+        LogUtils.e("AppCenter: Nhận được push notification");
         /* The following notification properties are available. */
         String title = pushNotification.getTitle();
         String message = pushNotification.getMessage();
@@ -39,7 +39,7 @@ public class CustomPushListener implements PushListener {
         } else {
 
             /* Display a toast when a background push is clicked. */
-            Toast.makeText(activity, String.format("Push clicked with data=%1s", customData), Toast.LENGTH_LONG).show();
+            Toast.makeText(activity, String.format("AppCenter: Push clicked with data=%1s", customData), Toast.LENGTH_LONG).show();
         }
     }
 

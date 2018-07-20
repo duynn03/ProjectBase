@@ -2,7 +2,6 @@ package com.example.nguyenduy.projectbase.utils.permission;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -12,155 +11,146 @@ import android.support.v4.app.ActivityCompat;
 import android.text.TextUtils;
 
 import com.example.nguyenduy.projectbase.R;
+import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class BasePermission {
 
-    private static List<PermissionBuilder> permissions = new ArrayList<>();
+    private static PermissionBuilder mBuilder;
+    private static final int REQUEST_CODE_PERMISSION = 12345;
 
     // Permission for fragment
     //https://stackoverflow.com/questions/32714787/android-m-permissions-onrequestpermissionsresult-not-being-called
-    public static void checkPermission(Activity activity,
-                                       String permission,
-                                       int requestCode,
-                                       CharSequence messageReasonNeedPermission,
-                                       CharSequence messageReject,
-                                       final CallbackPermissionListener listener) {
-        if (hasPermission(activity, permission)) {
-            listener.onResult(true);
+    public static void checkPermission(PermissionBuilder permissionBuilder) {
+        mBuilder = permissionBuilder;
+        if (!hasPermissionNeedCheck()) {
+            mBuilder.listener.onResult(true, null);
             return;
         }
-        boolean shouldShowReasonNeedPermission = ActivityCompat.shouldShowRequestPermissionRationale(activity, permission);
-        PermissionBuilder builder = new PermissionBuilder(activity, permission, requestCode, messageReasonNeedPermission, messageReject, listener);
-        if (shouldShowReasonNeedPermission && !TextUtils.isEmpty(messageReasonNeedPermission)) {
-            showReasonNeedPermission(builder);
+        // shouldShowRequestPermissionRationale return về true nếu user đã denied request trước đó
+        boolean shouldShowReason = shouldShowReasonNeedPermission();
+        if (shouldShowReason && !TextUtils.isEmpty(mBuilder.messageReason)) {
+            showReasonNeedPermission();
         } else {
-            requestPermission(builder);
+            requestPermission();
         }
     }
 
-    private static boolean hasPermission(Context context, String permission) {
-        return ActivityCompat.checkSelfPermission(context, permission) == PackageManager.PERMISSION_GRANTED;
+    private static boolean hasPermissionNeedCheck() {
+        for (String permission : mBuilder.permissions) {
+            if (ActivityCompat.checkSelfPermission(mBuilder.activity, permission) == PackageManager.PERMISSION_DENIED)
+                return true;
+        }
+        return false;
     }
 
-    private static void showReasonNeedPermission(final PermissionBuilder permission) {
-        new AlertDialog.Builder(permission.activity)
+    private static boolean shouldShowReasonNeedPermission() {
+        for (String permission : mBuilder.permissions) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(mBuilder.activity, permission))
+                return true;
+        }
+        return false;
+
+    }
+
+    private static void showReasonNeedPermission() {
+        new AlertDialog.Builder(mBuilder.activity)
                 .setCancelable(false)
-                .setMessage(permission.messageReasonNeedPermission)
+                .setMessage(mBuilder.messageReason)
                 .setPositiveButton(R.string.OK, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        requestPermission(permission);
+                        requestPermission();
                     }
                 })
                 .show();
     }
 
-    private static void requestPermission(PermissionBuilder builder) {
-        permissions.add(builder);
-        ActivityCompat.requestPermissions(builder.activity, new String[]{builder.permission}, builder.requestCode);
+    private static void requestPermission() {
+        ActivityCompat.requestPermissions(mBuilder.activity, mBuilder.permissions, REQUEST_CODE_PERMISSION);
     }
 
-    private static void showMessageRejected(final PermissionBuilder permission) {
-        new AlertDialog.Builder(permission.activity)
+    private static void showMessageRejected(final List<String> permissionDenieds) {
+        new AlertDialog.Builder(mBuilder.activity)
                 .setCancelable(false)
-                .setMessage(permission.messageReject)
+                .setMessage(mBuilder.messageReject)
                 .setPositiveButton(R.string.OK, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        permission.listener.onResult(false);
-                        permissions.remove(permission);
+                        mBuilder.listener.onResult(false, permissionDenieds);
                     }
                 })
                 .setNegativeButton(R.string.change_setting, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        openAppDetailSetting(permission);
+                        openAppDetailSetting();
                     }
                 })
                 .show();
     }
 
-    private static void openAppDetailSetting(PermissionBuilder permission) {
-        Intent intent = new Intent();
-        intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-        Uri uri = Uri.fromParts("package", permission.activity.getPackageName(), null);
-        intent.setData(uri);
-        permission.activity.startActivityForResult(intent, permission.requestCode);
+    private static void openAppDetailSetting() {
+        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+        intent.setData(Uri.fromParts("package", mBuilder.activity.getPackageName(), null));
+        mBuilder.activity.startActivityForResult(intent, REQUEST_CODE_PERMISSION);
     }
 
-    // Because this lib only supports request one permission at one time,
-    // so this method called 'onRequestPermissionResult',
-    // not 'onRequestPermissionsResult'
-    public static void onRequestPermissionResult(Activity activity,
-                                                 int requestCode,
+    public static void onRequestPermissionResult(int requestCode,
                                                  String[] permissions,
                                                  int[] grantResults) {
-        PermissionBuilder permission = null;
-        for (PermissionBuilder itemPermission : BasePermission.permissions) {
-            if (itemPermission.activity.equals(activity)
-                    && itemPermission.requestCode == requestCode
-                    && itemPermission.permission.equals(permissions[0])) {
-                permission = itemPermission;
-                break;
-            }
-        }
-        if (permission != null) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                permission.listener.onResult(true);
-                BasePermission.permissions.remove(permission);
+        if (REQUEST_CODE_PERMISSION != requestCode) return;
+
+        List<String> permissionDenieds = findPermissionDenied(permissions, grantResults);
+        // if not permission denied
+        if (MethodUtils.isEmpty(permissionDenieds)) {
+            mBuilder.listener.onResult(true, null);
+        } else {
+            if (TextUtils.isEmpty(mBuilder.messageReject)) {
+                mBuilder.listener.onResult(false, permissionDenieds);
             } else {
-                if (TextUtils.isEmpty(permission.messageReject)) {
-                    permission.listener.onResult(false);
-                    BasePermission.permissions.remove(permission);
-                } else {
-                    showMessageRejected(permission);
-                }
+                showMessageRejected(permissionDenieds);
             }
         }
     }
 
-    public static void onActivityResult(Activity activity, int requestCode) {
-        PermissionBuilder permission = null;
-        for (PermissionBuilder itemPermission : permissions) {
-            if (itemPermission.activity.equals(activity)
-                    && itemPermission.requestCode == requestCode) {
-                permission = itemPermission;
-                break;
-            }
+    private static List<String> findPermissionDenied(String[] permissions, int[] grantResults) {
+        List<String> permissionDenieds = new ArrayList<>();
+        for (int i = 0; i < grantResults.length; i++) {
+            if (grantResults[i] == PackageManager.PERMISSION_DENIED)
+                permissionDenieds.add(permissions[i]);
         }
-        if (permission != null) {
-            permission.listener.onResult(hasPermission(permission.activity, permission.permission) ? true : false);
-            permissions.remove(permission);
-        }
+        return permissionDenieds;
     }
 
     public interface CallbackPermissionListener {
-        void onResult(boolean success);
+        void onResult(boolean success, List<String> permissionDenieds);
     }
 
-    private static class PermissionBuilder {
+    public static class PermissionBuilder {
         private final Activity activity;
-        private final String permission;
-        private final int requestCode;
-        private final CharSequence messageReasonNeedPermission;
-        private final CharSequence messageReject;
+        private final String[] permissions;
+        private String messageReason;
+        private String messageReject;
         private final CallbackPermissionListener listener;
 
         PermissionBuilder(Activity activity,
-                          String permission,
-                          int requestCode,
-                          CharSequence messageReasonNeedPermission,
-                          CharSequence messageReject,
-                          CallbackPermissionListener listener) {
+                          CallbackPermissionListener listener,
+                          String... permissions) {
             this.activity = activity;
-            this.permission = permission;
-            this.requestCode = requestCode;
-            this.messageReasonNeedPermission = messageReasonNeedPermission;
-            this.messageReject = messageReject;
             this.listener = listener;
+            this.permissions = permissions;
+        }
+
+        public PermissionBuilder setReason(String messageReason) {
+            this.messageReason = messageReason;
+            return this;
+        }
+
+        public PermissionBuilder setMessageReject(String messageReject) {
+            this.messageReject = messageReject;
+            return this;
         }
     }
 }

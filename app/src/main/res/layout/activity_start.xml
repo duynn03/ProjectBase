@@ -44,6 +44,7 @@
         android:layout_above="@+id/btn_Permission_location"
         android:text="Get Gallery" />
 
+
     <ImageView
         android:id="@+id/im_gallery"
         android:layout_width="120dp"
@@ -51,27 +52,34 @@
         android:scaleType="centerCrop" />
 
     <Button
+        android:id="@+id/btn_Permission_write_file_and_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_Permission_gallery"
+        android:text="Get write file and location" />
+
+    <Button
         android:id="@+id/btn_register_change_data_share_prefrence"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/btn_go_to_login_fragment"
+        android:layout_centerHorizontal="true"
         android:text="register change data share prefrence" />
 
     <Button
         android:id="@+id/btn_unregister_change_data_share_prefrence"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/btn_register_change_data_share_prefrence"
+        android:layout_centerHorizontal="true"
         android:text="unregister change data share prefrence" />
 
     <Button
         android:id="@+id/btn_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/btn_unregister_change_data_share_prefrence"
+        android:layout_centerHorizontal="true"
         android:text="0" />
 
 </RelativeLayout>

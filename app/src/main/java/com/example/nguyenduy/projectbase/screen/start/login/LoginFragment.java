@@ -12,15 +12,18 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Button;
 
+import com.example.nguyenduy.projectbase.screen.main.MainActivity;
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.BaseFragment;
 import com.example.nguyenduy.projectbase.base.IBasePresenter;
 import com.example.nguyenduy.projectbase.base.firebase.FireBaseUtils;
 import com.example.nguyenduy.projectbase.base.listener.HandShakeListener;
 import com.example.nguyenduy.projectbase.base.listener.HandShakeListenerUtils;
-import com.example.nguyenduy.projectbase.utils.data.SharedPreferenceUtils;
+import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
 import com.example.nguyenduy.projectbase.utils.permission.BasePermission;
 import com.example.nguyenduy.projectbase.utils.permission.PermissionUtils;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -56,13 +59,26 @@ public class LoginFragment extends BaseFragment<ILoginPresenter> implements ILog
 
     @Override
     public void prepareComplete() {
-//        AppCenterUtils.generateCrash();
-        FireBaseUtils.generateCrash();
+
+    }
+
+    @OnClick(R.id.btn_generate_crash)
+    public void onClickCrash() {
+        // AppCenterUtils.generateCrash();
+        FireBaseUtils.testCrash();
     }
 
     @OnClick(R.id.btn_login)
     public void onClickLogin() {
         getPresenter().login();
+        startActivity(MainActivity.class);
+    }
+
+    private void startActivity(Class<?> clazz) {
+        Intent intent = new Intent(getContext(), clazz);
+        // root task
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 
     @OnClick(R.id.btn_forgot_password)
@@ -79,7 +95,7 @@ public class LoginFragment extends BaseFragment<ILoginPresenter> implements ILog
     public void getGallery() {
         PermissionUtils.checkPermissionReadExternalStorage(getActivity(), new BasePermission.CallbackPermissionListener() {
             @Override
-            public void onResult(boolean success) {
+            public void onResult(boolean success, List<String> permissionDenieds) {
                 if (success) {
                     showToast("get Permission read gallery Success fragment!");
                     getImageFromGallery();
@@ -134,6 +150,24 @@ public class LoginFragment extends BaseFragment<ILoginPresenter> implements ILog
         }
         // picturePath là link ảnh
         return picturePath;
+    }
+
+    @OnClick(R.id.btn_Permission_write_file_and_location)
+    public void getPermissionWriteFileAndLocation() {
+        PermissionUtils.checkPermissionWriteExternalStorageAndLocation(getActivity(), new BasePermission.CallbackPermissionListener() {
+            @Override
+            public void onResult(boolean success, List<String> permissionDenieds) {
+                if (success) {
+                    showToast("get Permission write file and location Success!");
+                } else {
+                    String permission = permissionDenieds.get(0);
+                    for (int i = 1; i < permissionDenieds.size(); i++) {
+                        permission += ", " + permissionDenieds.get(i);
+                    }
+                    showToast("Not get Permission: " + permission);
+                }
+            }
+        });
     }
 
     @BindView(R.id.btn_number)
