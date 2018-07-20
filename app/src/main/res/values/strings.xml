@@ -18,7 +18,7 @@
     <string name="permission_msg_reject_read_external_storage">We <b>can\'t</b> read external storage <b>without permission</b>.</string>
     <string name="permission_msg_reason_read_external_storage_and_location">Chúng tôi cần permission read external storage and location để có thể tiếp tục.</string>
     <string name="permission_msg_reject_read_external_storage_and_location">Chúng tôi không thể lấy được tất cả permission nên không thể tiếp tục.</string>
-
+    <string name="permission_msg_reason_firebase_analytic">We need that permissions to send analytic to our server.</string>
     <!--appcenter-->
     <!--Crash-->
     <string name="activity_crash_btn_back">Back to continue</string>

@@ -48,6 +48,10 @@
         <meta-data
             android:name="firebase_crashlytics_collection_enabled"
             android:value="false" />
+        <!--enable debug performance -->
+        <meta-data
+            android:name="firebase_performance_logcat_enabled"
+            android:value="true" />
         <!--Disable Firebase Clound Message auto initialization generates an Instance ID,-->
         <meta-data
             android:name="firebase_messaging_auto_init_enabled"

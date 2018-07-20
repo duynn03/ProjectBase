@@ -23,6 +23,7 @@ import com.example.nguyenduy.projectbase.screen.start.login.LoginFragment;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
 import com.example.nguyenduy.projectbase.utils.permission.BasePermission;
 import com.example.nguyenduy.projectbase.utils.permission.PermissionUtils;
+import com.google.firebase.perf.metrics.AddTrace;
 
 import java.util.List;
 
@@ -36,6 +37,7 @@ public class StartActivity extends BaseActivity<IStartActivityPresenter> impleme
 
     private HandShakeListener mHandShakeListener;
 
+    @AddTrace(name = "onCreateTrace", enabled = true)
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

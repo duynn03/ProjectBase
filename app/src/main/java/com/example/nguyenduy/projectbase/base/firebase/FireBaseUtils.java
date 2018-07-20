@@ -1,17 +1,30 @@
 package com.example.nguyenduy.projectbase.base.firebase;
 
+import android.app.Activity;
 import android.content.Context;
 
 import com.crashlytics.android.Crashlytics;
+import com.example.nguyenduy.projectbase.utils.permission.BasePermission;
+import com.example.nguyenduy.projectbase.utils.permission.PermissionUtils;
+
+import java.util.List;
 
 public class FireBaseUtils {
 
     private AnalyticUtils mAnalytic;
     private CrashUtils mCrash;
 
-    public FireBaseUtils(Context context) {
-        mAnalytic = new AnalyticUtils(context);
-        mCrash = new CrashUtils(context);
+    public FireBaseUtils(final Activity activity) {
+        PermissionUtils.checkPermissionFireBaseAnalytic(activity, new BasePermission.CallbackPermissionListener() {
+            @Override
+            public void onResult(boolean success, List<String> permissionDenieds) {
+                if (success) {
+                    mAnalytic = new AnalyticUtils(activity);
+                }
+            }
+        });
+
+        mCrash = new CrashUtils(activity);
     }
 
     public static void init() {
@@ -39,7 +52,9 @@ public class FireBaseUtils {
     }
 
     public void onDestroy() {
-        mAnalytic.onDestroy();
+        if (null != mAnalytic) {
+            mAnalytic.onDestroy();
+        }
         mCrash.onDestroy();
     }
 }

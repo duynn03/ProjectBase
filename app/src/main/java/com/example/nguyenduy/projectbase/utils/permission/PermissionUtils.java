@@ -10,6 +10,18 @@ import com.example.nguyenduy.projectbase.utils.permission.BasePermission.Permiss
 
 public class PermissionUtils {
 
+    public static void checkPermissionFireBaseAnalytic(Activity activity, CallbackPermissionListener listener) {
+        BasePermission.checkPermission(
+                new PermissionBuilder(
+                        activity,
+                        listener,
+                        Manifest.permission.INTERNET,
+                        Manifest.permission.ACCESS_NETWORK_STATE,
+                        Manifest.permission.WAKE_LOCK)
+                        .setReason(ResourceUtils.getString(R.string.permission_msg_reason_firebase_analytic)));
+    }
+
+
     public static void checkPermissionInternet(Activity activity, CallbackPermissionListener listener) {
         BasePermission.checkPermission(
                 new PermissionBuilder(
