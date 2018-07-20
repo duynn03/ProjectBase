@@ -14,6 +14,8 @@ import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPrefe
 import com.example.nguyenduy.projectbase.utils.permission.BasePermission;
 import com.example.nguyenduy.projectbase.utils.permission.PermissionUtils;
 
+import java.util.List;
+
 public class SplashActivity extends AppCompatActivity {
 
     private AppCenterUtils mAppCenter;
@@ -24,7 +26,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         PermissionUtils.checkPermissionInternet(this, new BasePermission.CallbackPermissionListener() {
             @Override
-            public void onResult(boolean success) {
+            public void onResult(boolean success, List<String> permissionDenieds) {
                 if (!success) {
                     finish();
                     return;
@@ -32,7 +34,6 @@ public class SplashActivity extends AppCompatActivity {
                 initComponents();
             }
         });
-
     }
 
     private void initComponents() {

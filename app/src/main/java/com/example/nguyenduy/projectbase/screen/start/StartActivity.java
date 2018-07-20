@@ -24,6 +24,8 @@ import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPrefe
 import com.example.nguyenduy.projectbase.utils.permission.BasePermission;
 import com.example.nguyenduy.projectbase.utils.permission.PermissionUtils;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.OnClick;
 
@@ -70,24 +72,17 @@ public class StartActivity extends BaseActivity<IStartActivityPresenter> impleme
     public void prepareComplete() {
         PermissionUtils.checkPermissionInternet(this, new BasePermission.CallbackPermissionListener() {
             @Override
-            public void onResult(boolean success) {
+            public void onResult(boolean success, List<String> permissionDenieds) {
                 if (!success) {
                     showToast("get Permission Internet Fail");
                 }
                 if (SharedPreferenceUtils.getInstance().getUserInformation() == null) {
                     addFragmentLogin();
                 } else {
-                    startActivity(MainActivity.class);
+                    startRootActivity(MainActivity.class);
                 }
             }
         });
-    }
-
-    private void startActivity(Class<?> clazz) {
-        Intent intent = new Intent(this, clazz);
-        // root task
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
     }
 
     private void addFragmentLogin() {
@@ -136,7 +131,7 @@ public class StartActivity extends BaseActivity<IStartActivityPresenter> impleme
     public void getPermissionLocation() {
         PermissionUtils.checkPermissionLocation(this, new BasePermission.CallbackPermissionListener() {
             @Override
-            public void onResult(boolean success) {
+            public void onResult(boolean success, List<String> permissionDenieds) {
                 if (success) {
                     showToast("get Permission Location Success!");
                 } else {
@@ -150,7 +145,7 @@ public class StartActivity extends BaseActivity<IStartActivityPresenter> impleme
     public void getPermissionWriteFile() {
         PermissionUtils.checkPermissionWriteExternalStorage(this, new BasePermission.CallbackPermissionListener() {
             @Override
-            public void onResult(boolean success) {
+            public void onResult(boolean success, List<String> permissionDenieds) {
                 if (success) {
                     showToast("get Permission write file Success!");
                 } else {
@@ -160,11 +155,29 @@ public class StartActivity extends BaseActivity<IStartActivityPresenter> impleme
         });
     }
 
+    @OnClick(R.id.btn_Permission_write_file_and_location)
+    public void getPermissionWriteFileAndLocation() {
+        PermissionUtils.checkPermissionWriteExternalStorageAndLocation(this, new BasePermission.CallbackPermissionListener() {
+            @Override
+            public void onResult(boolean success, List<String> permissionDenieds) {
+                if (success) {
+                    showToast("get Permission write file and location Success!");
+                } else {
+                    String permission = permissionDenieds.get(0);
+                    for (int i = 1; i < permissionDenieds.size(); i++) {
+                        permission += ", " + permissionDenieds.get(i);
+                    }
+                    showToast("Not get Permission: " + permission);
+                }
+            }
+        });
+    }
+
     @OnClick(R.id.btn_Permission_gallery)
     public void getGallery() {
         PermissionUtils.checkPermissionReadExternalStorage(this, new BasePermission.CallbackPermissionListener() {
             @Override
-            public void onResult(boolean success) {
+            public void onResult(boolean success, List<String> permissionDenieds) {
                 if (success) {
                     showToast("get Permission read gallery Success!");
                     getImageFromGallery();

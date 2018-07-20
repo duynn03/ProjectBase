@@ -16,6 +16,8 @@
     <string name="permission_msg_reject_write_external_storage">We <b>can\'t</b> write external storage <b>without permission</b>.</string>
     <string name="permission_msg_reason_read_external_storage">We need <b>read external storage permission</b> to write your file.</string>
     <string name="permission_msg_reject_read_external_storage">We <b>can\'t</b> read external storage <b>without permission</b>.</string>
+    <string name="permission_msg_reason_read_external_storage_and_location">Chúng tôi cần permission read external storage and location để có thể tiếp tục.</string>
+    <string name="permission_msg_reject_read_external_storage_and_location">Chúng tôi không thể lấy được tất cả permission nên không thể tiếp tục.</string>
 
     <!--appcenter-->
     <!--Crash-->

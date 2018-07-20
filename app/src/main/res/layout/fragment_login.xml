@@ -55,9 +55,9 @@
         android:id="@+id/btn_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
         android:text="Login" />
 
     <Button
@@ -69,10 +69,18 @@
         android:text="Get Gallery" />
 
     <Button
-        android:id="@+id/btn_generate_crash"
+        android:id="@+id/btn_Permission_write_file_and_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/btn_Permission_gallery"
+        android:layout_alignParentRight="true"
+        android:text="Get write file and location" />
+
+    <Button
+        android:id="@+id/btn_generate_crash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_Permission_write_file_and_location"
         android:layout_alignParentRight="true"
         android:text="Crash" />
 

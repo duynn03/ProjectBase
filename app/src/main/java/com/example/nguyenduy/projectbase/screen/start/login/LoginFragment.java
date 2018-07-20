@@ -23,6 +23,8 @@ import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPrefe
 import com.example.nguyenduy.projectbase.utils.permission.BasePermission;
 import com.example.nguyenduy.projectbase.utils.permission.PermissionUtils;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.OnClick;
 
@@ -93,7 +95,7 @@ public class LoginFragment extends BaseFragment<ILoginPresenter> implements ILog
     public void getGallery() {
         PermissionUtils.checkPermissionReadExternalStorage(getActivity(), new BasePermission.CallbackPermissionListener() {
             @Override
-            public void onResult(boolean success) {
+            public void onResult(boolean success, List<String> permissionDenieds) {
                 if (success) {
                     showToast("get Permission read gallery Success fragment!");
                     getImageFromGallery();
@@ -148,6 +150,24 @@ public class LoginFragment extends BaseFragment<ILoginPresenter> implements ILog
         }
         // picturePath là link ảnh
         return picturePath;
+    }
+
+    @OnClick(R.id.btn_Permission_write_file_and_location)
+    public void getPermissionWriteFileAndLocation() {
+        PermissionUtils.checkPermissionWriteExternalStorageAndLocation(getActivity(), new BasePermission.CallbackPermissionListener() {
+            @Override
+            public void onResult(boolean success, List<String> permissionDenieds) {
+                if (success) {
+                    showToast("get Permission write file and location Success!");
+                } else {
+                    String permission = permissionDenieds.get(0);
+                    for (int i = 1; i < permissionDenieds.size(); i++) {
+                        permission += ", " + permissionDenieds.get(i);
+                    }
+                    showToast("Not get Permission: " + permission);
+                }
+            }
+        });
     }
 
     @BindView(R.id.btn_number)

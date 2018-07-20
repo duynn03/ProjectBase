@@ -57,19 +57,12 @@ public class MainActivity extends BaseActivity<IMainPresenter> implements IMainV
     @OnClick(R.id.btn_logout)
     public void onClickButtonLogout() {
         SharedPreferenceUtils.getInstance().clearUserInformation();
-        startActivity(StartActivity.class);
+        startRootActivity(StartActivity.class);
     }
 
     @OnClick(R.id.btn_generate_crash)
     public void onClickCrash() {
         // AppCenterUtils.generateCrash();
         FireBaseUtils.testCrash();
-    }
-
-    private void startActivity(Class<?> clazz) {
-        Intent intent = new Intent(this, clazz);
-        // root task
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
     }
 }

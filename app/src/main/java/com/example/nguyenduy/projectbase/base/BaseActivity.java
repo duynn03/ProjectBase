@@ -156,7 +156,11 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
     public void onRequestPermissionsResult(int requestCode,
                                            @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
-        BasePermission.onRequestPermissionResult(this, requestCode, permissions, grantResults);
+        BasePermission.onRequestPermissionResult(requestCode, permissions, grantResults);
+    }
+
+    public void startRootActivity(Class<?> clazz) {
+        startActivity(clazz, null, Intent.FLAG_ACTIVITY_CLEAR_TASK, Intent.FLAG_ACTIVITY_NEW_TASK);
     }
 
     /**
