@@ -16,12 +16,13 @@ public class CustomDistributeListener implements DistributeListener {
 
     @Override
     public boolean onReleaseAvailable(Activity activity, ReleaseDetails releaseDetails) {
+
         Toast.makeText(activity, "AppCenter: có new Version", Toast.LENGTH_SHORT).show();
-        // Look at releaseDetails public methods to get version information, release notes text or release notes URL
+        LogUtils.e("AppCenter: có new Version");
         String versionName = releaseDetails.getShortVersion();
         int versionCode = releaseDetails.getVersion();
-        String releaseNotes = releaseDetails.getReleaseNotes();
         Uri releaseNotesUrl = releaseDetails.getReleaseNotesUrl();
+        String releaseNotes = releaseDetails.getReleaseNotes();
 
         // Build our own dialog title and message
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(activity);

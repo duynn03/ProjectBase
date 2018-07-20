@@ -44,6 +44,9 @@
     <string name="appcenter_distribute_update_failed_dialog_reinstall">Reinstall app</string>
     <string name="appcenter_distribute_update_failed_dialog_message">This release was either side-loaded or downloaded using a browser in private mode.</string>
 
+    <string name="install_url">http...</string>
+    <string name="api_url">http...</string>
+
 
     <!--firebase-->
     <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
