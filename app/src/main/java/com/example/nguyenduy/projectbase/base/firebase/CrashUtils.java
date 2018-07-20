@@ -39,6 +39,7 @@ public class CrashUtils implements SharedPreferences.OnSharedPreferenceChangeLis
     }
 
     private static void updateUserInformation() {
+        addKey(FireBaseConstants.Crash.KEY_APPLICATION_INSTANCE, FireBaseIdUtils.getIdAppInstance());
         UserInformation user = SharedPreferenceUtils.getInstance().getUserInformation();
         if (null == user) {
             clearUserInformation();
@@ -47,7 +48,7 @@ public class CrashUtils implements SharedPreferences.OnSharedPreferenceChangeLis
         setUserId(user.getId());
         setUserName(user.getUsername());
         setUserEmail(user.getEmail());
-        LogUtils.e("CrashUtils.updateUserInformation(): " + user.toString());
+        LogUtils.e("FCMService: CrashUtils.updateUserInformation(): " + user.toString());
     }
 
     /**
@@ -75,7 +76,7 @@ public class CrashUtils implements SharedPreferences.OnSharedPreferenceChangeLis
         setUserId("");
         setUserName("");
         setUserEmail("");
-        LogUtils.e("CrashUtils.clearUserInformation()");
+        LogUtils.e("FCMService: CrashUtils.clearUserInformation()");
     }
 
     public enum LogPriority {

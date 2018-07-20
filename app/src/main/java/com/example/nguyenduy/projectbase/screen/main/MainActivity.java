@@ -4,6 +4,8 @@ import android.content.Intent;
 
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.BaseActivity;
+import com.example.nguyenduy.projectbase.base.firebase.FireBaseConstants;
+import com.example.nguyenduy.projectbase.base.firebase.FCM.TopicUtils;
 import com.example.nguyenduy.projectbase.base.firebase.FireBaseUtils;
 import com.example.nguyenduy.projectbase.screen.start.StartActivity;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
@@ -40,6 +42,16 @@ public class MainActivity extends BaseActivity<IMainPresenter> implements IMainV
     @Override
     public void prepareComplete() {
 
+    }
+
+    @OnClick(R.id.btn_subscribe)
+    public void onClickButtonSubscribe() {
+        TopicUtils.subscribe(FireBaseConstants.Topic.NEWS);
+    }
+
+    @OnClick(R.id.btn_unsubscribe)
+    public void onClickButtonUnsubscribe() {
+        TopicUtils.unsubscribe(FireBaseConstants.Topic.NEWS);
     }
 
     @OnClick(R.id.btn_logout)

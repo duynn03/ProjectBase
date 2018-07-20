@@ -22,29 +22,29 @@ public class AppCenterUtils {
     // branch github
     // duynn03@gmail.com
     // nguyenduy1
-    private final String APP_SCRET = "c0bd7330-a45c-4ebf-b60c-08ddaf4bd4bc";
+    private final String APP_SECRET = "c0bd7330-a45c-4ebf-b60c-08ddaf4bd4bc";
 
     private Activity mActivity;
     private CrashUtils mCrash;
     private AnalyticUtils mAnalytic;
     private DistributeUtils mDistribute;
-    private PushUtils mPush;
+    //private PushUtils mPush;
 
     public AppCenterUtils(Activity activity, CrashUtils.ICrashListener listenerCrash) {
         mActivity = activity;
         mDistribute = new DistributeUtils();
-        AppCenter.start(MyApplication.getInstance(), APP_SCRET, Analytics.class, Crashes.class, Distribute.class, Push.class);
+        AppCenter.start(MyApplication.getInstance(), APP_SECRET, Analytics.class, Crashes.class, Distribute.class, Push.class);
         AppCenter.setEnabled(true);
         AppCenter.setLogLevel(Log.VERBOSE);
         mCrash = new CrashUtils(mActivity, listenerCrash);
         mAnalytic = new AnalyticUtils();
 
-        mPush = new PushUtils();
+        //mPush = new PushUtils();  // dùng push notification của fire base
 
         AppCenter.getInstallId().thenAccept(new AppCenterConsumer<UUID>() {
             @Override
             public void accept(UUID uuid) {
-                LogUtils.e("getInstallId(): " + uuid);
+                LogUtils.e("AppCenter: getInstallId(): " + uuid);
             }
         });
     }

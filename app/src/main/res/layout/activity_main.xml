@@ -24,4 +24,18 @@
         android:layout_above="@+id/btn_logout"
         android:text="Crash" />
 
+    <Button
+        android:id="@+id/btn_subscribe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_generate_crash"
+        android:text="Subscribe" />
+
+    <Button
+        android:id="@+id/btn_unsubscribe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_subscribe"
+        android:text="Unsubscribe" />
+
 </RelativeLayout>

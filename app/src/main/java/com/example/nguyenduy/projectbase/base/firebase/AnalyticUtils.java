@@ -11,9 +11,6 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class AnalyticUtils implements SharedPreferences.OnSharedPreferenceChangeListener {
 
-    private static final String EMAIL = "Email";
-    private static final String USER_NAME = "Name";
-
     private FirebaseAnalytics mAnalytics;
 
     public AnalyticUtils(Context context) {
@@ -34,6 +31,7 @@ public class AnalyticUtils implements SharedPreferences.OnSharedPreferenceChange
     }*/
 
     private void updateUserInformation() {
+        setUserProperty(FireBaseConstants.Analytic.KEY_APPLICATION_INSTANCE, FireBaseIdUtils.getIdAppInstance());
         UserInformation user = SharedPreferenceUtils.getInstance().getUserInformation();
         if (null == user) {
             clearUserInformation();
@@ -42,7 +40,7 @@ public class AnalyticUtils implements SharedPreferences.OnSharedPreferenceChange
         setUserId(user.getId());
         setUserName(user.getUsername());
         setUserEmail(user.getEmail());
-        LogUtils.e("AnalyticUtils.updateUserInformation(): " + user.toString());
+        LogUtils.e("FCMService: AnalyticUtils.updateUserInformation(): " + user.toString());
     }
 
     private void setUserId(String id) {
@@ -50,13 +48,18 @@ public class AnalyticUtils implements SharedPreferences.OnSharedPreferenceChange
     }
 
     private void setUserName(String userName) {
-        setUserProperty(USER_NAME, userName);
+        setUserProperty(FireBaseConstants.Analytic.USER_NAME, userName);
     }
 
     private void setUserEmail(String email) {
-        setUserProperty(EMAIL, email);
+        setUserProperty(FireBaseConstants.Analytic.EMAIL, email);
     }
 
+    /**
+     * key chỉ bao gồm chữ, số, và dấu _
+     * @param key
+     * @param value
+     */
     private void setUserProperty(String key, String value) {
         mAnalytics.setUserProperty(key, value);
     }
@@ -68,7 +71,7 @@ public class AnalyticUtils implements SharedPreferences.OnSharedPreferenceChange
         setUserId("");
         setUserName("");
         setUserEmail("");
-        LogUtils.e("AnalyticUtils.clearUserInformation()");
+        LogUtils.e("FCMService: AnalyticUtils.clearUserInformation()");
     }
 
     private void resetAnalyticsData() {
