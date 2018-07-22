@@ -11,6 +11,7 @@ import android.support.v4.app.ActivityCompat;
 import android.text.TextUtils;
 
 import com.example.nguyenduy.projectbase.R;
+import com.example.nguyenduy.projectbase.utils.Constants;
 import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
 
 import java.util.ArrayList;
@@ -19,7 +20,6 @@ import java.util.List;
 public class BasePermission {
 
     private static PermissionBuilder mBuilder;
-    private static final int REQUEST_CODE_PERMISSION = 12345;
 
     // Permission for fragment
     //https://stackoverflow.com/questions/32714787/android-m-permissions-onrequestpermissionsresult-not-being-called
@@ -69,7 +69,7 @@ public class BasePermission {
     }
 
     private static void requestPermission() {
-        ActivityCompat.requestPermissions(mBuilder.activity, mBuilder.permissions, REQUEST_CODE_PERMISSION);
+        ActivityCompat.requestPermissions(mBuilder.activity, mBuilder.permissions, Constants.IntentCommon.REQUEST_CODE_PERMISSION);
     }
 
     private static void showMessageRejected(final List<String> permissionDenieds) {
@@ -94,13 +94,13 @@ public class BasePermission {
     private static void openAppDetailSetting() {
         Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
         intent.setData(Uri.fromParts("package", mBuilder.activity.getPackageName(), null));
-        mBuilder.activity.startActivityForResult(intent, REQUEST_CODE_PERMISSION);
+        mBuilder.activity.startActivityForResult(intent, Constants.IntentCommon.REQUEST_CODE_PERMISSION);
     }
 
     public static void onRequestPermissionResult(int requestCode,
                                                  String[] permissions,
                                                  int[] grantResults) {
-        if (REQUEST_CODE_PERMISSION != requestCode) return;
+        if (Constants.IntentCommon.REQUEST_CODE_PERMISSION != requestCode) return;
 
         List<String> permissionDenieds = findPermissionDenied(permissions, grantResults);
         // if not permission denied

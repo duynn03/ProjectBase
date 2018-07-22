@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 apply plugin: 'realm-android'
 apply plugin: 'io.fabric'
 apply plugin: 'com.google.firebase.firebase-perf'
-apply plugin: 'com.google.gms.google-services'
 
 android {
     /*config signature*/
@@ -48,7 +47,7 @@ android {
 
     /*config môi trường*/
     flavorDimensions "mode"
-    ext{
+    ext {
         APP_NAME_DEVELOP = "@string/app_name_develop"
         APP_NAME_TEST = "@string/app_name_test"
         APP_NAME_UAT = "@string/app_name_uat"
@@ -56,25 +55,25 @@ android {
     }
     productFlavors {
         Uat {
-            manifestPlaceholders = [ applicationLabel: APP_NAME_UAT]
+            manifestPlaceholders = [applicationLabel: APP_NAME_UAT]
             applicationIdSuffix ".uat"
             versionNameSuffix " Uat"
             dimension "mode"
         }
         Product {
-            manifestPlaceholders = [ applicationLabel: APP_NAME_PRODUCTION]
+            manifestPlaceholders = [applicationLabel: APP_NAME_PRODUCTION]
             dimension "mode"
             applicationIdSuffix ".product"
             versionNameSuffix " Product"
         }
         Develop {
-            manifestPlaceholders = [ applicationLabel: APP_NAME_DEVELOP]
+            manifestPlaceholders = [applicationLabel: APP_NAME_DEVELOP]
             applicationIdSuffix ".develop"
             versionNameSuffix " Develop"
             dimension "mode"
         }
         TTest {
-            manifestPlaceholders = [ applicationLabel: APP_NAME_TEST]
+            manifestPlaceholders = [applicationLabel: APP_NAME_TEST]
             applicationIdSuffix ".test"
             versionNameSuffix " Test"
             dimension "mode"
@@ -117,4 +116,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:17.1.0'
     implementation 'com.google.firebase:firebase-perf:16.0.0'
 
+
 }
+
+apply plugin: 'com.google.gms.google-services'

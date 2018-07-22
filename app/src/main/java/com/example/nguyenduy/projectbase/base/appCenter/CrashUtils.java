@@ -7,10 +7,11 @@ import android.graphics.BitmapFactory;
 
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.screen.start.crash.CrashActivity;
+import com.example.nguyenduy.projectbase.utils.Constants;
 import com.example.nguyenduy.projectbase.utils.LogUtils;
+import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
 import com.example.nguyenduy.projectbase.utils.method.ResourceUtils;
 import com.example.nguyenduy.projectbase.utils.method.SDKUtils;
-import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.crashes.Crashes;
 import com.microsoft.appcenter.crashes.CrashesListener;
 import com.microsoft.appcenter.crashes.ingestion.models.ErrorAttachmentLog;
@@ -27,7 +28,8 @@ import java.util.Arrays;
 
 public class CrashUtils implements CrashesListener {
 
-    private final int ID_INTENT_START_ACTIVITY_CRASH = 1;
+    private static final String TAG = MethodUtils.getTagClass(CrashUtils.class);
+
     private final String NAME_FILE_LOG_CRASH = "CrashInfor";
     private final String CONTENT_TYPE_IMAGE = "image/jpeg";
     private final String CONTENT_TYPE_FILE_TO_BINARY_GREATER_VERSION_M = "binary/octet-stream";
@@ -43,10 +45,13 @@ public class CrashUtils implements CrashesListener {
     public CrashUtils(Activity activity, ICrashListener listener) {
         mActivity = activity;
         mListener = listener;
-        Crashes.setEnabled(true);
-        Crashes.notifyUserConfirmation(Crashes.ALWAYS_SEND);
         Crashes.setListener(this);
         checkHasCrashInLastSession();
+    }
+
+    public static void init() {
+        Crashes.setEnabled(true);
+        Crashes.notifyUserConfirmation(Crashes.ALWAYS_SEND);
     }
 
     private void checkHasCrashInLastSession() {
@@ -54,7 +59,7 @@ public class CrashUtils implements CrashesListener {
             @Override
             public void accept(Boolean isCrashed) {
                 if (isCrashed) {
-                    showActivitySorryCrashed();
+                    showActivityCrashed();
                 } else {
                     mListener.onComplete();
                 }
@@ -62,13 +67,13 @@ public class CrashUtils implements CrashesListener {
         });
     }
 
-    private void showActivitySorryCrashed() {
+    private void showActivityCrashed() {
         Intent intent = new Intent(mActivity, CrashActivity.class);
-        mActivity.startActivityForResult(intent, ID_INTENT_START_ACTIVITY_CRASH);
+        mActivity.startActivityForResult(intent, Constants.IntentCommon.START_ACTIVITY_CRASH);
     }
 
     public void onActivityResult(int requestCode) {
-        if (requestCode == ID_INTENT_START_ACTIVITY_CRASH && null != mListener) {
+        if (requestCode == Constants.IntentCommon.START_ACTIVITY_CRASH && null != mListener) {
             mListener.onComplete();
         }
     }
@@ -98,7 +103,7 @@ public class CrashUtils implements CrashesListener {
         // TODO
         StringBuilder content = new StringBuilder();
         content
-                .append("InstallId: " + AppCenter.getInstallId())
+                .append("InstallId: " + AppCenterUtils.getInstallId())
                 .append("\n *****************************************")
                 .append("\n" + getInfoCrashApp(report));
         return ErrorAttachmentLog.attachmentWithText(content.toString(), NAME_FILE_LOG_CRASH + ".txt");
@@ -162,11 +167,11 @@ public class CrashUtils implements CrashesListener {
 
     @Override
     public void onSendingFailed(ErrorReport report, Exception e) {
-        LogUtils.e("AppCenter: Crash onSendingFailed(): " + report.getThrowable().toString() + ", Exception: " + e.toString());
+        LogUtils.e(TAG + "onSendingFailed(): " + report.getThrowable().toString() + ", Exception: " + e.toString());
     }
 
     @Override
     public void onSendingSucceeded(ErrorReport report) {
-        LogUtils.e("AppCenter: Crash onSendingSucceeded(): " + report.getThrowable().toString());
+        LogUtils.i(TAG + "onSendingSucceeded(): " + report.getThrowable().toString());
     }
 }

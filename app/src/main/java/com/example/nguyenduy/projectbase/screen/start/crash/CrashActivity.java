@@ -5,6 +5,7 @@ import android.app.Activity;
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.BaseActivity;
 import com.example.nguyenduy.projectbase.utils.LogUtils;
+import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
 import com.microsoft.appcenter.crashes.Crashes;
 import com.microsoft.appcenter.crashes.model.ErrorReport;
 import com.microsoft.appcenter.utils.async.AppCenterConsumer;
@@ -12,6 +13,8 @@ import com.microsoft.appcenter.utils.async.AppCenterConsumer;
 import butterknife.OnClick;
 
 public class CrashActivity extends BaseActivity<ICrashPresenter> implements ICrashView {
+
+    private static final String TAG = MethodUtils.getTagClass(CrashActivity.class);
 
     @Override
     public int getIdLayout() {
@@ -40,15 +43,15 @@ public class CrashActivity extends BaseActivity<ICrashPresenter> implements ICra
 
     @Override
     public void prepareComplete() {
-        getCrashReport();
+        getInformationCrashReport();
     }
 
-    private void getCrashReport() {
+    private void getInformationCrashReport() {
         Crashes.getLastSessionCrashReport().thenAccept(new AppCenterConsumer<ErrorReport>() {
             @Override
             public void accept(ErrorReport report) {
                 if (report != null) {
-                    LogUtils.e("Crash getLastSessionCrashReport(): " + report.getThrowable().toString());
+                    LogUtils.e(TAG + "getLastSessionCrashReport(): " + report.getThrowable().toString());
                 }
             }
         });

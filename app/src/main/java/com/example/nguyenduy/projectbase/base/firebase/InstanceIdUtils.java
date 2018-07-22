@@ -7,7 +7,7 @@ import com.google.firebase.iid.InstanceIdResult;
 import java.io.IOException;
 
 // https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId
-public class FireBaseIdUtils {
+public class InstanceIdUtils {
 
     /**
      * return Id và auto generate token cho project

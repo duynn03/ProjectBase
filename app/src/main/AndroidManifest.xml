@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -22,57 +21,75 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".screen.SplashActivity"
             android:theme="@style/AppTheme.Launcher">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+        <activity android:name=".screen.start.crash.CrashActivity" />
+        <activity android:name=".screen.main.MainActivity" />
+        <activity android:name=".screen.start.StartActivity" />
+        <activity
+            android:name=".screen.DrawerLayoutActivity"
+            android:label="@string/title_activity_drawer_layout"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".screen.start.crash.CrashActivity" />
-        <activity android:name=".screen.main.MainActivity" />
-        <activity android:name=".screen.start.StartActivity" />
-
-        <!--Firebase Cloud Message-->
+        <!-- Firebase Cloud Message -->
         <service android:name=".base.firebase.FCM.FCMService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
-        <!--Disable Firebase Crashlytics auto initialization generates an Instance ID,-->
+        <!-- Disable Firebase Crashlytics auto initialization generates an Instance ID, -->
         <meta-data
             android:name="firebase_crashlytics_collection_enabled"
             android:value="false" />
-        <!--enable debug performance -->
+        <!-- enable debug performance -->
         <meta-data
             android:name="firebase_performance_logcat_enabled"
             android:value="true" />
-        <!--Disable Firebase Clound Message auto initialization generates an Instance ID,-->
+        <!-- tắt hoàn toàn performance, phải remove firebase_performance_logcat_enabled thì firebase_performance_collection_deactivated mới có tác dụng -->
+        <!--
+            <meta-data
+            android:name="firebase_performance_collection_deactivated"
+            android:value="true" />
+        -->
+        <!-- Disable Firebase Clound Message auto initialization generates an Instance ID, -->
         <meta-data
             android:name="firebase_messaging_auto_init_enabled"
             android:value="false" />
-        <!--android sẽ custom cho các message
+        <!--
+            android sẽ custom cho các message
                 được gửi từ Notifications composer
-                và các message không đặt icon notification-->
+                và các message không đặt icon notification
+        -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/ic_launcher_background" />
-        <!--android sẽ custom cho các message
+        <!--
+            android sẽ custom cho các message
                 được gửi từ Notifications composer
-                và các message không đặt color notification-->
+                và các message không đặt color notification
+        -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/colorAccent" />
-        <!--for android 8.0(API level 26) or high-->
-        <!--https://developer.android.com/guide/topics/ui/notifiers/notifications#ManageChannels-->
+        <!-- for android 8.0(API level 26) or high -->
+        <!-- https://developer.android.com/guide/topics/ui/notifiers/notifications#ManageChannels -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="@string/default_notification_channel_id" />
+
     </application>
 
 </manifest>

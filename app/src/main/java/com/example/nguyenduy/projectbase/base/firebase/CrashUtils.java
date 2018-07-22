@@ -9,11 +9,14 @@ import com.example.nguyenduy.projectbase.utils.Constants;
 import com.example.nguyenduy.projectbase.utils.LogUtils;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.UserInformation;
+import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
 
 import io.fabric.sdk.android.Fabric;
 
 // custom crash: https://firebase.google.com/docs/crashlytics/customize-crash-reports
 public class CrashUtils implements SharedPreferences.OnSharedPreferenceChangeListener {
+
+    private static final String TAG = MethodUtils.getTagClass(CrashUtils.class);
 
     public CrashUtils(Context context) {
         enableDebuggerCrashlytics(context);
@@ -40,7 +43,7 @@ public class CrashUtils implements SharedPreferences.OnSharedPreferenceChangeLis
 
     private static void updateUserInformation() {
         addKey(FireBaseConstants.Crash.TOKEN, SharedPreferenceUtils.getInstance().getToken());
-        addKey(FireBaseConstants.Crash.APPLICATION_INSTANCE, FireBaseIdUtils.getIdAppInstance());
+        addKey(FireBaseConstants.Crash.APPLICATION_INSTANCE, InstanceIdUtils.getIdAppInstance());
         UserInformation user = SharedPreferenceUtils.getInstance().getUserInformation();
         if (null == user) {
             clearUserInformation();
@@ -49,7 +52,7 @@ public class CrashUtils implements SharedPreferences.OnSharedPreferenceChangeLis
         setUserId(user.getId());
         setUserName(user.getUsername());
         setUserEmail(user.getEmail());
-        LogUtils.e("FCMService: CrashUtils.updateUserInformation(): " + user.toString());
+        LogUtils.i(TAG + "updateUserInformation(): " + user.toString());
     }
 
     /**
@@ -77,7 +80,7 @@ public class CrashUtils implements SharedPreferences.OnSharedPreferenceChangeLis
         setUserId("");
         setUserName("");
         setUserEmail("");
-        LogUtils.e("FCMService: CrashUtils.clearUserInformation()");
+        LogUtils.i(TAG + "clearUserInformation()");
     }
 
     public enum LogPriority {

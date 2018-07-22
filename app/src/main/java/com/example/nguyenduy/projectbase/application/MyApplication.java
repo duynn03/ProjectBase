@@ -3,6 +3,7 @@ package com.example.nguyenduy.projectbase.application;
 import android.app.Application;
 import android.content.Context;
 
+import com.example.nguyenduy.projectbase.base.appCenter.AppCenterUtils;
 import com.example.nguyenduy.projectbase.base.firebase.FireBaseUtils;
 import com.example.nguyenduy.projectbase.database.Database;
 
@@ -16,6 +17,7 @@ public class MyApplication extends Application {
         mContext = getApplicationContext();
         instance = this;
         FireBaseUtils.init();
+        AppCenterUtils.init();
         Database.configDefault(this);
     }
 

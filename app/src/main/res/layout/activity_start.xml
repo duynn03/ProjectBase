@@ -58,6 +58,14 @@
         android:layout_above="@+id/btn_Permission_gallery"
         android:text="Get write file and location" />
 
+
+    <Button
+        android:id="@+id/btn_trace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_Permission_write_file_and_location"
+        android:text="Test trace" />
+
     <Button
         android:id="@+id/btn_register_change_data_share_prefrence"
         android:layout_width="wrap_content"

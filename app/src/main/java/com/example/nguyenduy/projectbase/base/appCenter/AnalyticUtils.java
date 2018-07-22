@@ -1,5 +1,6 @@
 package com.example.nguyenduy.projectbase.base.appCenter;
 
+import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
 import com.microsoft.appcenter.analytics.Analytics;
 
 import java.util.HashMap;
@@ -7,7 +8,9 @@ import java.util.Map;
 
 public class AnalyticUtils {
 
-    public AnalyticUtils() {
+    private static final String TAG = MethodUtils.getTagClass(AnalyticUtils.class);
+
+    public static void init() {
         Analytics.setEnabled(true);
     }
 

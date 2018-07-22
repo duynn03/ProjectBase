@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.widget.Toast;
 
 import com.example.nguyenduy.projectbase.utils.LogUtils;
+import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
 import com.microsoft.appcenter.distribute.Distribute;
 import com.microsoft.appcenter.distribute.DistributeListener;
 import com.microsoft.appcenter.distribute.ReleaseDetails;
@@ -14,11 +15,12 @@ import com.microsoft.appcenter.distribute.UpdateAction;
 
 public class CustomDistributeListener implements DistributeListener {
 
+    private static final String TAG = MethodUtils.getTagClass(CustomDistributeListener.class);
+
     @Override
     public boolean onReleaseAvailable(Activity activity, ReleaseDetails releaseDetails) {
-
         Toast.makeText(activity, "AppCenter: có new Version", Toast.LENGTH_SHORT).show();
-        LogUtils.e("AppCenter: có new Version");
+        LogUtils.i(TAG + "has new Version");
         String versionName = releaseDetails.getShortVersion();
         int versionCode = releaseDetails.getVersion();
         Uri releaseNotesUrl = releaseDetails.getReleaseNotesUrl();

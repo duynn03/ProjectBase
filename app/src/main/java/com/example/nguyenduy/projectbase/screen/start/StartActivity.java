@@ -14,11 +14,12 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.example.nguyenduy.projectbase.screen.main.MainActivity;
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.BaseActivity;
+import com.example.nguyenduy.projectbase.base.firebase.PerformanceUtils;
 import com.example.nguyenduy.projectbase.base.listener.HandShakeListener;
 import com.example.nguyenduy.projectbase.base.listener.HandShakeListenerUtils;
+import com.example.nguyenduy.projectbase.screen.main.MainActivity;
 import com.example.nguyenduy.projectbase.screen.start.login.LoginFragment;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
 import com.example.nguyenduy.projectbase.utils.permission.BasePermission;
@@ -173,6 +174,11 @@ public class StartActivity extends BaseActivity<IStartActivityPresenter> impleme
                 }
             }
         });
+    }
+
+    @OnClick(R.id.btn_trace)
+    public void testTrace() {
+        PerformanceUtils.test(imGallery);
     }
 
     @OnClick(R.id.btn_Permission_gallery)

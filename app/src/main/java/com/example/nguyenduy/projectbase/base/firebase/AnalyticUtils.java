@@ -9,9 +9,12 @@ import com.example.nguyenduy.projectbase.utils.Constants;
 import com.example.nguyenduy.projectbase.utils.LogUtils;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.UserInformation;
+import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class AnalyticUtils implements SharedPreferences.OnSharedPreferenceChangeListener {
+
+    private static final String TAG = MethodUtils.getTagClass(AnalyticUtils.class);
 
     private FirebaseAnalytics mAnalytics;
 
@@ -38,7 +41,7 @@ public class AnalyticUtils implements SharedPreferences.OnSharedPreferenceChange
 
     private void updateUserInformation() {
         setUserProperty(FireBaseConstants.Analytic.TOKEN, SharedPreferenceUtils.getInstance().getToken());
-        setUserProperty(FireBaseConstants.Analytic.APPLICATION_INSTANCE, FireBaseIdUtils.getIdAppInstance());
+        setUserProperty(FireBaseConstants.Analytic.APPLICATION_INSTANCE, InstanceIdUtils.getIdAppInstance());
         UserInformation user = SharedPreferenceUtils.getInstance().getUserInformation();
         if (null == user) {
             clearUserInformation();
@@ -47,7 +50,7 @@ public class AnalyticUtils implements SharedPreferences.OnSharedPreferenceChange
         setUserId(user.getId());
         setUserName(user.getUsername());
         setUserEmail(user.getEmail());
-        LogUtils.e("FCMService: AnalyticUtils.updateUserInformation(): " + user.toString());
+        LogUtils.i(TAG + "updateUserInformation(): " + user.toString());
     }
 
     private void setUserId(String id) {
@@ -79,7 +82,7 @@ public class AnalyticUtils implements SharedPreferences.OnSharedPreferenceChange
         setUserId("");
         setUserName("");
         setUserEmail("");
-        LogUtils.e("FCMService: AnalyticUtils.clearUserInformation()");
+        LogUtils.i(TAG + "clearUserInformation()");
     }
 
     private void resetAnalyticsData() {

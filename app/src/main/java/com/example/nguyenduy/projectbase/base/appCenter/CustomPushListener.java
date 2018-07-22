@@ -1,10 +1,9 @@
 package com.example.nguyenduy.projectbase.base.appCenter;
 
 import android.app.Activity;
-import android.support.v7.app.AlertDialog;
-import android.widget.Toast;
 
 import com.example.nguyenduy.projectbase.utils.LogUtils;
+import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
 import com.microsoft.appcenter.push.PushListener;
 import com.microsoft.appcenter.push.PushNotification;
 
@@ -12,10 +11,11 @@ import java.util.Map;
 
 public class CustomPushListener implements PushListener {
 
+    private static final String TAG = MethodUtils.getTagClass(CustomPushListener.class);
+
     @Override
     public void onPushNotificationReceived(Activity activity, PushNotification pushNotification) {
-        LogUtils.e("AppCenter: Nhận được push notification");
-        /* The following notification properties are available. */
+
         String title = pushNotification.getTitle();
         String message = pushNotification.getMessage();
         Map<String, String> customData = pushNotification.getCustomData();
@@ -26,7 +26,7 @@ public class CustomPushListener implements PushListener {
          */
         if (!isApplicationForeground(message)) {
             /* Display an alert for foreground push. */
-            AlertDialog.Builder dialog = new AlertDialog.Builder(activity);
+            /*AlertDialog.Builder dialog = new AlertDialog.Builder(activity);
             if (title != null) {
                 dialog.setTitle(title);
             }
@@ -35,11 +35,11 @@ public class CustomPushListener implements PushListener {
                 dialog.setMessage(message + "\n" + customData);
             }
             dialog.setPositiveButton(android.R.string.ok, null);
-            dialog.show();
+            dialog.show();*/
+            LogUtils.i(TAG + "Foreground: title: " + title + "\n" + "message: " + message + "\n" + "data: " + customData);
         } else {
-
             /* Display a toast when a background push is clicked. */
-            Toast.makeText(activity, String.format("AppCenter: Push clicked with data=%1s", customData), Toast.LENGTH_LONG).show();
+            LogUtils.i(TAG + "Background: data= " + customData);
         }
     }
 
