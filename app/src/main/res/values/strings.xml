@@ -59,8 +59,13 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <!--title toolbar-->
+    <string name="toolbar_title_camera">Camera</string>
+    <string name="toolbar_title_gallery">Gallery</string>
+    <string name="toolbar_title_slideshow">Slideshow</string>
+    <string name="toolbar_title_manage">Manage</string>
 
-
+    <!--base activity-->
     <string name="base_activity_dialog_loading_message_loading">Loading...</string>
 
 </resources>

@@ -34,7 +34,7 @@
         <activity android:name=".screen.main.MainActivity" />
         <activity android:name=".screen.start.StartActivity" />
         <activity
-            android:name=".screen.DrawerLayoutActivity"
+            android:name=".screen.main2.MainActivity"
             android:label="@string/title_activity_drawer_layout"
             android:theme="@style/AppTheme">
             <intent-filter>

@@ -1,5 +1,7 @@
 package com.example.nguyenduy.projectbase.base.drawerlayout;
 
+import android.support.annotation.NonNull;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -7,31 +9,35 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.FrameLayout;
 
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.utils.method.MethodContextUtils;
 
-public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelectedListener {
+import java.util.List;
+
+public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelectedListener, DrawerLayout.DrawerListener {
 
     private AppCompatActivity mActivity;
     private IDrawerLayoutListener mListener;
 
     private DrawerLayout mDrawer;
+    private AppBarLayout mAppBar;
     private Toolbar mToolbar;
     private ActionBarDrawerToggle mToggle;
     private NavigationView mNavigation;
+    private FrameLayout mContent;
 
     public interface IDrawerLayoutListener {
-
-        int getIdDrawerLayout();
 
         int getIdHeaderDrawerLayout();
 
         int getIdMenuDrawerLayout();
 
-        int getIdToolbar();
+        List<ItemMenuDrawerLayout> getListMenuDrawerLayout();
 
-        int getIdNavigationView();
+        boolean hasToolbarDrawerLayout();
 
         void onNavigationItemSelected(int idItem);
     }
@@ -47,22 +53,38 @@ public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelecte
     }
 
     private void findViewById() {
-        this.mDrawer = mActivity.findViewById(mListener.getIdDrawerLayout());
-        this.mToolbar = mActivity.findViewById(mListener.getIdToolbar());
-        mNavigation = mActivity.findViewById(mListener.getIdNavigationView());
+        mDrawer = mActivity.findViewById(R.id.drawer_layout);
+        mNavigation = mActivity.findViewById(R.id.navigation_view);
+        mContent = mActivity.findViewById(R.id.fl_drawer_layout_content);
+        mAppBar = mActivity.findViewById(R.id.appbar);
+        mToolbar = mActivity.findViewById(R.id.toolbar);
+    }
+
+    private boolean hasHeaderDrawerLayout() {
+        return mListener.getIdHeaderDrawerLayout() > 0;
+    }
+
+    private boolean hasMenuDrawerLayout() {
+        return mListener.getIdMenuDrawerLayout() > 0;
+    }
+
+    private boolean hasToolbarDrawerLayout() {
+        return mListener.hasToolbarDrawerLayout();
     }
 
     private void initViews() {
+        DrawerLayoutView view = new DrawerLayoutView();
         // add header
-        if (mListener.getIdHeaderDrawerLayout() > 0) {
+        if (hasHeaderDrawerLayout()) {
             mNavigation.addHeaderView(MethodContextUtils.createView(mActivity, mListener.getIdHeaderDrawerLayout()));
         }
         // add menu
-        mNavigation.inflateMenu(mListener.getIdMenuDrawerLayout());
-
-        // set view
-        DrawerLayoutView view = new DrawerLayoutView();
-        view.setViewHeader();
+        if (hasMenuDrawerLayout()) {
+            mNavigation.inflateMenu(mListener.getIdMenuDrawerLayout());
+            view.setViewMenu();
+        }
+        // toolbar
+        MethodContextUtils.setVisibility(mAppBar, hasToolbarDrawerLayout() ? View.VISIBLE : View.GONE);
     }
 
     private void initComponents() {
@@ -75,7 +97,30 @@ public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelecte
     }
 
     private void setEvents() {
-        mNavigation.setNavigationItemSelectedListener(this);
+        mDrawer.addDrawerListener(this);
+        if (hasMenuDrawerLayout())
+            mNavigation.setNavigationItemSelectedListener(this);
+    }
+
+    @Override
+    public void onDrawerSlide(@NonNull View drawerView, float slideOffset) {
+        // kéo ra thì mContent cũng kéo theo
+        mContent.setTranslationX(mContent.getWidth() * slideOffset);
+    }
+
+    @Override
+    public void onDrawerOpened(@NonNull View drawerView) {
+
+    }
+
+    @Override
+    public void onDrawerClosed(@NonNull View drawerView) {
+
+    }
+
+    @Override
+    public void onDrawerStateChanged(int newState) {
+
     }
 
     private void prepareComplete() {
@@ -103,8 +148,22 @@ public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelecte
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         mListener.onNavigationItemSelected(item.getItemId());
+        setTitleToolbar(item.getItemId());
         closeDrawer();
         return true;
+    }
+
+    private void setTitleToolbar(int idMenu) {
+        int indexMenu = findIndexMenuInListMenuDrawerLayout(idMenu);
+        if (indexMenu != -1)
+            mToolbar.setTitle(mListener.getListMenuDrawerLayout().get(indexMenu).getNameMenu());
+    }
+
+    private int findIndexMenuInListMenuDrawerLayout(int idMenu) {
+        for (int i = 0; i < mListener.getListMenuDrawerLayout().size(); i++) {
+            if (idMenu == mListener.getListMenuDrawerLayout().get(i).getIdMenu()) return i;
+        }
+        return -1;
     }
 
 }

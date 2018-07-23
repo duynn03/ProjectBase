@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.nguyenduy.projectbase.screen.DrawerLayoutActivity">
+    tools:context="com.example.nguyenduy.projectbase.base.drawerlayout.BaseActivityWithDrawerLayout">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
@@ -20,7 +21,13 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_drawer_layout" />
+    <!-- <include layout="@layout/drawer_layout_content" />-->
+
+    <FrameLayout
+        android:id="@+id/fl_drawer_layout_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

@@ -1,7 +1,5 @@
 package com.example.nguyenduy.projectbase.screen.main;
 
-import android.content.Intent;
-
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.BaseActivity;
 import com.example.nguyenduy.projectbase.base.firebase.FireBaseConstants;

@@ -49,6 +49,7 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
         setContentView(getIdLayout());
         initRootView();
         hiddenContentLayout();
+        initBaseView();
         initViews();
         initBaseComponents();
         initComponents();
@@ -65,17 +66,18 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
         return R.id.root_activity;
     }
 
-    private void initBaseComponents() {
+    protected void initBaseView() {
         //Inject View
         bindView = ButterKnife.bind(this);
+    }
 
+    private void initBaseComponents() {
         //Create presenter for this view
         if (null == mPresenter) {
             mPresenter = initPresenter();
         }
         initEditText();
         initLoadingDialog();
-
     }
 
     private void initLoadingDialog() {

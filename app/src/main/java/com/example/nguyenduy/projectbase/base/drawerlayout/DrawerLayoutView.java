@@ -6,4 +6,7 @@ public class DrawerLayoutView {
 
     }
 
+    public void setViewMenu() {
+
+    }
 }
