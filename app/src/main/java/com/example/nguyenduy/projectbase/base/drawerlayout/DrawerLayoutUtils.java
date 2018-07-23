@@ -166,4 +166,8 @@ public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelecte
         return -1;
     }
 
+    public View getHeader() {
+        return mNavigation.getHeaderView(0);
+    }
+
 }

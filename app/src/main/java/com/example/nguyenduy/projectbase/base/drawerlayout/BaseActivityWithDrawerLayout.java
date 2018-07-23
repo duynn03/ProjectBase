@@ -1,5 +1,7 @@
 package com.example.nguyenduy.projectbase.base.drawerlayout;
 
+import android.view.View;
+
 import com.example.nguyenduy.projectbase.base.BaseActivity;
 import com.example.nguyenduy.projectbase.base.IBasePresenter;
 import com.example.nguyenduy.projectbase.base.drawerlayout.DrawerLayoutUtils;
@@ -20,5 +22,8 @@ public abstract class BaseActivityWithDrawerLayout<P extends IBasePresenter> ext
         super.initBaseView();
     }
 
+    protected View getHeader() {
+        return drawerLayout.getHeader();
+    }
 
 }

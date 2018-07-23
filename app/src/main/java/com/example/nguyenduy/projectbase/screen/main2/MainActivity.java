@@ -11,6 +11,7 @@ import com.example.nguyenduy.projectbase.base.firebase.FireBaseUtils;
 import com.example.nguyenduy.projectbase.base.drawerlayout.BaseActivityWithDrawerLayout;
 import com.example.nguyenduy.projectbase.screen.start.StartActivity;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
+import com.example.nguyenduy.projectbase.utils.data.SharedPreference.UserInformation;
 import com.example.nguyenduy.projectbase.utils.method.ResourceUtils;
 
 import java.util.ArrayList;
@@ -103,4 +104,20 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
                 break;
         }
     }
+
+    @OnClick(R.id.btn_logout)
+    public void onClickButtonLogout() {
+        SharedPreferenceUtils.getInstance().clearUserInformation();
+      //  startRootActivity(StartActivity.class);
+    }
+
+    @OnClick(R.id.btn_login)
+    public void onClickLogin() {
+        UserInformation user = new UserInformation()
+                .setId("123")
+                .setUsername("Nguyễn Ngọc Duy")
+                .setEmail("duynn03@gmail.com");
+        SharedPreferenceUtils.getInstance().setUserInformation(user);
+    }
+
 }

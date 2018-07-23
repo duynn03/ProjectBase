@@ -18,17 +18,13 @@ import butterknife.BindView;
 
 public abstract class BaseActivityWithHeaderUserDrawerLayout<P extends IBasePresenter> extends BaseActivityWithDrawerLayout<P> implements SharedPreferences.OnSharedPreferenceChangeListener {
 
-    @BindView(R.id.item_drawer_layout_header)
-    LinearLayout header;
+    private LinearLayout header;
 
-    @BindView(R.id.im_user_avatar)
-    ImageView avatar;
+    private ImageView avatar;
 
-    @BindView(R.id.tv_user_name)
-    TextView userName;
+    private TextView userName;
 
-    @BindView(R.id.tv_user_email)
-    TextView userEmail;
+    private TextView userEmail;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,8 +40,16 @@ public abstract class BaseActivityWithHeaderUserDrawerLayout<P extends IBasePres
     @Override
     protected void initBaseView() {
         super.initBaseView();
+        findViewById();
         DrawerLayoutView view = new DrawerLayoutView();
         view.setViewHeader();
+    }
+
+    private void findViewById() {
+        header = getHeader().findViewById(R.id.item_drawer_layout_header);
+        avatar = getHeader().findViewById(R.id.im_user_avatar);
+        userName = getHeader().findViewById(R.id.tv_user_name);
+        userEmail = getHeader().findViewById(R.id.tv_user_email);
     }
 
     @Override

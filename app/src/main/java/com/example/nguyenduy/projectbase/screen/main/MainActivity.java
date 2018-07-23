@@ -41,26 +41,4 @@ public class MainActivity extends BaseActivity<IMainPresenter> implements IMainV
     public void prepareComplete() {
 
     }
-
-    @OnClick(R.id.btn_subscribe)
-    public void onClickButtonSubscribe() {
-        TopicUtils.subscribe(FireBaseConstants.Topic.NEWS);
-    }
-
-    @OnClick(R.id.btn_unsubscribe)
-    public void onClickButtonUnsubscribe() {
-        TopicUtils.unsubscribe(FireBaseConstants.Topic.NEWS);
-    }
-
-    @OnClick(R.id.btn_logout)
-    public void onClickButtonLogout() {
-        SharedPreferenceUtils.getInstance().clearUserInformation();
-        startRootActivity(StartActivity.class);
-    }
-
-    @OnClick(R.id.btn_generate_crash)
-    public void onClickCrash() {
-        // AppCenterUtils.generateCrash();
-        FireBaseUtils.testCrash();
-    }
 }
