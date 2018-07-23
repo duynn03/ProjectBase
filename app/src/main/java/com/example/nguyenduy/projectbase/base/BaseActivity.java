@@ -20,8 +20,8 @@ import android.widget.Toast;
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.firebase.FireBaseUtils;
 import com.example.nguyenduy.projectbase.utils.LogUtils;
-import com.example.nguyenduy.projectbase.utils.method.MethodContextUtils;
 import com.example.nguyenduy.projectbase.utils.method.ResourceUtils;
+import com.example.nguyenduy.projectbase.utils.method.ViewUtils;
 import com.example.nguyenduy.projectbase.utils.permission.BasePermission;
 
 import java.io.Serializable;
@@ -71,7 +71,7 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
         bindView = ButterKnife.bind(this);
     }
 
-    private void initBaseComponents() {
+    protected void initBaseComponents() {
         //Create presenter for this view
         if (null == mPresenter) {
             mPresenter = initPresenter();
@@ -131,11 +131,11 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
     }
 
     public void hiddenContentLayout() {
-        MethodContextUtils.setVisibility(mRootView, View.INVISIBLE);
+        ViewUtils.setVisibility(mRootView, View.INVISIBLE);
     }
 
     public void showContentLayout() {
-        MethodContextUtils.setVisibility(mRootView, View.VISIBLE);
+        ViewUtils.setVisibility(mRootView, View.VISIBLE);
     }
 
     public void showDialogLoading() {

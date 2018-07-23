@@ -12,7 +12,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import com.example.nguyenduy.projectbase.R;
-import com.example.nguyenduy.projectbase.utils.method.MethodContextUtils;
+import com.example.nguyenduy.projectbase.utils.method.ViewUtils;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -79,11 +79,11 @@ public abstract class BaseFragment<P extends IBasePresenter> extends Fragment im
     }
 
     public void hiddenContentLayout() {
-        MethodContextUtils.setVisibility(mRootView, View.INVISIBLE);
+        ViewUtils.setVisibility(mRootView, View.INVISIBLE);
     }
 
     public void showContentLayout() {
-        MethodContextUtils.setVisibility(mRootView, View.VISIBLE);
+        ViewUtils.setVisibility(mRootView, View.VISIBLE);
     }
 
     public <A extends BaseActivity> A getRootActivity() {

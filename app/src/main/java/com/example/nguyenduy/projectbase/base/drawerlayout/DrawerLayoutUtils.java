@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.example.nguyenduy.projectbase.R;
-import com.example.nguyenduy.projectbase.utils.method.MethodContextUtils;
+import com.example.nguyenduy.projectbase.utils.method.ViewUtils;
 
 import java.util.List;
 
@@ -76,7 +76,7 @@ public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelecte
         DrawerLayoutView view = new DrawerLayoutView();
         // add header
         if (hasHeaderDrawerLayout()) {
-            mNavigation.addHeaderView(MethodContextUtils.createView(mActivity, mListener.getIdHeaderDrawerLayout()));
+            mNavigation.addHeaderView(ViewUtils.createView(mActivity, mListener.getIdHeaderDrawerLayout()));
         }
         // add menu
         if (hasMenuDrawerLayout()) {
@@ -84,7 +84,7 @@ public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelecte
             view.setViewMenu();
         }
         // toolbar
-        MethodContextUtils.setVisibility(mAppBar, hasToolbarDrawerLayout() ? View.VISIBLE : View.GONE);
+        ViewUtils.setVisibility(mAppBar, hasToolbarDrawerLayout() ? View.VISIBLE : View.GONE);
     }
 
     private void initComponents() {

@@ -1,36 +1,25 @@
 package com.example.nguyenduy.projectbase.base.drawerlayout;
 
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.IBasePresenter;
-import com.example.nguyenduy.projectbase.utils.Constants;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.UserInformation;
-import com.example.nguyenduy.projectbase.utils.method.MethodContextUtils;
+import com.example.nguyenduy.projectbase.utils.method.ViewUtils;
 
-import butterknife.BindView;
+public abstract class BaseActivityWithHeaderUserDrawerLayout<P extends IBasePresenter> extends BaseActivityWithDrawerLayout<P> {
 
-public abstract class BaseActivityWithHeaderUserDrawerLayout<P extends IBasePresenter> extends BaseActivityWithDrawerLayout<P> implements SharedPreferences.OnSharedPreferenceChangeListener {
-
-    private LinearLayout header;
+    private RelativeLayout header;
 
     private ImageView avatar;
 
     private TextView userName;
 
     private TextView userEmail;
-
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        SharedPreferenceUtils.getInstance().registerOnSharedPreferenceChangeListener(this);
-    }
 
     @Override
     public int getIdHeaderDrawerLayout() {
@@ -42,21 +31,23 @@ public abstract class BaseActivityWithHeaderUserDrawerLayout<P extends IBasePres
         super.initBaseView();
         findViewById();
         DrawerLayoutView view = new DrawerLayoutView();
-        view.setViewHeader();
+        view.setViewHeader(header);
+        view.setViewAvatarUser(avatar);
+        view.setViewUserName(userName);
+        view.setViewUserEmail(userEmail);
     }
 
     private void findViewById() {
-        header = getHeader().findViewById(R.id.item_drawer_layout_header);
+        header = getHeader().findViewById(R.id.drawer_layout_header);
         avatar = getHeader().findViewById(R.id.im_user_avatar);
         userName = getHeader().findViewById(R.id.tv_user_name);
         userEmail = getHeader().findViewById(R.id.tv_user_email);
     }
 
     @Override
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        if (Constants.SharedPreference.USER_INFORMATION.equals(key)) {
-            updateUserInformation();
-        }
+    protected void initBaseComponents() {
+        super.initBaseComponents();
+        updateUserInformation();
     }
 
     private void updateUserInformation() {
@@ -77,20 +68,15 @@ public abstract class BaseActivityWithHeaderUserDrawerLayout<P extends IBasePres
     }
 
     private void setName(String name) {
-        MethodContextUtils.setText(userName, name);
+        ViewUtils.setText(userName, name);
     }
 
     private void setEmail(String email) {
-        MethodContextUtils.setText(userEmail, email);
+        ViewUtils.setText(userEmail, email);
     }
 
     private void setAvatar(String url) {
-        MethodContextUtils.loadImage(avatar, url, R.mipmap.ic_launcher_round);
+        ViewUtils.loadImage(avatar, url, R.mipmap.ic_launcher_round);
     }
 
-    @Override
-    protected void onDestroy() {
-        SharedPreferenceUtils.getInstance().unregisterOnSharedPreferenceChangeListener(this);
-        super.onDestroy();
-    }
 }

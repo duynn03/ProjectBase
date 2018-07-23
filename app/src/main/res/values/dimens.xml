@@ -15,9 +15,11 @@
     <dimen name="height_of_screen_design">736px</dimen>
 
     <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="nav_header_vertical_spacing">8dp</dimen>
-    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="activity_horizontal_margin">16px</dimen>
+    <dimen name="activity_vertical_margin">16px</dimen>
+    <dimen name="drawer_layout_header_avatar_user_width_height">64px</dimen>
+    <dimen name="drawer_layout_header_padding_top">64px</dimen>
+    <dimen name="drawer_layout_header_vertical_spacing">8px</dimen>
+    <dimen name="drawer_layout_header_height">176px</dimen>
 
 </resources>

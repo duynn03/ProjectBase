@@ -20,9 +20,23 @@
         <item name="colorAccent">@color/colorPrimary</item>
     </style>
 
-    <!---->
+    <!--drawer layout-->
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!--style common-->
+    <style name="ImageAvatar">
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="TextView">
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="EditTextStyle" parent="TextView">
+        <!--<item name="android:textCursorDrawable">@drawable/color_cursor_edittext</item>-->
+    </style>
 
 </resources>
