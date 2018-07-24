@@ -49,7 +49,7 @@ public class ViewUtils {
     }
 
     // width, height normal
-    public static void setWidthHeightNormal(View view, int width, int height) {
+    private static void setWidthHeightNormal(View view, int width, int height) {
         ViewGroup.LayoutParams params = view.getLayoutParams();
         params.width = width;
         params.height = height;
@@ -64,14 +64,14 @@ public class ViewUtils {
         setWidthHeightNormal(
                 view,
                 WindowUtils.convertWidth(ResourceUtils.getDimension(widthDesign)),
-                WindowUtils.convertHeight(ResourceUtils.getDimension(heightDesign)));
+                WindowUtils.convertHeightNotIncludeStatusBar(ResourceUtils.getDimension(heightDesign)));
     }
 
     // widthDesign, heightDesign bao gồm cả statusbar
     public static void setWidthHeightIncludeStatusBar(View view, int widthDesign, int heightDesign) {
         setWidthHeightNormal(
                 view,
-                WindowUtils.convertHeightIncludeStatusBar(ResourceUtils.getDimension(widthDesign)),
+                WindowUtils.convertWidth(ResourceUtils.getDimension(widthDesign)),
                 WindowUtils.convertHeightIncludeStatusBar(ResourceUtils.getDimension(heightDesign)));
     }
 
@@ -83,7 +83,7 @@ public class ViewUtils {
         );
     }
 
-    public static void setMarginNormal(View view, int left, int top, int right, int bottom) {
+    private static void setMarginNormal(View view, int left, int top, int right, int bottom) {
         ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
         params.setMargins(left, top, right, bottom);
         view.setLayoutParams(params);
@@ -114,7 +114,7 @@ public class ViewUtils {
         view.requestLayout();
     }
 
-    public static void setPaddingNormal(View view, int left, int top, int right, int bottom) {
+    private static void setPaddingNormal(View view, int left, int top, int right, int bottom) {
         view.setPadding(left, top, right, bottom);
         view.requestLayout();
     }
