@@ -10,7 +10,7 @@ import com.example.nguyenduy.projectbase.utils.method.ViewUtils;
 public class DrawerLayoutView {
 
     public void setViewHeader(ViewGroup view) {
-        ViewUtils.setPadding(view, R.dimen.activity_horizontal_margin, R.dimen.drawer_layout_header_padding_top, R.dimen.activity_horizontal_margin, R.dimen.activity_vertical_margin);
+        ViewUtils.setPaddingNormal(view, R.dimen.activity_horizontal_margin, R.dimen.drawer_layout_header_padding_top, R.dimen.activity_horizontal_margin, R.dimen.activity_vertical_margin);
     }
 
     public void setViewAvatarUser(ImageView view) {
@@ -18,11 +18,11 @@ public class DrawerLayoutView {
     }
 
     public void setViewUserName(TextView view) {
-        ViewUtils.setPadding(view, 0, R.dimen.drawer_layout_header_vertical_spacing, 0, 0);
+        ViewUtils.setPaddingNormal(view, 0, R.dimen.drawer_layout_header_vertical_spacing, 0, 0);
     }
 
     public void setViewUserEmail(TextView view) {
-        ViewUtils.setPadding(view, 0, R.dimen.drawer_layout_header_vertical_spacing, 0, 0);
+        ViewUtils.setPaddingNormal(view, 0, R.dimen.drawer_layout_header_vertical_spacing, 0, 0);
     }
 
     public void setViewMenu() {

@@ -3,7 +3,6 @@ package com.example.nguyenduy.projectbase.utils.method;
 import android.content.res.Resources;
 
 import com.example.nguyenduy.projectbase.R;
-import com.example.nguyenduy.projectbase.utils.method.ResourceUtils;
 
 public class WindowUtils {
 
@@ -16,12 +15,12 @@ public class WindowUtils {
         return result;
     }
 
-    public static int getScreenWidth() {
+    public static int getScreenWidthActual() {
         return Resources.getSystem().getDisplayMetrics().widthPixels;
     }
 
     /*include status bar*/
-    private static int getScreenHeight() {
+    private static int getScreenHeightActual() {
         return Resources.getSystem().getDisplayMetrics().heightPixels;
     }
 
@@ -33,16 +32,24 @@ public class WindowUtils {
         return ResourceUtils.getDimension(R.dimen.height_of_screen_design);
     }
 
-    public static int convertHeightExcludeWidthStatusBar(float length) {
-        return convertHeight(length) - getStatusBarHeight();
+    public static int convertHeightIncludeStatusBar(float length) {
+        if (length <= 0) return (int) length; // length có thể là match parent
+        return convertHeight(length);
+    }
+
+    public static int convertHeightNotIncludeStatusBar(float length) {
+        if (length <= 0) return (int) length; // length có thể là match parent
+        return convertHeight(length) + getStatusBarHeight();
     }
 
     public static int convertHeight(float length) {
-        return (int) ((length * getScreenHeight()) / getHeightOfScreenDesign());
+        if (length <= 0) return (int) length; // length có thể là match parent
+        return (int) ((length * getScreenHeightActual()) / getHeightOfScreenDesign());
     }
 
     public static int convertWidth(float length) {
-        return (int) ((length * getScreenWidth()) / getWidthOfScreenDesign());
+        if (length <= 0) return (int) length; // length có thể là match parent
+        return (int) ((length * getScreenWidthActual()) / getWidthOfScreenDesign());
     }
 
 }

@@ -12,6 +12,7 @@ public class ResourceUtils {
     }
 
     public static int getDimension(int id) {
+        if (id <= 0) return id;     // id có thể là match parent, ...
         return getResource().getDimensionPixelSize(id);
     }
 
