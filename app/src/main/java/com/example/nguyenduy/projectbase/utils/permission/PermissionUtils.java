@@ -21,7 +21,6 @@ public class PermissionUtils {
                         .setReason(ResourceUtils.getString(R.string.permission_msg_reason_firebase_analytic)));
     }
 
-
     public static void checkPermissionInternet(Activity activity, CallbackPermissionListener listener) {
         BasePermission.checkPermission(
                 new PermissionBuilder(

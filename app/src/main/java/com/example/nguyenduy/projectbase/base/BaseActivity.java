@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.MotionEvent;
@@ -246,6 +247,25 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
         super.onDestroy();
     }
 
+    public void addFragment(Fragment fragment, boolean isAddToBackStack) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction()
+                .add(R.id.fl_drawer_layout_content, fragment, fragment.getClass().getName());
+        if (isAddToBackStack) {
+            transaction.addToBackStack(fragment.getClass().getSimpleName());
+        }
+        transaction.commit();
+    }
+
+    public void replaceFragment(Fragment fragment, boolean isAddToBackStack) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fl_drawer_layout_content, fragment, fragment.getClass().getName());
+        if (isAddToBackStack) {
+            transaction.addToBackStack(fragment.getClass().getSimpleName());
+        }
+        transaction.commit();
+    }
+
+
     public int getCountBackStack() {
         return getSupportFragmentManager().getBackStackEntryCount();
     }
@@ -266,10 +286,6 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
     }
 
     public void popBackStack() {
-        getSupportFragmentManager().popBackStack();
-    }
-
-    public void popBackStack(String tag) {
         getSupportFragmentManager().popBackStack();
     }
 

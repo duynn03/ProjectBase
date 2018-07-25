@@ -2,9 +2,9 @@ package com.example.nguyenduy.projectbase.screen.start.SignUp;
 
 import com.example.nguyenduy.projectbase.base.BasePresenterImp;
 
-public class SignUpPresenterImp extends BasePresenterImp<ISignUpView> implements ISignUpPresenter {
+class SignUpPresenterImp extends BasePresenterImp<ISignUpView> implements ISignUpPresenter {
 
-    public SignUpPresenterImp(ISignUpView view) {
+    SignUpPresenterImp(ISignUpView view) {
         super(view);
     }
 

@@ -43,7 +43,7 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
 
     @Override
     public void prepareComplete() {
-
+        //addFragment();
     }
 
     @Override
@@ -63,13 +63,23 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        // init toolbar
         new ToolbarUtils(this, this, menu);
         return true;
     }
 
+    // handle toolbar
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
+        switch (item.getItemId()) {
+            case R.id.toolbar_help:
+                showToast("toolbar_help");
+                return true;
+            case R.id.action_settings:
+                showToast("action_settings");
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 
@@ -81,23 +91,32 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
     @Override
     public void onNavigationItemSelectedDrawerLayout(int idItem) {
         switch (idItem) {
-            case R.id.nav_camera:
-                showToast("nav_camera");
+            case R.id.menu_home:
+                showToast("menu_home");
                 break;
-            case R.id.nav_gallery:
-                showToast("nav_gallery");
+            case R.id.menu_permission:
+                showToast("menu_permission");
                 break;
-            case R.id.nav_slideshow:
-                showToast("nav_slideshow");
+            case R.id.menu_sharedpreference:
+                showToast("menu_sharedpreference");
                 break;
-            case R.id.nav_manage:
-                showToast("nav_manage");
+            case R.id.menu_notification:
+                showToast("menu_notification");
                 break;
-            case R.id.nav_share:
-                showToast("nav_share");
+            case R.id.menu_firebase:
+                showToast("menu_firebase");
                 break;
-            case R.id.nav_send:
-                showToast("nav_send");
+            case R.id.menu_appcenter:
+                showToast("menu_appcenter");
+                break;
+            case R.id.menu_hand_shake:
+                showToast("menu_hand_shake");
+                break;
+            case R.id.menu_realm:
+                showToast("menu_realm");
+                break;
+            case R.id.menu_share:
+                showToast("menu_share");
                 break;
         }
     }
@@ -115,6 +134,6 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
                 .setUsername("Nguyễn Ngọc Duy")
                 .setEmail("duynn03@gmail.com");
         SharedPreferenceUtils.getInstance().setUserInformation(user);*/
-        setCountMenuDrawerLayout(R.id.nav_camera, 80);
+        setCountMenuDrawerLayout(R.id.menu_home, 80);
     }
 }

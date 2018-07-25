@@ -8,7 +8,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.MenuItem;
+import android.view.SubMenu;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
@@ -17,8 +19,6 @@ import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
 import com.example.nguyenduy.projectbase.utils.method.ResourceUtils;
 import com.example.nguyenduy.projectbase.utils.method.ViewUtils;
-
-import java.util.List;
 
 public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelectedListener, DrawerLayout.DrawerListener {
 
@@ -163,18 +163,42 @@ public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelecte
         return true;
     }
 
+    /* chỉ support title 2 level*/
     private void setTitleToolbar(int idMenu) {
         int indexMenu = findIndexMenuDrawerLayout(idMenu);
         if (MethodUtils.isEmpty(titleMenuToolbars))
             getTitleMenuToolbar();
 
-        if (indexMenu != -1 && titleMenuToolbars.length > indexMenu)
+        if (indexMenu != -1 && titleMenuToolbars.length > indexMenu && !TextUtils.isEmpty(titleMenuToolbars[indexMenu]))
             mActivity.getSupportActionBar().setTitle(titleMenuToolbars[indexMenu]);
     }
 
     private int findIndexMenuDrawerLayout(int idMenu) {
+        int index = 0;
+        MenuItem item;
+        SubMenu subMenu;
         for (int i = 0; i < mNavigation.getMenu().size(); i++) {
-            if (idMenu == mNavigation.getMenu().getItem(i).getItemId()) return i;
+            item = mNavigation.getMenu().getItem(i);
+            if (!isGroupItem(item)) {
+                if (idMenu == item.getItemId()) return index;
+                else index++;
+            } else {
+                subMenu = item.getSubMenu();
+                int indexSubMenu = findIndexInSubMenu(idMenu, subMenu);
+                if (indexSubMenu != -1) return index + indexSubMenu;
+                else index += subMenu.size();
+            }
+        }
+        return -1;
+    }
+
+    private boolean isGroupItem(MenuItem subMenu) {
+        return subMenu.hasSubMenu();
+    }
+
+    private int findIndexInSubMenu(int idMenu, SubMenu subMenu) {
+        for (int i = 0; i < subMenu.size(); i++) {
+            if (idMenu == subMenu.getItem(i).getItemId()) return i;
         }
         return -1;
     }

@@ -54,22 +54,41 @@
     <!--drawer layout-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <!--menu drawerlayout-->
+    <string name="drawer_layout_menu_home">Home</string>
+    <string name="drawer_layout_menu_permission">Permission</string>
+    <string name="drawer_layout_menu_sharedpreference">SharedPreference</string>
+    <string name="drawer_layout_menu_notification">Notification</string>
+    <!--label manage_application-->
+    <string name="drawer_layout_menu_label_manage_application">Manage Application</string>
+    <string name="drawer_layout_menu_firebase">Firebase</string>
+    <string name="drawer_layout_menu_appcenter">AppCenter</string>
+    <!--label listener-->
+    <string name="drawer_layout_menu_label_listener">Listener</string>
+    <string name="drawer_layout_menu_hand_shake">HandShake</string>
+    <!--label database-->
+    <string name="drawer_layout_menu_label_database">Database</string>
+    <string name="drawer_layout_menu_realm">Realm</string>
+    <!--label other-->
+    <string name="drawer_layout_menu_label_other">Other</string>
+    <string name="drawer_layout_menu_share">Share</string>
+
+    <!--title toolbar, nếu không có title thì để là rỗng-->
+    <string-array name="navigation_drawer_title_menu_toolbar">
+        <item>Home</item>
+        <item>Permission</item>
+        <item>SharedPreference</item>
+        <item>Notification</item>
+        <item>Firebase</item>
+        <item>AppCenter</item>
+        <item>HandShake</item>
+        <item>Realm</item>
+        <item></item>
+    </string-array>
+
+    <!--toolbar-->
     <string name="toolbar_help">Help</string>
     <string name="action_settings">Settings</string>
-    <!--label-->
-    <string name="navigation_drawer_label_camera">Camera</string>
-    <string name="navigation_drawer_label_gallery">Gallery</string>
-    <string name="navigation_drawer_label_slideshow">Slideshow</string>
-    <string name="navigation_drawer_label_manage">Manage</string>
-    <string name="navigation_drawer_label_share">Share</string>
-    <string name="navigation_drawer_label_send">Send</string>
-    <!--title toolbar-->
-    <string-array name="navigation_drawer_title_menu_toolbar">
-        <item>Camera</item>
-        <item>Gallery</item>
-        <item>Slideshow</item>
-        <item>Manage</item>
-    </string-array>
 
     <!--base activity-->
     <string name="base_activity_dialog_loading_message_loading">Loading...</string>

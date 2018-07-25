@@ -4,9 +4,9 @@ import com.example.nguyenduy.projectbase.base.BasePresenterImp;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.UserInformation;
 
-public class LoginPresenterImp extends BasePresenterImp<ILoginView> implements ILoginPresenter {
+class LoginPresenterImp extends BasePresenterImp<ILoginView> implements ILoginPresenter {
 
-    public LoginPresenterImp(ILoginView view) {
+    LoginPresenterImp(ILoginView view) {
         super(view);
     }
 
