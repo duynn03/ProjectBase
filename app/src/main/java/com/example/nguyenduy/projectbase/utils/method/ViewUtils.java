@@ -64,7 +64,7 @@ public class ViewUtils {
         setWidthHeightNormal(
                 view,
                 WindowUtils.convertWidth(ResourceUtils.getDimension(widthDesign)),
-                WindowUtils.convertHeightNotIncludeStatusBar(ResourceUtils.getDimension(heightDesign)));
+                WindowUtils.convertHeightExcludeStatusBar(ResourceUtils.getDimension(heightDesign)));
     }
 
     // widthDesign, heightDesign bao gồm cả statusbar
@@ -90,28 +90,38 @@ public class ViewUtils {
         view.requestLayout();
     }
 
-    /*topDesign not include statusbar*/
     public static void setMargin(View view, int leftDesign, int topDesign, int rightDesign, int bottomDesign) {
-        ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-        params.setMargins(
+        setMarginNormal(
+                view,
                 WindowUtils.convertWidth(ResourceUtils.getDimension(leftDesign)),
                 WindowUtils.convertHeight(ResourceUtils.getDimension(topDesign)),
                 WindowUtils.convertWidth(ResourceUtils.getDimension(rightDesign)),
-                WindowUtils.convertHeight(ResourceUtils.getDimension(bottomDesign)));
-        view.setLayoutParams(params);
-        view.requestLayout();
+                WindowUtils.convertHeight(ResourceUtils.getDimension(bottomDesign))
+        );
     }
 
     /*topDesign include statusbar*/
     public static void setMarginIncludeStatusBar(View view, int leftDesign, int topDesign, int rightDesign, int bottomDesign) {
-        ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-        params.setMargins(
+        setMarginNormal(
+                view,
                 WindowUtils.convertWidth(ResourceUtils.getDimension(leftDesign)),
                 WindowUtils.convertHeightIncludeStatusBar(ResourceUtils.getDimension(topDesign)),
                 WindowUtils.convertWidth(ResourceUtils.getDimension(rightDesign)),
-                WindowUtils.convertHeight(ResourceUtils.getDimension(bottomDesign)));
-        view.setLayoutParams(params);
-        view.requestLayout();
+                WindowUtils.convertHeight(ResourceUtils.getDimension(bottomDesign))
+
+        );
+    }
+
+    /*topDesign exclude statusbar*/
+    public static void setMarginExcludeStatusBar(View view, int leftDesign, int topDesign, int rightDesign, int bottomDesign) {
+        setMarginNormal(
+                view,
+                WindowUtils.convertWidth(ResourceUtils.getDimension(leftDesign)),
+                WindowUtils.convertHeightExcludeStatusBar(ResourceUtils.getDimension(topDesign)),
+                WindowUtils.convertWidth(ResourceUtils.getDimension(rightDesign)),
+                WindowUtils.convertHeight(ResourceUtils.getDimension(bottomDesign))
+
+        );
     }
 
     private static void setPaddingNormal(View view, int left, int top, int right, int bottom) {
@@ -119,23 +129,32 @@ public class ViewUtils {
         view.requestLayout();
     }
 
-    // topDesign not include statusbar
     public static void setPadding(View view, int leftDesign, int topDesign, int rightDesign, int bottomDesign) {
-        view.setPadding(
+        setPaddingNormal(
+                view,
                 WindowUtils.convertWidth(ResourceUtils.getDimension(leftDesign)),
                 WindowUtils.convertHeight(ResourceUtils.getDimension(topDesign)),
                 WindowUtils.convertWidth(ResourceUtils.getDimension(rightDesign)),
                 WindowUtils.convertHeight(ResourceUtils.getDimension(bottomDesign)));
-        view.requestLayout();
     }
 
     // topDesign include statusbar
     public static void setPaddingIncludeStatusBar(View view, int leftDesign, int topDesign, int rightDesign, int bottomDesign) {
-        view.setPadding(
+        setPaddingNormal(
+                view,
                 WindowUtils.convertWidth(ResourceUtils.getDimension(leftDesign)),
                 WindowUtils.convertHeightIncludeStatusBar(ResourceUtils.getDimension(topDesign)),
                 WindowUtils.convertWidth(ResourceUtils.getDimension(rightDesign)),
                 WindowUtils.convertHeight(ResourceUtils.getDimension(bottomDesign)));
-        view.requestLayout();
+    }
+
+    // topDesign exclude statusbar
+    public static void setPaddingExcludeStatusBar(View view, int leftDesign, int topDesign, int rightDesign, int bottomDesign) {
+        setPaddingNormal(
+                view,
+                WindowUtils.convertWidth(ResourceUtils.getDimension(leftDesign)),
+                WindowUtils.convertHeightExcludeStatusBar(ResourceUtils.getDimension(topDesign)),
+                WindowUtils.convertWidth(ResourceUtils.getDimension(rightDesign)),
+                WindowUtils.convertHeight(ResourceUtils.getDimension(bottomDesign)));
     }
 }

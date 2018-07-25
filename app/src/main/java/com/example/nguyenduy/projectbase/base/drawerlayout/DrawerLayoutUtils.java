@@ -11,8 +11,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.example.nguyenduy.projectbase.R;
+import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
+import com.example.nguyenduy.projectbase.utils.method.ResourceUtils;
 import com.example.nguyenduy.projectbase.utils.method.ViewUtils;
 
 import java.util.List;
@@ -25,7 +28,7 @@ public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelecte
     private DrawerLayout mDrawer;
     private AppBarLayout mAppBar;
     private Toolbar mToolbar;
-    private ActionBarDrawerToggle mToggle;
+    private String[] titleMenuToolbars;
     private NavigationView mNavigation;
     private FrameLayout mContent;
 
@@ -35,11 +38,13 @@ public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelecte
 
         int getIdMenuDrawerLayout();
 
-        List<ItemMenuDrawerLayout> getListMenuDrawerLayout();
+        int getIdArrayTitleMenuDrawerLayout();
+
+        List<ItemCounterDrawerLayout> getListCounterMenuDrawerLayout();
 
         boolean hasToolbarDrawerLayout();
 
-        void onNavigationItemSelected(int idItem);
+        void onNavigationItemSelectedDrawerLayout(int idItem);
     }
 
     public DrawerLayoutUtils(AppCompatActivity activity, IDrawerLayoutListener listener) {
@@ -91,9 +96,28 @@ public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelecte
         // add Toolbar vào app
         mActivity.setSupportActionBar(mToolbar);
         // init toggle
-        mToggle = new ActionBarDrawerToggle(mActivity, mDrawer, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        ActionBarDrawerToggle mToggle = new ActionBarDrawerToggle(mActivity, mDrawer, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         mDrawer.addDrawerListener(mToggle);
         mToggle.syncState();
+
+        // add menu counter
+        if (hasMenuDrawerLayout()) {
+            updateCounterMenu();
+        }
+    }
+
+    private void updateCounterMenu() {
+        if (!MethodUtils.isEmpty(mListener.getListCounterMenuDrawerLayout()))
+            for (ItemCounterDrawerLayout item : mListener.getListCounterMenuDrawerLayout()) {
+                setCountMenu(item.getIdMenu(), item.getCounter());
+            }
+    }
+
+    private void setCountMenu(int idMenu, int count) {
+        TextView counter = (TextView) mNavigation.getMenu().findItem(idMenu).getActionView();
+        if (count > 0)
+            ViewUtils.setText(counter, count < 100 ? count : "99+");
+        else ViewUtils.setText(counter, "");
     }
 
     private void setEvents() {
@@ -147,23 +171,30 @@ public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelecte
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        mListener.onNavigationItemSelected(item.getItemId());
+        mListener.onNavigationItemSelectedDrawerLayout(item.getItemId());
         setTitleToolbar(item.getItemId());
         closeDrawer();
         return true;
     }
 
     private void setTitleToolbar(int idMenu) {
-        int indexMenu = findIndexMenuInListMenuDrawerLayout(idMenu);
-        if (indexMenu != -1)
-            mToolbar.setTitle(mListener.getListMenuDrawerLayout().get(indexMenu).getNameMenu());
+        int indexMenu = findIndexMenuDrawerLayout(idMenu);
+        if (MethodUtils.isEmpty(titleMenuToolbars))
+            getTitleMenuToolbar();
+
+        if (indexMenu != -1 && titleMenuToolbars.length > indexMenu)
+            mActivity.getSupportActionBar().setTitle(titleMenuToolbars[indexMenu]);
     }
 
-    private int findIndexMenuInListMenuDrawerLayout(int idMenu) {
-        for (int i = 0; i < mListener.getListMenuDrawerLayout().size(); i++) {
-            if (idMenu == mListener.getListMenuDrawerLayout().get(i).getIdMenu()) return i;
+    private int findIndexMenuDrawerLayout(int idMenu) {
+        for (int i = 0; i < mNavigation.getMenu().size(); i++) {
+            if (idMenu == mNavigation.getMenu().getItem(i).getItemId()) return i;
         }
         return -1;
+    }
+
+    private void getTitleMenuToolbar() {
+        titleMenuToolbars = ResourceUtils.getStringArray(mListener.getIdArrayTitleMenuDrawerLayout());
     }
 
     public View getHeader() {

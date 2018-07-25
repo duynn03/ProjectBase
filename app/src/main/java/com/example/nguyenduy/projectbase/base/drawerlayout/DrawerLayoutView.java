@@ -10,8 +10,7 @@ import com.example.nguyenduy.projectbase.utils.method.ViewUtils;
 public class DrawerLayoutView {
 
     public void setViewHeader(ViewGroup view) {
-        ViewUtils.setPadding(view, R.dimen.activity_horizontal_margin, R.dimen.drawer_layout_header_padding_top, R.dimen.activity_horizontal_margin, R.dimen.activity_vertical_margin);
-        ViewUtils.setWidthHeight(view, ViewGroup.LayoutParams.MATCH_PARENT, R.dimen.drawer_layout_header_height);
+        ViewUtils.setPaddingExcludeStatusBar(view, R.dimen.activity_horizontal_margin, R.dimen.drawer_layout_header_padding_top, R.dimen.activity_horizontal_margin, R.dimen.activity_vertical_margin);
     }
 
     public void setViewAvatarUser(ImageView view) {

@@ -20,6 +20,10 @@ public class ResourceUtils {
         return getResource().getString(id);
     }
 
+    public static String[] getStringArray(int id) {
+        return getResource().getStringArray(id);
+    }
+
     public static int getColor(int id) {
         return getResource().getColor(id);
     }

@@ -37,7 +37,7 @@ public class WindowUtils {
         return convertHeight(length);
     }
 
-    public static int convertHeightNotIncludeStatusBar(float length) {
+    public static int convertHeightExcludeStatusBar(float length) {
         if (length <= 0) return (int) length; // length có thể là match parent
         return convertHeight(length) + getStatusBarHeight();
     }

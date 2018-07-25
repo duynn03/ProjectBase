@@ -55,11 +55,20 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
+    <!--label-->
+    <string name="navigation_drawer_label_camera">Camera</string>
+    <string name="navigation_drawer_label_gallery">Gallery</string>
+    <string name="navigation_drawer_label_slideshow">Slideshow</string>
+    <string name="navigation_drawer_label_manage">Manage</string>
+    <string name="navigation_drawer_label_share">Share</string>
+    <string name="navigation_drawer_label_send">Send</string>
     <!--title toolbar-->
-    <string name="toolbar_title_camera">Camera</string>
-    <string name="toolbar_title_gallery">Gallery</string>
-    <string name="toolbar_title_slideshow">Slideshow</string>
-    <string name="toolbar_title_manage">Manage</string>
+    <string-array name="navigation_drawer_title_menu_toolbar">
+        <item>Camera</item>
+        <item>Gallery</item>
+        <item>Slideshow</item>
+        <item>Manage</item>
+    </string-array>
 
     <!--base activity-->
     <string name="base_activity_dialog_loading_message_loading">Loading...</string>

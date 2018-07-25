@@ -4,26 +4,13 @@ import android.widget.FrameLayout;
 
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.drawerlayout.BaseActivityWithHeaderUserDrawerLayout;
-import com.example.nguyenduy.projectbase.base.drawerlayout.ItemMenuDrawerLayout;
-import com.example.nguyenduy.projectbase.base.firebase.FireBaseConstants;
-import com.example.nguyenduy.projectbase.base.firebase.FCM.TopicUtils;
-import com.example.nguyenduy.projectbase.base.firebase.FireBaseUtils;
-import com.example.nguyenduy.projectbase.base.drawerlayout.BaseActivityWithDrawerLayout;
-import com.example.nguyenduy.projectbase.screen.start.StartActivity;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.UserInformation;
-import com.example.nguyenduy.projectbase.utils.method.ResourceUtils;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
 public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPresenter> implements IMainView {
-
-    /*drawer layout*/
-    private List<ItemMenuDrawerLayout> menuDrawerLayouts;
 
     @BindView(R.id.fl_drawer_layout_content)
     FrameLayout contentDrawerLayout;
@@ -45,15 +32,6 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
 
     @Override
     public void initComponents() {
-        initMenuDrawerLayout();
-    }
-
-    private void initMenuDrawerLayout() {
-        menuDrawerLayouts = new ArrayList<>();
-        menuDrawerLayouts.add(new ItemMenuDrawerLayout().setIdMenu(R.id.nav_camera).setNameMenu(ResourceUtils.getString(R.string.toolbar_title_camera)));
-        menuDrawerLayouts.add(new ItemMenuDrawerLayout().setIdMenu(R.id.nav_gallery).setNameMenu(ResourceUtils.getString(R.string.toolbar_title_gallery)));
-        menuDrawerLayouts.add(new ItemMenuDrawerLayout().setIdMenu(R.id.nav_slideshow).setNameMenu(ResourceUtils.getString(R.string.toolbar_title_slideshow)));
-        menuDrawerLayouts.add(new ItemMenuDrawerLayout().setIdMenu(R.id.nav_manage).setNameMenu(ResourceUtils.getString(R.string.toolbar_title_manage)));
     }
 
     @Override
@@ -72,8 +50,8 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
     }
 
     @Override
-    public List<ItemMenuDrawerLayout> getListMenuDrawerLayout() {
-        return menuDrawerLayouts;
+    public int getIdArrayTitleMenuDrawerLayout() {
+        return R.array.navigation_drawer_title_menu_toolbar;
     }
 
     @Override
@@ -82,7 +60,7 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
     }
 
     @Override
-    public void onNavigationItemSelected(int idItem) {
+    public void onNavigationItemSelectedDrawerLayout(int idItem) {
         switch (idItem) {
             case R.id.nav_camera:
                 showToast("nav_camera");
@@ -108,7 +86,7 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
     @OnClick(R.id.btn_logout)
     public void onClickButtonLogout() {
         SharedPreferenceUtils.getInstance().clearUserInformation();
-      //  startRootActivity(StartActivity.class);
+        //  startRootActivity(StartActivity.class);
     }
 
     @OnClick(R.id.btn_login)

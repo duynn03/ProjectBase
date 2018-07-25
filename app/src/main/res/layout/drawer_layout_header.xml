@@ -21,21 +21,21 @@
 
     <TextView
         android:id="@+id/tv_user_name"
+        style="@style/TextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/im_user_avatar"
         android:paddingTop="@dimen/drawer_layout_header_vertical_spacing"
-        android:text="userName"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="@dimen/font_size_text_20dp" />
+        android:text=""
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
         android:id="@+id/tv_user_email"
-        android:layout_width="wrap_content"
+        style="@style/TextView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_user_name"
         android:paddingTop="@dimen/drawer_layout_header_vertical_spacing"
-        android:text="userName"
-        android:textSize="@dimen/font_size_text_20dp" />
+        android:text="" />
 
 </RelativeLayout>
