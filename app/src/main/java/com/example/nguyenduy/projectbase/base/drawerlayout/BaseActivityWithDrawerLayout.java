@@ -32,4 +32,8 @@ public abstract class BaseActivityWithDrawerLayout<P extends IBasePresenter> ext
         return drawerLayout.getHeader();
     }
 
+    public void setCountMenuDrawerLayout(int idMenu, int count) {
+        drawerLayout.setCountMenu(idMenu, count);
+    }
+
 }

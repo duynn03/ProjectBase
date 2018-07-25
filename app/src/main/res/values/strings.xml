@@ -54,6 +54,7 @@
     <!--drawer layout-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="toolbar_help">Help</string>
     <string name="action_settings">Settings</string>
     <!--label-->
     <string name="navigation_drawer_label_camera">Camera</string>

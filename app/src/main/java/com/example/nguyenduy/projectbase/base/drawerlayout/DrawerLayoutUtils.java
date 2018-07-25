@@ -40,8 +40,6 @@ public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelecte
 
         int getIdArrayTitleMenuDrawerLayout();
 
-        List<ItemCounterDrawerLayout> getListCounterMenuDrawerLayout();
-
         boolean hasToolbarDrawerLayout();
 
         void onNavigationItemSelectedDrawerLayout(int idItem);
@@ -99,21 +97,9 @@ public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelecte
         ActionBarDrawerToggle mToggle = new ActionBarDrawerToggle(mActivity, mDrawer, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         mDrawer.addDrawerListener(mToggle);
         mToggle.syncState();
-
-        // add menu counter
-        if (hasMenuDrawerLayout()) {
-            updateCounterMenu();
-        }
     }
 
-    private void updateCounterMenu() {
-        if (!MethodUtils.isEmpty(mListener.getListCounterMenuDrawerLayout()))
-            for (ItemCounterDrawerLayout item : mListener.getListCounterMenuDrawerLayout()) {
-                setCountMenu(item.getIdMenu(), item.getCounter());
-            }
-    }
-
-    private void setCountMenu(int idMenu, int count) {
+    public void setCountMenu(int idMenu, int count) {
         TextView counter = (TextView) mNavigation.getMenu().findItem(idMenu).getActionView();
         if (count > 0)
             ViewUtils.setText(counter, count < 100 ? count : "99+");

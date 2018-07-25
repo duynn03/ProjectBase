@@ -1,16 +1,18 @@
 package com.example.nguyenduy.projectbase.screen.main2;
 
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.drawerlayout.BaseActivityWithHeaderUserDrawerLayout;
+import com.example.nguyenduy.projectbase.base.drawerlayout.ToolbarUtils;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
-import com.example.nguyenduy.projectbase.utils.data.SharedPreference.UserInformation;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPresenter> implements IMainView {
+public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPresenter> implements IMainView, ToolbarUtils.IToolbarListener {
 
     @BindView(R.id.fl_drawer_layout_content)
     FrameLayout contentDrawerLayout;
@@ -46,7 +48,7 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
 
     @Override
     public int getIdMenuDrawerLayout() {
-        return R.menu.activity_drawer_layout_menu;
+        return R.menu.drawer_layout_menu;
     }
 
     @Override
@@ -57,6 +59,23 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
     @Override
     public boolean hasToolbarDrawerLayout() {
         return true;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        new ToolbarUtils(this, this, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+    }
+
+
+    @Override
+    public int getIdToolbar() {
+        return R.menu.toolbar_menu;
     }
 
     @Override
@@ -91,11 +110,11 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
 
     @OnClick(R.id.btn_login)
     public void onClickLogin() {
-        UserInformation user = new UserInformation()
+        /*UserInformation user = new UserInformation()
                 .setId("123")
                 .setUsername("Nguyễn Ngọc Duy")
                 .setEmail("duynn03@gmail.com");
-        SharedPreferenceUtils.getInstance().setUserInformation(user);
+        SharedPreferenceUtils.getInstance().setUserInformation(user);*/
+        setCountMenuDrawerLayout(R.id.nav_camera, 80);
     }
-
 }
