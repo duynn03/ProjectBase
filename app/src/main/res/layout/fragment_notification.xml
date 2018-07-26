@@ -12,4 +12,30 @@
         android:layout_marginTop="20dp"
         android:text="Fragment Notification" />
 
+    <Button
+        android:id="@+id/btn_number"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="0" />
+
+    <Button
+        android:id="@+id/btn_increment_number"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_number"
+        android:layout_centerHorizontal="true"
+        android:text="+" />
+
+    <Button
+        android:id="@+id/btn_decrement_number"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_increment_number"
+        android:layout_centerHorizontal="true"
+        android:text="-" />
+
 </RelativeLayout>

@@ -1,15 +1,31 @@
 package com.example.nguyenduy.projectbase.screen.main2.firebase;
 
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.widget.ImageView;
+
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.BaseFragment;
 import com.example.nguyenduy.projectbase.base.IBasePresenter;
 import com.example.nguyenduy.projectbase.base.firebase.FCM.TopicUtils;
 import com.example.nguyenduy.projectbase.base.firebase.FireBaseConstants;
 import com.example.nguyenduy.projectbase.base.firebase.FireBaseUtils;
+import com.example.nguyenduy.projectbase.base.firebase.PerformanceUtils;
+import com.google.firebase.perf.metrics.AddTrace;
 
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class FirebaseFragment extends BaseFragment<IFirebasePresenter> implements IFirebaseView {
+
+    @BindView(R.id.im_gallery)
+    ImageView imGallery;
+
+    @AddTrace(name = "onCreateFirebaseFragment", enabled = true)
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     public int getIdLayout() {

@@ -16,6 +16,7 @@ import com.example.nguyenduy.projectbase.screen.main2.notification.NotificationF
 import com.example.nguyenduy.projectbase.screen.main2.permission.PermissionFragment;
 import com.example.nguyenduy.projectbase.screen.main2.sharedpreference.SharedPreferenceFragment;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
+import com.example.nguyenduy.projectbase.utils.data.SharedPreference.UserInformation;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -90,7 +91,6 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
         return super.onOptionsItemSelected(item);
     }
 
-
     @Override
     public int getIdToolbar() {
         return R.menu.toolbar_menu;
@@ -137,11 +137,10 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
 
     @OnClick(R.id.btn_login)
     public void onClickLogin() {
-        /*UserInformation user = new UserInformation()
+        UserInformation user = new UserInformation()
                 .setId("123")
                 .setUsername("Nguyễn Ngọc Duy")
                 .setEmail("duynn03@gmail.com");
-        SharedPreferenceUtils.getInstance().setUserInformation(user);*/
-        setCountMenuDrawerLayout(R.id.menu_home, 80);
+        SharedPreferenceUtils.getInstance().setUserInformation(user);
     }
 }

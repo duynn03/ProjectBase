@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.microsoft.appcenter:appcenter-crashes-1.6.1">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/appcenter-crashes-1.6.1.aar/ae24e45c0bd29cd093104ce6ae522a62/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/appcenter-crashes-1.6.1.aar/ae24e45c0bd29cd093104ce6ae522a62/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/appcenter-crashes-1.6.1.aar/51cec53647551afc4cd132f6a1568b1a/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/appcenter-crashes-1.6.1.aar/51cec53647551afc4cd132f6a1568b1a/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

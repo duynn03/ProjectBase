@@ -1,6 +1,9 @@
 package com.example.nguyenduy.projectbase.utils.method;
 
 import android.content.Context;
+import android.support.annotation.ColorRes;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.IdRes;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +16,7 @@ import com.example.nguyenduy.projectbase.application.MyApplication;
 
 public class ViewUtils {
 
-    public static void setText(TextView view, int stringId) {
+    public static void setText(TextView view, @IdRes int stringId) {
         view.setText(String.valueOf(ResourceUtils.getString(stringId)));
     }
 
@@ -25,18 +28,18 @@ public class ViewUtils {
         return view.getText().toString();
     }
 
-    public static void setImage(ImageView view, int drawableId) {
+    public static void setImage(ImageView view, @IdRes int drawableId) {
         view.setImageDrawable(ResourceUtils.getDrawable(drawableId));
     }
 
-    public static void setImage(ImageView view, String urlImage, int idPlaceholder) {
+    public static void setImage(ImageView view, String urlImage, @DrawableRes int idPlaceholder) {
         Glide.with(MyApplication.getAppContext())
                 .load(urlImage)
                 .apply(new RequestOptions().placeholder(idPlaceholder))
                 .into(view);
     }
 
-    public static void setColor(TextView view, int colorId) {
+    public static void setColor(TextView view, @ColorRes int colorId) {
         view.setTextColor(ResourceUtils.getColor(colorId));
     }
 
