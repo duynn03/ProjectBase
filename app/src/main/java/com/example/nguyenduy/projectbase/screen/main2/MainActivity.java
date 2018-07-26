@@ -52,7 +52,7 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
 
     @Override
     public void prepareComplete() {
-        addFragment(new HomeFragment(), false);
+        setSelectMenu(R.id.menu_home);
     }
 
     @Override

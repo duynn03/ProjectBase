@@ -22,14 +22,12 @@ public class SharedPreferenceUtils {
     private static final String SHARED_PREFERENCES_NAME = "SHARED_PREFERENCES_NAME";
 
     private static SharedPreferenceUtils mSharedPreferenceUtils;
-    private Context mContext;
     private SharedPreferences mPreferences;
     private SharedPreferences.Editor mEditor;
     private Gson gson = new Gson();
 
     private SharedPreferenceUtils() {
-        mContext = MyApplication.getAppContext();
-        mPreferences = mContext.getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
+        mPreferences = MyApplication.getAppContext().getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
         mEditor = mPreferences.edit();
     }
 
@@ -159,7 +157,7 @@ public class SharedPreferenceUtils {
         }
     }
 
-    public boolean containKey(String key) {
+    private boolean containKey(String key) {
         return mPreferences.contains(key);
     }
 

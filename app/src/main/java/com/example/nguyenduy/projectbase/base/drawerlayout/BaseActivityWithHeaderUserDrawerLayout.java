@@ -1,16 +1,18 @@
 package com.example.nguyenduy.projectbase.base.drawerlayout;
 
+import android.content.SharedPreferences;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.IBasePresenter;
+import com.example.nguyenduy.projectbase.utils.Constants;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.UserInformation;
 import com.example.nguyenduy.projectbase.utils.method.ViewUtils;
 
-public abstract class BaseActivityWithHeaderUserDrawerLayout<P extends IBasePresenter> extends BaseActivityWithDrawerLayout<P> {
+public abstract class BaseActivityWithHeaderUserDrawerLayout<P extends IBasePresenter> extends BaseActivityWithDrawerLayout<P> implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     private RelativeLayout header;
 
@@ -47,6 +49,15 @@ public abstract class BaseActivityWithHeaderUserDrawerLayout<P extends IBasePres
     protected void initBaseComponents() {
         super.initBaseComponents();
         updateUserInformation();
+        SharedPreferenceUtils.getInstance().registerOnSharedPreferenceChangeListener(this);
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        if (!Constants.SharedPreference.USER_INFORMATION.equals(key)) {
+            return;
+        }
+        updateUserInformation();
     }
 
     private void updateUserInformation() {
@@ -78,4 +89,9 @@ public abstract class BaseActivityWithHeaderUserDrawerLayout<P extends IBasePres
         ViewUtils.setImage(avatar, url, R.mipmap.ic_launcher_round);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SharedPreferenceUtils.getInstance().unregisterOnSharedPreferenceChangeListener(this);
+    }
 }

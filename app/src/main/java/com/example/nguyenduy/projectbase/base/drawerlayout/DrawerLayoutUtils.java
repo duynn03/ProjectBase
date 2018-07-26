@@ -173,6 +173,15 @@ public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelecte
             mActivity.getSupportActionBar().setTitle(titleMenuToolbars[indexMenu]);
     }
 
+    private MenuItem findMenu(int idMenu) {
+        return mNavigation.getMenu().findItem(idMenu);
+    }
+
+    public void setSelectMenu(int idMenu) {
+        onNavigationItemSelected(findMenu(idMenu));
+        mNavigation.setCheckedItem(idMenu); // highlight menu
+    }
+
     private int findIndexMenuDrawerLayout(int idMenu) {
         int index = 0;
         MenuItem item;

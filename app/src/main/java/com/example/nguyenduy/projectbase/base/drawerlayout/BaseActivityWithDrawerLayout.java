@@ -36,4 +36,8 @@ public abstract class BaseActivityWithDrawerLayout<P extends IBasePresenter> ext
         drawerLayout.setCountMenu(idMenu, count);
     }
 
+    public void setSelectMenu(int idMenu) {
+        drawerLayout.setSelectMenu(idMenu);
+    }
+
 }
