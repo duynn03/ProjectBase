@@ -2,9 +2,6 @@ package com.example.nguyenduy.projectbase.screen.main;
 
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.BaseActivity;
-import com.example.nguyenduy.projectbase.base.firebase.FireBaseConstants;
-import com.example.nguyenduy.projectbase.base.firebase.FCM.TopicUtils;
-import com.example.nguyenduy.projectbase.base.firebase.FireBaseUtils;
 import com.example.nguyenduy.projectbase.screen.start.StartActivity;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
 
@@ -41,4 +38,11 @@ public class MainActivity extends BaseActivity<IMainPresenter> implements IMainV
     public void prepareComplete() {
 
     }
+
+    @OnClick(R.id.btn_logout)
+    public void onClickButtonLogout() {
+        SharedPreferenceUtils.getInstance().clearUserInformation();
+        startRootActivity(StartActivity.class);
+    }
+
 }

@@ -7,6 +7,14 @@ import android.widget.FrameLayout;
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.drawerlayout.BaseActivityWithHeaderUserDrawerLayout;
 import com.example.nguyenduy.projectbase.base.drawerlayout.ToolbarUtils;
+import com.example.nguyenduy.projectbase.screen.main2.appcenter.AppCenterFragment;
+import com.example.nguyenduy.projectbase.screen.main2.database.RealmFragment;
+import com.example.nguyenduy.projectbase.screen.main2.firebase.FirebaseFragment;
+import com.example.nguyenduy.projectbase.screen.main2.home.HomeFragment;
+import com.example.nguyenduy.projectbase.screen.main2.listener.handshake.HandshakeFragment;
+import com.example.nguyenduy.projectbase.screen.main2.notification.NotificationFragment;
+import com.example.nguyenduy.projectbase.screen.main2.permission.PermissionFragment;
+import com.example.nguyenduy.projectbase.screen.main2.sharedpreference.SharedPreferenceFragment;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
 
 import butterknife.BindView;
@@ -14,7 +22,7 @@ import butterknife.OnClick;
 
 public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPresenter> implements IMainView, ToolbarUtils.IToolbarListener {
 
-    @BindView(R.id.fl_drawer_layout_content)
+    @BindView(R.id.fl_content)
     FrameLayout contentDrawerLayout;
 
     @Override
@@ -43,7 +51,7 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
 
     @Override
     public void prepareComplete() {
-        //addFragment();
+        addFragment(new HomeFragment(), false);
     }
 
     @Override
@@ -92,28 +100,28 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
     public void onNavigationItemSelectedDrawerLayout(int idItem) {
         switch (idItem) {
             case R.id.menu_home:
-                showToast("menu_home");
+                replaceFragment(new HomeFragment(), false);
                 break;
             case R.id.menu_permission:
-                showToast("menu_permission");
+                replaceFragment(new PermissionFragment(), false);
                 break;
             case R.id.menu_sharedpreference:
-                showToast("menu_sharedpreference");
+                replaceFragment(new SharedPreferenceFragment(), false);
                 break;
             case R.id.menu_notification:
-                showToast("menu_notification");
+                replaceFragment(new NotificationFragment(), false);
                 break;
             case R.id.menu_firebase:
-                showToast("menu_firebase");
+                replaceFragment(new FirebaseFragment(), false);
                 break;
             case R.id.menu_appcenter:
-                showToast("menu_appcenter");
+                replaceFragment(new AppCenterFragment(), false);
                 break;
             case R.id.menu_hand_shake:
-                showToast("menu_hand_shake");
+                replaceFragment(new HandshakeFragment(), false);
                 break;
             case R.id.menu_realm:
-                showToast("menu_realm");
+                replaceFragment(new RealmFragment(), false);
                 break;
             case R.id.menu_share:
                 showToast("menu_share");

@@ -91,9 +91,10 @@ public class AnalyticUtils implements SharedPreferences.OnSharedPreferenceChange
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        if (Constants.SharedPreference.USER_INFORMATION.equals(key) || Constants.SharedPreference.TOKEN.equals(key)) {
-            updateUserInformation();
+        if (!Constants.SharedPreference.USER_INFORMATION.equals(key) && !Constants.SharedPreference.TOKEN.equals(key)) {
+            return;
         }
+        updateUserInformation();
     }
 
     public void onDestroy() {

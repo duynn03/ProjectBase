@@ -249,7 +249,7 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
 
     public void addFragment(Fragment fragment, boolean isAddToBackStack) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction()
-                .add(R.id.fl_drawer_layout_content, fragment, fragment.getClass().getName());
+                .add(R.id.fl_content, fragment, fragment.getClass().getName());
         if (isAddToBackStack) {
             transaction.addToBackStack(fragment.getClass().getSimpleName());
         }
@@ -258,7 +258,7 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
 
     public void replaceFragment(Fragment fragment, boolean isAddToBackStack) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fl_drawer_layout_content, fragment, fragment.getClass().getName());
+                .replace(R.id.fl_content, fragment, fragment.getClass().getName());
         if (isAddToBackStack) {
             transaction.addToBackStack(fragment.getClass().getSimpleName());
         }

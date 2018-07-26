@@ -1,10 +1,20 @@
 package com.example.nguyenduy.projectbase.screen.main2.sharedpreference;
 
+import android.content.SharedPreferences;
+import android.widget.Button;
+
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.BaseFragment;
 import com.example.nguyenduy.projectbase.base.IBasePresenter;
+import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
+import com.example.nguyenduy.projectbase.utils.method.ViewUtils;
 
-public class SharedPreferenceFragment extends BaseFragment<ISharedPreferencePresenter> implements ISharedPreferenceView {
+import butterknife.BindView;
+import butterknife.OnClick;
+
+public class SharedPreferenceFragment extends BaseFragment<ISharedPreferencePresenter> implements ISharedPreferenceView, SharedPreferences.OnSharedPreferenceChangeListener {
+
+    private static final String KEY_SHARED_PREFERENCE_NUMBER = "KEY_SHARED_PREFERENCE_NUMBER";
 
     @Override
     public int getIdLayout() {
@@ -35,4 +45,33 @@ public class SharedPreferenceFragment extends BaseFragment<ISharedPreferencePres
     public void prepareComplete() {
 
     }
+
+    @BindView(R.id.btn_number)
+    Button btnNumber;
+
+    @OnClick(R.id.btn_number)
+    public void onClickButtonNumber() {
+        int number = Integer.parseInt(btnNumber.getText().toString());
+        SharedPreferenceUtils.getInstance().setValue(KEY_SHARED_PREFERENCE_NUMBER, number + 1);
+        ViewUtils.setText(btnNumber, SharedPreferenceUtils.getInstance().getValue(KEY_SHARED_PREFERENCE_NUMBER, -1) + "");
+    }
+
+    @OnClick(R.id.btn_register_change_data_share_prefrence)
+    public void registerOnSharedPreferenceChangeListener() {
+        SharedPreferenceUtils.getInstance().registerOnSharedPreferenceChangeListener(this);
+    }
+
+    @OnClick(R.id.btn_unregister_change_data_share_prefrence)
+    public void unRegisterOnSharedPreferenceChangeListener() {
+        SharedPreferenceUtils.getInstance().unregisterOnSharedPreferenceChangeListener(this);
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        if (!KEY_SHARED_PREFERENCE_NUMBER.equals(key)) {
+            return;
+        }
+        showToast("SharedPreference: key: " + key + ", value: " + SharedPreferenceUtils.getInstance().getValue(key, -1));
+    }
+
 }

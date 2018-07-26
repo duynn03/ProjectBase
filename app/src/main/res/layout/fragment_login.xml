@@ -20,31 +20,6 @@
         android:text="Forgot Password" />
 
     <Button
-        android:id="@+id/btn_register_change_data_share_prefrence"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_forgot_password"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:text="register change data share prefrence" />
-
-    <Button
-        android:id="@+id/btn_unregister_change_data_share_prefrence"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_register_change_data_share_prefrence"
-        android:layout_centerHorizontal="true"
-        android:text="unregister change data share prefrence" />
-
-    <Button
-        android:id="@+id/btn_number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_unregister_change_data_share_prefrence"
-        android:layout_centerHorizontal="true"
-        android:text="0" />
-
-    <Button
         android:id="@+id/btn_sign_up"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -59,29 +34,5 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="50dp"
         android:text="Login" />
-
-    <Button
-        android:id="@+id/btn_Permission_gallery"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btn_login"
-        android:layout_alignParentRight="true"
-        android:text="Get Gallery" />
-
-    <Button
-        android:id="@+id/btn_Permission_write_file_and_location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btn_Permission_gallery"
-        android:layout_alignParentRight="true"
-        android:text="Get write file and location" />
-
-    <Button
-        android:id="@+id/btn_generate_crash"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btn_Permission_write_file_and_location"
-        android:layout_alignParentRight="true"
-        android:text="Crash" />
 
 </RelativeLayout>

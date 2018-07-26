@@ -8,7 +8,33 @@
         style="@style/TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:text="Fragment SharedPreference" />
+
+    <Button
+        android:id="@+id/btn_register_change_data_share_prefrence"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Register change data SharePrefrence" />
+
+    <Button
+        android:id="@+id/btn_unregister_change_data_share_prefrence"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_register_change_data_share_prefrence"
+        android:layout_centerHorizontal="true"
+        android:text="unregister" />
+
+    <Button
+        android:id="@+id/btn_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_unregister_change_data_share_prefrence"
+        android:layout_centerHorizontal="true"
+        android:text="0" />
 
 </RelativeLayout>

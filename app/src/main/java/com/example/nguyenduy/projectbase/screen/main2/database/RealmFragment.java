@@ -4,16 +4,16 @@ import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.BaseFragment;
 import com.example.nguyenduy.projectbase.base.IBasePresenter;
 
-public class DatabaseFragment extends BaseFragment<IDatabasePresenter> implements IDatabaseView {
+public class RealmFragment extends BaseFragment<IRealmPresenter> implements IRealmView {
 
     @Override
     public int getIdLayout() {
-        return R.layout.fragment_database;
+        return R.layout.fragment_realm;
     }
 
     @Override
     public IBasePresenter initPresenter() {
-        return new DatabasePresenterImp(this);
+        return new RealmPresenterImp(this);
     }
 
     @Override

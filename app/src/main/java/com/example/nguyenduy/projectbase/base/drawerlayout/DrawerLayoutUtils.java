@@ -58,7 +58,7 @@ public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelecte
     private void findViewById() {
         mDrawer = mActivity.findViewById(R.id.drawer_layout);
         mNavigation = mActivity.findViewById(R.id.navigation_view);
-        mContent = mActivity.findViewById(R.id.fl_drawer_layout_content);
+        mContent = mActivity.findViewById(R.id.fl_content);
         mAppBar = mActivity.findViewById(R.id.appbar);
         mToolbar = mActivity.findViewById(R.id.toolbar);
     }

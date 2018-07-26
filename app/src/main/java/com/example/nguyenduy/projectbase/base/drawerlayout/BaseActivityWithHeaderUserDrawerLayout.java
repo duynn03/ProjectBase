@@ -1,7 +1,6 @@
 package com.example.nguyenduy.projectbase.base.drawerlayout;
 
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -76,7 +75,7 @@ public abstract class BaseActivityWithHeaderUserDrawerLayout<P extends IBasePres
     }
 
     private void setAvatar(String url) {
-        ViewUtils.loadImage(avatar, url, R.mipmap.ic_launcher_round);
+        ViewUtils.setImage(avatar, url, R.mipmap.ic_launcher_round);
     }
 
 }

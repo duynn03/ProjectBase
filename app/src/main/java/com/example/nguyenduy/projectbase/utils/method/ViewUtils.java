@@ -29,7 +29,7 @@ public class ViewUtils {
         view.setImageDrawable(ResourceUtils.getDrawable(drawableId));
     }
 
-    public static void loadImage(ImageView view, String urlImage, int idPlaceholder) {
+    public static void setImage(ImageView view, String urlImage, int idPlaceholder) {
         Glide.with(MyApplication.getAppContext())
                 .load(urlImage)
                 .apply(new RequestOptions().placeholder(idPlaceholder))
