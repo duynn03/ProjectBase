@@ -1,7 +1,5 @@
 package com.example.nguyenduy.projectbase.screen.main2.navigation.snackbar;
 
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.widget.RelativeLayout;
 
