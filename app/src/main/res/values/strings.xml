@@ -63,6 +63,9 @@
     <string name="drawer_layout_menu_label_manage_application">Manage Application</string>
     <string name="drawer_layout_menu_firebase">Firebase</string>
     <string name="drawer_layout_menu_appcenter">AppCenter</string>
+    <!--label navigation-->
+    <string name="drawer_layout_menu_label_navigation">Navigation</string>
+    <string name="drawer_layout_menu_snackbar">Snackbar</string>
     <!--label listener-->
     <string name="drawer_layout_menu_label_listener">Listener</string>
     <string name="drawer_layout_menu_hand_shake">HandShake</string>
@@ -81,6 +84,7 @@
         <item>Notification</item>
         <item>Firebase</item>
         <item>AppCenter</item>
+        <item>Snackbar</item>
         <item>HandShake</item>
         <item>Realm</item>
         <item></item>

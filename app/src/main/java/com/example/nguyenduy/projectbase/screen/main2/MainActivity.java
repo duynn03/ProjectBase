@@ -12,6 +12,7 @@ import com.example.nguyenduy.projectbase.screen.main2.database.RealmFragment;
 import com.example.nguyenduy.projectbase.screen.main2.firebase.FirebaseFragment;
 import com.example.nguyenduy.projectbase.screen.main2.home.HomeFragment;
 import com.example.nguyenduy.projectbase.screen.main2.listener.handshake.HandshakeFragment;
+import com.example.nguyenduy.projectbase.screen.main2.navigation.snackbar.SnackbarFragment;
 import com.example.nguyenduy.projectbase.screen.main2.notification.NotificationFragment;
 import com.example.nguyenduy.projectbase.screen.main2.permission.PermissionFragment;
 import com.example.nguyenduy.projectbase.screen.main2.sharedpreference.SharedPreferenceFragment;
@@ -116,6 +117,9 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
                 break;
             case R.id.menu_appcenter:
                 replaceFragment(new AppCenterFragment(), false);
+                break;
+            case R.id.menu_snack_bar:
+                replaceFragment(new SnackbarFragment(), false);
                 break;
             case R.id.menu_hand_shake:
                 replaceFragment(new HandshakeFragment(), false);

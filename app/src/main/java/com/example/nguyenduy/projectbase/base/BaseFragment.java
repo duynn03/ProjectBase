@@ -2,7 +2,9 @@ package com.example.nguyenduy.projectbase.base;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
@@ -21,7 +23,8 @@ public abstract class BaseFragment<P extends IBasePresenter> extends Fragment im
 
     private P mPresenter;
     private Unbinder bindView;
-    private ViewGroup mRootView;
+    private ViewGroup mRootViewLayout;
+    private View mRootViewFragmentCreated;
 
     @Nullable
     @Override
@@ -32,27 +35,38 @@ public abstract class BaseFragment<P extends IBasePresenter> extends Fragment im
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        initRootView(view);
+        mRootViewFragmentCreated = view;
+        initRootView();
         hiddenContentLayout();
         initViews();
-        initBaseComponents(view);
+        initBaseComponents();
         initComponents();
         setEvents();
         showContentLayout();
         prepareComplete();
+        showSnackbar();
     }
 
-    private void initRootView(View view) {
-        mRootView = view.findViewById(getIdRootView());
+    public void showSnackbar() {
+        Snackbar.make(mRootViewFragmentCreated, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show();
+    }
+
+    private void initRootView() {
+        mRootViewLayout = (ViewGroup) findViewById(getIdRootView());
+    }
+
+    public View findViewById(@IdRes int id) {
+        return mRootViewFragmentCreated.findViewById(id);
     }
 
     private int getIdRootView() {
         return R.id.root_fragment;
     }
 
-    private void initBaseComponents(View view) {
+    private void initBaseComponents() {
         //Inject View
-        bindView = ButterKnife.bind(this, view);
+        bindView = ButterKnife.bind(this, mRootViewFragmentCreated);
 
         //Create presenter for this view
         if (null == mPresenter) {
@@ -79,11 +93,11 @@ public abstract class BaseFragment<P extends IBasePresenter> extends Fragment im
     }
 
     public void hiddenContentLayout() {
-        ViewUtils.setVisibility(mRootView, View.INVISIBLE);
+        ViewUtils.setVisibility(mRootViewLayout, View.INVISIBLE);
     }
 
     public void showContentLayout() {
-        ViewUtils.setVisibility(mRootView, View.VISIBLE);
+        ViewUtils.setVisibility(mRootViewLayout, View.VISIBLE);
     }
 
     public <A extends BaseActivity> A getRootActivity() {

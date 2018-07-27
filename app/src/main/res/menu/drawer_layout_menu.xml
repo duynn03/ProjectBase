@@ -25,7 +25,6 @@
             app:actionLayout="@layout/drawer_layout_menu_counter" />
     </group>
 
-
     <item android:title="@string/drawer_layout_menu_label_manage_application">
         <menu>
             <group android:checkableBehavior="single">
@@ -37,6 +36,17 @@
                     android:id="@+id/menu_appcenter"
                     android:icon="@drawable/ic_menu_manage"
                     android:title="@string/drawer_layout_menu_appcenter" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/drawer_layout_menu_label_navigation">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_snack_bar"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="@string/drawer_layout_menu_snackbar" />
             </group>
         </menu>
     </item>
