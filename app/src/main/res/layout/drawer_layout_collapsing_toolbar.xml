@@ -8,7 +8,7 @@
     tools:openDrawer="start">
 
     <include
-        layout="@layout/drawer_layout_content"
+        layout="@layout/drawer_layout_collapsing_toolbar_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

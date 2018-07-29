@@ -2,18 +2,17 @@ package com.example.nguyenduy.projectbase.base.drawerlayout;
 
 import android.app.Activity;
 import android.view.Menu;
-import android.view.MenuItem;
 
-public class ToolbarUtils {
+public class OptionMenuUtils {
 
     private Activity mActivity;
-    private IToolbarListener mListener;
+    private IOptionMenuListener mListener;
 
-    public interface IToolbarListener {
+    public interface IOptionMenuListener {
         int getIdToolbar();
     }
 
-    public ToolbarUtils(Activity activity, IToolbarListener listener, Menu menu) {
+    public OptionMenuUtils(Activity activity, IOptionMenuListener listener, Menu menu) {
         mActivity = activity;
         mListener = listener;
         mActivity.getMenuInflater().inflate(listener.getIdToolbar(), menu);

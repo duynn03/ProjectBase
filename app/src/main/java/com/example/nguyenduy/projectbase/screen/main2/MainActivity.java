@@ -6,13 +6,14 @@ import android.widget.FrameLayout;
 
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.drawerlayout.BaseActivityWithHeaderUserDrawerLayout;
-import com.example.nguyenduy.projectbase.base.drawerlayout.ToolbarUtils;
+import com.example.nguyenduy.projectbase.base.drawerlayout.OptionMenuUtils;
 import com.example.nguyenduy.projectbase.screen.main2.appcenter.AppCenterFragment;
 import com.example.nguyenduy.projectbase.screen.main2.database.RealmFragment;
 import com.example.nguyenduy.projectbase.screen.main2.firebase.FirebaseFragment;
 import com.example.nguyenduy.projectbase.screen.main2.home.HomeFragment;
 import com.example.nguyenduy.projectbase.screen.main2.listener.handshake.HandshakeFragment;
-import com.example.nguyenduy.projectbase.screen.main2.navigation.snackbar.SnackbarFragment;
+import com.example.nguyenduy.projectbase.screen.main2.navigation.dialog.DialogFragment;
+import com.example.nguyenduy.projectbase.screen.main2.navigation.snackbar.SnackBarFragment;
 import com.example.nguyenduy.projectbase.screen.main2.notification.NotificationFragment;
 import com.example.nguyenduy.projectbase.screen.main2.permission.PermissionFragment;
 import com.example.nguyenduy.projectbase.screen.main2.sharedpreference.SharedPreferenceFragment;
@@ -22,14 +23,14 @@ import com.example.nguyenduy.projectbase.utils.data.SharedPreference.UserInforma
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPresenter> implements IMainView, ToolbarUtils.IToolbarListener {
+public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPresenter> implements IMainView, OptionMenuUtils.IOptionMenuListener {
 
     @BindView(R.id.fl_content)
     FrameLayout contentDrawerLayout;
 
     @Override
     public int getIdLayout() {
-        return R.layout.activity_drawer_layout;
+        return R.layout.activity_drawer_layout_collapsing_toolbar;
     }
 
     @Override
@@ -53,7 +54,7 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
 
     @Override
     public void prepareComplete() {
-        setSelectMenu(R.id.menu_home);
+       // setSelectMenuDrawerLayout(R.id.menu_home);
     }
 
     @Override
@@ -62,19 +63,14 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
     }
 
     @Override
-    public int getIdArrayTitleMenuDrawerLayout() {
+    public int getIdArrayTitleToolbarDrawerLayout() {
         return R.array.navigation_drawer_title_menu_toolbar;
-    }
-
-    @Override
-    public boolean hasToolbarDrawerLayout() {
-        return true;
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // init toolbar
-        new ToolbarUtils(this, this, menu);
+        new OptionMenuUtils(this, this, menu);
         return true;
     }
 
@@ -94,7 +90,7 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
 
     @Override
     public int getIdToolbar() {
-        return R.menu.toolbar_menu;
+        return R.menu.option_menu;
     }
 
     @Override
@@ -119,7 +115,10 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
                 replaceFragment(new AppCenterFragment(), false);
                 break;
             case R.id.menu_snack_bar:
-                replaceFragment(new SnackbarFragment(), false);
+                replaceFragment(new SnackBarFragment(), false);
+                break;
+            case R.id.menu_dialog:
+                replaceFragment(new DialogFragment(), false);
                 break;
             case R.id.menu_hand_shake:
                 replaceFragment(new HandshakeFragment(), false);
@@ -133,7 +132,7 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
         }
     }
 
-    @OnClick(R.id.btn_logout)
+/*    @OnClick(R.id.btn_logout)
     public void onClickButtonLogout() {
         SharedPreferenceUtils.getInstance().clearUserInformation();
         //  startRootActivity(StartActivity.class);
@@ -146,5 +145,5 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
                 .setUsername("Nguyễn Ngọc Duy")
                 .setEmail("duynn03@gmail.com");
         SharedPreferenceUtils.getInstance().setUserInformation(user);
-    }
+    }*/
 }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_activity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--drawer layout-->
+    <include
+        layout="@layout/drawer_layout_collapsing_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</android.support.design.widget.CoordinatorLayout>

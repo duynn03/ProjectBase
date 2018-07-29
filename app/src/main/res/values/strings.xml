@@ -66,6 +66,7 @@
     <!--label navigation-->
     <string name="drawer_layout_menu_label_navigation">Navigation</string>
     <string name="drawer_layout_menu_snackbar">Snackbar</string>
+    <string name="drawer_layout_menu_dialog">Dialog</string>
     <!--label listener-->
     <string name="drawer_layout_menu_label_listener">Listener</string>
     <string name="drawer_layout_menu_hand_shake">HandShake</string>
@@ -85,6 +86,7 @@
         <item>Firebase</item>
         <item>AppCenter</item>
         <item>Snackbar</item>
+        <item>Dialog</item>
         <item>HandShake</item>
         <item>Realm</item>
         <item></item>
@@ -96,6 +98,12 @@
 
     <!--base activity-->
     <string name="base_activity_dialog_loading_message_loading">Loading...</string>
+
+    <string name="cheese_ipsum">Jarlsberg lancashire edam. Dolcelatte hard cheese brie st. agur blue
+    cheese caerphilly bavarian bergkase cheese and biscuits mascarpone. Cheeseburger swiss bavarian
+    bergkase cream cheese fromage frais cheesy feet port-salut airedale. St. agur blue cheese rubber
+    cheese caerphilly cheddar cheesecake cream cheese manchego lancashire. Roquefort squirty cheese
+    the big cheese.</string>
 
 </resources>
 

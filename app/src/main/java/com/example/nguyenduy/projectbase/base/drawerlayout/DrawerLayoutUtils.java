@@ -2,6 +2,7 @@ package com.example.nguyenduy.projectbase.base.drawerlayout;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -25,8 +26,9 @@ public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelecte
     private AppCompatActivity mActivity;
     private IDrawerLayoutListener mListener;
 
-    private DrawerLayout mDrawer;
+    private DrawerLayout mDrawerLayout;
     private AppBarLayout mAppBar;
+    private CollapsingToolbarLayout collapsingToolbar;
     private Toolbar mToolbar;
     private String[] titleMenuToolbars;
     private NavigationView mNavigation;
@@ -38,14 +40,12 @@ public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelecte
 
         int getIdMenuDrawerLayout();
 
-        int getIdArrayTitleMenuDrawerLayout();
-
-        boolean hasToolbarDrawerLayout();
+        int getIdArrayTitleToolbarDrawerLayout();
 
         void onNavigationItemSelectedDrawerLayout(int idItem);
     }
 
-    public DrawerLayoutUtils(AppCompatActivity activity, IDrawerLayoutListener listener) {
+    DrawerLayoutUtils(AppCompatActivity activity, IDrawerLayoutListener listener) {
         mActivity = activity;
         mListener = listener;
         findViewById();
@@ -56,46 +56,34 @@ public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelecte
     }
 
     private void findViewById() {
-        mDrawer = mActivity.findViewById(R.id.drawer_layout);
+        mDrawerLayout = mActivity.findViewById(R.id.drawer_layout);
         mNavigation = mActivity.findViewById(R.id.navigation_view);
         mContent = mActivity.findViewById(R.id.fl_content);
         mAppBar = mActivity.findViewById(R.id.appbar);
         mToolbar = mActivity.findViewById(R.id.toolbar);
+        collapsingToolbar = mActivity.findViewById(R.id.collapsing_toolbar);
     }
 
     private boolean hasHeaderDrawerLayout() {
         return mListener.getIdHeaderDrawerLayout() > 0;
     }
 
-    private boolean hasMenuDrawerLayout() {
-        return mListener.getIdMenuDrawerLayout() > 0;
-    }
-
-    private boolean hasToolbarDrawerLayout() {
-        return mListener.hasToolbarDrawerLayout();
-    }
-
     private void initViews() {
-        DrawerLayoutView view = new DrawerLayoutView();
         // add header
         if (hasHeaderDrawerLayout()) {
             mNavigation.addHeaderView(ViewUtils.createView(mActivity, mListener.getIdHeaderDrawerLayout()));
         }
         // add menu
-        if (hasMenuDrawerLayout()) {
-            mNavigation.inflateMenu(mListener.getIdMenuDrawerLayout());
-            view.setViewMenu();
-        }
-        // toolbar
-        ViewUtils.setVisibility(mAppBar, hasToolbarDrawerLayout() ? View.VISIBLE : View.GONE);
+        mNavigation.inflateMenu(mListener.getIdMenuDrawerLayout());
+        new DrawerLayoutView().setViewMenu();
     }
 
     private void initComponents() {
         // add Toolbar vào app
         mActivity.setSupportActionBar(mToolbar);
         // init toggle
-        ActionBarDrawerToggle mToggle = new ActionBarDrawerToggle(mActivity, mDrawer, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        mDrawer.addDrawerListener(mToggle);
+        ActionBarDrawerToggle mToggle = new ActionBarDrawerToggle(mActivity, mDrawerLayout, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
     }
 
@@ -107,15 +95,14 @@ public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelecte
     }
 
     private void setEvents() {
-        mDrawer.addDrawerListener(this);
-        if (hasMenuDrawerLayout())
-            mNavigation.setNavigationItemSelectedListener(this);
+        mDrawerLayout.addDrawerListener(this);
+        mNavigation.setNavigationItemSelectedListener(this);
     }
 
     @Override
     public void onDrawerSlide(@NonNull View drawerView, float slideOffset) {
         // kéo ra thì mContent cũng kéo theo
-        mContent.setTranslationX(mContent.getWidth() * slideOffset);
+        //mContent.setTranslationX(mContent.getWidth() * slideOffset);
     }
 
     @Override
@@ -138,18 +125,18 @@ public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelecte
     }
 
     public boolean isDrawerOpen() {
-        return mDrawer.isDrawerOpen(GravityCompat.START);
+        return mDrawerLayout.isDrawerOpen(GravityCompat.START);
     }
 
     public void closeDrawer() {
         if (isDrawerOpen()) {
-            mDrawer.closeDrawer(GravityCompat.START);
+            mDrawerLayout.closeDrawer(GravityCompat.START);
         }
     }
 
     public void openDrawer() {
         if (!isDrawerOpen()) {
-            mDrawer.openDrawer(GravityCompat.START);
+            mDrawerLayout.openDrawer(GravityCompat.START);
         }
     }
 
@@ -170,7 +157,10 @@ public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelecte
             getTitleMenuToolbar();
 
         if (indexMenu != -1 && titleMenuToolbars.length > indexMenu && !TextUtils.isEmpty(titleMenuToolbars[indexMenu]))
-            mActivity.getSupportActionBar().setTitle(titleMenuToolbars[indexMenu]);
+            if (null != collapsingToolbar)
+                collapsingToolbar.setTitle(titleMenuToolbars[indexMenu]);
+            else
+                mToolbar.setTitle(titleMenuToolbars[indexMenu]);
     }
 
     private MenuItem findMenu(int idMenu) {
@@ -213,7 +203,7 @@ public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelecte
     }
 
     private void getTitleMenuToolbar() {
-        titleMenuToolbars = ResourceUtils.getStringArray(mListener.getIdArrayTitleMenuDrawerLayout());
+        titleMenuToolbars = ResourceUtils.getStringArray(mListener.getIdArrayTitleToolbarDrawerLayout());
     }
 
     public View getHeader() {

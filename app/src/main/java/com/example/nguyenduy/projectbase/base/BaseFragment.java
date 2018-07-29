@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
@@ -44,12 +43,6 @@ public abstract class BaseFragment<P extends IBasePresenter> extends Fragment im
         setEvents();
         showContentLayout();
         prepareComplete();
-        showSnackbar();
-    }
-
-    public void showSnackbar() {
-        Snackbar.make(mRootViewFragmentCreated, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show();
     }
 
     private void initRootView() {

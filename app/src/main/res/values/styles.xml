@@ -1,4 +1,5 @@
 <resources>
+
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
@@ -7,9 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.FullStatusBar" parent="AppTheme" />
+
     <!-- The launcher theme.-->
     <!--https://android.jlelse.eu/the-complete-android-splash-screen-guide-c7db82bce565-->
-    <style name="AppTheme.Launcher">
+    <style name="AppTheme.FullStatusBar.Launcher" parent="AppTheme.FullStatusBar">
         <item name="android:windowBackground">@drawable/launch_screen</item>
     </style>
 
