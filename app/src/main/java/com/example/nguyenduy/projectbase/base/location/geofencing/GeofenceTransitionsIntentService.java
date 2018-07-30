@@ -24,7 +24,7 @@ public class GeofenceTransitionsIntentService extends IntentService {
 
     @Override
     protected void onHandleIntent(@Nullable Intent intent) {
-        GeofencingEvent geofencingEvent = GeofencingEvent.fromIntent(intent);
+        /*GeofencingEvent geofencingEvent = GeofencingEvent.fromIntent(intent);
         if (geofencingEvent.hasError()) {
             String errorMessage = getErrorString(this, geofencingEvent.getErrorCode());
             LogUtils.e(TAG + ": " + errorMessage);
@@ -47,11 +47,11 @@ public class GeofenceTransitionsIntentService extends IntentService {
             LogUtils.i(TAG + ": " + geofenceTransitionDetails);
         } else {
             // Log the error.
-            LogUtils.e(TAG + ": " + /*getString(R.string.geofence_transition_invalid_type*/ "geofence_transition_invalid_type: " + geofenceTransition);
-        }
+            LogUtils.e(TAG + ": " + *//*getString(R.string.geofence_transition_invalid_type*//* "geofence_transition_invalid_type: " + geofenceTransition);
+        }*/
     }
 
-    private String getErrorString(Context context, int errorCode) {
+  /*  private String getErrorString(Context context, int errorCode) {
         Resources mResources = context.getResources();
         switch (errorCode) {
             case GeofenceStatusCodes.GEOFENCE_NOT_AVAILABLE:
@@ -67,5 +67,5 @@ public class GeofenceTransitionsIntentService extends IntentService {
                 return "unknown_geofence_error";
             // return mResources.getString(R.string.unknown_geofence_error);
         }
-    }
+    }*/
 }
