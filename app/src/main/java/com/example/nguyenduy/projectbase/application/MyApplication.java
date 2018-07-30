@@ -2,12 +2,13 @@ package com.example.nguyenduy.projectbase.application;
 
 import android.app.Application;
 import android.content.Context;
+import android.support.multidex.MultiDexApplication;
 
 import com.example.nguyenduy.projectbase.base.appCenter.AppCenterUtils;
 import com.example.nguyenduy.projectbase.base.firebase.FireBaseUtils;
 import com.example.nguyenduy.projectbase.database.Database;
 
-public class MyApplication extends Application {
+public class MyApplication extends MultiDexApplication {
 
     private static Context mContext;
     private static MyApplication instance;

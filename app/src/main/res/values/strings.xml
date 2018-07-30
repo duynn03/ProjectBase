@@ -65,6 +65,7 @@
     <string name="drawer_layout_menu_appcenter">AppCenter</string>
     <!--label navigation-->
     <string name="drawer_layout_menu_label_navigation">Navigation</string>
+    <string name="drawer_layout_menu_toolbar_collapsing">Toolbar Collapsing</string>
     <string name="drawer_layout_menu_snackbar">Snackbar</string>
     <string name="drawer_layout_menu_dialog">Dialog</string>
     <!--label listener-->
@@ -73,6 +74,9 @@
     <!--label database-->
     <string name="drawer_layout_menu_label_database">Database</string>
     <string name="drawer_layout_menu_realm">Realm</string>
+    <!--label location-->
+    <string name="drawer_layout_menu_label_location">Location</string>
+    <string name="drawer_layout_menu_location">Location</string>
     <!--label other-->
     <string name="drawer_layout_menu_label_other">Other</string>
     <string name="drawer_layout_menu_share">Share</string>
@@ -85,6 +89,7 @@
         <item>Notification</item>
         <item>Firebase</item>
         <item>AppCenter</item>
+        <item></item>
         <item>Snackbar</item>
         <item>Dialog</item>
         <item>HandShake</item>

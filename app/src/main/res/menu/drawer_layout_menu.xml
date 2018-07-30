@@ -44,6 +44,10 @@
         <menu>
             <group android:checkableBehavior="single">
                 <item
+                    android:id="@+id/menu_toolbar_collapsing"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="@string/drawer_layout_menu_toolbar_collapsing" />
+                <item
                     android:id="@+id/menu_snack_bar"
                     android:icon="@drawable/ic_menu_manage"
                     android:title="@string/drawer_layout_menu_snackbar" />
@@ -73,6 +77,17 @@
                     android:id="@+id/menu_realm"
                     android:icon="@drawable/ic_menu_share"
                     android:title="@string/drawer_layout_menu_realm" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/drawer_layout_menu_label_location">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_location"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_location" />
             </group>
         </menu>
     </item>

@@ -25,6 +25,7 @@ android {
         applicationId "com.example.nguyenduy.projectbase"
         minSdkVersion 15
         targetSdkVersion 27
+        multiDexEnabled true
         versionCode 1
         versionName '1.0'
         multiDexEnabled true
@@ -93,6 +94,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.android.support:recyclerview-v7:27.1.1'
+    /*multidex for android before < 5.0*/
+    implementation 'com.android.support:multidex:1.0.3'
     //inject view
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
@@ -119,6 +122,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:17.1.0'
     implementation 'com.google.firebase:firebase-perf:16.0.0'
 
+    /*location geofence*/
+    implementation 'com.google.android.gms:play-services-maps:15.0.1'
+    implementation 'com.google.android.gms:play-services-location:15.0.1'
 
 }
 
