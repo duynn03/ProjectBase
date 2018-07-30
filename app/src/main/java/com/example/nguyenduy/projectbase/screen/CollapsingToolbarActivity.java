@@ -1,10 +1,5 @@
 package com.example.nguyenduy.projectbase.screen;
 
-import android.os.Bundle;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.screen.main2.MainActivity;
 
