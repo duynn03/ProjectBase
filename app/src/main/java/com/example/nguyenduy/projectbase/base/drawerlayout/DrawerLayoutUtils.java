@@ -160,7 +160,7 @@ public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelecte
             if (null != collapsingToolbar)
                 collapsingToolbar.setTitle(titleMenuToolbars[indexMenu]);
             else
-                mToolbar.setTitle(titleMenuToolbars[indexMenu]);
+                mActivity.getSupportActionBar().setTitle(titleMenuToolbars[indexMenu]);
     }
 
     private MenuItem findMenu(int idMenu) {

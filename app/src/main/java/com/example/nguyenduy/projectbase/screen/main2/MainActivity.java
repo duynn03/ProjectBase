@@ -21,6 +21,8 @@ import com.example.nguyenduy.projectbase.screen.main2.sharedpreference.SharedPre
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.UserInformation;
 
+import butterknife.OnClick;
+
 public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPresenter> implements IMainView, OptionMenuUtils.IOptionMenuListener {
 
     @Override
@@ -133,13 +135,13 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
         }
     }
 
-    // @OnClick(R.id.btn_logout)
+   // @OnClick(R.id.btn_logout)
     public void onClickButtonLogout() {
         SharedPreferenceUtils.getInstance().clearUserInformation();
         //  startRootActivity(StartActivity.class);
     }
 
-    // @OnClick(R.id.btn_login)
+    //@OnClick(R.id.btn_login)
     public void onClickLogin() {
         UserInformation user = new UserInformation()
                 .setId("123")
