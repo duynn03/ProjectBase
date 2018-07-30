@@ -1,4 +1,4 @@
-package com.example.nguyenduy.projectbase.base.customView;
+package com.example.nguyenduy.projectbase.base.view;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
