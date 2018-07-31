@@ -9,9 +9,9 @@ import android.view.View;
 
 import com.example.nguyenduy.projectbase.R;
 
-/*
 import de.hdodenhof.circleimageview.CircleImageView;
 
+// https://github.com/saulmm/CoordinatorBehaviorExample
 @SuppressWarnings("unused")
 public class AvatarImageBehavior extends CoordinatorLayout.Behavior<CircleImageView> {
 
@@ -55,7 +55,7 @@ public class AvatarImageBehavior extends CoordinatorLayout.Behavior<CircleImageV
         init();
 
         mFinalLeftAvatarPadding = context.getResources().getDimension(
-                R.dimen.spacing_normal);
+                R.dimen.activity_horizontal_margin);
     }
 
     private void init() {
@@ -63,7 +63,7 @@ public class AvatarImageBehavior extends CoordinatorLayout.Behavior<CircleImageV
     }
 
     private void bindDimensions() {
-        mAvatarMaxSize = mContext.getResources().getDimension(R.dimen.image_width);
+        mAvatarMaxSize = 120;
     }
 
     // sẽ được gọi mỗi khi something happen trên layout
@@ -150,4 +150,3 @@ public class AvatarImageBehavior extends CoordinatorLayout.Behavior<CircleImageV
         return result;
     }
 }
-*/

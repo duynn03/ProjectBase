@@ -1,4 +1,4 @@
-package com.example.nguyenduy.projectbase.screen;
+package com.example.nguyenduy.projectbase.screen.main2.navigation.toolbar;
 
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.screen.main2.MainActivity;

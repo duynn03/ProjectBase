@@ -48,6 +48,10 @@
                     android:icon="@drawable/ic_menu_manage"
                     android:title="@string/drawer_layout_menu_toolbar_collapsing" />
                 <item
+                    android:id="@+id/menu_toolbar_collapsing_custom_behavior"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="@string/drawer_layout_menu_toolbar_collapsing_custom_behavior" />
+                <item
                     android:id="@+id/menu_snack_bar"
                     android:icon="@drawable/ic_menu_manage"
                     android:title="@string/drawer_layout_menu_snackbar" />

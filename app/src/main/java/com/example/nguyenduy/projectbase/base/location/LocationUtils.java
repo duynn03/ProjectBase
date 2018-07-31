@@ -56,12 +56,12 @@ public class LocationUtils {
     }
 
     // https://developer.android.com/training/location/change-location-settings
-    private boolean checkLocationSetting(Context context) {
+ /*   private boolean checkLocationSetting(Context context) {
         LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder();
         SettingsClient client = LocationServices.getSettingsClient(context);
         Task<LocationSettingsResponse> task = client.checkLocationSettings(builder.build());
         task.
-    }
+    }*/
 
     public void openLocationSetting() {
 //        https://developers.google.com/android/reference/com/google/android/gms/location/SettingsClient

@@ -6,7 +6,7 @@ import android.view.MenuItem;
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.drawerlayout.BaseActivityWithHeaderUserDrawerLayout;
 import com.example.nguyenduy.projectbase.base.drawerlayout.OptionMenuUtils;
-import com.example.nguyenduy.projectbase.screen.CollapsingToolbarActivity;
+import com.example.nguyenduy.projectbase.screen.main2.navigation.toolbar.CollapsingToolbarActivity;
 import com.example.nguyenduy.projectbase.screen.main2.appcenter.AppCenterFragment;
 import com.example.nguyenduy.projectbase.screen.main2.database.RealmFragment;
 import com.example.nguyenduy.projectbase.screen.main2.firebase.FirebaseFragment;
@@ -16,6 +16,7 @@ import com.example.nguyenduy.projectbase.screen.main2.location.geofence.Geofence
 import com.example.nguyenduy.projectbase.screen.main2.location.location.LocationFragment;
 import com.example.nguyenduy.projectbase.screen.main2.navigation.dialog.DialogFragment;
 import com.example.nguyenduy.projectbase.screen.main2.navigation.snackbar.SnackBarFragment;
+import com.example.nguyenduy.projectbase.screen.main2.navigation.toolbar.CollapsingToolbarCustomBehaviorActivity;
 import com.example.nguyenduy.projectbase.screen.main2.notification.NotificationFragment;
 import com.example.nguyenduy.projectbase.screen.main2.permission.PermissionFragment;
 import com.example.nguyenduy.projectbase.screen.main2.sharedpreference.SharedPreferenceFragment;
@@ -115,6 +116,9 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
                 break;
             case R.id.menu_toolbar_collapsing:
                 startActivity(CollapsingToolbarActivity.class, null);
+                break;
+            case R.id.menu_toolbar_collapsing_custom_behavior:
+                startActivity(CollapsingToolbarCustomBehaviorActivity.class, null);
                 break;
             case R.id.menu_dialog:
                 replaceFragment(new DialogFragment(), false);
