@@ -34,8 +34,10 @@ public class PermissionUtils {
                 new PermissionBuilder(
                         activity,
                         listener,
-                        Manifest.permission.ACCESS_FINE_LOCATION)
-                        .setReason(ResourceUtils.getString(R.string.permission_msg_reason_location)));
+                        Manifest.permission.ACCESS_FINE_LOCATION,
+                        Manifest.permission.ACCESS_COARSE_LOCATION)
+                        .setReason(ResourceUtils.getString(R.string.permission_msg_reason_location))
+                        .setMessageReject(ResourceUtils.getString(R.string.permission_msg_reject_last_known_location)));
     }
 
     public static void checkPermissionWriteExternalStorage(Activity activity, CallbackPermissionListener listener) {

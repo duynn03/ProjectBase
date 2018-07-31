@@ -12,7 +12,8 @@ import com.example.nguyenduy.projectbase.screen.main2.database.RealmFragment;
 import com.example.nguyenduy.projectbase.screen.main2.firebase.FirebaseFragment;
 import com.example.nguyenduy.projectbase.screen.main2.home.HomeFragment;
 import com.example.nguyenduy.projectbase.screen.main2.listener.handshake.HandshakeFragment;
-import com.example.nguyenduy.projectbase.screen.main2.location.LocationFragment;
+import com.example.nguyenduy.projectbase.screen.main2.location.geofence.GeofenceFragment;
+import com.example.nguyenduy.projectbase.screen.main2.location.location.LocationFragment;
 import com.example.nguyenduy.projectbase.screen.main2.navigation.dialog.DialogFragment;
 import com.example.nguyenduy.projectbase.screen.main2.navigation.snackbar.SnackBarFragment;
 import com.example.nguyenduy.projectbase.screen.main2.notification.NotificationFragment;
@@ -20,8 +21,6 @@ import com.example.nguyenduy.projectbase.screen.main2.permission.PermissionFragm
 import com.example.nguyenduy.projectbase.screen.main2.sharedpreference.SharedPreferenceFragment;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.UserInformation;
-
-import butterknife.OnClick;
 
 public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPresenter> implements IMainView, OptionMenuUtils.IOptionMenuListener {
 
@@ -129,13 +128,16 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
             case R.id.menu_location:
                 replaceFragment(new LocationFragment(), false);
                 break;
+            case R.id.menu_geofence:
+                replaceFragment(new GeofenceFragment(), false);
+                break;
             case R.id.menu_share:
                 showToast("menu_share");
                 break;
         }
     }
 
-   // @OnClick(R.id.btn_logout)
+    // @OnClick(R.id.btn_logout)
     public void onClickButtonLogout() {
         SharedPreferenceUtils.getInstance().clearUserInformation();
         //  startRootActivity(StartActivity.class);

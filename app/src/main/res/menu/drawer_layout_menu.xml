@@ -88,6 +88,10 @@
                     android:id="@+id/menu_location"
                     android:icon="@drawable/ic_menu_share"
                     android:title="@string/drawer_layout_menu_location" />
+                <item
+                    android:id="@+id/menu_geofence"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_geofence" />
             </group>
         </menu>
     </item>

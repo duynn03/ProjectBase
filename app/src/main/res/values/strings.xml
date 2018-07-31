@@ -10,6 +10,10 @@
     <string name="OK">OK</string>
     <string name="change_setting">CHANGE SETTING</string>
     <!--Message permission-->
+    <string name="permission_msg_reason_firebase_analytic">We need that permissions to send analytic to our server.</string>
+    <string name="permission_msg_reason_last_known_location">We need <b>location permission</b> to locate your position.</string>
+    <string name="permission_msg_reject_last_known_location">We <b>can\'t</b> get location then not continue.</string>
+
     <string name="permission_msg_reason_location">We need <b>location permission</b> to locate your position.</string>
     <string name="permission_msg_reject_location">We <b>can\'t</b> get your location <b>without location permission</b>.</string>
     <string name="permission_msg_reason_write_external_storage">We need <b>write external storage permission</b> to write your file.</string>
@@ -18,7 +22,7 @@
     <string name="permission_msg_reject_read_external_storage">We <b>can\'t</b> read external storage <b>without permission</b>.</string>
     <string name="permission_msg_reason_read_external_storage_and_location">Chúng tôi cần permission read external storage and location để có thể tiếp tục.</string>
     <string name="permission_msg_reject_read_external_storage_and_location">Chúng tôi không thể lấy được tất cả permission nên không thể tiếp tục.</string>
-    <string name="permission_msg_reason_firebase_analytic">We need that permissions to send analytic to our server.</string>
+
 
     <!--appcenter-->
     <!--Crash-->
@@ -77,6 +81,7 @@
     <!--label location-->
     <string name="drawer_layout_menu_label_location">Location</string>
     <string name="drawer_layout_menu_location">Location</string>
+    <string name="drawer_layout_menu_geofence">Geofence</string>
     <!--label other-->
     <string name="drawer_layout_menu_label_other">Other</string>
     <string name="drawer_layout_menu_share">Share</string>
@@ -94,6 +99,8 @@
         <item>Dialog</item>
         <item>HandShake</item>
         <item>Realm</item>
+        <item>Location</item>
+        <item>Geofence</item>
         <item></item>
     </string-array>
 
@@ -109,6 +116,28 @@
     bergkase cream cheese fromage frais cheesy feet port-salut airedale. St. agur blue cheese rubber
     cheese caerphilly cheddar cheesecake cream cheese manchego lancashire. Roquefort squirty cheese
     the big cheese.</string>
+
+    <!-- Location geofence Error strings -->
+    <string name="geofence_not_available">Geofence service is not available now</string>
+    <string name="geofence_too_many_geofences">Your app has registered too many geofences</string>
+    <string name="geofence_too_many_pending_intents">
+        You have provided too many PendingIntents to the addGeofences() call
+    </string>
+    <string name="unknown_geofence_error">
+        Unknown error: the Geofence service is not available now
+    </string>
+    <string name="geofence_transition_invalid_type">
+        Geofence transition error: invalid transition type %1$d
+    </string>
+
+    <!-- Transition type strings -->
+    <string name="geofence_transition_entered">Entered</string>
+    <string name="geofence_transition_exited">Exited</string>
+    <string name="unknown_geofence_transition">Unknown Transition</string>
+
+    <string name="geofence_transition_notification_text">
+        Click notification to return to app
+    </string>
 
 </resources>
 

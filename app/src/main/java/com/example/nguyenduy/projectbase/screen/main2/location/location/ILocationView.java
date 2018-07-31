@@ -1,4 +1,4 @@
-package com.example.nguyenduy.projectbase.screen.main2.location;
+package com.example.nguyenduy.projectbase.screen.main2.location.location;
 
 import com.example.nguyenduy.projectbase.base.IBaseView;
 

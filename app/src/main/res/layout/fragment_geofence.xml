@@ -10,14 +10,6 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Fragment Location" />
-
-    <Button
-        android:id="@+id/btn_last_knowwn_location"
-        style="@style/Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Get Last known Location" />
+        android:text="Fragment Geofence" />
 
 </RelativeLayout>

@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.example.nguyenduy.projectbase.R;
 
+/*
 import de.hdodenhof.circleimageview.CircleImageView;
 
 @SuppressWarnings("unused")
@@ -149,3 +150,4 @@ public class AvatarImageBehavior extends CoordinatorLayout.Behavior<CircleImageV
         return result;
     }
 }
+*/

@@ -6,6 +6,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.widget.Toast;
 
 import com.example.nguyenduy.projectbase.utils.LogUtils;
 import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
@@ -32,13 +33,12 @@ public class GeofenceUtils {
         mGeofencingClient = LocationServices.getGeofencingClient(mContext);
     }
 
-    /*timeExpire seconds*/
-    public Geofence createGeofence(double latitude, double longitude, float radius, String requestId, long timeExpire) {
+    public Geofence createGeofence(double latitude, double longitude, String requestId) {
         return new Geofence.Builder()
                 // Set the request ID of the geofence. This is a string to identify this geofence.
                 .setRequestId(requestId)
-                .setCircularRegion(latitude, longitude, radius)
-                .setExpirationDuration(timeExpire * 1000)
+                .setCircularRegion(latitude, longitude, GeofenceConstans.GEOFENCE_RADIUS_IN_METERS)
+                .setExpirationDuration(GeofenceConstans.GEOFENCE_EXPIRATION_IN_MILLISECONDS)
                 /*  int GEOFENCE_TRANSITION_ENTER = 1;
                     int GEOFENCE_TRANSITION_EXIT = 2;
                     int GEOFENCE_TRANSITION_DWELL = 4;
@@ -47,13 +47,13 @@ public class GeofenceUtils {
                 .build();
     }
 
-    private GeofencingRequest getGeofencingRequest(Geofence geofence) {
+    private GeofencingRequest getGeofencingRequest(List<Geofence> geofences) {
         GeofencingRequest.Builder builder = new GeofencingRequest.Builder();
         /*  int INITIAL_TRIGGER_ENTER = 1;
             int INITIAL_TRIGGER_EXIT = 2;
             int INITIAL_TRIGGER_DWELL = 4; - nghĩa là User phải ở trong location special 1 khoảng time thì mới kích hoạt event này, hoặc có thể đặt radius*/
         builder.setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_ENTER | GeofencingRequest.INITIAL_TRIGGER_EXIT);
-        builder.addGeofence(geofence);
+        builder.addGeofences(geofences);
         return builder.build();
     }
 
@@ -73,27 +73,45 @@ public class GeofenceUtils {
     }
 
     @SuppressLint("MissingPermission")
-    private void addGeofence(final Activity activity, final Geofence geofence) {
+    public void addGeofences(final Activity activity, final List<Geofence> geofences) {
         PermissionUtils.checkPermissionLocation(activity, new BasePermission.CallbackPermissionListener() {
             @Override
             public void onResult(boolean success, List<String> permissionDenieds) {
                 if (success) {
-                    mGeofencingClient.addGeofences(getGeofencingRequest(geofence), getGeofencePendingIntent())
+                    mGeofencingClient.addGeofences(getGeofencingRequest(geofences), getGeofencePendingIntent())
                             .addOnSuccessListener(activity, new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     LogUtils.i(TAG + "addGeofence: onSuccess");
+                                    Toast.makeText(activity, "addGeofence: onSuccess", Toast.LENGTH_SHORT).show();
                                 }
                             })
                             .addOnFailureListener(activity, new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
-                                    LogUtils.i(TAG + "addGeofence: onFailure");
+                                    LogUtils.i(TAG + "addGeofence: onFailure: " + GeofenceErrorMessages.getErrorString(activity, e));
+                                    Toast.makeText(activity, "addGeofence: onFailure", Toast.LENGTH_SHORT).show();
                                 }
                             });
                 }
             }
         });
+    }
+
+    public void removeGeofence(final Activity activity) {
+        mGeofencingClient.removeGeofences(getGeofencePendingIntent())
+                .addOnSuccessListener(activity, new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        LogUtils.i(TAG + "removeGeofence: onSuccess");
+                    }
+                })
+                .addOnFailureListener(activity, new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        LogUtils.i(TAG + "removeGeofence: onFailure");
+                    }
+                });
     }
 
 
