@@ -17,8 +17,8 @@ public class FireBaseUtils {
     public FireBaseUtils(final Activity activity) {
         PermissionUtils.checkPermissionFireBaseAnalytic(activity, new BasePermission.CallbackPermissionListener() {
             @Override
-            public void onResult(boolean success, List<String> permissionDenieds) {
-                if (success) {
+            public void onResult(boolean isSuccess, List<String> permissionDenieds) {
+                if (isSuccess) {
                     mAnalytic = new AnalyticUtils(activity);
                 }
             }

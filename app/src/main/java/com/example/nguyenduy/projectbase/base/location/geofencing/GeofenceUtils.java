@@ -76,8 +76,8 @@ public class GeofenceUtils {
     public void addGeofences(final Activity activity, final List<Geofence> geofences) {
         PermissionUtils.checkPermissionLocation(activity, new BasePermission.CallbackPermissionListener() {
             @Override
-            public void onResult(boolean success, List<String> permissionDenieds) {
-                if (success) {
+            public void onResult(boolean isSuccess, List<String> permissionDenieds) {
+                if (isSuccess) {
                     mGeofencingClient.addGeofences(getGeofencingRequest(geofences), getGeofencePendingIntent())
                             .addOnSuccessListener(activity, new OnSuccessListener<Void>() {
                                 @Override

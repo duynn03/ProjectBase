@@ -13,11 +13,38 @@
         android:text="Fragment Location" />
 
     <Button
-        android:id="@+id/btn_last_knowwn_location"
+        android:id="@+id/btn_last_known_location"
         style="@style/Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="Get Last known Location" />
+
+    <Button
+        android:id="@+id/btn_change_location_setting"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_last_known_location"
+        android:layout_centerHorizontal="true"
+        android:text="Check Location Setting đã bật chưa?" />
+
+    <Button
+        android:id="@+id/btn_register_update_location"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_change_location_setting"
+        android:layout_centerHorizontal="true"
+        android:text="Register Location Update" />
+
+    <Button
+        android:id="@+id/btn_unregister_update_location"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_register_update_location"
+        android:layout_centerHorizontal="true"
+        android:text="Unregister Location Update" />
 
 </RelativeLayout>

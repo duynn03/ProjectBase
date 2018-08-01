@@ -125,7 +125,7 @@ public class BasePermission {
     }
 
     public interface CallbackPermissionListener {
-        void onResult(boolean success, List<String> permissionDenieds);
+        void onResult(boolean isSuccess, List<String> permissionDenieds);
     }
 
     public static class PermissionBuilder {

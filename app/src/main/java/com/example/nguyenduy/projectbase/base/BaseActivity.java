@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.firebase.FireBaseUtils;
+import com.example.nguyenduy.projectbase.base.location.LocationSetting;
 import com.example.nguyenduy.projectbase.utils.LogUtils;
 import com.example.nguyenduy.projectbase.utils.method.ResourceUtils;
 import com.example.nguyenduy.projectbase.utils.method.ViewUtils;
@@ -162,6 +163,12 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
         BasePermission.onRequestPermissionResult(requestCode, permissions, grantResults);
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        LocationSetting.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
     public void startRootActivity(Class<?> clazz) {
         startActivity(clazz, null, Intent.FLAG_ACTIVITY_CLEAR_TASK, Intent.FLAG_ACTIVITY_NEW_TASK);
     }
@@ -193,8 +200,6 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
 
     /**
      * note: bundle nullable
-     *
-     * @return
      */
     private Bundle getIntentBundle() {
         return mIntent.getExtras();
@@ -202,7 +207,7 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
 
     @Override
     public boolean isIntentBundle() {
-        return null != getIntentBundle() ? true : false;
+        return null != getIntentBundle();
     }
 
     @Override

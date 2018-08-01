@@ -60,6 +60,10 @@
             </intent-filter>
         </service>
 
+        <!--location convert longitude, latitude -> address name -->
+        <service
+            android:name=".base.location.FetchAddressIntentService"
+            android:exported="false"/>
         <!--location geofence-->
         <service android:name=".base.location.geofencing.GeofenceTransitionsIntentService"/>
 

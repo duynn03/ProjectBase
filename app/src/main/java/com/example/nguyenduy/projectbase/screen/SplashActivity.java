@@ -26,8 +26,8 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         PermissionUtils.checkPermissionInternet(this, new BasePermission.CallbackPermissionListener() {
             @Override
-            public void onResult(boolean success, List<String> permissionDenieds) {
-                if (!success) {
+            public void onResult(boolean isSuccess, List<String> permissionDenieds) {
+                if (!isSuccess) {
                     finish();
                     return;
                 }

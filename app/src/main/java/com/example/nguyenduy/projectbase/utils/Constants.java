@@ -9,5 +9,6 @@ public class Constants {
     public class IntentCommon {
         public static final int REQUEST_CODE_PERMISSION = 1;
         public static final int START_ACTIVITY_CRASH = 2;
+        public static final int REQUEST_CHECK_SETTINGS_LOCATION = 3;
     }
 }

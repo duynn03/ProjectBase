@@ -61,8 +61,8 @@ public class PermissionFragment extends BaseFragment<IPermissionPresenter> imple
     public void getPermissionLocation() {
         PermissionUtils.checkPermissionLocation(getActivity(), new BasePermission.CallbackPermissionListener() {
             @Override
-            public void onResult(boolean success, List<String> permissionDenieds) {
-                if (success) {
+            public void onResult(boolean isSuccess, List<String> permissionDenieds) {
+                if (isSuccess) {
                     showToast("get Permission Location Success!");
                 } else {
                     showToast("Not get Permission Location...");
@@ -75,8 +75,8 @@ public class PermissionFragment extends BaseFragment<IPermissionPresenter> imple
     public void getPermissionWriteFile() {
         PermissionUtils.checkPermissionWriteExternalStorage(getActivity(), new BasePermission.CallbackPermissionListener() {
             @Override
-            public void onResult(boolean success, List<String> permissionDenieds) {
-                if (success) {
+            public void onResult(boolean isSuccess, List<String> permissionDenieds) {
+                if (isSuccess) {
                     showToast("get Permission write file Success!");
                 } else {
                     showToast("Not get Permission write file...");
@@ -89,8 +89,8 @@ public class PermissionFragment extends BaseFragment<IPermissionPresenter> imple
     public void getPermissionWriteFileAndLocation() {
         PermissionUtils.checkPermissionWriteExternalStorageAndLocation(getActivity(), new BasePermission.CallbackPermissionListener() {
             @Override
-            public void onResult(boolean success, List<String> permissionDenieds) {
-                if (success) {
+            public void onResult(boolean isSuccess, List<String> permissionDenieds) {
+                if (isSuccess) {
                     showToast("get Permission write file and location Success!");
                 } else {
                     String permission = permissionDenieds.get(0);
@@ -107,8 +107,8 @@ public class PermissionFragment extends BaseFragment<IPermissionPresenter> imple
     public void getGallery() {
         PermissionUtils.checkPermissionReadExternalStorage(getActivity(), new BasePermission.CallbackPermissionListener() {
             @Override
-            public void onResult(boolean success, List<String> permissionDenieds) {
-                if (success) {
+            public void onResult(boolean isSuccess, List<String> permissionDenieds) {
+                if (isSuccess) {
                     showToast("get Permission read gallery Success!");
                     getImageFromGallery();
                 } else {
