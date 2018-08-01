@@ -40,17 +40,32 @@
         </menu>
     </item>
 
-    <item android:title="@string/drawer_layout_menu_label_navigation">
+    <item android:title="@string/drawer_layout_menu_label_toolbar">
+        <menu>
+            <item
+                android:id="@+id/menu_toolbar_collapsing"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="@string/drawer_layout_menu_toolbar_collapsing" />
+            <item
+                android:id="@+id/menu_toolbar_collapsing_custom_behavior"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="@string/drawer_layout_menu_toolbar_collapsing_custom_behavior" />
+        </menu>
+    </item>
+
+    <item android:title="@string/drawer_layout_menu_label_appbar">
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/menu_toolbar_collapsing"
+                    android:id="@+id/menu_appbar_bottom"
                     android:icon="@drawable/ic_menu_manage"
-                    android:title="@string/drawer_layout_menu_toolbar_collapsing" />
-                <item
-                    android:id="@+id/menu_toolbar_collapsing_custom_behavior"
-                    android:icon="@drawable/ic_menu_manage"
-                    android:title="@string/drawer_layout_menu_toolbar_collapsing_custom_behavior" />
+                    android:title="@string/drawer_layout_menu_appbar_bottom" />
+            </group>
+        </menu>
+    </item>
+    <item android:title="@string/drawer_layout_menu_label_navigation">
+        <menu>
+            <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/menu_snack_bar"
                     android:icon="@drawable/ic_menu_manage"

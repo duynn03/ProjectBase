@@ -1,4 +1,4 @@
-package com.example.nguyenduy.projectbase.screen.main2.navigation.toolbar;
+package com.example.nguyenduy.projectbase.screen.main2.toolbar;
 
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;

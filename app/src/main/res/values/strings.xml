@@ -65,10 +65,15 @@
     <string name="drawer_layout_menu_label_manage_application">Manage Application</string>
     <string name="drawer_layout_menu_firebase">Firebase</string>
     <string name="drawer_layout_menu_appcenter">AppCenter</string>
-    <!--label navigation-->
-    <string name="drawer_layout_menu_label_navigation">Navigation</string>
+    <!--label toolbar-->
+    <string name="drawer_layout_menu_label_toolbar">Toolbar</string>
     <string name="drawer_layout_menu_toolbar_collapsing">Toolbar Collapsing</string>
     <string name="drawer_layout_menu_toolbar_collapsing_custom_behavior">Toolbar Collapsing Custom behavior</string>
+    <!--label appbar-->
+    <string name="drawer_layout_menu_label_appbar">Appbar</string>
+    <string name="drawer_layout_menu_appbar_bottom">Appbar Bottom</string>
+    <!--label navigation-->
+    <string name="drawer_layout_menu_label_navigation">Navigation</string>
     <string name="drawer_layout_menu_snackbar">Snackbar</string>
     <string name="drawer_layout_menu_dialog">Dialog</string>
     <!--label listener-->

@@ -1,10 +1,13 @@
 package com.example.nguyenduy.projectbase.base.location;
 
+
 import android.app.IntentService;
 import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
+import android.os.Bundle;
+import android.os.ResultReceiver;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 
@@ -46,7 +49,7 @@ public class FetchAddressIntentService extends IntentService {
             return;
         }
 
-        Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+    /*    Geocoder geocoder = new Geocoder(this, Locale.getDefault());
         String errorMessage = "";
         List<Address> addresses = null;
         // Get the location passed to this service through an extra.
@@ -86,7 +89,15 @@ public class FetchAddressIntentService extends IntentService {
             }
             LogUtils.i(TAG + getString(R.string.address_found));
             deliverResultToReceiver(SUCCESS_RESULT, TextUtils.join(System.getProperty("line.separator"), addressFragments));
-        }
+        }*/
+    }
+
+    protected ResultReceiver mReceiver;
+
+    private void deliverResultToReceiver(int resultCode, String message) {
+        Bundle bundle = new Bundle();
+        bundle.putString(RESULT_DATA_KEY, message);
+        mReceiver.send(resultCode, bundle);
     }
 
 

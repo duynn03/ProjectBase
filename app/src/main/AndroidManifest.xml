@@ -44,14 +44,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".screen.main2.navigation.toolbar.CollapsingToolbarActivity">
+        <activity android:name=".screen.main2.toolbar.CollapsingToolbarActivity">
             <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>-->
         </activity>
-        <activity android:name=".screen.main2.navigation.toolbar.CollapsingToolbarCustomBehaviorActivity" />
+        <activity android:name=".screen.main2.toolbar.CollapsingToolbarCustomBehaviorActivity" />
+        <activity android:name=".screen.main2.appbar.appbarBottom.AppbarBottomActivity" />
 
         <!-- Firebase Cloud Message -->
         <service android:name=".base.firebase.FCM.FCMService">
