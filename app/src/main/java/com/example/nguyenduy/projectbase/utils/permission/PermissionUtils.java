@@ -40,6 +40,17 @@ public class PermissionUtils {
                         .setMessageReject(ResourceUtils.getString(R.string.permission_msg_reject_location)));
     }
 
+    public static void checkPermissionNetwork(Activity activity, CallbackPermissionListener listener) {
+        BasePermission.checkPermission(
+                new PermissionBuilder(
+                        activity,
+                        listener,
+                        Manifest.permission.INTERNET,
+                        Manifest.permission.ACCESS_NETWORK_STATE)
+                        .setReason(ResourceUtils.getString(R.string.permission_msg_reason_access_network_state))
+                        .setMessageReject(ResourceUtils.getString(R.string.permission_msg_reject_access_network_state)));
+    }
+
     public static void checkPermissionWriteExternalStorage(Activity activity, CallbackPermissionListener listener) {
         BasePermission.checkPermission(
                 new PermissionBuilder(

@@ -7,6 +7,7 @@ import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.application.MyApplication;
 import com.example.nguyenduy.projectbase.base.BaseFragment;
 import com.example.nguyenduy.projectbase.base.IBasePresenter;
+import com.example.nguyenduy.projectbase.base.location.ConvertLocationUtils;
 import com.example.nguyenduy.projectbase.base.location.LocationSetting;
 import com.example.nguyenduy.projectbase.base.location.LocationUtils;
 import com.example.nguyenduy.projectbase.base.location.ReceiveLocationUpdate;
@@ -18,6 +19,8 @@ import butterknife.OnClick;
 public class LocationFragment extends BaseFragment<ILocationPresenter> implements ILocationView, ReceiveLocationUpdate.IReceiveLocationUpdateListener {
 
     private ReceiveLocationUpdate locationUpdate;
+
+    private ConvertLocationUtils convertLocation;
 
     @Override
     public int getIdLayout() {
@@ -37,6 +40,7 @@ public class LocationFragment extends BaseFragment<ILocationPresenter> implement
     @Override
     public void initComponents() {
         locationUpdate = new ReceiveLocationUpdate(getRootActivity());
+        convertLocation = new ConvertLocationUtils(getRootActivity());
     }
 
     @Override
@@ -55,10 +59,30 @@ public class LocationFragment extends BaseFragment<ILocationPresenter> implement
         LocationUtils.getLastKnownLocation(getRootActivity(), new LocationUtils.IGetLastKnownLocationListener() {
             @Override
             public void onResult(Location location) {
-                if (null != location) {
-                    showToast("getLastKnownLocation(): Latitude: " + location.getLatitude() + "\n" + "Longitude: " + location.getLongitude());
+                if (null == location) {
+                    showToast("not get location from getLastKnownLocation() \nNguyên nhân có thể do: chưa bật location, mới bật location nên chưa get được");
                 } else {
-                    showToast("not get location from getLastKnownLocation()");
+                    showToast("getLastKnownLocation(): Latitude: " + location.getLatitude() + "\n" + "Longitude: " + location.getLongitude());
+                }
+            }
+        });
+    }
+
+    @OnClick(R.id.btn_fetch_address_location)
+    public void onClickGetAddressLocation() {
+        LocationUtils.getLastKnownLocation(getRootActivity(), new LocationUtils.IGetLastKnownLocationListener() {
+            @Override
+            public void onResult(Location location) {
+                if (null == location) {
+                    showToast("not get location from getLastKnownLocation() \nNguyên nhân có thể do: chưa bật location, mới bật location nên chưa get được");
+                } else {
+                    showToast("getLastKnownLocation(): Latitude: " + location.getLatitude() + "\n" + "Longitude: " + location.getLongitude());
+                    convertLocation.convert(location, new ConvertLocationUtils.IConvertLocationListener() {
+                        @Override
+                        public void onResult(String nameAddress) {
+                            showToast(nameAddress);
+                        }
+                    });
                 }
             }
         });

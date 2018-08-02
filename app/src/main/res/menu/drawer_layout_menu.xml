@@ -85,6 +85,10 @@
                     android:id="@+id/menu_hand_shake"
                     android:icon="@drawable/ic_menu_share"
                     android:title="@string/drawer_layout_menu_hand_shake" />
+                <item
+                    android:id="@+id/menu_network"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_network" />
             </group>
         </menu>
     </item>
