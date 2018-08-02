@@ -6,6 +6,7 @@ import android.text.TextUtils;
 
 import com.example.nguyenduy.projectbase.application.MyApplication;
 import com.example.nguyenduy.projectbase.utils.Constants;
+import com.example.nguyenduy.projectbase.utils.method.SystemUtils;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -126,6 +127,21 @@ public class SharedPreferenceUtils {
         return getList(key, null, clazz);
     }
 
+    public void clear(String key) {
+        if (containKey(key)) {
+            mEditor.remove(key);
+            mEditor.commit();
+        }
+    }
+
+    private boolean containKey(String key) {
+        return mPreferences.contains(key);
+    }
+
+    public void clearAll() {
+        mEditor.clear().commit();
+    }
+
     public void setToken(String token) {
         setValue(Constants.SharedPreference.TOKEN, token);
     }
@@ -150,18 +166,33 @@ public class SharedPreferenceUtils {
         clear(Constants.SharedPreference.USER_INFORMATION);
     }
 
-    public void clear(String key) {
-        if (containKey(key)) {
-            mEditor.remove(key);
-            mEditor.commit();
-        }
+    public void init() {
+        setStatusWifi(SystemUtils.isWifiConnected());
+        setStatusMobileData(SystemUtils.isMobileConnected());
+        setStatusNetwork(SystemUtils.isNetworkOnline());
     }
 
-    private boolean containKey(String key) {
-        return mPreferences.contains(key);
+    public void setStatusWifi(boolean isConnect) {
+        setValue(Constants.SharedPreference.WIFI, isConnect);
     }
 
-    public void clearAll() {
-        mEditor.clear().commit();
+    public boolean isConnectedWifi() {
+        return getValue(Constants.SharedPreference.WIFI, false);
+    }
+
+    public void setStatusMobileData(boolean isConnect) {
+        setValue(Constants.SharedPreference.MOBILE_DATA, isConnect);
+    }
+
+    public boolean isConnectedMobileData() {
+        return getValue(Constants.SharedPreference.MOBILE_DATA, false);
+    }
+
+    public void setStatusNetwork(boolean isConnect) {
+        setValue(Constants.SharedPreference.NETWORK, isConnect);
+    }
+
+    public boolean isConnectedNetwork() {
+        return getValue(Constants.SharedPreference.NETWORK, false);
     }
 }

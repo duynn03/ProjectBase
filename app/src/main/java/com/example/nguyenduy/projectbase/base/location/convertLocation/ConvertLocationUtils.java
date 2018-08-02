@@ -1,4 +1,4 @@
-package com.example.nguyenduy.projectbase.base.location;
+package com.example.nguyenduy.projectbase.base.location.convertLocation;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,7 +11,8 @@ import android.os.ResultReceiver;
 import android.text.TextUtils;
 import android.widget.Toast;
 
-import com.example.nguyenduy.projectbase.base.location.convertLocation.ConvertLocationConstants;
+import com.example.nguyenduy.projectbase.base.location.LocationSetting;
+import com.example.nguyenduy.projectbase.base.location.LocationUtils;
 import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
 
 import java.util.ArrayList;

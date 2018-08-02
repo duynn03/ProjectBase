@@ -4,6 +4,9 @@ public class Constants {
     public class SharedPreference {
         public static final String USER_INFORMATION = "USER_INFORMATION";
         public static final String TOKEN = "TOKEN";
+        public static final String WIFI = "WIFI";
+        public static final String MOBILE_DATA = "MOBILE_DATA";
+        public static final String NETWORK = "NETWORK";
     }
 
     public class IntentCommon {

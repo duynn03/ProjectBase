@@ -9,9 +9,21 @@ public class NetworkUtils {
     private NetworkReceiver receiver;
     private Context mContext;
 
-    public NetworkUtils(Context context, NetworkReceiver.INetworkChangeListener listener) {
+    public NetworkUtils(Context context) {
         mContext = context;
-        receiver = new NetworkReceiver(listener);
+        receiver = new NetworkReceiver();
+    }
+
+    public void setListenerNetworkChange(NetworkReceiver.INetworkChangeListener listener) {
+        receiver.setListenerNetworkChange(listener);
+    }
+
+    public void setListenerWifiChange(NetworkReceiver.IChangeWifiListener listener) {
+        receiver.setListenerWifiChange(listener);
+    }
+
+    public void setListenerMobileDataChange(NetworkReceiver.IChangeMobileDataListener listener) {
+        receiver.setListenerMobileDataChange(listener);
     }
 
     // Registers BroadcastReceiver to track network connection changes.
@@ -20,8 +32,10 @@ public class NetworkUtils {
     }
 
     public void unregisterChangeNetwork() {
-        if (null != receiver)
+        if (null != receiver) {
+            receiver.onDestroy();
             mContext.unregisterReceiver(receiver);
+        }
     }
 
 }

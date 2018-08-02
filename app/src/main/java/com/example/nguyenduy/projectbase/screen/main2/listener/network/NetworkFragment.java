@@ -6,7 +6,7 @@ import com.example.nguyenduy.projectbase.base.IBasePresenter;
 import com.example.nguyenduy.projectbase.base.listener.network.NetworkReceiver;
 import com.example.nguyenduy.projectbase.base.listener.network.NetworkUtils;
 
-public class NetworkFragment extends BaseFragment<INetworkPresenter> implements INetworkView, NetworkReceiver.INetworkChangeListener {
+public class NetworkFragment extends BaseFragment<INetworkPresenter> implements INetworkView, NetworkReceiver.INetworkChangeListener, NetworkReceiver.IChangeMobileDataListener, NetworkReceiver.IChangeWifiListener {
 
     private NetworkUtils networkUtils;
 
@@ -27,27 +27,40 @@ public class NetworkFragment extends BaseFragment<INetworkPresenter> implements 
 
     @Override
     public void initComponents() {
-        networkUtils = new NetworkUtils(getRootActivity(), this);
+        networkUtils = new NetworkUtils(getRootActivity());
     }
 
     @Override
     public void setEvents() {
-        networkUtils.registerChangeNetwork();
+        networkUtils.setListenerMobileDataChange(this);
+        networkUtils.setListenerWifiChange(this);
+        networkUtils.setListenerNetworkChange(this);
     }
 
     @Override
     public void prepareComplete() {
-
+        networkUtils.registerChangeNetwork();
     }
 
     @Override
-    public void changeNetwork(boolean isWifiConnected, boolean isMobileConnected) {
-        showToast("Wifi: " + isWifiConnected + "\nMobile: " + isMobileConnected);
+    public void changeMobileDataConnected(boolean isMobileConnected) {
+        showToast("Mobile: " + isMobileConnected);
+    }
+
+    @Override
+    public void changeNetworkConnected(boolean isConnected) {
+        showToast("Network: " + isConnected);
+    }
+
+    @Override
+    public void changeWifiConnected(boolean isWifiConnected) {
+        showToast("Wifi: " + isWifiConnected);
     }
 
     @Override
     public void onDestroy() {
-        super.onDestroy();
         networkUtils.unregisterChangeNetwork();
+        super.onDestroy();
     }
+
 }

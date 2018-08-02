@@ -3,48 +3,71 @@ package com.example.nguyenduy.projectbase.base.listener.network;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.net.NetworkInfo;
+import android.content.SharedPreferences;
 
+import com.example.nguyenduy.projectbase.utils.Constants;
+import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
 import com.example.nguyenduy.projectbase.utils.method.SystemUtils;
 
-public class NetworkReceiver extends BroadcastReceiver {
+// https://developer.android.com/training/basics/network-ops/managing
+public class NetworkReceiver extends BroadcastReceiver implements SharedPreferences.OnSharedPreferenceChangeListener {
 
-    private INetworkChangeListener mListener;
+    private INetworkChangeListener mListenerNetworkChange;
+    private IChangeWifiListener mListenerWifiChange;
+    private IChangeMobileDataListener mListenerMobileDataChange;
 
-    public NetworkReceiver(INetworkChangeListener listener) {
-        mListener = listener;
+    public NetworkReceiver() {
+        updateStatusNetwork();
+        SharedPreferenceUtils.getInstance().registerOnSharedPreferenceChangeListener(this);
+    }
+
+    public interface IChangeWifiListener {
+        void changeWifiConnected(boolean isWifiConnected);
+    }
+
+    public interface IChangeMobileDataListener {
+        void changeMobileDataConnected(boolean isMobileConnected);
     }
 
     public interface INetworkChangeListener {
-        void changeNetwork(boolean isWifiConnected, boolean isMobileConnected);
+        void changeNetworkConnected(boolean isConnected);
+    }
+
+    public void setListenerNetworkChange(INetworkChangeListener listener) {
+        mListenerNetworkChange = listener;
+    }
+
+    public void setListenerWifiChange(IChangeWifiListener listener) {
+        mListenerWifiChange = listener;
+    }
+
+    public void setListenerMobileDataChange(IChangeMobileDataListener listener) {
+        mListenerMobileDataChange = listener;
     }
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        NetworkInfo networkInfo = SystemUtils.getConnectivityManager().getActiveNetworkInfo();
-        mListener.changeNetwork(SystemUtils.isWifiConnected(), SystemUtils.isMobileConnected());
-        /*// Checks the user prefs and the network connection. Based on the result, decides whether
-        // to refresh the display or keep the current display.
-        // If the userpref is Wi-Fi only, checks to see if the device has a Wi-Fi connection.
-        if (WIFI.equals(sPref) && networkInfo != null && networkInfo.getType() == ConnectivityManager.TYPE_WIFI) {
-            // If device has its Wi-Fi connection, sets refreshDisplay
-            // to true. This causes the display to be refreshed when the user
-            // returns to the app.
-            refreshDisplay = true;
-            Toast.makeText(context, R.string.wifi_connected, Toast.LENGTH_SHORT).show();
-
-            // If the setting is ANY network and there is a network connection
-            // (which by process of elimination would be mobile), sets refreshDisplay to true.
-        } else if (ANY.equals(sPref) && networkInfo != null) {
-            refreshDisplay = true;
-
-            // Otherwise, the app can't download content--either because there is no network
-            // connection (mobile or Wi-Fi), or because the pref setting is WIFI, and there
-            // is no Wi-Fi connection.
-            // Sets refreshDisplay to false.
-        } else {
-            refreshDisplay = false;
-            Toast.makeText(context, R.string.lost_connection, Toast.LENGTH_SHORT).show();
-        }*/
+        updateStatusNetwork();
     }
+
+    private void updateStatusNetwork() {
+        SharedPreferenceUtils.getInstance().setStatusWifi(SystemUtils.isWifiConnected());
+        SharedPreferenceUtils.getInstance().setStatusMobileData(SystemUtils.isMobileConnected());
+        SharedPreferenceUtils.getInstance().setStatusNetwork(SystemUtils.isNetworkOnline());
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        if (Constants.SharedPreference.NETWORK.equals(key) && null != mListenerNetworkChange)
+            mListenerNetworkChange.changeNetworkConnected(SharedPreferenceUtils.getInstance().isConnectedNetwork());
+        else if (Constants.SharedPreference.WIFI.equals(key) && null != mListenerWifiChange)
+            mListenerWifiChange.changeWifiConnected(SharedPreferenceUtils.getInstance().isConnectedWifi());
+        else if (Constants.SharedPreference.MOBILE_DATA.equals(key) && null != mListenerMobileDataChange)
+            mListenerMobileDataChange.changeMobileDataConnected(SharedPreferenceUtils.getInstance().isConnectedMobileData());
+    }
+
+    public void onDestroy() {
+        SharedPreferenceUtils.getInstance().unregisterOnSharedPreferenceChangeListener(this);
+    }
+
 }

@@ -6,8 +6,6 @@ import android.content.Context;
 import android.location.Location;
 import android.os.Looper;
 
-import com.example.nguyenduy.projectbase.utils.permission.BasePermission;
-import com.example.nguyenduy.projectbase.utils.permission.PermissionUtils;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationResult;
@@ -53,20 +51,14 @@ public class ReceiveLocationUpdate {
 
         // open setting location
         LocationUtils.isOpenSettingLocation(mActivity, new LocationSetting.ILocationSettingListener() {
+            @SuppressLint("MissingPermission")
             @Override
             public void onResult(boolean isSuccess) {
-                if (isSuccess)
-                    // check permission
-                    PermissionUtils.checkPermissionLocation(mActivity, new BasePermission.CallbackPermissionListener() {
-                        @SuppressLint("MissingPermission")
-                        @Override
-                        public void onResult(boolean isSuccess, List<String> permissionDenieds) {
-                            if (isSuccess) {
-                                isRegistering = true;
-                                mFusedLocationClient.requestLocationUpdates(LocationUtils.createLocationRequest(), mLocationCallback, Looper.myLooper());
-                            }
-                        }
-                    });
+                if (isSuccess) {
+                    isRegistering = true;
+                    mFusedLocationClient.requestLocationUpdates(LocationUtils.createLocationRequest(), mLocationCallback, Looper.myLooper());
+                }
+
             }
         });
     }

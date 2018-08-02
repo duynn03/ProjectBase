@@ -71,7 +71,7 @@
 
         <!--location convert longitude, latitude -> address name -->
         <service
-            android:name=".base.location.FetchAddressIntentService"
+            android:name=".base.location.convertLocation.FetchAddressIntentService"
             android:exported="false" />
         <!--location geofence-->
         <service android:name=".base.location.geofencing.GeofenceTransitionsIntentService" />

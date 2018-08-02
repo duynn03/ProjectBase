@@ -23,7 +23,7 @@ public class ConvertLocationConstants {
     public static final String DATA_NAME_ADDRESS = "DATA_NAME_ADDRESS";
 
     public class MessageErrorLog {
-        public static final String NO_GEOCODER_AVAILABLE = "No geocoder available";
+        public static final String NO_GEOCODER_AVAILABLE = "No geocoder available.................................";
         public static final String FETCH_ADDRESS = "Fetch address";
         public static final String ADDRESS_FOUND = "Address found";
         public static final String NO_ADDRESS_FOUND = "Sorry, no address found";

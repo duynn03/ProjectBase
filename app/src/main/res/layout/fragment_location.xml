@@ -21,11 +21,20 @@
         android:text="Get Last known Location" />
 
     <Button
-        android:id="@+id/btn_fetch_address_location"
+        android:id="@+id/btn_get_current_location"
         style="@style/Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_last_known_location"
+        android:layout_centerHorizontal="true"
+        android:text="Get Current Location" />
+
+    <Button
+        android:id="@+id/btn_fetch_address_location"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_get_current_location"
         android:layout_centerHorizontal="true"
         android:text="Fetch address" />
 

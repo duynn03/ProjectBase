@@ -1,4 +1,4 @@
-package com.example.nguyenduy.projectbase.base.location;
+package com.example.nguyenduy.projectbase.base.location.convertLocation;
 
 import android.app.IntentService;
 import android.content.Intent;
@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.os.ResultReceiver;
 import android.support.annotation.Nullable;
 
-import com.example.nguyenduy.projectbase.base.location.convertLocation.ConvertLocationConstants;
 import com.example.nguyenduy.projectbase.utils.LogUtils;
 import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
 
@@ -29,7 +28,6 @@ import static com.example.nguyenduy.projectbase.base.location.convertLocation.Co
 import static com.example.nguyenduy.projectbase.base.location.convertLocation.ConvertLocationConstants.Result.SUCCESS;
 import static com.example.nguyenduy.projectbase.base.location.convertLocation.ConvertLocationConstants.TYPE_CONVERT;
 import static com.example.nguyenduy.projectbase.base.location.convertLocation.ConvertLocationConstants.TypeConvert.LOCATION_ADDRESS;
-import static com.example.nguyenduy.projectbase.base.location.convertLocation.ConvertLocationConstants.TypeConvert.NAME_ADDRESS;
 
 public class FetchAddressIntentService extends IntentService {
 
