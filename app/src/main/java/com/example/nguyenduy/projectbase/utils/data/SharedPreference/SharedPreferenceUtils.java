@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.text.TextUtils;
 
 import com.example.nguyenduy.projectbase.application.MyApplication;
+import com.example.nguyenduy.projectbase.base.listener.network.DataSaverUtils;
 import com.example.nguyenduy.projectbase.utils.Constants;
 import com.example.nguyenduy.projectbase.utils.method.SystemUtils;
 import com.google.gson.Gson;
@@ -167,9 +168,12 @@ public class SharedPreferenceUtils {
     }
 
     public void init() {
+        // network
         setStatusWifi(SystemUtils.isWifiConnected());
         setStatusMobileData(SystemUtils.isMobileConnected());
         setStatusNetwork(SystemUtils.isNetworkOnline());
+        // data saver
+        setStatusDataSaver(DataSaverUtils.getStatusDataSaver());
     }
 
     public void setStatusWifi(boolean isConnect) {
@@ -194,5 +198,13 @@ public class SharedPreferenceUtils {
 
     public boolean isConnectedNetwork() {
         return getValue(Constants.SharedPreference.NETWORK, false);
+    }
+
+    public void setStatusDataSaver(int status) {
+        setValue(Constants.SharedPreference.DATA_SAVER, status);
+    }
+
+    public int getStatusDataSaver() {
+        return getValue(Constants.SharedPreference.DATA_SAVER, DataSaverUtils.NOT_ACTIVE_NETWORK_METERED);
     }
 }

@@ -14,20 +14,16 @@ public class NetworkUtils {
         receiver = new NetworkReceiver();
     }
 
-    public void setListenerNetworkChange(NetworkReceiver.INetworkChangeListener listener) {
-        receiver.setListenerNetworkChange(listener);
-    }
-
-    public void setListenerWifiChange(NetworkReceiver.IChangeWifiListener listener) {
-        receiver.setListenerWifiChange(listener);
-    }
-
-    public void setListenerMobileDataChange(NetworkReceiver.IChangeMobileDataListener listener) {
-        receiver.setListenerMobileDataChange(listener);
-    }
-
     // Registers BroadcastReceiver to track network connection changes.
-    public void registerChangeNetwork() {
+    public void registerChangeNetwork(
+            NetworkReceiver.INetworkChangeListener networkListener,
+            NetworkReceiver.IChangeWifiListener wifiListener,
+            NetworkReceiver.IChangeMobileDataListener mobileDataListener) {
+
+        receiver.setListenerNetworkChange(networkListener);
+        receiver.setListenerWifiChange(wifiListener);
+        receiver.setListenerMobileDataChange(mobileDataListener);
+
         mContext.registerReceiver(receiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
     }
 

@@ -1,15 +1,28 @@
 package com.example.nguyenduy.projectbase.utils.method;
 
+import android.os.Build;
+
 import com.example.nguyenduy.projectbase.BuildConfig;
 
 public class SDKUtils {
 
-    public static int getVersionSDK() {
-        return android.os.Build.VERSION.SDK_INT;
+    public static int getVersionSdkCurrent() {
+        return Build.VERSION.SDK_INT;
     }
 
-    public static boolean isVersionSDKGreaterVersionM() {
-        return getVersionSDK() > android.os.Build.VERSION_CODES.M;
+    // >= 6.0
+    public static boolean isVersionSdkCurrentGreaterOrEqualVersionM() {
+        return getVersionSdkCurrent() >= Build.VERSION_CODES.M;
+    }
+
+    // >= 7.0
+    public static boolean isVersionSdkCurrentGreaterOrEqualVersionN() {
+        return getVersionSdkCurrent() >= Build.VERSION_CODES.N;
+    }
+
+    // >= api 16
+    public static boolean isVersionSdkCurrentGreaterOrEqualVersionJellyBean() {
+        return getVersionSdkCurrent() >= Build.VERSION_CODES.JELLY_BEAN;
     }
 
     public static int getVersionCode() {

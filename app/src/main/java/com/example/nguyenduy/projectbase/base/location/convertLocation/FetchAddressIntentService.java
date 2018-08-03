@@ -23,6 +23,7 @@ import static com.example.nguyenduy.projectbase.base.location.convertLocation.Co
 import static com.example.nguyenduy.projectbase.base.location.convertLocation.ConvertLocationConstants.RESULT_DATA;
 import static com.example.nguyenduy.projectbase.base.location.convertLocation.ConvertLocationConstants.RESULT_RECEIVER;
 import static com.example.nguyenduy.projectbase.base.location.convertLocation.ConvertLocationConstants.Result.INVALID_LAT_LONG_USED;
+import static com.example.nguyenduy.projectbase.base.location.convertLocation.ConvertLocationConstants.Result.INVALID_NAME_ADDRESS_USED;
 import static com.example.nguyenduy.projectbase.base.location.convertLocation.ConvertLocationConstants.Result.NOT_FOUND;
 import static com.example.nguyenduy.projectbase.base.location.convertLocation.ConvertLocationConstants.Result.SERVICE_NOT_AVAILABLE;
 import static com.example.nguyenduy.projectbase.base.location.convertLocation.ConvertLocationConstants.Result.SUCCESS;
@@ -71,10 +72,17 @@ public class FetchAddressIntentService extends IntentService {
             deliverResultToReceiver(SERVICE_NOT_AVAILABLE, addresses);
         } catch (IllegalArgumentException illegalArgumentException) {
             // invalid latitude or longitude values.
-            LogUtils.e(TAG + ConvertLocationConstants.MessageErrorLog.INVALID_LAT_LONG_USED + ": " +
-                    "Latitude = " + location.getLatitude() + ", Longitude = " + location.getLongitude() + ", Exception: " +
-                    illegalArgumentException.getMessage());
-            deliverResultToReceiver(INVALID_LAT_LONG_USED, addresses);
+            if (LOCATION_ADDRESS == typeConvert) {
+                LogUtils.e(TAG + ConvertLocationConstants.MessageErrorLog.INVALID_LAT_LONG_USED + ": " +
+                        "Latitude = " + location.getLatitude() + ", Longitude = " + location.getLongitude() + ", Exception: " +
+                        illegalArgumentException.getMessage());
+                deliverResultToReceiver(INVALID_LAT_LONG_USED, addresses);
+            } else {
+                LogUtils.e(TAG + ConvertLocationConstants.MessageErrorLog.INVALID_NAME_ADDRESS_USED + ": " +
+                        "nameAddress = " + nameAddress + ", Exception: " +
+                        illegalArgumentException.getMessage());
+                deliverResultToReceiver(INVALID_NAME_ADDRESS_USED, addresses);
+            }
         }
     }
 

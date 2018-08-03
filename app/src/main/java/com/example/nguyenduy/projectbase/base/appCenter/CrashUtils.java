@@ -32,8 +32,8 @@ public class CrashUtils implements CrashesListener {
 
     private final String NAME_FILE_LOG_CRASH = "CrashInfor";
     private final String CONTENT_TYPE_IMAGE = "image/jpeg";
-    private final String CONTENT_TYPE_FILE_TO_BINARY_GREATER_VERSION_M = "binary/octet-stream";
-    private final String CONTENT_TYPE_FILE_TO_BINARY_LESS_VERSION_M = "application/octet-stream";
+    private final String CONTENT_TYPE_FILE_TO_BINARY_GREATER_OR_EQUAL_VERSION_M = "binary/octet-stream";
+    private final String CONTENT_TYPE_FILE_TO_BINARY_LESS_OR_EQUAL_VERSION_M = "application/octet-stream";
 
     private ICrashListener mListener;
     private Activity mActivity;
@@ -142,7 +142,7 @@ public class CrashUtils implements CrashesListener {
     }
 
     private String getContentTypeBinary() {
-        return SDKUtils.isVersionSDKGreaterVersionM() ? CONTENT_TYPE_FILE_TO_BINARY_GREATER_VERSION_M : CONTENT_TYPE_FILE_TO_BINARY_LESS_VERSION_M;
+        return SDKUtils.isVersionSdkCurrentGreaterOrEqualVersionM() ? CONTENT_TYPE_FILE_TO_BINARY_GREATER_OR_EQUAL_VERSION_M : CONTENT_TYPE_FILE_TO_BINARY_LESS_OR_EQUAL_VERSION_M;
     }
 
     private byte[] convertFileToByte(File file) {

@@ -12,4 +12,48 @@
         android:layout_marginTop="20dp"
         android:text="Fragment Network" />
 
+    <Button
+        android:id="@+id/btn_get_data_saver"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Get Status DataSaver" />
+
+    <Button
+        android:id="@+id/btn_open_setting_data_saver"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_get_data_saver"
+        android:layout_centerHorizontal="true"
+        android:text="Open Setting DataSaver (API >= 24)" />
+
+    <Button
+        android:id="@+id/btn_register_data_saver"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_open_setting_data_saver"
+        android:layout_centerHorizontal="true"
+        android:text="Register Change DataSaver" />
+
+    <Button
+        android:id="@+id/btn_unregister_data_saver"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_register_data_saver"
+        android:layout_centerHorizontal="true"
+        android:text="Unregister Change DataSaver" />
+
+    <Button
+        android:id="@+id/btn_down_task"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_unregister_data_saver"
+        android:layout_centerHorizontal="true"
+        android:text="Download Task nặng...." />
+
 </RelativeLayout>

@@ -1,6 +1,7 @@
 package com.example.nguyenduy.projectbase.screen.main2.location.location;
 
 import android.location.Location;
+import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.example.nguyenduy.projectbase.R;
@@ -19,7 +20,6 @@ import butterknife.OnClick;
 public class LocationFragment extends BaseFragment<ILocationPresenter> implements ILocationView, ReceiveLocationUpdate.IReceiveLocationUpdateListener {
 
     private ReceiveLocationUpdate locationUpdate;
-
     private ConvertLocationUtils convertLocation;
 
     @Override
@@ -60,7 +60,7 @@ public class LocationFragment extends BaseFragment<ILocationPresenter> implement
             @Override
             public void onResult(Location location) {
                 if (null == location) {
-                    showToast("not get location from getLastKnownLocation() \nNguyên nhân có thể do: chưa bật location, mới bật location nên chưa get được, do chưa có application nào request location");
+                    showToast("not get location from getLastKnownLocation() \nNguyên nhân có thể do: mới bật location nên chưa get được, do chưa có application nào request location");
                 } else {
                     showToast("getLastKnownLocation(): Latitude: " + location.getLatitude() + "\n" + "Longitude: " + location.getLongitude());
                 }
@@ -82,8 +82,10 @@ public class LocationFragment extends BaseFragment<ILocationPresenter> implement
         });
     }
 
+    String mNameAddress;
+
     @OnClick(R.id.btn_fetch_address_location)
-    public void onClickGetAddressLocation() {
+    public void onClickGetNameAddressLocation() {
         LocationUtils.getLastKnownLocation(getRootActivity(), new LocationUtils.IGetLocationListener() {
             @Override
             public void onResult(Location location) {
@@ -94,9 +96,30 @@ public class LocationFragment extends BaseFragment<ILocationPresenter> implement
                     convertLocation.convert(location, new ConvertLocationUtils.IConvertLocationListener() {
                         @Override
                         public void onResult(String nameAddress) {
-                            showToast(nameAddress);
+                            // convert success
+                            if (!TextUtils.isEmpty(nameAddress)) {
+                                mNameAddress = nameAddress;
+                                showToast(nameAddress);
+                            } else {
+                                showToast("onClickGetNameAddressLocation(): convert not success");
+                            }
                         }
                     });
+                }
+            }
+        });
+    }
+
+    // test, 11 Phố Duy Tân, Dịch Vọng Hậu, Từ Liêm, Hà Nội, Vietnam - https://www.google.com/maps/place/21.030752+105.784434
+    @OnClick(R.id.btn_fetch_location)
+    public void onClickGetFetchLocation() {
+        convertLocation.convert(mNameAddress, new ConvertLocationUtils.IConvertNameAddressListener() {
+            @Override
+            public void onResult(Location location) {
+                if (null != location) {
+                    showToast("onClickGetFetchLocation(): Latitude: " + location.getLatitude() + "\n" + "Longitude: " + location.getLongitude());
+                } else {
+                    showToast("onClickGetFetchLocation(): convert not success");
                 }
             }
         });

@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.nguyenduy.projectbase.base.location.LocationSetting;
 import com.example.nguyenduy.projectbase.base.location.LocationUtils;
 import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
+import com.example.nguyenduy.projectbase.utils.method.SystemUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,10 +57,12 @@ public class ConvertLocationUtils {
         LocationUtils.isOpenSettingLocation(mActivity, new LocationSetting.ILocationSettingListener() {
             @Override
             public void onResult(boolean isSuccess) {
-                if (isSuccess) {
-                    startServiceLocation(location);
-                    mListenerLocation = listener;
+                // not open setting location
+                if (!isSuccess) {
+                    return;
                 }
+                startServiceLocation(location);
+                mListenerLocation = listener;
             }
         });
     }
@@ -87,9 +90,13 @@ public class ConvertLocationUtils {
                 return;
             }
 
-            // Display the address string or an error message sent from the intent service.
             List<Address> addresses = resultData.getParcelableArrayList(RESULT_DATA);
-            mListenerLocation.onResult(MethodUtils.isEmpty(addresses) || resultCode != SUCCESS ? null : convertAddressToString(addresses.get(0)));
+            if (resultCode != SUCCESS && !SystemUtils.isNetworkOnline()) {
+                // turn on network
+                Toast.makeText(mActivity, "you must turn on network and try again", Toast.LENGTH_SHORT).show();
+            } else {
+                mListenerLocation.onResult(MethodUtils.isEmpty(addresses) ? null : convertAddressToString(addresses.get(0)));
+            }
         }
     }
 
@@ -106,13 +113,22 @@ public class ConvertLocationUtils {
         void onResult(Location location);
     }
 
-    public void convert(String nameAddress, IConvertNameAddressListener listener) {
-        mListenerNameAddress = listener;
+    public void convert(final String nameAddress, final IConvertNameAddressListener listener) {
         if (!Geocoder.isPresent()) {
             Toast.makeText(mActivity, ConvertLocationConstants.MessageErrorLog.NO_GEOCODER_AVAILABLE, Toast.LENGTH_SHORT).show();
             return;
         }
-        startServiceNameAddress(nameAddress);
+        LocationUtils.isOpenSettingLocation(mActivity, new LocationSetting.ILocationSettingListener() {
+            @Override
+            public void onResult(boolean isSuccess) {
+                // not open setting location
+                if (!isSuccess) {
+                    return;
+                }
+                startServiceNameAddress(nameAddress);
+                mListenerNameAddress = listener;
+            }
+        });
     }
 
     private void startServiceNameAddress(String nameAddress) {
@@ -137,10 +153,13 @@ public class ConvertLocationUtils {
             if (resultData == null) {
                 return;
             }
-
-            // Display the address string or an error message sent from the intent service.
             List<Address> addresses = resultData.getParcelableArrayList(RESULT_DATA);
-            mListenerNameAddress.onResult(MethodUtils.isEmpty(addresses) || resultCode != SUCCESS ? null : convertAddressToLocation(addresses.get(0)));
+            if (resultCode != SUCCESS && !SystemUtils.isNetworkOnline()) {
+                // turn on network
+                Toast.makeText(mActivity, "you must turn on network and try again", Toast.LENGTH_SHORT).show();
+            } else {
+                mListenerNameAddress.onResult(MethodUtils.isEmpty(addresses) ? null : convertAddressToLocation(addresses.get(0)));
+            }
         }
     }
 

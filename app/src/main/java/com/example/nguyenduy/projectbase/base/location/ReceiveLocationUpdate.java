@@ -32,7 +32,7 @@ public class ReceiveLocationUpdate {
         return new LocationCallback() {
             @Override
             public void onLocationResult(LocationResult locationResult) {
-                if (locationResult == null) {
+                if (null == locationResult || null == mListener) {
                     return;
                 }
                 // update result

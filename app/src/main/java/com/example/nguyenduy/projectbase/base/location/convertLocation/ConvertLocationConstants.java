@@ -7,6 +7,7 @@ public class ConvertLocationConstants {
         public static final int SUCCESS = 1;
         public static final int SERVICE_NOT_AVAILABLE = 2;
         public static final int INVALID_LAT_LONG_USED = 3;
+        public static final int INVALID_NAME_ADDRESS_USED = 4;
     }
 
     public static final String TYPE_CONVERT = "TYPE_CONVERT";
@@ -30,6 +31,7 @@ public class ConvertLocationConstants {
         public static final String NO_LOCATION_DATA_PROVIDED = "No location data provided";
         public static final String SERVICE_NOT_AVAILABLE = "Sorry, the service is not available";
         public static final String INVALID_LAT_LONG_USED = "Invalid latitude or longitude used";
+        public static final String INVALID_NAME_ADDRESS_USED = "Invalid name address used";
     }
 
 }

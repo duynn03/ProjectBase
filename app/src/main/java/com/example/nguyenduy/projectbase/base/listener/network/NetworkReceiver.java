@@ -16,7 +16,7 @@ public class NetworkReceiver extends BroadcastReceiver implements SharedPreferen
     private IChangeWifiListener mListenerWifiChange;
     private IChangeMobileDataListener mListenerMobileDataChange;
 
-    public NetworkReceiver() {
+    NetworkReceiver() {
         updateStatusNetwork();
         SharedPreferenceUtils.getInstance().registerOnSharedPreferenceChangeListener(this);
     }
