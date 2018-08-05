@@ -74,6 +74,7 @@
     <string name="drawer_layout_menu_appbar_bottom">Appbar Bottom</string>
     <!--label navigation-->
     <string name="drawer_layout_menu_label_navigation">Navigation</string>
+    <string name="drawer_layout_menu_navigation_bottom">Navigation bottom</string>
     <string name="drawer_layout_menu_snackbar">Snackbar</string>
     <string name="drawer_layout_menu_dialog">Dialog</string>
     <!--label listener-->
@@ -87,6 +88,7 @@
     <string name="drawer_layout_menu_label_location">Location</string>
     <string name="drawer_layout_menu_location">Location</string>
     <string name="drawer_layout_menu_geofence">Geofence</string>
+    <string name="drawer_layout_menu_detect_activity_user">Detect Activity of User</string>
     <!--label other-->
     <string name="drawer_layout_menu_label_other">Other</string>
     <string name="drawer_layout_menu_share">Share</string>
@@ -102,6 +104,7 @@
         <item></item>
         <item></item>
         <item></item>
+        <item>Navigation bottom</item>
         <item>Snackbar</item>
         <item>Dialog</item>
         <item>HandShake</item>
@@ -109,6 +112,7 @@
         <item>Realm</item>
         <item>Location</item>
         <item>Geofence</item>
+        <item>Detect Activity of User</item>
         <item></item>
     </string-array>
 
@@ -119,21 +123,16 @@
     <!--base activity-->
     <string name="base_activity_dialog_loading_message_loading">Loading...</string>
 
+
+    <!--base fragment navigation bottom-->
+    <!--title toolbar, nếu không có title thì để là rỗng-->
+    <string-array name="navigation_bottom_title_menu_toolbar">
+        <item>Home</item>
+        <item>Notification</item>
+        <item>HandShake</item>
+    </string-array>
+
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula sem a malesuada rhoncus. Pellentesque ut dolor a dui porttitor porta lacinia non libero. Nunc volutpat arcu quis quam convallis molestie. Etiam ac tristique sem, id commodo justo. Phasellus congue tincidunt lectus, at dignissim ligula maximus eu. Quisque interdum nunc eget tellus bibendum suscipit. Phasellus feugiat ultricies posuere. Nullam porta accumsan velit, ut rutrum massa fermentum eu. Nunc ac bibendum nunc. Mauris eu ultricies ipsum. Ut id dolor dui. Pellentesque dictum dui vel tempus maximus. Vivamus non nisi quis libero scelerisque pretium. Ut eu tristique justo. Sed pellentesque placerat quam, ut ultricies turpis feugiat a. Aliquam a volutpat risus.Praesent at lectus semper, suscipit elit in, facilisis massa. Phasellus sed vestibulum ante, a euismod sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin tincidunt orci augue, a porta odio lacinia eu. Nunc in congue risus. Maecenas commodo nibh ac enim fermentum, eu sagittis massa blandit. Vestibulum elementum massa nec dapibus mollis. Etiam porta, est sit amet aliquet porta, odio elit finibus risus, id rutrum purus mi non ipsum. Nulla viverra nec enim sed venenatis.Maecenas mattis, erat et viverra euismod, neque diam porttitor tellus, in fringilla metus est id augue. Nunc at metus cursus, porttitor nisi vitae, congue diam. Curabitur ligula massa, ullamcorper eget scelerisque vel, pharetra ac sapien. Ut auctor luctus ultricies. Nullam semper tortor ac elementum luctus. In et tempus ex. Praesent sodales, dolor id volutpat elementum, ligula enim euismod odio, maximus sodales magna neque nec neque. Curabitur pretium nisl neque, consequat aliquet dui tincidunt ac. Vivamus augue nunc, aliquet eu ex a, ultrices aliquam lorem. Duis nibh lectus, ultricies vel iaculis sit amet, imperdiet id sapien. Duis scelerisque sodales metus eu rutrum. Suspendisse posuere nisi ac magna consequat, eu vestibulum ipsum venenatis. Suspendisse auctor nisi nec leo venenatis tristique.Praesent tincidunt lorem sit amet mi consequat cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent vitae blandit sapien. Curabitur est sapien, lobortis sit amet facilisis vel, faucibus eu quam. Nam tempus libero at tellus tempor laoreet. Pellentesque quam lorem, tincidunt in molestie eget, dictum vel risus. Nunc gravida convallis mattis.</string>
-
-    <!-- Location geofence Error strings -->
-    <string name="geofence_not_available">Geofence service is not available now</string>
-    <string name="geofence_too_many_geofences">Your app has registered too many geofences</string>
-    <string name="geofence_too_many_pending_intents">You have provided too many PendingIntents to the addGeofences() call</string>
-    <string name="unknown_geofence_error">Unknown error: the Geofence service is not available now</string>
-    <string name="geofence_transition_invalid_type">Geofence transition error: invalid transition type %1$d</string>
-
-    <!-- Transition type strings -->
-    <string name="geofence_transition_entered">Entered</string>
-    <string name="geofence_transition_exited">Exited</string>
-    <string name="unknown_geofence_transition">Unknown Transition</string>
-
-    <string name="geofence_transition_notification_text">Click notification to return to app</string>
 
 </resources>
 

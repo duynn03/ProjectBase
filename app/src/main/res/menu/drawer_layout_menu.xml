@@ -67,6 +67,10 @@
         <menu>
             <group android:checkableBehavior="single">
                 <item
+                    android:id="@+id/menu_navigation_bottom"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="@string/drawer_layout_menu_navigation_bottom" />
+                <item
                     android:id="@+id/menu_snack_bar"
                     android:icon="@drawable/ic_menu_manage"
                     android:title="@string/drawer_layout_menu_snackbar" />
@@ -115,6 +119,10 @@
                     android:id="@+id/menu_geofence"
                     android:icon="@drawable/ic_menu_share"
                     android:title="@string/drawer_layout_menu_geofence" />
+                <item
+                    android:id="@+id/menu_detect_activity_user"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_detect_activity_user" />
             </group>
         </menu>
     </item>

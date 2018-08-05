@@ -92,7 +92,6 @@ public class LocationFragment extends BaseFragment<ILocationPresenter> implement
                 if (null == location) {
                     showToast("not get location from getLastKnownLocation() \nNguyên nhân có thể do: chưa bật location, mới bật location nên chưa get được, do chưa có application nào request location");
                 } else {
-                    showToast("getLastKnownLocation(): Latitude: " + location.getLatitude() + "\n" + "Longitude: " + location.getLongitude());
                     convertLocation.convert(location, new ConvertLocationUtils.IConvertLocationListener() {
                         @Override
                         public void onResult(String nameAddress) {

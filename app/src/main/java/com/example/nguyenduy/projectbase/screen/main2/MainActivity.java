@@ -13,9 +13,11 @@ import com.example.nguyenduy.projectbase.screen.main2.firebase.FirebaseFragment;
 import com.example.nguyenduy.projectbase.screen.main2.home.HomeFragment;
 import com.example.nguyenduy.projectbase.screen.main2.listener.handshake.HandshakeFragment;
 import com.example.nguyenduy.projectbase.screen.main2.listener.network.NetworkFragment;
+import com.example.nguyenduy.projectbase.screen.main2.location.detectActivityUser.DetectActivityUserFragment;
 import com.example.nguyenduy.projectbase.screen.main2.location.geofence.GeofenceFragment;
 import com.example.nguyenduy.projectbase.screen.main2.location.location.LocationFragment;
 import com.example.nguyenduy.projectbase.screen.main2.navigation.dialog.DialogFragment;
+import com.example.nguyenduy.projectbase.screen.main2.navigation.navigationBottom.NavigationBottomFragment;
 import com.example.nguyenduy.projectbase.screen.main2.navigation.snackbar.SnackBarFragment;
 import com.example.nguyenduy.projectbase.screen.main2.notification.NotificationFragment;
 import com.example.nguyenduy.projectbase.screen.main2.permission.PermissionFragment;
@@ -116,6 +118,9 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
             case R.id.menu_appbar_bottom:
                 startActivity(AppbarBottomActivity.class, null);
                 break;
+            case R.id.menu_navigation_bottom:
+                replaceFragment(new NavigationBottomFragment(), false);
+                break;
             case R.id.menu_snack_bar:
                 replaceFragment(new SnackBarFragment(), false);
                 break;
@@ -142,6 +147,9 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
                 break;
             case R.id.menu_geofence:
                 replaceFragment(new GeofenceFragment(), false);
+                break;
+            case R.id.menu_detect_activity_user:
+                replaceFragment(new DetectActivityUserFragment(), false);
                 break;
             case R.id.menu_share:
                 showToast("menu_share");

@@ -16,6 +16,9 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!--get last known location-->
 
+    <!--Detect when users start or end an activity-->
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+
     <uses-feature
         android:name="android.hardware.sensor.accelerometer"
         android:required="true" />
@@ -75,6 +78,8 @@
             android:exported="false" />
         <!--location geofence-->
         <service android:name=".base.location.geofencing.GeofenceTransitionsIntentService" />
+        <!--Detect when users start or end an activity-->
+        <service android:name=".base.location.detectActivityUser.DetectedActivitiesIntentService" />
 
         <!-- Disable Firebase Crashlytics auto initialization generates an Instance ID, -->
         <meta-data

@@ -45,6 +45,7 @@ public class NetworkReceiver extends BroadcastReceiver implements SharedPreferen
         mListenerMobileDataChange = listener;
     }
 
+    /*Nếu bật cả wifi và 3g thì chỉ nhận wifi = true, 3g = false*/
     @Override
     public void onReceive(Context context, Intent intent) {
         updateStatusNetwork();

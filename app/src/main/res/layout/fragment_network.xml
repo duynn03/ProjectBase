@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_open_setting_data_saver"
         android:layout_centerHorizontal="true"
-        android:text="Register Change DataSaver" />
+        android:text="Register Change DataSaver(API >= 24)" />
 
     <Button
         android:id="@+id/btn_unregister_data_saver"
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_register_data_saver"
         android:layout_centerHorizontal="true"
-        android:text="Unregister Change DataSaver" />
+        android:text="Unregister Change DataSaver(API >= 24)" />
 
     <Button
         android:id="@+id/btn_down_task"

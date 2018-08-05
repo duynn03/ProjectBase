@@ -44,6 +44,10 @@ public class LocationSetting {
             }
         }
 
+        // use BLE scans to derive location
+        // https://developers.google.com/android/reference/com/google/android/gms/location/LocationSettingsRequest.Builder#setNeedBle(boolean)
+        locationRequestBuilder.setNeedBle(true);
+
         LocationServices.getSettingsClient(activity).checkLocationSettings(locationRequestBuilder.build())
                 .addOnCompleteListener(new OnCompleteListener<LocationSettingsResponse>() {
                     @Override

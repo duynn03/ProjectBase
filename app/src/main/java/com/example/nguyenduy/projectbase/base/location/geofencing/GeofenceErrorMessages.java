@@ -1,9 +1,5 @@
 package com.example.nguyenduy.projectbase.base.location.geofencing;
 
-import android.content.Context;
-import android.content.res.Resources;
-
-import com.example.nguyenduy.projectbase.R;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.location.GeofenceStatusCodes;
 
@@ -12,36 +8,29 @@ import com.google.android.gms.location.GeofenceStatusCodes;
  */
 class GeofenceErrorMessages {
     /**
-     * Prevents instantiation.
-     */
-    private GeofenceErrorMessages() {
-    }
-
-    /**
      * Returns the error string for a geofencing exception.
      */
-    public static String getErrorString(Context context, Exception e) {
+    public static String getErrorString(Exception e) {
         if (e instanceof ApiException) {
-            return getErrorString(context, ((ApiException) e).getStatusCode());
+            return getErrorString(((ApiException) e).getStatusCode());
         } else {
-            return context.getResources().getString(R.string.unknown_geofence_error);
+            return "Unknown error: the Geofence service is not available now";
         }
     }
 
     /**
      * Returns the error string for a geofencing error code.
      */
-    public static String getErrorString(Context context, int errorCode) {
-        Resources mResources = context.getResources();
+    public static String getErrorString(int errorCode) {
         switch (errorCode) {
             case GeofenceStatusCodes.GEOFENCE_NOT_AVAILABLE:
-                return mResources.getString(R.string.geofence_not_available);
+                return "Geofence service is not available now";
             case GeofenceStatusCodes.GEOFENCE_TOO_MANY_GEOFENCES:
-                return mResources.getString(R.string.geofence_too_many_geofences);
+                return "Your app has registered too many geofences";
             case GeofenceStatusCodes.GEOFENCE_TOO_MANY_PENDING_INTENTS:
-                return mResources.getString(R.string.geofence_too_many_pending_intents);
+                return "You have provided too many PendingIntents to the addGeofences() call";
             default:
-                return mResources.getString(R.string.unknown_geofence_error);
+                return "Unknown error: the Geofence service is not available now";
         }
     }
 }

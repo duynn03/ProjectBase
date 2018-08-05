@@ -6,6 +6,7 @@ import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,6 +38,7 @@ public abstract class BaseFragment<P extends IBasePresenter> extends Fragment im
         mRootViewFragmentCreated = view;
         initRootView();
         hiddenContentLayout();
+        initBaseView();
         initViews();
         initBaseComponents();
         initComponents();
@@ -57,10 +59,12 @@ public abstract class BaseFragment<P extends IBasePresenter> extends Fragment im
         return R.id.root_fragment;
     }
 
-    private void initBaseComponents() {
+    protected void initBaseView() {
         //Inject View
         bindView = ButterKnife.bind(this, mRootViewFragmentCreated);
+    }
 
+    private void initBaseComponents() {
         //Create presenter for this view
         if (null == mPresenter) {
             mPresenter = initPresenter();
@@ -96,6 +100,24 @@ public abstract class BaseFragment<P extends IBasePresenter> extends Fragment im
     public <A extends BaseActivity> A getRootActivity() {
         FragmentActivity activity = getActivity();
         return activity == null ? null : (A) activity;
+    }
+
+    public void addFragment(Fragment fragment, boolean isAddToBackStack) {
+        FragmentTransaction transaction = getChildFragmentManager().beginTransaction()
+                .add(R.id.fl_content_fragment, fragment, fragment.getClass().getName());
+        if (isAddToBackStack) {
+            transaction.addToBackStack(fragment.getClass().getSimpleName());
+        }
+        transaction.commit();
+    }
+
+    public void replaceFragment(Fragment fragment, boolean isAddToBackStack) {
+        FragmentTransaction transaction = getChildFragmentManager().beginTransaction()
+                .replace(R.id.fl_content_fragment, fragment, fragment.getClass().getName());
+        if (isAddToBackStack) {
+            transaction.addToBackStack(fragment.getClass().getSimpleName());
+        }
+        transaction.commit();
     }
 
     public void showProgress() {

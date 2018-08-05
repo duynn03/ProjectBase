@@ -40,6 +40,17 @@ public class PermissionUtils {
                         .setMessageReject(ResourceUtils.getString(R.string.permission_msg_reject_location)));
     }
 
+    public static void checkPermissionDetectActivityOfUser(Activity activity, CallbackPermissionListener listener) {
+        BasePermission.checkPermission(
+                new PermissionBuilder(
+                        activity,
+                        listener,
+                        Manifest.permission.ACCESS_FINE_LOCATION,
+                        Manifest.permission.ACCESS_COARSE_LOCATION)
+                        .setReason(ResourceUtils.getString(R.string.permission_msg_reason_location))
+                        .setMessageReject(ResourceUtils.getString(R.string.permission_msg_reject_location)));
+    }
+
     public static void checkPermissionNetwork(Activity activity, CallbackPermissionListener listener) {
         BasePermission.checkPermission(
                 new PermissionBuilder(

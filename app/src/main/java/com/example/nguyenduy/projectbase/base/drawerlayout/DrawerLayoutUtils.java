@@ -152,7 +152,7 @@ public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelecte
 
     /* chỉ support title 2 level*/
     private void setTitleToolbar(int idMenu) {
-        int indexMenu = findIndexMenuDrawerLayout(idMenu);
+        int indexMenu = findIndexMenu(idMenu);
         if (MethodUtils.isEmpty(titleMenuToolbars))
             getTitleMenuToolbar();
 
@@ -172,7 +172,7 @@ public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelecte
         mNavigation.setCheckedItem(idMenu); // highlight menu
     }
 
-    private int findIndexMenuDrawerLayout(int idMenu) {
+    private int findIndexMenu(int idMenu) {
         int index = 0;
         MenuItem item;
         SubMenu subMenu;

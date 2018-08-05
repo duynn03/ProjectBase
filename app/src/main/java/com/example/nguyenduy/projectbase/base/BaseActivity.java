@@ -270,7 +270,6 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
         transaction.commit();
     }
 
-
     public int getCountBackStack() {
         return getSupportFragmentManager().getBackStackEntryCount();
     }
