@@ -10,17 +10,22 @@ public class SDKUtils {
         return Build.VERSION.SDK_INT;
     }
 
-    // >= 6.0
-    public static boolean isVersionSdkCurrentGreaterOrEqualVersionM() {
-        return getVersionSdkCurrent() >= Build.VERSION_CODES.M;
+    // >= 8.0 (api 26)
+    public static boolean isVersionSdkCurrentGreaterOrEqualVersion0() {
+        return getVersionSdkCurrent() >= Build.VERSION_CODES.O;
     }
 
-    // >= 7.0
+    // >= 7.0 (api 24)
     public static boolean isVersionSdkCurrentGreaterOrEqualVersionN() {
         return getVersionSdkCurrent() >= Build.VERSION_CODES.N;
     }
 
-    // >= api 16
+    // >= 6.0 (api 23)
+    public static boolean isVersionSdkCurrentGreaterOrEqualVersionM() {
+        return getVersionSdkCurrent() >= Build.VERSION_CODES.M;
+    }
+
+    // >= 4.1 (api 16)
     public static boolean isVersionSdkCurrentGreaterOrEqualVersionJellyBean() {
         return getVersionSdkCurrent() >= Build.VERSION_CODES.JELLY_BEAN;
     }

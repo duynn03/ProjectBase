@@ -19,6 +19,7 @@ import com.example.nguyenduy.projectbase.screen.main2.location.location.Location
 import com.example.nguyenduy.projectbase.screen.main2.navigation.dialog.DialogFragment;
 import com.example.nguyenduy.projectbase.screen.main2.navigation.navigationBottom.NavigationBottomFragment;
 import com.example.nguyenduy.projectbase.screen.main2.navigation.snackbar.SnackBarFragment;
+import com.example.nguyenduy.projectbase.screen.main2.navigation.notification.NotificationNavigationFragment;
 import com.example.nguyenduy.projectbase.screen.main2.notification.NotificationFragment;
 import com.example.nguyenduy.projectbase.screen.main2.permission.PermissionFragment;
 import com.example.nguyenduy.projectbase.screen.main2.sharedpreference.SharedPreferenceFragment;
@@ -120,6 +121,9 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
                 break;
             case R.id.menu_navigation_bottom:
                 replaceFragment(new NavigationBottomFragment(), false);
+                break;
+            case R.id.menu_navigation_notification:
+                replaceFragment(new NotificationNavigationFragment(), false);
                 break;
             case R.id.menu_snack_bar:
                 replaceFragment(new SnackBarFragment(), false);

@@ -13,20 +13,29 @@
         android:text="Fragment Notification" />
 
     <Button
-        android:id="@+id/btn_show_notification"
+        android:id="@+id/btn_number"
         style="@style/Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Show Notification" />
+        android:text="0" />
 
     <Button
-        android:id="@+id/btn_show"
+        android:id="@+id/btn_increment_number"
         style="@style/Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_show_notification"
+        android:layout_below="@+id/btn_number"
         android:layout_centerHorizontal="true"
-        android:text="Show Notification 2" />
+        android:text="+" />
+
+    <Button
+        android:id="@+id/btn_decrement_number"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_increment_number"
+        android:layout_centerHorizontal="true"
+        android:text="-" />
 
 </RelativeLayout>

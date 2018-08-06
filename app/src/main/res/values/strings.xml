@@ -75,6 +75,7 @@
     <!--label navigation-->
     <string name="drawer_layout_menu_label_navigation">Navigation</string>
     <string name="drawer_layout_menu_navigation_bottom">Navigation bottom</string>
+    <string name="drawer_layout_menu_navigation_notification">Notification</string>
     <string name="drawer_layout_menu_snackbar">Snackbar</string>
     <string name="drawer_layout_menu_dialog">Dialog</string>
     <!--label listener-->
@@ -105,6 +106,7 @@
         <item></item>
         <item></item>
         <item>Navigation bottom</item>
+        <item>Notification</item>
         <item>Snackbar</item>
         <item>Dialog</item>
         <item>HandShake</item>

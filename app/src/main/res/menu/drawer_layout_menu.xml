@@ -71,6 +71,10 @@
                     android:icon="@drawable/ic_menu_manage"
                     android:title="@string/drawer_layout_menu_navigation_bottom" />
                 <item
+                    android:id="@+id/menu_navigation_notification"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="@string/drawer_layout_menu_navigation_notification" />
+                <item
                     android:id="@+id/menu_snack_bar"
                     android:icon="@drawable/ic_menu_manage"
                     android:title="@string/drawer_layout_menu_snackbar" />

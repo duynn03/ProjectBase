@@ -65,6 +65,9 @@
         <activity android:name=".screen.main2.toolbar.CollapsingToolbarCustomBehaviorActivity" />
         <activity android:name=".screen.main2.appbar.appbarBottom.AppbarBottomActivity" />
 
+        <receiver android:name=".base.notification.NotificationBroadcastReceiver">
+        </receiver>
+
         <!-- Firebase Cloud Message -->
         <service android:name=".base.firebase.FCM.FCMService">
             <intent-filter>

@@ -20,7 +20,7 @@ public class DetectActivityUserFragment extends BaseFragment<IDetectActivityUser
 
     @Override
     public int getIdLayout() {
-        return R.layout.fragment_realm;
+        return R.layout.fragment_detect_activity_user;
     }
 
     @Override

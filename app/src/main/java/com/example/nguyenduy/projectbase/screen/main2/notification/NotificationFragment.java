@@ -1,17 +1,15 @@
 package com.example.nguyenduy.projectbase.screen.main2.notification;
 
-import android.widget.Button;
-
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.BaseFragment;
 import com.example.nguyenduy.projectbase.base.IBasePresenter;
-import com.example.nguyenduy.projectbase.base.drawerlayout.BaseActivityWithHeaderUserDrawerLayout;
-import com.example.nguyenduy.projectbase.utils.method.ViewUtils;
+import com.example.nguyenduy.projectbase.base.notification.NotificationUtils;
 
-import butterknife.BindView;
 import butterknife.OnClick;
 
 public class NotificationFragment extends BaseFragment<INotificationPresenter> implements INotificationView {
+
+    private NotificationUtils notificationUtils;
 
     @Override
     public int getIdLayout() {
@@ -30,7 +28,7 @@ public class NotificationFragment extends BaseFragment<INotificationPresenter> i
 
     @Override
     public void initComponents() {
-
+        notificationUtils = new NotificationUtils(getRootActivity());
     }
 
     @Override
@@ -43,22 +41,9 @@ public class NotificationFragment extends BaseFragment<INotificationPresenter> i
 
     }
 
-    @BindView(R.id.btn_number)
-    Button btnNumber;
-
-    @OnClick(R.id.btn_increment_number)
-    public void onClickButtonIncrementNumber() {
-        int number = Integer.parseInt(btnNumber.getText().toString());
-        number++;
-        ViewUtils.setText(btnNumber, number + "");
-        ((BaseActivityWithHeaderUserDrawerLayout) getActivity()).setCountMenuDrawerLayout(R.id.menu_notification, number);
+    @OnClick(R.id.btn_show_notification)
+    public void onClickButtonShowNotification() {
+        notificationUtils.showNotification();
     }
 
-    @OnClick(R.id.btn_decrement_number)
-    public void onClickButtonDecrementNumber() {
-        int number = Integer.parseInt(btnNumber.getText().toString());
-        number--;
-        ViewUtils.setText(btnNumber, number + "");
-        ((BaseActivityWithHeaderUserDrawerLayout) getActivity()).setCountMenuDrawerLayout(R.id.menu_notification, number);
-    }
 }
