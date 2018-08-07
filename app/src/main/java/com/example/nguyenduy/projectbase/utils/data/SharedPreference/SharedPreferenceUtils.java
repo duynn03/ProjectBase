@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.text.TextUtils;
 
 import com.example.nguyenduy.projectbase.application.MyApplication;
-import com.example.nguyenduy.projectbase.base.listener.network.DataSaverUtils;
+import com.example.nguyenduy.projectbase.base.broadcast.system.network.DataSaverUtils;
 import com.example.nguyenduy.projectbase.utils.Constants;
 import com.example.nguyenduy.projectbase.utils.method.SystemUtils;
 import com.google.gson.Gson;

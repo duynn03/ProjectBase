@@ -25,6 +25,11 @@ public class SDKUtils {
         return getVersionSdkCurrent() >= Build.VERSION_CODES.M;
     }
 
+    // >= 4.2 (api 17)
+    public static boolean isVersionSdkCurrentGreaterOrEqualVersionJellyBeanMR1() {
+        return getVersionSdkCurrent() >= Build.VERSION_CODES.JELLY_BEAN_MR1;
+    }
+
     // >= 4.1 (api 16)
     public static boolean isVersionSdkCurrentGreaterOrEqualVersionJellyBean() {
         return getVersionSdkCurrent() >= Build.VERSION_CODES.JELLY_BEAN;

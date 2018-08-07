@@ -19,6 +19,9 @@
     <!--Detect when users start or end an activity-->
     <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
 
+    <!--broadcast system-->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <uses-feature
         android:name="android.hardware.sensor.accelerometer"
         android:required="true" />
@@ -64,9 +67,6 @@
         </activity>
         <activity android:name=".screen.main2.toolbar.CollapsingToolbarCustomBehaviorActivity" />
         <activity android:name=".screen.main2.appbar.appbarBottom.AppbarBottomActivity" />
-
-        <receiver android:name=".base.notification.NotificationBroadcastReceiver">
-        </receiver>
 
         <!-- Firebase Cloud Message -->
         <service android:name=".base.firebase.FCM.FCMService">
@@ -123,6 +123,21 @@
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="@string/default_notification_channel_id" />
+
+
+        <!--broadcast system-->
+        <receiver
+            android:name=".base.broadcast.system.BootReceiver"
+            android:exported="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.INPUT_METHOD_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <!--broadcast custom-->
+        <receiver android:name=".base.notification.NotificationBroadcastReceiver" />
 
     </application>
 

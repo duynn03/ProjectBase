@@ -23,6 +23,10 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/drawer_layout_menu_notification"
             app:actionLayout="@layout/drawer_layout_menu_counter" />
+        <item
+            android:id="@+id/menu_broadcast"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/drawer_layout_menu_broadcast"/>
     </group>
 
     <item android:title="@string/drawer_layout_menu_label_manage_application">

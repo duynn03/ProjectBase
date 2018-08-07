@@ -5,14 +5,14 @@ import android.net.ConnectivityManager;
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.BaseFragment;
 import com.example.nguyenduy.projectbase.base.IBasePresenter;
-import com.example.nguyenduy.projectbase.base.listener.network.DataSaverReceiver;
-import com.example.nguyenduy.projectbase.base.listener.network.DataSaverUtils;
-import com.example.nguyenduy.projectbase.base.listener.network.NetworkReceiver;
-import com.example.nguyenduy.projectbase.base.listener.network.NetworkUtils;
+import com.example.nguyenduy.projectbase.base.broadcast.system.network.DataSaverReceiver;
+import com.example.nguyenduy.projectbase.base.broadcast.system.network.DataSaverUtils;
+import com.example.nguyenduy.projectbase.base.broadcast.system.network.NetworkReceiver;
+import com.example.nguyenduy.projectbase.base.broadcast.system.network.NetworkUtils;
 
 import butterknife.OnClick;
 
-public class NetworkFragment extends BaseFragment<INetworkPresenter> implements INetworkView, NetworkReceiver.INetworkChangeListener, NetworkReceiver.IChangeMobileDataListener, NetworkReceiver.IChangeWifiListener, DataSaverReceiver.IChangeDataSaverListener {
+public class FragmentNetwork extends BaseFragment<INetworkPresenter> implements INetworkView, NetworkReceiver.IChangeNetworkListener, NetworkReceiver.IChangeMobileDataListener, NetworkReceiver.IChangeWifiListener, DataSaverReceiver.IChangeDataSaverListener {
 
     private NetworkUtils networkUtils;
     private DataSaverUtils dataSaver;
@@ -44,7 +44,7 @@ public class NetworkFragment extends BaseFragment<INetworkPresenter> implements 
 
     @Override
     public void prepareComplete() {
-        networkUtils.registerChangeNetwork(this, this, this);
+        networkUtils.register(this, this, this);
     }
 
     @Override
@@ -64,7 +64,7 @@ public class NetworkFragment extends BaseFragment<INetworkPresenter> implements 
 
     @Override
     public void onDestroy() {
-        networkUtils.unregisterChangeNetwork();
+        networkUtils.unregister();
         super.onDestroy();
     }
 
@@ -96,7 +96,7 @@ public class NetworkFragment extends BaseFragment<INetworkPresenter> implements 
 
     @OnClick(R.id.btn_register_data_saver)
     public void onClickRegisterDataSaver() {
-        dataSaver.registerReceiver(this);
+        dataSaver.register(this);
     }
 
     @Override
@@ -121,7 +121,7 @@ public class NetworkFragment extends BaseFragment<INetworkPresenter> implements 
 
     @OnClick(R.id.btn_unregister_data_saver)
     public void onClickUnregisterDataSaver() {
-        dataSaver.unregisterReceiver();
+        dataSaver.unregister();
     }
 
     @OnClick(R.id.btn_down_task)

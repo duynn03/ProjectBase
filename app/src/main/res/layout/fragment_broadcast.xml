@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        style="@style/TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Fragment Broadcast" />
+
+    <Button
+        android:id="@+id/btn_get_status_airplane"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Get status Airplane" />
+
+    <Button
+        android:id="@+id/btn_register_airplane"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_get_status_airplane"
+        android:layout_centerHorizontal="true"
+        android:text="Register listener Airplane" />
+
+    <Button
+        android:id="@+id/btn_unregister_airplane"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_register_airplane"
+        android:layout_centerHorizontal="true"
+        android:text="Unregister listener Airplane" />
+
+    <Button
+        android:id="@+id/btn_register_screen"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_unregister_airplane"
+        android:layout_centerHorizontal="true"
+        android:text="Register listener Screen" />
+
+    <Button
+        android:id="@+id/btn_unregister_screen"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_register_screen"
+        android:layout_centerHorizontal="true"
+        android:text="Unregister listener Screen" />
+
+</RelativeLayout>

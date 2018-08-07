@@ -61,6 +61,7 @@
     <string name="drawer_layout_menu_permission">Permission</string>
     <string name="drawer_layout_menu_sharedpreference">SharedPreference</string>
     <string name="drawer_layout_menu_notification">Notification</string>
+    <string name="drawer_layout_menu_broadcast">Broadcast</string>
     <!--label manage_application-->
     <string name="drawer_layout_menu_label_manage_application">Manage Application</string>
     <string name="drawer_layout_menu_firebase">Firebase</string>
@@ -100,6 +101,7 @@
         <item>Permission</item>
         <item>SharedPreference</item>
         <item>Notification</item>
+        <item>Broadcast</item>
         <item>Firebase</item>
         <item>AppCenter</item>
         <item></item>

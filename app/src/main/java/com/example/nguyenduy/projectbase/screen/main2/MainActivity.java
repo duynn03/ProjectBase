@@ -8,11 +8,12 @@ import com.example.nguyenduy.projectbase.base.drawerlayout.BaseActivityWithHeade
 import com.example.nguyenduy.projectbase.base.drawerlayout.OptionMenuUtils;
 import com.example.nguyenduy.projectbase.screen.main2.appbar.appbarBottom.AppbarBottomActivity;
 import com.example.nguyenduy.projectbase.screen.main2.appcenter.AppCenterFragment;
+import com.example.nguyenduy.projectbase.screen.main2.broadcast.BroadcastFragment;
 import com.example.nguyenduy.projectbase.screen.main2.database.RealmFragment;
 import com.example.nguyenduy.projectbase.screen.main2.firebase.FirebaseFragment;
 import com.example.nguyenduy.projectbase.screen.main2.home.HomeFragment;
 import com.example.nguyenduy.projectbase.screen.main2.listener.handshake.HandshakeFragment;
-import com.example.nguyenduy.projectbase.screen.main2.listener.network.NetworkFragment;
+import com.example.nguyenduy.projectbase.screen.main2.listener.network.FragmentNetwork;
 import com.example.nguyenduy.projectbase.screen.main2.location.detectActivityUser.DetectActivityUserFragment;
 import com.example.nguyenduy.projectbase.screen.main2.location.geofence.GeofenceFragment;
 import com.example.nguyenduy.projectbase.screen.main2.location.location.LocationFragment;
@@ -110,6 +111,9 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
             case R.id.menu_notification:
                 replaceFragment(new NotificationFragment(), false);
                 break;
+            case R.id.menu_broadcast:
+                replaceFragment(new BroadcastFragment(), false);
+                break;
             case R.id.menu_firebase:
                 replaceFragment(new FirebaseFragment(), false);
                 break;
@@ -141,7 +145,7 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
                 replaceFragment(new HandshakeFragment(), false);
                 break;
             case R.id.menu_network:
-                replaceFragment(new NetworkFragment(), false);
+                replaceFragment(new FragmentNetwork(), false);
                 break;
             case R.id.menu_realm:
                 replaceFragment(new RealmFragment(), false);

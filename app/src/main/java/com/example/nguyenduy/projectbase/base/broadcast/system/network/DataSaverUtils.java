@@ -1,4 +1,4 @@
-package com.example.nguyenduy.projectbase.base.listener.network;
+package com.example.nguyenduy.projectbase.base.broadcast.system.network;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -72,19 +72,23 @@ public class DataSaverUtils {
     }
 
     @SuppressLint("InlinedApi")
-    public void registerReceiver(DataSaverReceiver.IChangeDataSaverListener listener) {
+    public void register(DataSaverReceiver.IChangeDataSaverListener listener) {
         if (null != receiver) {
             receiver.setListenerDataSaverChange(listener);
-            mContext.registerReceiver(receiver, new IntentFilter(ConnectivityManager.ACTION_RESTRICT_BACKGROUND_CHANGED));
+            mContext.registerReceiver(receiver, createIntent());
         } else
-            LogUtils.e(TAG + "registerReceiver(): API must >= 24");
+            LogUtils.e(TAG + "register(): API must >= 24");
     }
 
-    public void unregisterReceiver() {
+    private IntentFilter createIntent() {
+        return new IntentFilter(ConnectivityManager.ACTION_RESTRICT_BACKGROUND_CHANGED);
+    }
+
+    public void unregister() {
         if (null != receiver) {
             receiver.onDestroy();
             mContext.unregisterReceiver(receiver);
         } else
-            LogUtils.e(TAG + "unregisterReceiver(): API must >= 24");
+            LogUtils.e(TAG + "unregister(): API must >= 24");
     }
 }

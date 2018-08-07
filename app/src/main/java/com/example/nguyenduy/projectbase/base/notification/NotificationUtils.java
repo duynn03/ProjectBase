@@ -46,7 +46,7 @@ public class NotificationUtils {
                 .setContentIntent(createIntentActivity())
                 // auto remove notification khi user taps vào notification
                 .setAutoCancel(true)
-                .addAction(R.drawable.ic_menu_gallery, "Action Button", createIntentAction())
+               // .addAction(R.drawable.ic_menu_gallery, "Action Button", createIntentAction())
                 .build();
     }
 
@@ -65,12 +65,12 @@ public class NotificationUtils {
 
     String EXTRA_NOTIFICATION_ID = "EXTRA_NOTIFICATION_ID";
 
-    private PendingIntent createIntentAction() {
+   /* private PendingIntent createIntentAction() {
         Intent actionIntent = new Intent(this, NotificationBroadcastReceiver.class);
         actionIntent.setAction("Intent Action Button");
         actionIntent.putExtra(EXTRA_NOTIFICATION_ID, 1);
         return PendingIntent.getBroadcast(mContext, 0, actionIntent, 0);
-    }
+    }*/
 
     @SuppressLint("NewApi")
     public static void init() {

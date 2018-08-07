@@ -1,4 +1,4 @@
-package com.example.nguyenduy.projectbase.base.listener.network;
+package com.example.nguyenduy.projectbase.base.broadcast.system.network;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -12,7 +12,7 @@ import com.example.nguyenduy.projectbase.utils.method.SystemUtils;
 // https://developer.android.com/training/basics/network-ops/managing
 public class NetworkReceiver extends BroadcastReceiver implements SharedPreferences.OnSharedPreferenceChangeListener {
 
-    private INetworkChangeListener mListenerNetworkChange;
+    private IChangeNetworkListener mListenerNetworkChange;
     private IChangeWifiListener mListenerWifiChange;
     private IChangeMobileDataListener mListenerMobileDataChange;
 
@@ -29,11 +29,11 @@ public class NetworkReceiver extends BroadcastReceiver implements SharedPreferen
         void changeMobileDataConnected(boolean isMobileConnected);
     }
 
-    public interface INetworkChangeListener {
+    public interface IChangeNetworkListener {
         void changeNetworkConnected(boolean isConnected);
     }
 
-    public void setListenerNetworkChange(INetworkChangeListener listener) {
+    public void setListenerNetworkChange(IChangeNetworkListener listener) {
         mListenerNetworkChange = listener;
     }
 

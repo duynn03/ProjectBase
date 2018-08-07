@@ -1,4 +1,4 @@
-package com.example.nguyenduy.projectbase.base.listener.network;
+package com.example.nguyenduy.projectbase.base.broadcast.system.network;
 
 import android.content.Context;
 import android.content.IntentFilter;
@@ -15,8 +15,8 @@ public class NetworkUtils {
     }
 
     // Registers BroadcastReceiver to track network connection changes.
-    public void registerChangeNetwork(
-            NetworkReceiver.INetworkChangeListener networkListener,
+    public void register(
+            NetworkReceiver.IChangeNetworkListener networkListener,
             NetworkReceiver.IChangeWifiListener wifiListener,
             NetworkReceiver.IChangeMobileDataListener mobileDataListener) {
 
@@ -24,10 +24,14 @@ public class NetworkUtils {
         receiver.setListenerWifiChange(wifiListener);
         receiver.setListenerMobileDataChange(mobileDataListener);
 
-        mContext.registerReceiver(receiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+        mContext.registerReceiver(receiver, createIntent());
     }
 
-    public void unregisterChangeNetwork() {
+    private IntentFilter createIntent() {
+        return new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+    }
+
+    public void unregister() {
         if (null != receiver) {
             receiver.onDestroy();
             mContext.unregisterReceiver(receiver);
