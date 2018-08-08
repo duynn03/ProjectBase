@@ -6,12 +6,12 @@ import android.net.ConnectivityManager;
 
 public class NetworkUtils {
 
-    private NetworkReceiver receiver;
+    private NetworkReceiver mReceiver;
     private Context mContext;
 
     public NetworkUtils(Context context) {
         mContext = context;
-        receiver = new NetworkReceiver();
+        mReceiver = new NetworkReceiver();
     }
 
     // Registers BroadcastReceiver to track network connection changes.
@@ -20,21 +20,21 @@ public class NetworkUtils {
             NetworkReceiver.IChangeWifiListener wifiListener,
             NetworkReceiver.IChangeMobileDataListener mobileDataListener) {
 
-        receiver.setListenerNetworkChange(networkListener);
-        receiver.setListenerWifiChange(wifiListener);
-        receiver.setListenerMobileDataChange(mobileDataListener);
+        mReceiver.setListenerNetworkChange(networkListener);
+        mReceiver.setListenerWifiChange(wifiListener);
+        mReceiver.setListenerMobileDataChange(mobileDataListener);
 
-        mContext.registerReceiver(receiver, createIntent());
+        mContext.registerReceiver(mReceiver, createIntentReceiver());
     }
 
-    private IntentFilter createIntent() {
+    private IntentFilter createIntentReceiver() {
         return new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
     }
 
     public void unregister() {
-        if (null != receiver) {
-            receiver.onDestroy();
-            mContext.unregisterReceiver(receiver);
+        if (null != mReceiver) {
+            mReceiver.onDestroy();
+            mContext.unregisterReceiver(mReceiver);
         }
     }
 

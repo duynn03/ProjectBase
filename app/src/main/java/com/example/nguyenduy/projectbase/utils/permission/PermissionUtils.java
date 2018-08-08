@@ -40,15 +40,15 @@ public class PermissionUtils {
                         .setMessageReject(ResourceUtils.getString(R.string.permission_msg_reject_location)));
     }
 
-    public static void checkPermissionDetectActivityOfUser(Activity activity, CallbackPermissionListener listener) {
+    public static void checkPermissionSMS(Activity activity, CallbackPermissionListener listener) {
         BasePermission.checkPermission(
                 new PermissionBuilder(
                         activity,
                         listener,
-                        Manifest.permission.ACCESS_FINE_LOCATION,
-                        Manifest.permission.ACCESS_COARSE_LOCATION)
-                        .setReason(ResourceUtils.getString(R.string.permission_msg_reason_location))
-                        .setMessageReject(ResourceUtils.getString(R.string.permission_msg_reject_location)));
+                        Manifest.permission.SEND_SMS,
+                        Manifest.permission.READ_SMS)
+                        .setReason(ResourceUtils.getString(R.string.permission_msg_reason_sms))
+                        .setMessageReject(ResourceUtils.getString(R.string.permission_msg_reject_sms)));
     }
 
     public static void checkPermissionNetwork(Activity activity, CallbackPermissionListener listener) {

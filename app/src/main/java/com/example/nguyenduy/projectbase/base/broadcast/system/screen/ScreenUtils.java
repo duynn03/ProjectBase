@@ -7,20 +7,20 @@ import android.content.IntentFilter;
 public class ScreenUtils {
 
     private Context mContext;
-    private ScreenReceiver mBroadcast;
+    private ScreenReceiver mReceiver;
 
     public ScreenUtils(Context context) {
         mContext = context;
-        mBroadcast = new ScreenReceiver();
+        mReceiver = new ScreenReceiver();
     }
 
     /*nhận broadcast khi context vẫn còn sống*/
     public void register(ScreenReceiver.IChangeScreenListener listener) {
-        mBroadcast.setListenerScreenChange(listener);
-        mContext.registerReceiver(mBroadcast, createIntent());
+        mReceiver.setListenerScreenChange(listener);
+        mContext.registerReceiver(mReceiver, createIntentReceiver());
     }
 
-    private IntentFilter createIntent() {
+    private IntentFilter createIntentReceiver() {
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_SCREEN_OFF);
         filter.addAction(Intent.ACTION_SCREEN_ON);
@@ -28,7 +28,7 @@ public class ScreenUtils {
     }
 
     public void unregister() {
-        mContext.unregisterReceiver(mBroadcast);
+        mContext.unregisterReceiver(mReceiver);
     }
 
 }

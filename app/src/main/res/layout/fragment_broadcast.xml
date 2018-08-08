@@ -1,59 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/root_fragment"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
-    <TextView
-        style="@style/TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="Fragment Broadcast" />
+    <RelativeLayout
+        android:id="@+id/root_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btn_get_status_airplane"
-        style="@style/Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Get status Airplane" />
+        <TextView
+            android:id="@+id/tv_broadcast"
+            style="@style/TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Fragment Broadcast" />
 
-    <Button
-        android:id="@+id/btn_register_airplane"
-        style="@style/Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_get_status_airplane"
-        android:layout_centerHorizontal="true"
-        android:text="Register listener Airplane" />
+        <TextView
+            android:id="@+id/tv_broadcast_system"
+            style="@style/TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_broadcast"
+            android:layout_centerHorizontal="true"
+            android:text="Broadcast System" />
 
-    <Button
-        android:id="@+id/btn_unregister_airplane"
-        style="@style/Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_register_airplane"
-        android:layout_centerHorizontal="true"
-        android:text="Unregister listener Airplane" />
+        <Button
+            android:id="@+id/btn_get_status_airplane"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_broadcast_system"
+            android:layout_centerHorizontal="true"
+            android:text="Get status Airplane" />
 
-    <Button
-        android:id="@+id/btn_register_screen"
-        style="@style/Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_unregister_airplane"
-        android:layout_centerHorizontal="true"
-        android:text="Register listener Screen" />
+        <Button
+            android:id="@+id/btn_register_airplane"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_get_status_airplane"
+            android:layout_centerHorizontal="true"
+            android:text="Register listener Airplane" />
 
-    <Button
-        android:id="@+id/btn_unregister_screen"
-        style="@style/Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_register_screen"
-        android:layout_centerHorizontal="true"
-        android:text="Unregister listener Screen" />
+        <Button
+            android:id="@+id/btn_unregister_airplane"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_register_airplane"
+            android:layout_centerHorizontal="true"
+            android:text="Unregister listener Airplane" />
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/btn_register_screen"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_unregister_airplane"
+            android:layout_centerHorizontal="true"
+            android:text="Register listener Screen" />
+
+        <Button
+            android:id="@+id/btn_unregister_screen"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_register_screen"
+            android:layout_centerHorizontal="true"
+            android:text="Unregister listener Screen" />
+
+        <TextView
+            android:id="@+id/tv_broadcast_custom"
+            style="@style/TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_unregister_screen"
+            android:layout_centerHorizontal="true"
+            android:text="Broadcast Custom" />
+
+        <Button
+            android:id="@+id/btn_send_broadcast_local"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_broadcast_custom"
+            android:layout_centerHorizontal="true"
+            android:text="Send Broadcast Local" />
+
+        <Button
+            android:id="@+id/btn_register_broadcast_local"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_send_broadcast_local"
+            android:layout_centerHorizontal="true"
+            android:text="Register Broadcast Local" />
+
+        <Button
+            android:id="@+id/btn_unregister_broadcast_local"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_register_broadcast_local"
+            android:layout_centerHorizontal="true"
+            android:text="Unregister Broadcast Local" />
+
+        <Button
+            android:id="@+id/btn_send_broadcast_global"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_unregister_broadcast_local"
+            android:layout_centerHorizontal="true"
+            android:text="Send Broadcast Global" />
+
+        <Button
+            android:id="@+id/btn_register_broadcast_global"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_send_broadcast_global"
+            android:layout_centerHorizontal="true"
+            android:text="Register Broadcast Global" />
+
+        <Button
+            android:id="@+id/btn_unregister_broadcast_global"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_register_broadcast_global"
+            android:layout_centerHorizontal="true"
+            android:text="Unregister Broadcast Global" />
+
+        <Button
+            android:id="@+id/btn_send_broadcast_order"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_unregister_broadcast_global"
+            android:layout_centerHorizontal="true"
+            android:text="Send Broadcast Order" />
+
+        <Button
+            android:id="@+id/btn_register_broadcast_order"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_send_broadcast_order"
+            android:layout_centerHorizontal="true"
+            android:text="Register Broadcast Order" />
+
+        <Button
+            android:id="@+id/btn_unregister_broadcast_order"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_register_broadcast_order"
+            android:layout_centerHorizontal="true"
+            android:text="Unregister Broadcast Order" />
+
+        <Button
+            android:id="@+id/btn_send_broadcast_order_callback"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_unregister_broadcast_order"
+            android:layout_centerHorizontal="true"
+            android:text="Send Broadcast Order Callback" />
+
+        <Button
+            android:id="@+id/btn_register_broadcast_order_callback"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_send_broadcast_order_callback"
+            android:layout_centerHorizontal="true"
+            android:text="Register Broadcast Order Callback" />
+
+        <Button
+            android:id="@+id/btn_unregister_broadcast_order_callback"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_register_broadcast_order_callback"
+            android:layout_centerHorizontal="true"
+            android:text="Unregister Broadcast Order Callback" />
+
+        <Button
+            android:id="@+id/btn_send_broadcast_with_permission"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_unregister_broadcast_order_callback"
+            android:layout_centerHorizontal="true"
+            android:text="Send Broadcast With Permission" />
+
+        <Button
+            android:id="@+id/btn_register_broadcast_with_permission"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_send_broadcast_with_permission"
+            android:layout_centerHorizontal="true"
+            android:text="Register Broadcast With Permission" />
+
+        <Button
+            android:id="@+id/btn_unregister_broadcast_with_permission"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_register_broadcast_with_permission"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="100dp"
+            android:text="Unregister Broadcast With Permission" />
+
+    </RelativeLayout>
+</ScrollView>

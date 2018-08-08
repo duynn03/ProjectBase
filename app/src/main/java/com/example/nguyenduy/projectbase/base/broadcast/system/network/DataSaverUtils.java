@@ -19,12 +19,12 @@ public class DataSaverUtils {
 
     public static final int NOT_ACTIVE_NETWORK_METERED = 4;
     private Context mContext;
-    private DataSaverReceiver receiver;
+    private DataSaverReceiver mReceiver;
 
     public DataSaverUtils(Context context) {
         mContext = context;
         if (SDKUtils.isVersionSdkCurrentGreaterOrEqualVersionN())
-            receiver = new DataSaverReceiver();
+            mReceiver = new DataSaverReceiver();
     }
 
     // check xem user có bật data saver không
@@ -73,21 +73,21 @@ public class DataSaverUtils {
 
     @SuppressLint("InlinedApi")
     public void register(DataSaverReceiver.IChangeDataSaverListener listener) {
-        if (null != receiver) {
-            receiver.setListenerDataSaverChange(listener);
-            mContext.registerReceiver(receiver, createIntent());
+        if (null != mReceiver) {
+            mReceiver.setListenerDataSaverChange(listener);
+            mContext.registerReceiver(mReceiver, createIntentReceiver());
         } else
             LogUtils.e(TAG + "register(): API must >= 24");
     }
 
-    private IntentFilter createIntent() {
+    private IntentFilter createIntentReceiver() {
         return new IntentFilter(ConnectivityManager.ACTION_RESTRICT_BACKGROUND_CHANGED);
     }
 
     public void unregister() {
-        if (null != receiver) {
-            receiver.onDestroy();
-            mContext.unregisterReceiver(receiver);
+        if (null != mReceiver) {
+            mReceiver.onDestroy();
+            mContext.unregisterReceiver(mReceiver);
         } else
             LogUtils.e(TAG + "unregister(): API must >= 24");
     }

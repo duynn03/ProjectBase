@@ -22,6 +22,9 @@
     <!--broadcast system-->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+
     <uses-feature
         android:name="android.hardware.sensor.accelerometer"
         android:required="true" />

@@ -8,27 +8,26 @@ import android.net.ConnectivityManager;
 public class AirplaneUtils {
 
     private Context mContext;
-    private AirplaneReceiver mBroadcast;
+    private AirplaneReceiver mReceiver;
 
     public AirplaneUtils(Context context) {
         mContext = context;
-        mBroadcast = new AirplaneReceiver();
+        mReceiver = new AirplaneReceiver();
     }
 
-    /*nhận broadcast khi context vẫn còn sống*/
     public void register(AirplaneReceiver.IChangeAirplaneListener listener) {
-        mBroadcast.setListenerAirplaneChange(listener);
-        mContext.registerReceiver(mBroadcast, createIntent());
+        mReceiver.setListenerAirplaneChange(listener);
+        mContext.registerReceiver(mReceiver, createIntentReceiver());
     }
 
-    private IntentFilter createIntent() {
+    private IntentFilter createIntentReceiver() {
         IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
         filter.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED);
         return filter;
     }
 
     public void unregister() {
-        mContext.unregisterReceiver(mBroadcast);
+        mContext.unregisterReceiver(mReceiver);
     }
 
 }
