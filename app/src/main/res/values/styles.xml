@@ -51,4 +51,8 @@
         <!--<item name="android:textCursorDrawable">@drawable/color_cursor_edittext</item>-->
     </style>
 
+    <style name="ScrollView">
+        <item name="android:fillViewport">true</item>
+    </style>
+
 </resources>
