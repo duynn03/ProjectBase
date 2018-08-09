@@ -1,5 +1,6 @@
 package com.example.nguyenduy.projectbase.base;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -10,9 +11,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.transition.Explode;
+import android.transition.Fade;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -23,6 +27,7 @@ import com.example.nguyenduy.projectbase.base.firebase.FireBaseUtils;
 import com.example.nguyenduy.projectbase.base.location.LocationSetting;
 import com.example.nguyenduy.projectbase.utils.LogUtils;
 import com.example.nguyenduy.projectbase.utils.method.ResourceUtils;
+import com.example.nguyenduy.projectbase.utils.method.SDKUtils;
 import com.example.nguyenduy.projectbase.utils.method.ViewUtils;
 import com.example.nguyenduy.projectbase.utils.permission.BasePermission;
 
@@ -43,8 +48,20 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
     private ViewGroup mRootView;
     private ProgressDialog loadingDialog;
 
+    @SuppressLint("NewApi")
+    private void initAnimation() {
+        if (SDKUtils.isVersionSdkCurrentGreaterOrEqualVersionLollipop()) {
+            // inside your activity (if you did not enable transitions in your theme)
+            getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
+            // set an exit transition
+            getWindow().setExitTransition(new Explode());
+            getWindow().setEnterTransition(new Explode());
+        }
+    }
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        initAnimation();
         super.onCreate(savedInstanceState);
         mFireBase = new FireBaseUtils(this);
         mIntent = getIntent();

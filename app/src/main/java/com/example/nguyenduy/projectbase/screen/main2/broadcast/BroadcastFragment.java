@@ -22,6 +22,7 @@ import com.example.nguyenduy.projectbase.base.broadcast.system.screen.ScreenRece
 import com.example.nguyenduy.projectbase.base.broadcast.system.screen.ScreenUtils;
 import com.example.nguyenduy.projectbase.utils.LogUtils;
 import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
+import com.example.nguyenduy.projectbase.utils.method.SDKUtils;
 import com.example.nguyenduy.projectbase.utils.method.SystemUtils;
 
 import butterknife.OnClick;
@@ -116,7 +117,8 @@ public class BroadcastFragment extends BaseFragment<IBroadcastPresenter> impleme
         screenUtils.unregister();
     }
 
-    private final String nameBroadcastLocal = "BROADCAST LOCAL";
+    /*Do broadcast là global nên cho thêm name package name broadcast vào để tránh xung đột với application khác. */
+    private final String nameBroadcastLocal = SDKUtils.getApplicationID() + "BROADCAST LOCAL";
 
     @OnClick(R.id.btn_send_broadcast_local)
     public void onClickButtonSendBroadcastLocal() {
@@ -139,7 +141,7 @@ public class BroadcastFragment extends BaseFragment<IBroadcastPresenter> impleme
         localBroadcastUtils.unregister();
     }
 
-    private final String nameBroadcastGlobal = "BROADCAST GLOBAL";
+    private final String nameBroadcastGlobal = SDKUtils.getApplicationID() +"BROADCAST GLOBAL";
 
     @OnClick(R.id.btn_send_broadcast_global)
     public void onClickButtonSendBroadcastGlobal() {
@@ -162,7 +164,7 @@ public class BroadcastFragment extends BaseFragment<IBroadcastPresenter> impleme
         globalBroadcastUtils.unregister();
     }
 
-    private final String nameBroadcastOrderNormal = "BROADCAST ORDER NORMAL";
+    private final String nameBroadcastOrderNormal = SDKUtils.getApplicationID() +"BROADCAST ORDER NORMAL";
 
     @OnClick(R.id.btn_send_broadcast_order)
     public void onClickButtonSendBroadcastOrder() {
@@ -191,7 +193,7 @@ public class BroadcastFragment extends BaseFragment<IBroadcastPresenter> impleme
         orderNormalBroadcastUtils.unregister();
     }
 
-    private final String nameBroadcastOrderCallback = "BROADCAST ORDER CALLBACK";
+    private final String nameBroadcastOrderCallback = SDKUtils.getApplicationID() +"BROADCAST ORDER CALLBACK";
 
     @OnClick(R.id.btn_send_broadcast_order_callback)
     public void onClickButtonSendBroadcastOrderCallback() {
@@ -226,7 +228,7 @@ public class BroadcastFragment extends BaseFragment<IBroadcastPresenter> impleme
         orderCallbackBroadcastUtils.unregister();
     }
 
-    private final String nameBroadcastPermission = "BROADCAST PERMISSION";
+    private final String nameBroadcastPermission = SDKUtils.getApplicationID() +"BROADCAST PERMISSION";
 
     @OnClick(R.id.btn_send_broadcast_with_permission)
     public void onClickButtonSendBroadcastPermission() {

@@ -35,11 +35,14 @@ public class StartActivity extends BaseActivity<IStartActivityPresenter> impleme
 
     @Override
     public void prepareComplete() {
-        if (SharedPreferenceUtils.getInstance().getUserInformation() == null)
-            addFragment(new LoginFragment(), false);
-        else
+        if (isUserLogin())
             startRootActivity(MainActivity.class);
+        else
+            addFragment(new LoginFragment(), false);
+    }
 
+    private boolean isUserLogin() {
+        return SharedPreferenceUtils.getInstance().getUserInformation() != null;
     }
 }
 

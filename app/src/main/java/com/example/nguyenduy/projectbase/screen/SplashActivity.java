@@ -1,11 +1,11 @@
 package com.example.nguyenduy.projectbase.screen;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.appCenter.AppCenterUtils;
 import com.example.nguyenduy.projectbase.base.appCenter.CrashUtils;
 import com.example.nguyenduy.projectbase.screen.main.MainActivity;
@@ -16,13 +16,13 @@ import com.example.nguyenduy.projectbase.utils.permission.PermissionUtils;
 
 import java.util.List;
 
+// https://android.jlelse.eu/the-complete-android-splash-screen-guide-c7db82bce565
 public class SplashActivity extends AppCompatActivity {
 
     private AppCenterUtils mAppCenter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         PermissionUtils.checkPermissionInternet(this, new BasePermission.CallbackPermissionListener() {
             @Override
@@ -63,11 +63,8 @@ public class SplashActivity extends AppCompatActivity {
         return SharedPreferenceUtils.getInstance().getUserInformation() != null;
     }
 
+    @SuppressLint("NewApi")
     private void startActivity(Class<?> clazz) {
-        Intent intent = new Intent(this, clazz);
-        // root task
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
+        startActivity(new Intent(this, clazz));
     }
-
 }

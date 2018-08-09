@@ -22,8 +22,8 @@
     <!--broadcast system-->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
-    <uses-permission android:name="android.permission.SEND_SMS"/>
-    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
 
     <uses-feature
         android:name="android.hardware.sensor.accelerometer"
@@ -40,34 +40,28 @@
         <activity
             android:name=".screen.SplashActivity"
             android:theme="@style/AppTheme.FullStatusBar.Launcher">
-            <!--<intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
-        </activity>
-        <activity android:name=".screen.start.crash.CrashActivity" />
-        <activity android:name=".screen.main.MainActivity" />
-        <activity android:name=".screen.start.StartActivity" />
-        <activity android:name=".screen.main2.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".screen.start.crash.CrashActivity" />
+        <activity android:name=".screen.main.MainActivity" />
+        <activity android:name=".screen.start.StartActivity" />
+        <activity android:name=".screen.main2.MainActivity">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
             <!--register change network-->
             <!--<intent-filter>
                 <action android:name="android.intent.action.MANAGE_NETWORK_USAGE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>-->
         </activity>
-        <activity android:name=".screen.main2.toolbar.CollapsingToolbarActivity">
-            <!--<intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
-        </activity>
+        <activity android:name=".screen.main2.toolbar.CollapsingToolbarActivity" />
         <activity android:name=".screen.main2.toolbar.CollapsingToolbarCustomBehaviorActivity" />
         <activity android:name=".screen.main2.appbar.appbarBottom.AppbarBottomActivity" />
 
@@ -140,7 +134,7 @@
         </receiver>
 
         <!--broadcast custom-->
-        <receiver android:name=".base.notification.NotificationBroadcastReceiver" />
+        <receiver android:name=".base.notification.NotificationReceiver" />
 
     </application>
 

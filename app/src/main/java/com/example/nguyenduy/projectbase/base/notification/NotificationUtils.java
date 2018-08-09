@@ -14,6 +14,7 @@ import android.support.v4.app.NotificationManagerCompat;
 
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.application.MyApplication;
+import com.example.nguyenduy.projectbase.base.notification.action.ReplyActionUtils;
 import com.example.nguyenduy.projectbase.screen.main2.MainActivity;
 import com.example.nguyenduy.projectbase.utils.method.SDKUtils;
 
@@ -24,9 +25,11 @@ public class NotificationUtils {
     private static final String CHANNEL_DESCRIPTION = "channel_01_DESCRIPTION";
 
     private Context mContext;
+    private NotificationManagerCompat notificationManager;
 
     public NotificationUtils(Context context) {
         mContext = context;
+        notificationManager = NotificationManagerCompat.from(MyApplication.getAppContext());
     }
 
     private Notification createNotification() {
@@ -43,37 +46,39 @@ public class NotificationUtils {
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 // set intent to activity
                 // https://developer.android.com/training/notify-user/navigation
-                .setContentIntent(createIntentActivity())
+                .setContentIntent(createIntentToActivity())
                 // auto remove notification khi user taps vào notification
                 .setAutoCancel(true)
-               // .addAction(R.drawable.ic_menu_gallery, "Action Button", createIntentAction())
+                .addAction(R.drawable.ic_menu_gallery, "Action Button", createIntentAction())
+                .addAction(ReplyActionUtils.createAction())
                 .build();
     }
 
+    // lưu lại id notification để update notification hoặc remove notification
+    private int idNotification = 1;
+
     public void showNotification() {
-        // lưu lại id notification để update notification hoặc remove notification
-        int idNotification = 1;
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(mContext);
         notificationManager.notify(idNotification, createNotification());
     }
 
-    private PendingIntent createIntentActivity() {
+    private PendingIntent createIntentToActivity() {
         Intent intent = new Intent(mContext, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         return PendingIntent.getActivity(mContext, 0, intent, 0);
     }
 
-    String EXTRA_NOTIFICATION_ID = "EXTRA_NOTIFICATION_ID";
+    private final static String EXTRA_NOTIFICATION_ID = "EXTRA_NOTIFICATION_ID";
 
-   /* private PendingIntent createIntentAction() {
-        Intent actionIntent = new Intent(this, NotificationBroadcastReceiver.class);
+    private PendingIntent createIntentAction() {
+        Intent actionIntent = new Intent(mContext, NotificationReceiver.class);
         actionIntent.setAction("Intent Action Button");
-        actionIntent.putExtra(EXTRA_NOTIFICATION_ID, 1);
+        actionIntent.putExtra(EXTRA_NOTIFICATION_ID, idNotification);
         return PendingIntent.getBroadcast(mContext, 0, actionIntent, 0);
-    }*/
+    }
 
     @SuppressLint("NewApi")
     public static void init() {
+        // register channel
         if (SDKUtils.isVersionSdkCurrentGreaterOrEqualVersion0())
             createChannel();
     }
