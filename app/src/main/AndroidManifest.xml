@@ -40,21 +40,21 @@
         <activity
             android:name=".screen.SplashActivity"
             android:theme="@style/AppTheme.FullStatusBar.Launcher">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".screen.start.crash.CrashActivity" />
-        <activity android:name=".screen.main.MainActivity" />
-        <activity android:name=".screen.start.StartActivity" />
-        <activity android:name=".screen.main2.MainActivity">
             <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>-->
+        </activity>
+        <activity android:name=".screen.start.crash.CrashActivity" />
+        <activity android:name=".screen.main.MainActivity" />
+        <activity android:name=".screen.start.StartActivity" />
+        <activity android:name=".screen.main2.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
             <!--register change network-->
             <!--<intent-filter>
                 <action android:name="android.intent.action.MANAGE_NETWORK_USAGE" />

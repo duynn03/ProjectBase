@@ -7,12 +7,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.transition.Explode;
-import android.transition.Fade;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,7 +61,7 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        initAnimation();
+        //initAnimation();
         super.onCreate(savedInstanceState);
         mFireBase = new FireBaseUtils(this);
         mIntent = getIntent();
@@ -106,16 +106,17 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
     }
 
     private void initEditText() {
-        setNotFocusWhenClickOutSideEditText(getIdRootView());
+        // setNotFocusWhenClickOutSideEditText(getIdRootView());
         // hidden keyboard of edit text when activity start
-        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        //  this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
     }
 
     private void setNotFocusWhenClickOutSideEditText(int viewId) {
         if (viewId <= 0) return;
         View view = findViewById(viewId);
         // Set up touch listener for non-text box views to hide keyboard.
-        if (!(view instanceof EditText)) {
+        if (!(view instanceof EditText || view instanceof TextInputLayout)) {
             view.setOnTouchListener(new View.OnTouchListener() {
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
@@ -134,10 +135,21 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
         }
     }
 
-    public void hideSoftKeyboard() {
-        InputMethodManager inputManager = (InputMethodManager) this.getSystemService(Activity.INPUT_METHOD_SERVICE);
-        if (this.getCurrentFocus() != null) {
-            inputManager.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(), 0);
+    private void hideSoftKeyboard() {
+        hideSoftKeyboard(this.getCurrentFocus());
+    }
+
+    public void hideSoftKeyboard(View view) {
+        if (null != view) {
+            InputMethodManager inputManager = (InputMethodManager) this.getSystemService(Activity.INPUT_METHOD_SERVICE);
+            inputManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
+    }
+
+    public void showSoftKeyboard(View view) {
+        if (null != view && view.requestFocus()) {
+            InputMethodManager inputManager = (InputMethodManager) this.getSystemService(Activity.INPUT_METHOD_SERVICE);
+            inputManager.showSoftInput(view, InputMethodManager.SHOW_IMPLICIT);
         }
     }
 

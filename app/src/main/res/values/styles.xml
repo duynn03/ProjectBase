@@ -51,6 +51,50 @@
         <!--<item name="android:textCursorDrawable">@drawable/color_cursor_edittext</item>-->
     </style>
 
+    <!--input text-->
+    <style name="InputFilledBox" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="hintEnabled">true</item>
+        <item name="errorEnabled">true</item>
+        <item name="helperTextEnabled">true</item>
+    </style>
+
+    <style name="InputFilledBoxEmail" parent="InputFilledBox">
+        <item name="hintEnabled">true</item>
+        <item name="android:hint">@string/hint_email</item>
+        <item name="errorEnabled">true</item>
+        <!--        <item name="helperTextEnabled">true</item>-->
+        <item name="counterEnabled">true</item>
+        <item name="counterMaxLength">20</item>
+    </style>
+
+    <style name="AutoCompleteTextViewEmail">
+        <item name="android:inputType">textEmailAddress</item>
+        <item name="android:lines">1</item>
+    </style>
+
+    <style name="InputFilledBoxPassword" parent="InputFilledBox">
+        <item name="hintEnabled">true</item>
+        <item name="android:hint">@string/hint_password</item>
+        <item name="errorEnabled">true</item>
+        <item name="counterEnabled">true</item>
+        <item name="counterMaxLength">16</item>
+        <item name="android:imeOptions">actionDone</item>
+        <item name="passwordToggleEnabled">true</item>
+        <item name="passwordToggleDrawable">@drawable/ic_launcher_background</item>
+    </style>
+
+    <style name="EditTextPassword">
+        <item name="android:inputType">textPassword</item>
+        <item name="android:lines">1</item>
+    </style>
+
+    <style name="InputOutlineBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <!-- boxCornerRadiusTopLeft
+         boxCornerRadiusTopRight
+         boxCornerRadiusBottomLeft
+         boxCornerRadiusBottomRight-->
+    </style>
+
     <style name="ScrollView">
         <item name="android:fillViewport">true</item>
     </style>

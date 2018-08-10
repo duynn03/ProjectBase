@@ -24,6 +24,7 @@ import com.example.nguyenduy.projectbase.screen.main2.navigation.notification.No
 import com.example.nguyenduy.projectbase.screen.main2.notification.NotificationFragment;
 import com.example.nguyenduy.projectbase.screen.main2.permission.PermissionFragment;
 import com.example.nguyenduy.projectbase.screen.main2.sharedpreference.SharedPreferenceFragment;
+import com.example.nguyenduy.projectbase.screen.main2.structure.ViewModelFragment;
 import com.example.nguyenduy.projectbase.screen.main2.toolbar.CollapsingToolbarActivity;
 import com.example.nguyenduy.projectbase.screen.main2.toolbar.CollapsingToolbarCustomBehaviorActivity;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
@@ -158,6 +159,9 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
                 break;
             case R.id.menu_detect_activity_user:
                 replaceFragment(new DetectActivityUserFragment(), false);
+                break;
+            case R.id.menu_view_model:
+                replaceFragment(new ViewModelFragment(), false);
                 break;
             case R.id.menu_share:
                 showToast("menu_share");
