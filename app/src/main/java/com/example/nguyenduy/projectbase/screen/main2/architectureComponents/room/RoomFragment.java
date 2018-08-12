@@ -1,19 +1,19 @@
-package com.example.nguyenduy.projectbase.screen.main2.structure;
+package com.example.nguyenduy.projectbase.screen.main2.architectureComponents.room;
 
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.BaseFragment;
 import com.example.nguyenduy.projectbase.base.IBasePresenter;
 
-public class ViewModelFragment extends BaseFragment<IViewModelPresenter> implements IViewModelView {
+public class RoomFragment extends BaseFragment<IRoomPresenter> implements IRoomView {
 
     @Override
     public int getIdLayout() {
-        return R.layout.fragment_view_model;
+        return R.layout.fragment_room;
     }
 
     @Override
     public IBasePresenter initPresenter() {
-        return new ViewModelPresenterImp(this);
+        return new RoomPresenterImp(this);
     }
 
     @Override

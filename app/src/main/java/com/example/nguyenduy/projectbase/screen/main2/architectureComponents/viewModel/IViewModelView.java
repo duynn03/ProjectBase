@@ -1,4 +1,4 @@
-package com.example.nguyenduy.projectbase.screen.main2.structure;
+package com.example.nguyenduy.projectbase.screen.main2.architectureComponents.viewModel;
 
 import com.example.nguyenduy.projectbase.base.IBaseView;
 

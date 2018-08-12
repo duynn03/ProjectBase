@@ -8,6 +8,8 @@ import com.example.nguyenduy.projectbase.base.drawerlayout.BaseActivityWithHeade
 import com.example.nguyenduy.projectbase.base.drawerlayout.OptionMenuUtils;
 import com.example.nguyenduy.projectbase.screen.main2.appbar.appbarBottom.AppbarBottomActivity;
 import com.example.nguyenduy.projectbase.screen.main2.appcenter.AppCenterFragment;
+import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.liveData.LiveDataFragment;
+import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.room.RoomFragment;
 import com.example.nguyenduy.projectbase.screen.main2.broadcast.BroadcastFragment;
 import com.example.nguyenduy.projectbase.screen.main2.database.RealmFragment;
 import com.example.nguyenduy.projectbase.screen.main2.firebase.FirebaseFragment;
@@ -24,7 +26,7 @@ import com.example.nguyenduy.projectbase.screen.main2.navigation.notification.No
 import com.example.nguyenduy.projectbase.screen.main2.notification.NotificationFragment;
 import com.example.nguyenduy.projectbase.screen.main2.permission.PermissionFragment;
 import com.example.nguyenduy.projectbase.screen.main2.sharedpreference.SharedPreferenceFragment;
-import com.example.nguyenduy.projectbase.screen.main2.structure.ViewModelFragment;
+import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.viewModel.ViewModelFragment;
 import com.example.nguyenduy.projectbase.screen.main2.toolbar.CollapsingToolbarActivity;
 import com.example.nguyenduy.projectbase.screen.main2.toolbar.CollapsingToolbarCustomBehaviorActivity;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
@@ -159,6 +161,12 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
                 break;
             case R.id.menu_detect_activity_user:
                 replaceFragment(new DetectActivityUserFragment(), false);
+                break;
+            case R.id.menu_room:
+                replaceFragment(new RoomFragment(), false);
+                break;
+            case R.id.menu_live_data:
+                replaceFragment(new LiveDataFragment(), false);
                 break;
             case R.id.menu_view_model:
                 replaceFragment(new ViewModelFragment(), false);

@@ -135,9 +135,17 @@
         </menu>
     </item>
 
-    <item android:title="@string/drawer_layout_menu_label_structure">
+    <item android:title="@string/drawer_layout_menu_label_architecture_components">
         <menu>
             <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_room"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_room" />
+                <item
+                    android:id="@+id/menu_live_data"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_live_data" />
                 <item
                     android:id="@+id/menu_view_model"
                     android:icon="@drawable/ic_menu_share"

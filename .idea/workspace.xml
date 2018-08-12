@@ -20,21 +20,15 @@
   <component name="ChangeListManager">
     <list default="true" id="9a86d4a8-ef47-4a8a-b826-0cae5c2116d1" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/BaseActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/BaseActivity.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/MainActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_splash.9.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_splash.png" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_splash.9.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_splash.png" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_splash.9.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_splash.png" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/ic_splash.9.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/ic_splash.png" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/structure/IViewModelPresenter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/architectureComponents/viewModel/IViewModelPresenter.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/structure/IViewModelView.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/architectureComponents/viewModel/IViewModelView.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/structure/ViewModelFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/architectureComponents/viewModel/ViewModelFragment.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/structure/ViewModelPresenterImp.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/architectureComponents/viewModel/ViewModelPresenterImp.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/drawer_layout_menu.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/drawer_layout_menu.xml" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -60,19 +54,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BaseActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/BaseActivity.java">
+      <file leaf-file-name="RoomFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/architectureComponents/room/RoomFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="42" column="35" lean-forward="false" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="35" />
-              <folding>
-                <element signature="method#initAnimation#0;class#BaseActivity#0" expanded="false" />
-                <element signature="method#initLoadingDialog#0;class#BaseActivity#0" expanded="false" />
-                <element signature="method#hideSoftKeyboard#1;class#BaseActivity#0" expanded="false" />
-                <element signature="method#showSoftKeyboard#0;class#BaseActivity#0" expanded="false" />
-                <element signature="e#7874#7875#0" expanded="true" />
-                <element signature="e#7916#7917#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="147">
+              <caret line="10" column="37" lean-forward="false" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="173">
+              <caret line="168" column="54" lean-forward="false" selection-start-line="168" selection-start-column="54" selection-end-line="168" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="309">
+              <caret line="137" column="25" lean-forward="false" selection-start-line="137" selection-start-column="25" selection-end-line="137" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -89,7 +96,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>onActivityResult</find>
       <find>createLocationRequest</find>
       <find>mFusedLocationClient</find>
       <find>getFromLocation()</find>
@@ -116,9 +122,10 @@
       <find>activity</find>
       <find>btn_sign_up</find>
       <find>imeOptions</find>
-      <find>drawer_layout_menu_label_location</find>
       <find>menu_detect_activity_user</find>
       <find>drawer_layout_menu_label_structure</find>
+      <find>drawer_layout_menu_label_location</find>
+      <find>menu_view_model</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -6953,14 +6960,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/method/SDKUtils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/method/SystemUtils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/system/airplane/BroadcastSystemReceiverUtils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/system/airplane/AirplaneReceiver.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/system/screen/AirplaneReceiver.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/system/screen/ScreenReceiver.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/custom/global/LocalBroadcastUtils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/custom/local/LocalReceiver.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/custom/global/LocalReceiver.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/custom/global/GlobalReceiver.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/custom/order/GlobalReceiver.java" />
@@ -6996,21 +6995,29 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/drawer_layout_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/structure/IRealmPresenter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/structure/IViewModelPresenter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_view_model.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/structure/ViewModelFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/drawer_layout_menu.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/architectureComponents/viewModel/ViewModelPresenterImp.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/architectureComponents/room/IViewModelView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/architectureComponents/room/IRoomView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/architectureComponents/liveData/RoomFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_room.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_live_data.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/architectureComponents/liveData/LiveDataFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/architectureComponents/room/RoomFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="751" />
-    <option name="y" value="73" />
-    <option name="width" value="1046" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="257" />
+    <option name="y" value="109" />
+    <option name="width" value="2275" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -7031,8 +7038,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -7161,7 +7166,7 @@
               <item name="projectbase" type="462c0819:PsiDirectoryNode" />
               <item name="screen" type="462c0819:PsiDirectoryNode" />
               <item name="main2" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="architectureComponents" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjectBase" type="b2602c69:ProjectViewProjectNode" />
@@ -7176,7 +7181,40 @@
               <item name="projectbase" type="462c0819:PsiDirectoryNode" />
               <item name="screen" type="462c0819:PsiDirectoryNode" />
               <item name="main2" type="462c0819:PsiDirectoryNode" />
-              <item name="structure" type="462c0819:PsiDirectoryNode" />
+              <item name="architectureComponents" type="462c0819:PsiDirectoryNode" />
+              <item name="liveData" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectBase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
+              <item name="projectbase" type="462c0819:PsiDirectoryNode" />
+              <item name="screen" type="462c0819:PsiDirectoryNode" />
+              <item name="main2" type="462c0819:PsiDirectoryNode" />
+              <item name="architectureComponents" type="462c0819:PsiDirectoryNode" />
+              <item name="room" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectBase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
+              <item name="projectbase" type="462c0819:PsiDirectoryNode" />
+              <item name="screen" type="462c0819:PsiDirectoryNode" />
+              <item name="main2" type="462c0819:PsiDirectoryNode" />
+              <item name="architectureComponents" type="462c0819:PsiDirectoryNode" />
+              <item name="viewModel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjectBase" type="b2602c69:ProjectViewProjectNode" />
@@ -7208,6 +7246,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -7311,7 +7352,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -7338,11 +7378,11 @@
       <recent name="com.example.nguyenduy.projectbase.base.broadcast.system" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Desktop\Working\Gitlap\Android\ProjectBase\app\src\main\res\layout" />
+      <recent name="C:\Users\Admin\Desktop\Working\Gitlap\Android\ProjectBase\app\src\main\java\com\example\nguyenduy\projectbase\screen\main2\architectureComponents\liveData" />
+      <recent name="C:\Users\Admin\Desktop\Working\Gitlap\Android\ProjectBase\app\src\main\java\com\example\nguyenduy\projectbase\screen\main2\architectureComponents\room" />
       <recent name="C:\Users\Admin\Desktop\Working\Android\ProjectBase\app\src\main\res\layout" />
       <recent name="C:\Users\Admin\Desktop\Working\Android\ProjectBase\app\src\main\java\com\example\nguyenduy\projectbase\screen\main2\structure" />
-      <recent name="C:\Users\Admin\Desktop\Working\Android\BaseProject\app\src\main\java\com\example\nguyenduy\projectbase\base\broadcast\custom\permission" />
-      <recent name="C:\Users\Admin\Desktop\Working\Android\BaseProject\app\src\main\java\com\example\nguyenduy\projectbase\base\broadcast\custom\order\callback" />
-      <recent name="C:\Users\Admin\Desktop\Working\Android\BaseProject\app\src\main\java\com\example\nguyenduy\projectbase\base\broadcast\custom\order" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -7531,7 +7571,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="257" y="109" width="2275" height="1047" extended-state="0" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -7548,8 +7588,8 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24970202" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2585288" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17207792" sideWeight="0.48081535" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11186903" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24441834" sideWeight="0.48081535" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18142076" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -7677,84 +7717,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/system/network/NetworkUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="37" lean-forward="false" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/system/airplane/AirplaneUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="38" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/system/screen/ScreenUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-28/android.jar!/android/content/IntentFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="60" column="22" lean-forward="false" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/custom/global/GlobalReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="26" column="29" lean-forward="false" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/custom/order/normal/Order1Receiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/custom/order/normal/Order2Receiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/custom/order/normal/OrderNormalBroadcastUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/notification/NotificationUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="69" column="20" lean-forward="false" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/notification/NotificationBroadcastReceiver.java" />
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-28/android.jar!/android/content/BroadcastReceiver.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="45" column="24" lean-forward="false" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/custom/order/callback/FinalOrderReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="36" column="19" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/custom/order/callback/Order4Receiver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="449">
@@ -7812,13 +7774,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_broadcast.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="192" column="63" lean-forward="false" selection-start-line="192" selection-start-column="29" selection-end-line="192" selection-end-column="63" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/location/detectActivityUser/DetectActivityUserFragment.java">
@@ -7879,10 +7841,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_splash.png">
-      <provider selected="true" editor-type-id="ninepatcheditor">
+      <provider editor-type-id="images">
         <state />
       </provider>
-      <provider editor-type-id="images">
+      <provider selected="true" editor-type-id="ninepatcheditor">
         <state />
       </provider>
     </entry>
@@ -7890,7 +7852,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -7898,7 +7859,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
           <caret line="106" column="16" lean-forward="false" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -7906,7 +7866,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="23" column="28" lean-forward="false" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -7922,7 +7881,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="79" column="13" lean-forward="false" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -7935,22 +7893,22 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_splash.png">
-      <provider selected="true" editor-type-id="ninepatcheditor">
+      <provider editor-type-id="images">
         <state />
       </provider>
-      <provider editor-type-id="images">
+      <provider selected="true" editor-type-id="ninepatcheditor">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="523">
           <caret line="41" column="45" lean-forward="false" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="45" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
@@ -7964,14 +7922,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
@@ -7980,74 +7930,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="96" column="52" lean-forward="false" selection-start-line="96" selection-start-column="18" selection-end-line="96" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/drawer_layout_menu.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="141" column="52" lean-forward="false" selection-start-line="141" selection-start-column="37" selection-end-line="141" selection-end-column="52" />
-          <folding>
-            <element signature="e#5047#5090#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_view_model.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/structure/ViewModelPresenterImp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/structure/IViewModelView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/structure/IViewModelPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="163" column="55" lean-forward="false" selection-start-line="163" selection-start-column="55" selection-end-line="163" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_view_model.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="41" lean-forward="false" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/structure/ViewModelFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -8062,16 +7951,190 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/BaseActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="42" column="35" lean-forward="false" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="35" />
+        <state relative-caret-position="161">
+          <caret line="44" column="18" lean-forward="true" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
           <folding>
             <element signature="method#initAnimation#0;class#BaseActivity#0" expanded="false" />
             <element signature="method#initLoadingDialog#0;class#BaseActivity#0" expanded="false" />
             <element signature="method#hideSoftKeyboard#1;class#BaseActivity#0" expanded="false" />
             <element signature="method#showSoftKeyboard#0;class#BaseActivity#0" expanded="false" />
-            <element signature="e#7874#7875#0" expanded="true" />
-            <element signature="e#7916#7917#0" expanded="true" />
+            <element signature="e#7874#7875#0" expanded="false" />
+            <element signature="e#7916#7917#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="98" column="37" lean-forward="true" selection-start-line="98" selection-start-column="37" selection-end-line="98" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/drawer_layout_menu.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="149" column="52" lean-forward="false" selection-start-line="149" selection-start-column="37" selection-end-line="149" selection-end-column="52" />
+          <folding>
+            <element signature="e#5047#5090#0" expanded="false" />
+            <element signature="e#5884#5942#0" expanded="false" />
+            <element signature="e#6177#6210#0" expanded="false" />
+            <element signature="e#6382#6420#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/architectureComponents/viewModel/IViewModelPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/architectureComponents/viewModel/IViewModelView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/architectureComponents/viewModel/ViewModelFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/architectureComponents/room.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/architectureComponents/viewModel/ViewModelPresenterImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/architectureComponents/room/IRoomPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_live_data.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="40" lean-forward="false" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_room.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/architectureComponents/liveData/LiveDataFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="10" column="42" lean-forward="false" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/architectureComponents/liveData/LiveDataPresenterImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/architectureComponents/liveData/ILiveDataView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/architectureComponents/liveData/ILiveDataPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/architectureComponents/room/IRoomView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/architectureComponents/room/RoomPresenterImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/architectureComponents/room/RoomFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="10" column="37" lean-forward="false" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-237">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main2/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="168" column="54" lean-forward="false" selection-start-line="168" selection-start-column="54" selection-end-line="168" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="137" column="25" lean-forward="false" selection-start-line="137" selection-start-column="25" selection-end-line="137" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
