@@ -139,6 +139,10 @@
         <menu>
             <group android:checkableBehavior="single">
                 <item
+                    android:id="@+id/menu_dragger"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_dragger" />
+                <item
                     android:id="@+id/menu_room"
                     android:icon="@drawable/ic_menu_share"
                     android:title="@string/drawer_layout_menu_room" />
