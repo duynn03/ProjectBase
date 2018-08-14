@@ -1,15 +1,9 @@
 package com.example.nguyenduy.projectbase.screen.main2.architectureComponents.viewModel;
 
-import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.ViewModel;
 
-import com.example.nguyenduy.projectbase.base.architectureComponents.database.entity.User;
-import com.example.nguyenduy.projectbase.base.architectureComponents.api.UserRepository;
-
-import javax.inject.Inject;
-
 public class ViewModelViewModel extends ViewModel {
-
+/*
     private LiveData<User> user;
     private UserRepository userRepository;
 
@@ -24,5 +18,5 @@ public class ViewModelViewModel extends ViewModel {
 
     public LiveData<User> getUser() {
         return user;
-    }
+    }*/
 }

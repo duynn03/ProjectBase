@@ -1,4 +1,4 @@
-package com.example.nguyenduy.projectbase.base.architectureComponents.api;
+package com.example.nguyenduy.projectbase.base.architectureComponents.database.repository.api;
 
 import android.arch.lifecycle.LiveData;
 import android.support.annotation.MainThread;

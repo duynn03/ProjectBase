@@ -1,4 +1,4 @@
-package com.example.nguyenduy.projectbase.base.architectureComponents.api;
+package com.example.nguyenduy.projectbase.base.architectureComponents.database.repository.api;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;

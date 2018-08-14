@@ -1,17 +1,51 @@
 package com.example.nguyenduy.projectbase.base.architectureComponents.database.entity;
 
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Embedded;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
+import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 
-@Entity
+@Entity(tableName = "User",
+        indices = {
+                // Unique
+                @Index(
+                        value = {
+                                "first_name",
+                                "last_name"
+                        },
+                        unique = true
+                ),
+                // Index
+                @Index("name"),
+                @Index(
+                        value = {
+                                "last_name",
+                                "address"
+                        }
+                )
+        })
 public class User {
 
-    @PrimaryKey
+    public User() {
+    }
+
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id")
     private int id;
 
-    private String name;
+    @ColumnInfo(name = "first_name")
+    private String firstName;
 
+    @ColumnInfo(name = "last_name")
     private String lastName;
+
+    @Ignore
+    private String fullName;
+
+    @Embedded(prefix = "home_")
+    private Address address;
 
     public int getId() {
         return id;
@@ -21,12 +55,12 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
@@ -35,5 +69,21 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }

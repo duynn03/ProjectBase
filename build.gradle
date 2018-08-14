@@ -15,7 +15,7 @@ buildscript {
         classpath 'com.google.gms:google-services:4.0.1'    // firebase
         classpath 'io.fabric.tools:gradle:1.25.4' // crash firebase
         classpath 'com.google.firebase:firebase-plugins:1.1.5'  // Performance Monitoring Firebase
-
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'  // dragger
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }

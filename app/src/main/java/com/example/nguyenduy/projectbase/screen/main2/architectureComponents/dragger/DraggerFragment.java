@@ -9,7 +9,7 @@ import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.dra
 
 public class DraggerFragment extends BaseFragment<IDraggerPresenter> implements IDraggerView {
 
-    private Vehicle vehicle;
+    Vehicle vehicle;
 
     @Override
     public int getIdLayout() {
@@ -28,9 +28,9 @@ public class DraggerFragment extends BaseFragment<IDraggerPresenter> implements 
 
     @Override
     public void initComponents() {
-        VehicleComponent component = Dagger_VehicleComponent.builder().vehicleModule(new VehicleModule()).build();
+       // VehicleComponent component = Dagger_VehicleComponent.builder().vehicleModule(new VehicleModule()).build();
 
-        vehicle = component.getProvideVehicle();
+       // vehicle = component.getProvideVehicle();
     }
 
     @Override

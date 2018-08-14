@@ -15,11 +15,11 @@ public class ViewModelFragment extends BaseFragment<IViewModelPresenter> impleme
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        viewModel = ViewModelProviders.of(this).get(ViewModelViewModel.class);
+        /*viewModel = ViewModelProviders.of(this).get(ViewModelViewModel.class);
 
         viewModel.getUser().observe(this, user -> {
             // update UI
-        });
+        });*/
     }
 
     @Override
