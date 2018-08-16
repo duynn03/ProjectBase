@@ -13,20 +13,66 @@
         android:text="Fragment Notification" />
 
     <Button
-        android:id="@+id/btn_show_notification"
+        android:id="@+id/btn_show_notification_big_text"
         style="@style/Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Show Notification" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Show Notification Big text" />
 
     <Button
-        android:id="@+id/btn_show"
+        android:id="@+id/btn_show_notification_text_multi_line"
         style="@style/Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_show_notification"
+        android:layout_below="@+id/btn_show_notification_big_text"
         android:layout_centerHorizontal="true"
-        android:text="Show Notification 2" />
+        android:text="Show Notification Text Multi Line" />
+
+    <Button
+        android:id="@+id/btn_show_notification_text_style_message"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_show_notification_text_multi_line"
+        android:layout_centerHorizontal="true"
+        android:text="Show Notification Text Style Message" />
+
+    <Button
+        android:id="@+id/btn_show_notification_big_image_1"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_show_notification_text_style_message"
+        android:layout_centerHorizontal="true"
+        android:text="Show Notification big image 1" />
+
+    <Button
+        android:id="@+id/btn_show_notification_big_image_2"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_show_notification_big_image_1"
+        android:layout_centerHorizontal="true"
+        android:text="Show Notification big image 2" />
+
+    <Button
+        android:id="@+id/btn_show_notification_big_image_3"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_show_notification_big_image_2"
+        android:layout_centerHorizontal="true"
+        android:text="Show Notification big image 3" />
+
+    <Button
+        android:id="@+id/btn_show_notification_control_media"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_show_notification_big_image_3"
+        android:layout_centerHorizontal="true"
+        android:text="Show Notification Control Media" />
 
 </RelativeLayout>

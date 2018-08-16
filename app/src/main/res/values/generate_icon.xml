@@ -9,4 +9,9 @@
     <!--toolbar-->
     <item name="ic_menu_help" type="drawable">@android:drawable/ic_menu_help</item>
     <item name="ic_menu" type="drawable">@android:drawable/ic_menu_add</item>
+    <!--Notification play media-->
+    <item name="ic_notification_prev" type="drawable">@android:drawable/ic_media_previous</item>
+    <item name="ic_notification_next" type="drawable">@android:drawable/ic_media_next</item>
+    <item name="ic_notification_pause" type="drawable">@android:drawable/ic_media_pause</item>
+    <item name="ic_notification_play" type="drawable">@android:drawable/ic_media_play</item>
 </resources>

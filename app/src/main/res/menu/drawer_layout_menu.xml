@@ -21,8 +21,7 @@
         <item
             android:id="@+id/menu_notification"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/drawer_layout_menu_notification"
-            app:actionLayout="@layout/drawer_layout_menu_counter" />
+            android:title="@string/drawer_layout_menu_notification" />
         <item
             android:id="@+id/menu_broadcast"
             android:icon="@drawable/ic_menu_slideshow"
@@ -77,7 +76,8 @@
                 <item
                     android:id="@+id/menu_navigation_notification"
                     android:icon="@drawable/ic_menu_manage"
-                    android:title="@string/drawer_layout_menu_navigation_notification" />
+                    android:title="@string/drawer_layout_menu_navigation_notification"
+                    app:actionLayout="@layout/drawer_layout_menu_counter" />
                 <item
                     android:id="@+id/menu_snack_bar"
                     android:icon="@drawable/ic_menu_manage"
