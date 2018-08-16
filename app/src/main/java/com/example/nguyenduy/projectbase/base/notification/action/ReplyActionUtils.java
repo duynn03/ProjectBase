@@ -7,6 +7,7 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.RemoteInput;
 
 import com.example.nguyenduy.projectbase.R;
+import com.example.nguyenduy.projectbase.application.MyApplication;
 
 public class ReplyActionUtils {
 

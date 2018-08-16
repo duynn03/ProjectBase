@@ -154,7 +154,9 @@ dependencies {
 
     /*architecture components*/
     def architectureComponentVersion = '1.1.1'
+    // room
     implementation "android.arch.persistence.room:runtime:$architectureComponentVersion"
+    annotationProcessor "android.arch.persistence.room:compiler:$architectureComponentVersion" // use kapt for Kotlin
     // optional - RxJava support for Room
     implementation "android.arch.persistence.room:rxjava2:$architectureComponentVersion"
     // optional - Guava support for Room, including Optional and ListenableFuture

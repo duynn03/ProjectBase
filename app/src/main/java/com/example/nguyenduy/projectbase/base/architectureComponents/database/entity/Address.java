@@ -1,5 +1,8 @@
 package com.example.nguyenduy.projectbase.base.architectureComponents.database.entity;
 
+import android.arch.persistence.room.Ignore;
+
+
 public class Address {
 
     private String street;
@@ -11,6 +14,14 @@ public class Address {
     private int postCode;
 
     public Address() {
+    }
+
+    @Ignore
+    public Address(String street, String state, String city, int postCode) {
+        this.street = street;
+        this.state = state;
+        this.city = city;
+        this.postCode = postCode;
     }
 
     public String getStreet() {
@@ -43,5 +54,22 @@ public class Address {
 
     public void setPostCode(int postCode) {
         this.postCode = postCode;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        if (null != street) {
+            builder.append(", street: " + street);
+        }
+        if (null != state) {
+            builder.append(", state: " + state);
+        }
+        if (null != city) {
+            builder.append(", fullName: " + city);
+        }
+        builder.append(", postCode: " + postCode + "");
+        return builder.toString();
+
     }
 }

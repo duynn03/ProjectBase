@@ -32,11 +32,18 @@ public class NotificationUtils {
         notificationManager = NotificationManagerCompat.from(MyApplication.getAppContext());
     }
 
+    // lưu lại id notification để update notification hoặc remove notification
+    private int idNotification = 1;
+
+    public void showNotification() {
+        notificationManager.notify(idNotification, createNotification());
+    }
+
     private Notification createNotification() {
         String contentSmall = "Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification";
         String contentBig = "Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification";
         return new NotificationCompat.Builder(mContext, CHANNEL_ID)
-                .setSmallIcon(R.drawable.ic_menu_camera)
+                .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle("Title Notification")
                 // default thì content sẽ chỉ hiển thị trên 1 line
                 .setContentText(contentSmall)
@@ -50,15 +57,8 @@ public class NotificationUtils {
                 // auto remove notification khi user taps vào notification
                 .setAutoCancel(true)
                 .addAction(R.drawable.ic_menu_gallery, "Action Button", createIntentAction())
-                .addAction(ReplyActionUtils.createAction())
+              //  .addAction(ReplyActionUtils.createAction())
                 .build();
-    }
-
-    // lưu lại id notification để update notification hoặc remove notification
-    private int idNotification = 1;
-
-    public void showNotification() {
-        notificationManager.notify(idNotification, createNotification());
     }
 
     private PendingIntent createIntentToActivity() {

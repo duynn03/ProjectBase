@@ -12,4 +12,87 @@
         android:layout_marginTop="20dp"
         android:text="Fragment Room" />
 
+    <Button
+        android:id="@+id/btn_get_list_data"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Get List Data" />
+
+    <Button
+        android:id="@+id/btn_get_by_id_data"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_get_list_data"
+        android:layout_centerHorizontal="true"
+        android:text="Get By ID" />
+
+    <Button
+        android:id="@+id/btn_get_by_name_data"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_get_by_id_data"
+        android:layout_centerHorizontal="true"
+        android:text="Get By Name" />
+
+
+    <Button
+        android:id="@+id/btn_insert_data"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_get_by_name_data"
+        android:layout_centerHorizontal="true"
+        android:text="Insert" />
+
+    <Button
+        android:id="@+id/btn_insert_list_data"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_insert_data"
+        android:layout_centerHorizontal="true"
+        android:text="Insert List Data" />
+
+    <Button
+        android:id="@+id/btn_update_data"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_insert_list_data"
+        android:layout_centerHorizontal="true"
+        android:text="Update" />
+
+    <Button
+        android:id="@+id/btn_update_list_data"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_update_data"
+        android:layout_centerHorizontal="true"
+        android:text="Update List Data" />
+
+    <Button
+        android:id="@+id/btn_delete_data"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_update_list_data"
+        android:layout_centerHorizontal="true"
+        android:text="Delete" />
+
+    <Button
+        android:id="@+id/btn_delete_list_data"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_delete_data"
+        android:layout_centerHorizontal="true"
+        android:text="Delete List Data" />
+
+
 </RelativeLayout>

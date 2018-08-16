@@ -1,57 +1,44 @@
 package com.example.nguyenduy.projectbase.base.architectureComponents.database.repository.dao;
 
-import android.arch.lifecycle.LiveData;
-import android.arch.persistence.room.Delete;
-import android.arch.persistence.room.Insert;
-import android.arch.persistence.room.OnConflictStrategy;
+import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Query;
-import android.arch.persistence.room.Update;
 
+import com.example.nguyenduy.projectbase.base.architectureComponents.database.dto.UserDto;
 import com.example.nguyenduy.projectbase.base.architectureComponents.database.entity.User;
 
 import java.util.List;
 
-public interface UserDao {
+@Dao
+public interface UserDao extends BaseDao<User> {
 
     // nên ghi hết các field, không nên dùng *
     @Query("SELECT * FROM User")
-    List<User> getAllUsers();
+    List<User> getAll();
 
-    @Query("SELECT * FROM User WHERE id IN (:ids)")
+    // nên ghi hết các field, không nên dùng *
+    @Query("SELECT DISTINCT last_name FROM User")
+    List<String> getAllDistinct();
+
     // param có thể là array hoặc list
-    // VD: LiveData<List<User>> getUserByID(List<int> ids);
-    LiveData<List<User>> getUserByID(int... ids);
+    // VD: LiveData<List<User>> getByID(List<int> ids);
+    @Query("SELECT * FROM User WHERE id IN (:ids)")
+    List<User> getByID(int... ids);
 
-    @Query("SELECT * FROM User WHERE id == id")
-    LiveData<User> getUserByID(int id);
+    @Query("SELECT * FROM User WHERE id == :id")
+    User getByID(int id);
 
     @Query("SELECT * FROM User WHERE first_name LIKE :name OR last_name LIKE :name")
-    LiveData<List<User>> getUsersByName(String name);
+    List<User> getByNames(String name);
 
     @Query("SELECT * FROM User WHERE first_name LIKE :name OR last_name LIKE :name LIMIT 1")
-    LiveData<User> getUserByName(String name);
+    User getByName(String name);
 
     // get field first_name and last_name
     // có thể sử dụng @Embedded để thay thế Dto
-    @Query("SELECT first_name, last_name FROM User")
-    LiveData<User> getUserDto();
+    @Query("SELECT first_name, last_name FROM User LIMIT 1")
+    UserDto getUserDto();
 
-    @Insert(onConflict = OnConflictStrategy.ROLLBACK)
-    void insertUsers(User... users);
-
-    @Insert(onConflict = OnConflictStrategy.ROLLBACK)
-    void insertUser(User user);
-
-    @Update(onConflict = OnConflictStrategy.REPLACE)
-    void updateUsers(User... users);
-
-    @Update(onConflict = OnConflictStrategy.REPLACE)
-    void updateUser(User user);
-
-    @Delete
-    void deleteUsers(User... users);
-
-    @Delete
-    void deleteUser(User user);
+    @Query("DELETE FROM User")
+    void deleteAll();
 
 }

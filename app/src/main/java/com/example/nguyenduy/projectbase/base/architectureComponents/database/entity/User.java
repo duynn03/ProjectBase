@@ -16,19 +16,27 @@ import android.arch.persistence.room.PrimaryKey;
                                 "last_name"
                         },
                         unique = true
-                ),
-                // Index
-                @Index("name"),
-                @Index(
-                        value = {
-                                "last_name",
-                                "address"
-                        }
                 )
+                //,
+                // Index
+//                @Index("name"),
+//                @Index(
+//                        value = {
+//                                "last_name",
+//                                "address"
+//                        }
+//                )
         })
 public class User {
 
     public User() {
+    }
+
+    @Ignore
+    public User(String firstName, String lastName, Address address) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
     }
 
     @PrimaryKey(autoGenerate = true)
@@ -44,7 +52,8 @@ public class User {
     @Ignore
     private String fullName;
 
-    @Embedded(prefix = "home_")
+   // @Embedded(/*prefix = "home_"*/)
+   @Ignore
     private Address address;
 
     public int getId() {
@@ -85,5 +94,23 @@ public class User {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        if (null != firstName) {
+            builder.append("firstName: " + firstName);
+        }
+        if (null != lastName) {
+            builder.append(", lastName: " + lastName);
+        }
+        if (null != fullName) {
+            builder.append(", fullName: " + fullName);
+        }
+        if (null != address) {
+            builder.append(", address: " + address.toString());
+        }
+        return builder.toString();
     }
 }
