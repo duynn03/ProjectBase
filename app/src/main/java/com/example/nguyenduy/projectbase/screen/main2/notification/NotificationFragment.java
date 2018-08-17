@@ -77,4 +77,20 @@ public class NotificationFragment extends BaseFragment<INotificationPresenter> i
         notificationUtils.showNotificationControlMedia();
     }
 
+    @OnClick(R.id.btn_show_notification_group_1)
+    public void onClickButtonShowNotificationGroup1() {
+        // TODO
+        notificationUtils.showNotificationGroup();
+    }
+
+    @OnClick(R.id.btn_show_notification_open_regular_activity)
+    public void onClickButtonShowNotificationOpenRegularActivity() {
+        notificationUtils.showNotificationOpenRegularActivity();
+    }
+
+    @OnClick(R.id.btn_show_notification_open_special_activity)
+    public void onClickButtonShowNotificationOpenSpecialActivity() {
+        notificationUtils.showNotificationOpenSpecialActivity();
+    }
+
 }

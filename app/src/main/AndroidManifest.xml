@@ -36,7 +36,7 @@
         android:label="${applicationLabel}"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.FullStatusBar">
+        android:theme="@style/AppTheme">
         <activity
             android:name=".screen.SplashActivity"
             android:theme="@style/AppTheme.FullStatusBar.Launcher">
@@ -46,10 +46,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>-->
         </activity>
-        <activity android:name=".screen.start.crash.CrashActivity" />
-        <activity android:name=".screen.main.MainActivity" />
-        <activity android:name=".screen.start.StartActivity" />
-        <activity android:name=".screen.main2.MainActivity">
+        <activity
+            android:name=".screen.start.crash.CrashActivity"
+            android:theme="@style/AppTheme.FullStatusBar" />
+        <activity
+            android:name=".screen.main.MainActivity"
+            android:theme="@style/AppTheme.FullStatusBar" />
+        <activity
+            android:name=".screen.start.StartActivity"
+            android:theme="@style/AppTheme.FullStatusBar" />
+        <activity
+            android:name=".screen.main2.MainActivity"
+            android:theme="@style/AppTheme.FullStatusBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -61,9 +69,24 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>-->
         </activity>
-        <activity android:name=".screen.main2.toolbar.CollapsingToolbarActivity" />
-        <activity android:name=".screen.main2.toolbar.CollapsingToolbarCustomBehaviorActivity" />
-        <activity android:name=".screen.main2.appbar.appbarBottom.AppbarBottomActivity" />
+        <activity
+            android:name=".screen.main2.toolbar.CollapsingToolbarActivity"
+            android:theme="@style/AppTheme.FullStatusBar" />
+        <activity
+            android:name=".screen.main2.toolbar.CollapsingToolbarCustomBehaviorActivity"
+            android:theme="@style/AppTheme.FullStatusBar" />
+        <activity
+            android:name=".screen.main2.appbar.appbarBottom.AppbarBottomActivity"
+            android:theme="@style/AppTheme.FullStatusBar" />
+        <!--notification-->
+        <activity
+            android:name=".base.notification.startActivity.RegularActivity"
+            android:parentActivityName=".screen.main2.MainActivity" />
+        <activity
+            android:name=".base.notification.startActivity.SpecialActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:taskAffinity="" />
 
         <!-- Firebase Cloud Message -->
         <service android:name=".base.firebase.FCM.FCMService">

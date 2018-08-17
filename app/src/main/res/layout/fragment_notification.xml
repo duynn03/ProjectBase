@@ -75,4 +75,31 @@
         android:layout_centerHorizontal="true"
         android:text="Show Notification Control Media" />
 
+    <Button
+        android:id="@+id/btn_show_notification_group_1"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_show_notification_control_media"
+        android:layout_centerHorizontal="true"
+        android:text="Show Notification Group 1" />
+
+    <Button
+        android:id="@+id/btn_show_notification_open_regular_activity"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_show_notification_group_1"
+        android:layout_centerHorizontal="true"
+        android:text="Show Notification Open Regular Activity" />
+
+    <Button
+        android:id="@+id/btn_show_notification_open_special_activity"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_show_notification_open_regular_activity"
+        android:layout_centerHorizontal="true"
+        android:text="Show Notification Open Special Activity" />
+
 </RelativeLayout>
