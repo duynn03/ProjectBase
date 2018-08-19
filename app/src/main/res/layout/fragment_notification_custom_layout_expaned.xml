@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:maxHeight="256dp">
+
+    <ImageView
+        android:id="@+id/im_avatar_notification_music"
+        style="@style/Image"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_splash" />
+
+    <TextView
+        android:id="@+id/tv_title_video_notification_music"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/im_avatar_notification_music"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:text="CHÍ TÀI- HARI WON SONG CA ANH CỨ ĐI ĐI- SIÊU BẤT NGỜ 2016 | TẬP 16 TRAILER (18/10/2016)"
+        android:textColor="@android:color/white"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_channel_notification_music"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_title_video_notification_music"
+        android:layout_alignRight="@+id/tv_title_video_notification_music"
+        android:layout_below="@+id/tv_title_video_notification_music"
+        android:layout_marginTop="5dp"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:text="Hari Wonaaaaaaaaaaaaaaaaaaaaaa"
+        android:textColor="@android:color/white"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/v_temp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/tv_channel_notification_music"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/im_avatar_notification_music"
+        android:src="@android:color/black" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_title_video_notification_music"
+        android:layout_alignRight="@+id/tv_title_video_notification_music"
+        android:layout_below="@+id/v_temp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp">
+
+        <ImageView
+            android:id="@+id/im_prev_notification_music"
+            style="@style/Image"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_notification_prev" />
+
+        <ImageView
+            android:id="@+id/im_play_notification_music"
+            style="@style/Image"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/im_prev_notification_music"
+            android:src="@drawable/ic_notification_play" />
+
+        <ImageView
+            android:id="@+id/im_next_notification_music"
+            style="@style/Image"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/im_play_notification_music"
+            android:src="@drawable/ic_notification_next" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

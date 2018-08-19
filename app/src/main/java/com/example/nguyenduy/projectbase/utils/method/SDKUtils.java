@@ -10,6 +10,11 @@ public class SDKUtils {
         return Build.VERSION.SDK_INT;
     }
 
+    // >= 9.0 (api 28)
+    public static boolean isVersionSdkCurrentGreaterOrEqualVersionP() {
+        return getVersionSdkCurrent() >= Build.VERSION_CODES.P;
+    }
+
     // >= 8.0 (api 26)
     public static boolean isVersionSdkCurrentGreaterOrEqualVersion0() {
         return getVersionSdkCurrent() >= Build.VERSION_CODES.O;

@@ -158,6 +158,7 @@
 
         <!--broadcast custom-->
         <receiver android:name=".base.notification.NotificationReceiver" />
+        <receiver android:name=".base.notification.action.ReplyActionReceiver" />
 
     </application>
 

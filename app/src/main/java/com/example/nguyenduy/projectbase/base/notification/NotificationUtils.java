@@ -8,12 +8,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.support.annotation.NonNull;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.app.Person;
 import android.support.v4.graphics.drawable.IconCompat;
+import android.widget.RemoteViews;
 
 import com.example.nguyenduy.projectbase.R;
+import com.example.nguyenduy.projectbase.base.notification.action.ReplyActionUtils;
 import com.example.nguyenduy.projectbase.base.notification.channel.NotificationChannelUtils;
 import com.example.nguyenduy.projectbase.base.notification.startActivity.RegularActivity;
 import com.example.nguyenduy.projectbase.base.notification.startActivity.SpecialActivity;
@@ -107,7 +110,6 @@ public class NotificationUtils {
                         .addMessage(message2))
                 .build();
     }
-
 
     public void showNotificationBigImage1() {
         notificationManager.notify(idNotification, createNotificationBigImage1());
@@ -236,14 +238,12 @@ public class NotificationUtils {
         notificationManager.notify(SUMMARY_ID, createNotificationSummaryGroup());
     }
 
-    String GROUP_KEY_WORK_EMAIL = "com.android.example.WORK_EMAIL";
-
     private Notification createNotificationGroup1() {
         return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_splash)
                 .setContentTitle("Title Notification 1")
                 .setContentText("Content Small 1")
-                .setGroup(GROUP_KEY_WORK_EMAIL)
+                .setGroup(NotificationChannelUtils.GROUP_CHANNEL_ID)
                 .build();
     }
 
@@ -252,7 +252,7 @@ public class NotificationUtils {
                 .setSmallIcon(R.drawable.ic_splash)
                 .setContentTitle("Title Notification 2")
                 .setContentText("Content Small 2")
-                .setGroup(GROUP_KEY_WORK_EMAIL)
+                .setGroup(NotificationChannelUtils.GROUP_CHANNEL_ID)
                 .build();
     }
 
@@ -268,11 +268,141 @@ public class NotificationUtils {
                         .setBigContentTitle("Big Content Title")
                         .setSummaryText("Summary Text"))
                 //specify which group this notification belongs to
-                .setGroup(GROUP_KEY_WORK_EMAIL)
+                .setGroup(NotificationChannelUtils.GROUP_CHANNEL_ID)
                 //set this notification as the summary for the group
                 .setGroupSummary(true)
                 .build();
     }
+
+    public void showNotificationBadge() {
+        notificationManager.notify(idNotification, createNotificationBadge());
+    }
+
+    /*https://developer.android.com/training/notify-user/badges?hl=pt-br
+     * https://medium.com/exploring-android/exploring-android-o-notification-badges-32e1152eb1a0*/
+    private Notification createNotificationBadge() {
+        String contentSmall = "Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification";
+        return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_splash)
+                .setContentTitle("Title Notification")
+                .setContentText(contentSmall)
+                // set custom badge notification
+                // default thì notification sẽ tự đếm
+                .setNumber(5)
+                // TODO
+                // .setBadgeIconType(NotificationCompat.BADGE_ICON_NONE)
+                //.setShortcutId(shortcutId)
+                .build();
+    }
+
+    public void showNotificationReplyAction() {
+        notificationManager.notify(idNotification, createNotificationReplyAction());
+    }
+
+    private Notification createNotificationReplyAction() {
+        return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_splash)
+                .setContentTitle("Title Notification 2")
+                .setContentText("Content Small 2")
+                .addAction(new ReplyActionUtils(mContext).createAction())
+                .build();
+    }
+
+    /*update notification khi ddax replied*/
+    public void showNotificationReplyActionReplied() {
+        notificationManager.notify(idNotification, createNotificationReplyActionReplied());
+    }
+
+    private Notification createNotificationReplyActionReplied() {
+        return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_splash)
+                .setContentText("Replied")
+                .build();
+    }
+
+    private final int PROGRESS_MAX = 100;
+    private int PROGRESS_CURRENT;
+    NotificationCompat.Builder mBuilder;
+
+    /*https://developer.android.com/training/notify-user/build-notification?hl=pt-br#progressbar
+    Nên sử dụng worker thread để update progressbar
+    Nếu download file thì nên sử dụng  DownloadManager*/
+    public void showNotificationProgressbar() {
+        // create builder notification
+        mBuilder = createNotificationProgressbar();
+        PROGRESS_CURRENT = 0;
+        mBuilder.setProgress(PROGRESS_MAX, PROGRESS_CURRENT, false);
+        notificationManager.notify(idNotification, mBuilder.build());
+    }
+
+    public void increaseNotificationProgressbar() {
+        if (null == mBuilder) return;
+        PROGRESS_CURRENT += 10;
+        // complete
+        if (PROGRESS_CURRENT >= PROGRESS_MAX) {
+            mBuilder.setContentText("Download Complete")
+                    // remove progressbar bằng cách set max = 0, current = 0
+                    .setProgress(0, 0, false);
+        } else {
+            // update
+            mBuilder.setContentText((PROGRESS_MAX - PROGRESS_CURRENT) / 10 + " second left")
+                    // set indeterminate = true để thanh progressbar chạy liên tục
+                    // set indeterminate = false để thanh progressbar đứng im theo % progress current
+                    .setProgress(PROGRESS_MAX, PROGRESS_CURRENT, true);
+        }
+        notificationManager.notify(idNotification, mBuilder.build());
+    }
+
+    private NotificationCompat.Builder createNotificationProgressbar() {
+        return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_splash)
+                .setContentTitle("Picture Download")
+                .setContentText((PROGRESS_MAX - PROGRESS_CURRENT) / 10 + " second left")
+                .setPriority(NotificationCompat.PRIORITY_LOW);
+    }
+
+    /* để test: vào notification --> tích vào hide content*/
+    public void showNotificationLockScreenHiddenContent() {
+        notificationManager.notify(idNotification, createNotificationLockScreenHiddenContent());
+    }
+
+    private Notification createNotificationLockScreenHiddenContent() {
+        String contentSmall = "Content Small Content Small Content Small Content Small Content Small";
+        return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_splash)
+                .setContentTitle("Title Notification")
+                .setContentText(contentSmall)
+                .setVisibility(NotificationCompat.VISIBILITY_PRIVATE)
+                .setPublicVersion(createNotificationPublicVersion())
+                .build();
+    }
+
+    private Notification createNotificationPublicVersion() {
+        String contentSmall = "Content Small Thu gọn...";
+        return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_splash)
+                .setContentTitle("Title Thu gọn...")
+                .setContentText(contentSmall)
+                .build();
+    }
+
+    public void showNotificationSettingOther() {
+        notificationManager.notify(idNotification, createNotificationSettingOther());
+    }
+
+    private Notification createNotificationSettingOther() {
+        String contentSmall = "Content Small";
+        return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_splash)
+                .setContentTitle("Title Notification")
+                // default thì content sẽ chỉ hiển thị trên 1 line
+                .setContentText(contentSmall)
+                // Không bắt buộc phải set, chỉ nên set category khi rơi vào các category đã được defined trong NotificationCompat
+                // sử dụng trong Do Not Disturb mode
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+    }
+
 
     public void showNotificationOpenRegularActivity() {
         notificationManager.notify(idNotification, createNotificationOpenRegularActivity());
@@ -333,10 +463,58 @@ public class NotificationUtils {
     private final static String EXTRA_NOTIFICATION_ID = "EXTRA_NOTIFICATION_ID";
 
     private PendingIntent createIntentAction() {
-        Intent actionIntent = new Intent(mContext, NotificationReceiver.class);
-        actionIntent.setAction("Intent Action Button");
+        // có thể send intent tới service, activity, broadcast ...
+        Intent actionIntent = new Intent(mContext, NotificationReceiver.class)
+                .setAction("Intent Action Button");
+        // có thể put thêm data
         actionIntent.putExtra(EXTRA_NOTIFICATION_ID, idNotification);
-        return PendingIntent.getBroadcast(mContext, 0, actionIntent, 0);
+        return PendingIntent.getBroadcast(mContext, 0, actionIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+    }
+
+    public void showCustomNotification() {
+        notificationManager.notify(idNotification, createCustomNotification());
+    }
+
+    /*https://developer.android.com/training/notify-user/custom-notification?hl=pt-br*/
+    private Notification createCustomNotification() {
+        // Get the layouts to use in the custom notification
+        RemoteViews notificationLayoutCollapsed = new RemoteViews(mContext.getPackageName(), R.layout.fragment_notification_custom_layout_collapsed);
+        RemoteViews notificationLayoutExpanded = new RemoteViews(mContext.getPackageName(), R.layout.fragment_notification_custom_layout_expaned);
+
+        setEventsCustomNotification(notificationLayoutCollapsed, notificationLayoutExpanded);
+
+        return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_splash)
+                // Có thể dùng NotificationCompat.DecoratedMediaCustomViewStyle cho custom layout play music
+                // setStyle để giữ notification icon, tên project, timestamp default của project
+                .setStyle(new NotificationCompat.DecoratedCustomViewStyle())
+                // setContent để support cho version old than Android 4.1 (API 16)
+                .setContent(notificationLayoutCollapsed)
+                .setCustomContentView(notificationLayoutCollapsed)
+                .setCustomBigContentView(notificationLayoutExpanded)
+                .build();
+    }
+
+    private void setEventsCustomNotification(@NonNull RemoteViews collapsed, @NonNull RemoteViews expanded) {
+        PendingIntent intentPrev = createIntentCustomNotification("Prev");
+        PendingIntent intentPlay = createIntentCustomNotification("Play");
+        PendingIntent intentNext = createIntentCustomNotification("Next");
+
+        collapsed.setOnClickPendingIntent(R.id.im_next_notification_music, intentNext);
+        collapsed.setOnClickPendingIntent(R.id.im_play_notification_music, intentPlay);
+
+        expanded.setOnClickPendingIntent(R.id.im_prev_notification_music, intentPrev);
+        expanded.setOnClickPendingIntent(R.id.im_next_notification_music, intentNext);
+        expanded.setOnClickPendingIntent(R.id.im_play_notification_music, intentPlay);
+    }
+
+    private PendingIntent createIntentCustomNotification(@NonNull String nameAction) {
+        // có thể send intent tới service, activity, broadcast ...
+        Intent actionIntent = new Intent(mContext, NotificationReceiver.class)
+                .setAction(nameAction);
+        // có thể put thêm data
+        //actionIntent.putExtra(EXTRA_NOTIFICATION_ID, idNotification);
+        return PendingIntent.getBroadcast(mContext, 0, actionIntent, PendingIntent.FLAG_UPDATE_CURRENT);
     }
 
 }
