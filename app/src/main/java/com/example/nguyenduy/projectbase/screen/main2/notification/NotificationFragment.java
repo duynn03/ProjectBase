@@ -99,6 +99,11 @@ public class NotificationFragment extends BaseFragment<INotificationPresenter> i
         notificationUtils.showNotificationBadge();
     }
 
+    @OnClick(R.id.btn_show_notification_action)
+    public void onClickButtonShowNotificationAction() {
+        notificationUtils.showNotificationAction();
+    }
+
     @OnClick(R.id.btn_show_notification_reply_action)
     public void onClickButtonShowNotificationReplyAction() {
         notificationUtils.showNotificationReplyAction();
@@ -132,6 +137,27 @@ public class NotificationFragment extends BaseFragment<INotificationPresenter> i
     @OnClick(R.id.btn_show_notification_open_special_activity)
     public void onClickButtonShowNotificationOpenSpecialActivity() {
         notificationUtils.showNotificationOpenSpecialActivity();
+    }
+
+    @OnClick(R.id.btn_update_notification)
+    public void onClickButtonUpdateNotification() {
+        notificationUtils.updateNotification();
+    }
+
+    @OnClick(R.id.btn_remove_notification)
+    public void onClickButtonRemoveNotification() {
+        notificationUtils.removeNotification();
+    }
+
+    @OnClick(R.id.btn_remove_notification_timeout)
+    public void onClickButtonRemoveNotificationTimeout() {
+        notificationUtils.removeNotificationTimeout();
+    }
+
+
+    @OnClick(R.id.btn_remove_all_notification)
+    public void onClickButtonRemoveAllNotification() {
+        notificationUtils.removeAllNotification();
     }
 
     @OnClick(R.id.btn_open_setting_notification_channel)

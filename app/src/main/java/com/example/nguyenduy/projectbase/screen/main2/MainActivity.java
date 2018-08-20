@@ -11,6 +11,8 @@ import com.example.nguyenduy.projectbase.screen.main2.appcenter.AppCenterFragmen
 import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.dragger.DraggerFragment;
 import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.liveData.LiveDataFragment;
 import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.room.RoomFragment;
+import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.viewModel.ViewModelFragment;
+import com.example.nguyenduy.projectbase.screen.main2.backgroundTask.thread.ThreadFragment;
 import com.example.nguyenduy.projectbase.screen.main2.broadcast.BroadcastFragment;
 import com.example.nguyenduy.projectbase.screen.main2.database.RealmFragment;
 import com.example.nguyenduy.projectbase.screen.main2.firebase.FirebaseFragment;
@@ -22,12 +24,11 @@ import com.example.nguyenduy.projectbase.screen.main2.location.geofence.Geofence
 import com.example.nguyenduy.projectbase.screen.main2.location.location.LocationFragment;
 import com.example.nguyenduy.projectbase.screen.main2.navigation.dialog.DialogFragment;
 import com.example.nguyenduy.projectbase.screen.main2.navigation.navigationBottom.NavigationBottomFragment;
-import com.example.nguyenduy.projectbase.screen.main2.navigation.snackbar.SnackBarFragment;
 import com.example.nguyenduy.projectbase.screen.main2.navigation.notification.NotificationNavigationFragment;
+import com.example.nguyenduy.projectbase.screen.main2.navigation.snackbar.SnackBarFragment;
 import com.example.nguyenduy.projectbase.screen.main2.notification.NotificationFragment;
 import com.example.nguyenduy.projectbase.screen.main2.permission.PermissionFragment;
 import com.example.nguyenduy.projectbase.screen.main2.sharedpreference.SharedPreferenceFragment;
-import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.viewModel.ViewModelFragment;
 import com.example.nguyenduy.projectbase.screen.main2.toolbar.CollapsingToolbarActivity;
 import com.example.nguyenduy.projectbase.screen.main2.toolbar.CollapsingToolbarCustomBehaviorActivity;
 import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
@@ -174,6 +175,9 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
                 break;
             case R.id.menu_view_model:
                 replaceFragment(new ViewModelFragment(), false);
+                break;
+            case R.id.menu_thread:
+                replaceFragment(new ThreadFragment(), false);
                 break;
             case R.id.menu_share:
                 showToast("menu_share");

@@ -8,6 +8,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
@@ -25,6 +28,8 @@ import com.example.nguyenduy.projectbase.utils.method.SDKUtils;
 
 public class NotificationUtils {
 
+    private final static String EXTRA_NOTIFICATION_ID = "EXTRA_NOTIFICATION_ID";
+
     private Context mContext;
     private NotificationManagerCompat notificationManager;
 
@@ -41,39 +46,28 @@ public class NotificationUtils {
     }
 
     private Notification createNotificationBigText() {
-        String contentSmall = "Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification";
-        String contentBig = "Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification Content Big Notification";
+        String smallText = "Content Text Small Content Text Small Content Text Small Content Text Small Content Text Small Content Text Small Content Text Small Content Text Small Content Text Small";
+        String bigText = "Content Text Big Content Text Big Content Text Big Content Text Big Content Text Big Content Text Big Content Text Big Content Text Big Content Text Big Content Text Big ";
         return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_splash)
-                .setContentTitle("Title Notification")
+                .setContentTitle("Big Text")
                 // default thì content sẽ chỉ hiển thị trên 1 line
-                .setContentText(contentSmall)
-                // set content hiển thị full trên expanable notification thì set style
-                // https://developer.android.com/training/notify-user/expanded
-                .setStyle(new NotificationCompat.BigTextStyle().bigText(contentBig))
-                .setPriority(NotificationCompat.PRIORITY_HIGH)
-                // set intent to activity
-                // https://developer.android.com/training/notify-user/navigation
-                .setContentIntent(createIntentToRegularActivity())
-                // auto remove notification khi user taps vào notification
-                .setAutoCancel(true)
-                .addAction(R.drawable.ic_menu_gallery, "Action Button", createIntentAction())
-                //  .addAction(ReplyActionUtils.createAction())
+                .setContentText(smallText)
+                .setStyle(new NotificationCompat.BigTextStyle().bigText(bigText))
                 .build();
     }
 
-    /*Add tối đa 6 line, nếu add nhiều hơn 6 line thì 6 line đầu sẽ hiển thị*/
     public void showNotificationTextMultiLine() {
         notificationManager.notify(idNotification, createNotificationTextMultiLine());
     }
 
     private Notification createNotificationTextMultiLine() {
-        String contentSmall = "Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification";
+        String smallText = "Content Text";
         return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_splash)
-                .setContentTitle("Title Notification")
-                // default thì content sẽ chỉ hiển thị trên 1 line
-                .setContentText(contentSmall)
+                .setContentTitle("Text MultiLine")
+                .setContentText(smallText)
+                /*Add tối đa 6 line, nếu add nhiều hơn 6 line thì 6 line đầu sẽ hiển thị*/
                 .setStyle(new NotificationCompat.InboxStyle()
                         .addLine("Line 1 Line 1 Line 1 Line 1  Line 1 Line 1 Line 1 Line 1 Line 1 Line 1 Line 1")
                         .addLine("Line 2 Line 2 Line 2 Line 2  Line 2 Line 2 Line 2 Line 2 Line 2 Line 2 Line 2")
@@ -88,26 +82,32 @@ public class NotificationUtils {
     /*Khi sử dụng setStyle Message thì value của setContent sẽ bị ignore*/
     private Notification createNotificationTextStyleMessage() {
         NotificationCompat.MessagingStyle.Message message1 =
-                new NotificationCompat.MessagingStyle.Message("Message 1 Message 1 Message 1 Message 1 Message 1",
-                        1368436083157l,
-                        new Person.Builder().setName("sender 1: ").build());
+                new NotificationCompat.MessagingStyle.Message(
+                        "Message 1 Message 1 Message 1 Message 1 Message 1",
+                        1368436083157L,
+                        new Person.Builder().setName("sender 1: ").build())
+                        // set data
+                        .setData("image/*", Uri.parse("https://www.w3schools.com/css/paris.jpg"));
         NotificationCompat.MessagingStyle.Message message2 =
-                new NotificationCompat.MessagingStyle.Message("Message 2 Message 2 Message 2 Message 2 Message 2",
-                        1368436083159l,
+                new NotificationCompat.MessagingStyle.Message(
+                        "Message 2 Message 2 Message 2 Message 2 Message 2",
+                        1368436083159L,
                         new Person.Builder().setName("sender 2: ").build());
-        Person person = new Person.Builder()
+
+        Person personReceiver = new Person.Builder()
                 .setName("Nguyễn Duy")
                 .setIcon(IconCompat.createWithResource(mContext, R.drawable.ic_menu_camera)).build();
 
         return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_splash)
-                /*Sử dụng kèm với NotificationCompat thì system sẽ tự động hỗ trợ expanded notification style*/
-                .setStyle(new NotificationCompat.MessagingStyle(person)
-                        /*conversion (optional)*/
-                        .setGroupConversation(true)
-                        .setConversationTitle("Conversation Title")
-                        .addMessage(message1)
-                        .addMessage(message2))
+                .setStyle(new NotificationCompat.MessagingStyle(personReceiver)
+                                /*conversion là optional*/
+                                .setGroupConversation(true)
+                                .setConversationTitle("Title Conversation")
+                                .addMessage(message1)
+                                .addMessage(message2)
+                        //.addHistoricMessage(new Message("historic text", 0, "historic sender")
+                )
                 .build();
     }
 
@@ -116,13 +116,12 @@ public class NotificationUtils {
     }
 
     private Notification createNotificationBigImage1() {
-        String contentSmall = "Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification";
+        String smallText = "Content Text Small";
         Bitmap bitmap = BitmapFactory.decodeResource(ResourceUtils.getResource(), R.drawable.ic_splash);
         return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_splash)
-                .setContentTitle("Title Notification")
-                // default thì content sẽ chỉ hiển thị trên 1 line
-                .setContentText(contentSmall)
+                .setContentTitle("Big Text 1")
+                .setContentText(smallText)
                 // https://developer.android.com/training/notify-user/expanded
                 // set image to
                 .setLargeIcon(bitmap)
@@ -136,17 +135,16 @@ public class NotificationUtils {
     }
 
     private Notification createNotificationBigImage2() {
-        String contentSmall = "Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification";
+        String smallText = "Content Text Small";
         Bitmap bitmap = BitmapFactory.decodeResource(ResourceUtils.getResource(), R.drawable.ic_splash);
         return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_splash)
-                .setContentTitle("Title Notification")
-                // default thì content sẽ chỉ hiển thị trên 1 line
-                .setContentText(contentSmall)
+                .setContentTitle("Big Text 2")
+                .setContentText(smallText)
                 // https://developer.android.com/training/notify-user/expanded
                 // set image to
                 .setLargeIcon(bitmap)
-                // set image nhỏ
+                // not set image nhỏ
                 .setStyle(new NotificationCompat.BigPictureStyle()
                         .bigPicture(bitmap)
                         .bigLargeIcon(null))
@@ -158,13 +156,12 @@ public class NotificationUtils {
     }
 
     private Notification createNotificationBigImage3() {
-        String contentSmall = "Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification";
+        String smallText = "Content Text Small";
         Bitmap bitmap = BitmapFactory.decodeResource(ResourceUtils.getResource(), R.drawable.ic_splash);
         return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_splash)
-                .setContentTitle("Title Notification")
-                // default thì content sẽ chỉ hiển thị trên 1 line
-                .setContentText(contentSmall)
+                .setContentTitle("Big Text 3")
+                .setContentText(smallText)
                 // https://developer.android.com/training/notify-user/expanded
                 // set image nhỏ
                 .setStyle(new NotificationCompat.BigPictureStyle()
@@ -220,7 +217,6 @@ public class NotificationUtils {
         return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_splash)
                 .setContentTitle("Title Notification")
-                // default thì content sẽ chỉ hiển thị trên 1 line
                 .setContentText(contentSmall)
                 .setStyle(new NotificationCompat.InboxStyle()
                         .addLine("Line 1 Line 1 Line 1 Line 1  Line 1 Line 1 Line 1 Line 1 Line 1 Line 1 Line 1")
@@ -230,12 +226,12 @@ public class NotificationUtils {
     }*/
 
     //use constant ID for notification used as group summary
-    int SUMMARY_ID = 0;
+    int GROUP_ID = 0;
 
     public void showNotificationGroup() {
         notificationManager.notify(idNotification, createNotificationGroup1());
         notificationManager.notify(idNotification + 1, createNotificationGroup2());
-        notificationManager.notify(SUMMARY_ID, createNotificationSummaryGroup());
+        notificationManager.notify(GROUP_ID, createNotificationSummaryGroup());
     }
 
     private Notification createNotificationGroup1() {
@@ -259,7 +255,7 @@ public class NotificationUtils {
     private Notification createNotificationSummaryGroup() {
         return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_splash)
-                .setContentTitle("Title Summary Group")
+                .setContentTitle("Title Group")
                 //set content text to support devices running API level < 24
                 .setContentText("Content Summary Group")
                 .setStyle(new NotificationCompat.InboxStyle()
@@ -281,18 +277,41 @@ public class NotificationUtils {
     /*https://developer.android.com/training/notify-user/badges?hl=pt-br
      * https://medium.com/exploring-android/exploring-android-o-notification-badges-32e1152eb1a0*/
     private Notification createNotificationBadge() {
-        String contentSmall = "Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification Content Small Notification";
+        String smallText = "Content Text Small";
         return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_splash)
-                .setContentTitle("Title Notification")
-                .setContentText(contentSmall)
-                // set custom badge notification
+                .setContentTitle("Notification Badge")
+                .setContentText(smallText)
                 // default thì notification sẽ tự đếm
+                // set custom badge notification
                 .setNumber(5)
                 // TODO
-                // .setBadgeIconType(NotificationCompat.BADGE_ICON_NONE)
+                //.setBadgeIconType(NotificationCompat.BADGE_ICON_NONE)
                 //.setShortcutId(shortcutId)
                 .build();
+    }
+
+    public void showNotificationAction() {
+        notificationManager.notify(idNotification, createNotificationAction());
+    }
+
+    private Notification createNotificationAction() {
+        String smallText = "Content Text Small";
+        return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_splash)
+                .setContentTitle("Notification Action")
+                .setContentText(smallText)
+                .addAction(R.drawable.ic_menu_gallery, "Action Button", createIntentAction())
+                .build();
+    }
+
+    private PendingIntent createIntentAction() {
+        // có thể send intent tới service, activity, broadcast ...
+        Intent actionIntent = new Intent(mContext, NotificationReceiver.class)
+                .setAction("Intent Action Button");
+        // có thể put thêm data
+        actionIntent.putExtra(EXTRA_NOTIFICATION_ID, idNotification);
+        return PendingIntent.getBroadcast(mContext, 0, actionIntent, PendingIntent.FLAG_UPDATE_CURRENT);
     }
 
     public void showNotificationReplyAction() {
@@ -300,16 +319,17 @@ public class NotificationUtils {
     }
 
     private Notification createNotificationReplyAction() {
+        String smallText = "Content Text Small";
         return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_splash)
-                .setContentTitle("Title Notification 2")
-                .setContentText("Content Small 2")
-                .addAction(new ReplyActionUtils(mContext).createAction())
+                .setContentTitle("Notification Reply Action")
+                .setContentText(smallText)
+                .addAction(new ReplyActionUtils(mContext).createReplyAction())
                 .build();
     }
 
-    /*update notification khi ddax replied*/
-    public void showNotificationReplyActionReplied() {
+    /*update notification khi đã replied*/
+    public void updateNotificationReplyActionReplied() {
         notificationManager.notify(idNotification, createNotificationReplyActionReplied());
     }
 
@@ -356,33 +376,32 @@ public class NotificationUtils {
     private NotificationCompat.Builder createNotificationProgressbar() {
         return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_splash)
-                .setContentTitle("Picture Download")
-                .setContentText((PROGRESS_MAX - PROGRESS_CURRENT) / 10 + " second left")
-                .setPriority(NotificationCompat.PRIORITY_LOW);
+                .setContentTitle("Notification Progressbar")
+                .setContentText((PROGRESS_MAX - PROGRESS_CURRENT) / 10 + " second left");
     }
 
-    /* để test: vào notification --> tích vào hide content*/
+    /*Để test: vào notification --> tích vào hide content*/
     public void showNotificationLockScreenHiddenContent() {
         notificationManager.notify(idNotification, createNotificationLockScreenHiddenContent());
     }
 
     private Notification createNotificationLockScreenHiddenContent() {
-        String contentSmall = "Content Small Content Small Content Small Content Small Content Small";
+        String smallText = "Content Text Small";
         return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_splash)
-                .setContentTitle("Title Notification")
-                .setContentText(contentSmall)
+                .setContentTitle("Notification Lock Screen Hidden Content")
+                .setContentText(smallText)
                 .setVisibility(NotificationCompat.VISIBILITY_PRIVATE)
                 .setPublicVersion(createNotificationPublicVersion())
                 .build();
     }
 
     private Notification createNotificationPublicVersion() {
-        String contentSmall = "Content Small Thu gọn...";
+        String smallText = "Content Text...";
         return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_splash)
-                .setContentTitle("Title Thu gọn...")
-                .setContentText(contentSmall)
+                .setContentTitle("Notification Lock Screen...")
+                .setContentText(smallText)
                 .build();
     }
 
@@ -391,32 +410,40 @@ public class NotificationUtils {
     }
 
     private Notification createNotificationSettingOther() {
-        String contentSmall = "Content Small";
+        String smallText = "Content Text...";
         return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_splash)
-                .setContentTitle("Title Notification")
-                // default thì content sẽ chỉ hiển thị trên 1 line
-                .setContentText(contentSmall)
+                .setContentTitle("Notification Setting Other")
+                .setContentText(smallText)
+                // set rung - cần permission android.permission.VIBRATE
+                .setVibrate(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400})
+                // TODO - chưa test
+                // set light - system sẽ bật light nếu screen off
+                .setLights(Color.RED, 3000, 3000)
+                // set sound default
+                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)) // .setSound(Uri.parse("uri://sadfasdfasdf.mp3"));
                 // Không bắt buộc phải set, chỉ nên set category khi rơi vào các category đã được defined trong NotificationCompat
                 // sử dụng trong Do Not Disturb mode
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                // https://developer.android.com/training/notify-user/channels?hl=pt-br#importance
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                // auto remove notification khi user taps vào notification
+                .setAutoCancel(true)
                 .build();
     }
-
 
     public void showNotificationOpenRegularActivity() {
         notificationManager.notify(idNotification, createNotificationOpenRegularActivity());
     }
 
-    /*https://developer.android.com/training/notify-user/navigation?hl=pt-br*/
+    /*https://developer.android.com/training/notify-user/navigation?hl=pt-br#DirectEntry*/
     private Notification createNotificationOpenRegularActivity() {
+        String smallText = "Content Text...";
         return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_splash)
-                .setContentTitle("Title Notification")
-                // default thì content sẽ chỉ hiển thị trên 1 line
-                .setContentText("Content Small")
+                .setContentTitle("Notification Open Regular Activity")
+                .setContentText(smallText)
                 // set intent to Regular activity
-                // https://developer.android.com/training/notify-user/navigation?hl=pt-br#DirectEntry
                 .setContentIntent(createIntentToRegularActivity())
                 .build();
     }
@@ -429,8 +456,7 @@ public class NotificationUtils {
             return PendingIntent.getActivity(mContext, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         } else {
             // Create the TaskStackBuilder and add the intent, which inflates the back stack
-            TaskStackBuilder stackBuilder = TaskStackBuilder.create(mContext)
-                    .addNextIntentWithParentStack(intent);
+            TaskStackBuilder stackBuilder = TaskStackBuilder.create(mContext).addNextIntentWithParentStack(intent);
             // Get the PendingIntent containing the entire back stack
             return stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
         }
@@ -440,15 +466,14 @@ public class NotificationUtils {
         notificationManager.notify(idNotification, createNotificationOpenSpecialActivity());
     }
 
-    /*https://developer.android.com/training/notify-user/navigation?hl=pt-br*/
+    /*https://developer.android.com/training/notify-user/navigation?hl=pt-br#ExtendedNotification*/
     private Notification createNotificationOpenSpecialActivity() {
+        String smallText = "Content Text...";
         return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_splash)
-                .setContentTitle("Title Notification")
-                // default thì content sẽ chỉ hiển thị trên 1 line
-                .setContentText("Content Small")
-                // set intent to Regular activity
-                // https://developer.android.com/training/notify-user/navigation?hl=pt-br#DirectEntry
+                .setContentTitle("Notification Open Special Activity")
+                .setContentText(smallText)
+                // set intent to Special activity
                 .setContentIntent(createIntentToSpecialActivity())
                 .build();
     }
@@ -460,15 +485,47 @@ public class NotificationUtils {
         return PendingIntent.getActivity(mContext, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
     }
 
-    private final static String EXTRA_NOTIFICATION_ID = "EXTRA_NOTIFICATION_ID";
+    public void updateNotification() {
+        notificationManager.notify(idNotification, createNotificationUpdate());
+    }
 
-    private PendingIntent createIntentAction() {
-        // có thể send intent tới service, activity, broadcast ...
-        Intent actionIntent = new Intent(mContext, NotificationReceiver.class)
-                .setAction("Intent Action Button");
-        // có thể put thêm data
-        actionIntent.putExtra(EXTRA_NOTIFICATION_ID, idNotification);
-        return PendingIntent.getBroadcast(mContext, 0, actionIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+    /*Để update notification thì gọi lại NotificationManagerCompat.notify() với Id cũ
+          Nếu ID cũ đã bị dismiss thì 1 new notification sẽ được thay thế*/
+    /*Nếu push nhiều hơn 1 notification / 1s thì system có thể sẽ drop đi 1 vài notification*/
+    private Notification createNotificationUpdate() {
+        String smallText = "Content Text...";
+        return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_splash)
+                .setContentTitle("Notification Update")
+                .setContentText(smallText)
+                // set rung - cần permission android.permission.VIBRATE
+                .setVibrate(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400})
+                // (sound, vibration, visual clues) chỉ xuất hiện ở lần đầu tiên show notification (theo ID), không apply cho update notification
+                .setOnlyAlertOnce(true)
+                .build();
+    }
+
+    public void removeNotification() {
+        notificationManager.cancel(idNotification);
+    }
+
+    /*TODo - Chưa test*/
+    public void removeNotificationTimeout() {
+        notificationManager.notify(idNotification, createNotificationTimeout());
+    }
+
+    private Notification createNotificationTimeout() {
+        String smallText = "Content Text...";
+        return new NotificationCompat.Builder(mContext, NotificationChannelUtils.CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_splash)
+                .setContentTitle("Notification Time Out")
+                .setContentText(smallText)
+                .setTimeoutAfter(3 * 1000)
+                .build();
+    }
+
+    public void removeAllNotification() {
+        notificationManager.cancelAll();
     }
 
     public void showCustomNotification() {
@@ -510,8 +567,7 @@ public class NotificationUtils {
 
     private PendingIntent createIntentCustomNotification(@NonNull String nameAction) {
         // có thể send intent tới service, activity, broadcast ...
-        Intent actionIntent = new Intent(mContext, NotificationReceiver.class)
-                .setAction(nameAction);
+        Intent actionIntent = new Intent(mContext, NotificationReceiver.class).setAction(nameAction);
         // có thể put thêm data
         //actionIntent.putExtra(EXTRA_NOTIFICATION_ID, idNotification);
         return PendingIntent.getBroadcast(mContext, 0, actionIntent, PendingIntent.FLAG_UPDATE_CURRENT);

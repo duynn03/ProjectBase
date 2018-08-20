@@ -27,7 +27,7 @@ public class ReplyActionReceiver extends BroadcastReceiver {
         LogUtils.i(TAG + "onReceive(): " + "Reply Action Message: " + replyActionUtils.getReplyMessage(intent));
         Toast.makeText(context, "onReceive(): " + "Reply Action Message: " + replyActionUtils.getReplyMessage(intent), Toast.LENGTH_SHORT).show();
         // update notification thành đã replied
-        notificationUtils.showNotificationReplyActionReplied();
+        notificationUtils.updateNotificationReplyActionReplied();
     }
 
 }

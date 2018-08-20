@@ -17,8 +17,8 @@ public class ReplyActionUtils {
         mContext = context;
     }
 
-    public NotificationCompat.Action createAction() {
-        return new NotificationCompat.Action.Builder(R.drawable.ic_menu_send, "reply", createIntentReplyAction())
+    public NotificationCompat.Action createReplyAction() {
+        return new NotificationCompat.Action.Builder(R.drawable.ic_menu_send, "Reply", createIntentReplyAction())
                 .addRemoteInput(createRemoteInputReplyAction())
                 .build();
     }
@@ -29,7 +29,6 @@ public class ReplyActionUtils {
                 .setAction("Intent Reply Action Button");
         // có thể put thêm data
         //replyActionIntent.putExtra(EXTRA_CONVERSATION_ID, ConversationId);
-
         return PendingIntent.getBroadcast(mContext, 0, replyActionIntent, PendingIntent.FLAG_UPDATE_CURRENT);
     }
 
