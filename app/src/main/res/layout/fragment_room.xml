@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_get_by_name_data"
         android:layout_centerHorizontal="true"
-        android:text="Insert" />
+        android:text="Insert Data" />
 
     <Button
         android:id="@+id/btn_insert_list_data"
@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_insert_list_data"
         android:layout_centerHorizontal="true"
-        android:text="Update" />
+        android:text="Update Data" />
 
     <Button
         android:id="@+id/btn_update_list_data"
@@ -83,7 +83,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_update_list_data"
         android:layout_centerHorizontal="true"
-        android:text="Delete" />
+        android:text="Delete Data" />
 
     <Button
         android:id="@+id/btn_delete_list_data"

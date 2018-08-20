@@ -73,7 +73,9 @@ public class RoomFragment extends BaseFragment<IRoomPresenter> implements IRoomV
 
     @OnClick(R.id.btn_insert_data)
     public void onClickButtonInsertData() {
-        AppDatabase.getInstance().userDao().insert(new User("Nguyen", "Duy Insert", new Address("Tố Hữu", "Hà đông", "Hà Nội", 20)));
+        long id = AppDatabase.getInstance().userDao().insert(new User("Nguyen", "Duy Insert", new Address("Tố Hữu", "Hà đông", "Hà Nội", 20)));
+        showToast("onClickButtonInsertData: id: " + (id >= 1 ? id : "null"));
+        LogUtils.i(TAG + "onClickButtonInsertData: id: " + (id >= 1 ? id : "null"));
     }
 
     @OnClick(R.id.btn_insert_list_data)
@@ -82,35 +84,45 @@ public class RoomFragment extends BaseFragment<IRoomPresenter> implements IRoomV
         users.add(new User("Nguyen", "Duy Insert List 1", new Address("Tố Hữu", "Hà đông", "Hà Nội", 20)));
         users.add(new User("Nguyen", "Duy Insert List 2", new Address("Tố Hữu", "Hà đông", "Hà Nội", 20)));
         users.add(new User("Nguyen", "Duy Insert List 3", new Address("Tố Hữu", "Hà đông", "Hà Nội", 20)));
-        AppDatabase.getInstance().userDao().insert(users.toArray(new User[users.size()]));
+        List<Long> results = AppDatabase.getInstance().userDao().insert(users);
+        showToast("onClickButtonInsertListData: ids: " + results.toString());
+        LogUtils.i(TAG + "onClickButtonInsertListData: ids: " + results.toString());
     }
 
     @OnClick(R.id.btn_update_data)
     public void onClickButtonUpdateData() {
         User user = AppDatabase.getInstance().userDao().getByID(2);
         user.setLastName("Duy Update Data");
-        AppDatabase.getInstance().userDao().update(user);
+        int numberRecordUpdated = AppDatabase.getInstance().userDao().update(user);
+        showToast("onClickButtonUpdateData: number record Updated: " + numberRecordUpdated);
+        LogUtils.i(TAG + "onClickButtonUpdateData: number record Updated: " + numberRecordUpdated);
     }
 
     @OnClick(R.id.btn_update_list_data)
     public void onClickButtonUpdateListData() {
         User user1 = AppDatabase.getInstance().userDao().getByID(3);
-        user1.setLastName("Duy Update Data 1");
+        user1.setLastName("Duy Update List Data 1");
         User user2 = AppDatabase.getInstance().userDao().getByID(4);
-        user2.setLastName("Duy Update Data 2");
-        AppDatabase.getInstance().userDao().update(user1, user2);
+        user2.setLastName("Duy Update List Data 2");
+        int numberRecordUpdated = AppDatabase.getInstance().userDao().update(user1, user2);
+        showToast("onClickButtonUpdateListData: number record Updated: " + numberRecordUpdated);
+        LogUtils.i(TAG + "onClickButtonUpdateListData: number record Updated: " + numberRecordUpdated);
     }
 
     @OnClick(R.id.btn_delete_data)
     public void onClickButtonDeleteData() {
         User user = AppDatabase.getInstance().userDao().getByID(5);
-        AppDatabase.getInstance().userDao().delete(user);
+        int numberRecordDeleted = AppDatabase.getInstance().userDao().delete(user);
+        showToast("onClickButtonDeleteData: number record Updated: " + numberRecordDeleted);
+        LogUtils.i(TAG + "onClickButtonDeleteData: number record Updated: " + numberRecordDeleted);
     }
 
     @OnClick(R.id.btn_delete_list_data)
     public void onClickButtonDeleteListData() {
         User user1 = AppDatabase.getInstance().userDao().getByID(6);
         User user2 = AppDatabase.getInstance().userDao().getByID(7);
-        AppDatabase.getInstance().userDao().delete(user1, user2);
+        int numberRecordDeleted = AppDatabase.getInstance().userDao().delete(user1, user2);
+        showToast("onClickButtonDeleteListData: number record Updated: " + numberRecordDeleted);
+        LogUtils.i(TAG + "onClickButtonDeleteListData: number record Updated: " + numberRecordDeleted);
     }
 }

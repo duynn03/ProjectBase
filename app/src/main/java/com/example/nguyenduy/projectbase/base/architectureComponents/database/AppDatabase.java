@@ -32,13 +32,17 @@ public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase instance;
 
+    private static String getDatabasePath() {
+        return MyApplication.getAppContext().getDatabasePath(DatabaseConstants.DATABASE_NAME + ".db").getAbsolutePath();
+    }
+
     public static synchronized AppDatabase getInstance() {
         if (instance == null) {
             instance = Room.databaseBuilder(
                     MyApplication.getAppContext(),
                     AppDatabase.class,
                     DatabaseConstants.DATABASE_NAME)
-                   // .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
+                    // .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
                     // init data default
                     .addCallback(new Callback() {
                         @Override
@@ -52,8 +56,12 @@ public abstract class AppDatabase extends RoomDatabase {
                         public void onOpen(@NonNull SupportSQLiteDatabase db) {
                             super.onOpen(db);
                             LogUtils.i(TAG + "getInstance(): addCallback(): onOpen()");
+                            LogUtils.i(TAG + "getDatabasePath(): " + getDatabasePath());
+
                         }
                     })
+                    // cho phép truy cập database trên main thread (NOT RECOMMEND)
+                    .allowMainThreadQueries()
                     .build();
         }
         return instance;

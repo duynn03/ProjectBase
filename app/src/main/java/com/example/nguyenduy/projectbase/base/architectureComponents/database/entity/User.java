@@ -17,15 +17,6 @@ import android.arch.persistence.room.PrimaryKey;
                         },
                         unique = true
                 )
-                //,
-                // Index
-//                @Index("name"),
-//                @Index(
-//                        value = {
-//                                "last_name",
-//                                "address"
-//                        }
-//                )
         })
 public class User {
 
@@ -52,8 +43,8 @@ public class User {
     @Ignore
     private String fullName;
 
-   // @Embedded(/*prefix = "home_"*/)
-   @Ignore
+    @Embedded(prefix = "home_")
+   // @Ignore
     private Address address;
 
     public int getId() {
