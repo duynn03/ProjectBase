@@ -11,8 +11,17 @@ import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 
 import com.example.nguyenduy.projectbase.application.MyApplication;
+import com.example.nguyenduy.projectbase.base.architectureComponents.database.entity.Account;
 import com.example.nguyenduy.projectbase.base.architectureComponents.database.entity.Address;
+import com.example.nguyenduy.projectbase.base.architectureComponents.database.entity.Book;
+import com.example.nguyenduy.projectbase.base.architectureComponents.database.entity.Repo;
 import com.example.nguyenduy.projectbase.base.architectureComponents.database.entity.User;
+import com.example.nguyenduy.projectbase.base.architectureComponents.database.entity.UserAndRepo;
+import com.example.nguyenduy.projectbase.base.architectureComponents.database.repository.dao.AccountDao;
+import com.example.nguyenduy.projectbase.base.architectureComponents.database.repository.dao.BookDao;
+import com.example.nguyenduy.projectbase.base.architectureComponents.database.repository.dao.RepoDao;
+import com.example.nguyenduy.projectbase.base.architectureComponents.database.repository.dao.UserAndAccountDao;
+import com.example.nguyenduy.projectbase.base.architectureComponents.database.repository.dao.UserAndRepoDao;
 import com.example.nguyenduy.projectbase.base.architectureComponents.database.repository.dao.UserDao;
 import com.example.nguyenduy.projectbase.utils.LogUtils;
 import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
@@ -21,7 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Database(
-        entities = {User.class},
+        entities = {User.class, Book.class, Repo.class, UserAndRepo.class, Account.class},
         version = DatabaseConstants.DATABASE_VERSION)
 @TypeConverters({ConverterTypeDatabase.class})
 public abstract class AppDatabase extends RoomDatabase {
@@ -30,14 +39,29 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public abstract UserDao userDao();
 
+    public abstract RepoDao repoDao();
+
+    public abstract UserAndRepoDao userRepoDao();
+
+    public abstract AccountDao accountDao();
+
+    public abstract UserAndAccountDao userAndAccountDao();
+
+    public abstract BookDao bookDao();
+
     private static AppDatabase instance;
 
     private static String getDatabasePath() {
         return MyApplication.getAppContext().getDatabasePath(DatabaseConstants.DATABASE_NAME + ".db").getAbsolutePath();
     }
 
+    public void closeDatabase() {
+        if (null != instance)
+            instance.close();
+    }
+
     public static synchronized AppDatabase getInstance() {
-        if (instance == null) {
+        if (null == instance) {
             instance = Room.databaseBuilder(
                     MyApplication.getAppContext(),
                     AppDatabase.class,
@@ -74,11 +98,29 @@ public abstract class AppDatabase extends RoomDatabase {
     private static class initDefaultDataAsyncTask extends AsyncTask<Void, Void, Void> {
 
         private final UserDao userDao;
+        private final RepoDao repoDao;
+        private final UserAndRepoDao userAndRepoDao;
+        private final AccountDao accountDao;
+        private final BookDao bookDao;
+
         List<User> users = new ArrayList<>();
+        List<Book> books = new ArrayList<>();
+        List<Repo> repos = new ArrayList<>();
+        List<UserAndRepo> userAndRepos = new ArrayList<>();
+        List<Account> accounts = new ArrayList<>();
 
         initDefaultDataAsyncTask(AppDatabase database) {
             userDao = database.userDao();
+            repoDao = database.repoDao();
+            userAndRepoDao = database.userRepoDao();
+            accountDao = database.accountDao();
+            bookDao = database.bookDao();
+
             initUser();
+            initBook();
+            initRepo();
+            initUserAndRepo();
+            initAccount();
         }
 
         private void initUser() {
@@ -89,11 +131,64 @@ public abstract class AppDatabase extends RoomDatabase {
             users.add(new User("Nguyen", "Duy5", new Address("Tố Hữu", "Hà đông", "Hà Nội", 20)));
         }
 
+        private void initBook() {
+            books.add(new Book("Book 1 User Id 1", 1));
+            books.add(new Book("Book 2 User Id 1", 1));
+            books.add(new Book("Book 3 User Id 1", 1));
+            books.add(new Book("Book 4 User Id 2", 2));
+            books.add(new Book("Book 5 User Id 3", 3));
+            books.add(new Book("Book 6 User Id 4", 4));
+        }
+
+        private void initRepo() {
+            repos.add(new Repo("Repo 1"));
+            repos.add(new Repo("Repo 2"));
+            repos.add(new Repo("Repo 3"));
+            repos.add(new Repo("Repo 4"));
+            repos.add(new Repo("Repo 5"));
+        }
+
+        private void initUserAndRepo() {
+            userAndRepos.add(new UserAndRepo(1, 1));
+            userAndRepos.add(new UserAndRepo(1, 2));
+            userAndRepos.add(new UserAndRepo(1, 3));
+            userAndRepos.add(new UserAndRepo(2, 1));
+            userAndRepos.add(new UserAndRepo(2, 2));
+            userAndRepos.add(new UserAndRepo(2, 3));
+            userAndRepos.add(new UserAndRepo(2, 4));
+        }
+
+        private void initAccount() {
+            accounts.add(new Account("Account 1", 1));
+            accounts.add(new Account("Account 2", 1));
+            accounts.add(new Account("Account 3", 2));
+            accounts.add(new Account("Account 4", 2));
+            accounts.add(new Account("Account 5", 3));
+        }
+
         @Transaction
         @Override
         protected Void doInBackground(final Void... params) {
+            // user
             userDao.deleteAll();
-            userDao.insert(users.toArray(new User[users.size()]));
+            userDao.insert(users);
+
+            // book
+            bookDao.deleteAll();
+            bookDao.insert(books);
+
+            // repo
+            repoDao.deleteAll();
+            repoDao.insert(repos);
+
+            // user and repo
+            userAndRepoDao.deleteAll();
+            userAndRepoDao.insert(userAndRepos);
+
+            // account
+            accountDao.deleteAll();
+            accountDao.insert(accounts);
+
             return null;
         }
     }
