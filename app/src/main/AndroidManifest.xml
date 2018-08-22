@@ -163,6 +163,19 @@
         <receiver android:name=".base.notification.NotificationReceiver" />
         <receiver android:name=".base.notification.action.ReplyActionReceiver" />
 
+        <!--service-->
+        <!--Xem thêm các attribute khai báo service
+        https://developer.android.com/guide/topics/manifest/service-element-->
+        <service
+            android:name=".base.backgroundTask.service.StartedService"
+            android:exported="false" />
+        <service
+            android:name=".base.backgroundTask.service.BindService"
+            android:exported="false" />
+        <service
+            android:name=".base.backgroundTask.service.TestIntentService"
+            android:exported="false" />
+
     </application>
 
 </manifest>
