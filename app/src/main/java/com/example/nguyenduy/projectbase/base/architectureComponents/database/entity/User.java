@@ -17,7 +17,8 @@ import android.arch.persistence.room.PrimaryKey;
                         },
                         unique = true
                 )
-        })
+        }
+)
 public class User {
 
     public User() {
@@ -44,7 +45,6 @@ public class User {
     private String fullName;
 
     @Embedded(prefix = "home_")
-   // @Ignore
     private Address address;
 
     public int getId() {

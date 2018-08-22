@@ -10,7 +10,7 @@ import com.example.nguyenduy.projectbase.base.appCenter.AppCenterUtils;
 import com.example.nguyenduy.projectbase.base.appCenter.CrashUtils;
 import com.example.nguyenduy.projectbase.screen.main.MainActivity;
 import com.example.nguyenduy.projectbase.screen.start.StartActivity;
-import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
+import com.example.nguyenduy.projectbase.base.sharedPreference.SharedPreferenceUtils;
 import com.example.nguyenduy.projectbase.utils.permission.BasePermission;
 import com.example.nguyenduy.projectbase.utils.permission.PermissionUtils;
 

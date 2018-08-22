@@ -3,7 +3,7 @@ package com.example.nguyenduy.projectbase.base.firebase.FCM;
 import android.text.TextUtils;
 
 import com.example.nguyenduy.projectbase.utils.LogUtils;
-import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
+import com.example.nguyenduy.projectbase.base.sharedPreference.SharedPreferenceUtils;
 import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.FirebaseMessagingService;

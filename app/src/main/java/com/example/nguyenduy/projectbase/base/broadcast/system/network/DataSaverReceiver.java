@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 
 import com.example.nguyenduy.projectbase.utils.Constants;
-import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
+import com.example.nguyenduy.projectbase.base.sharedPreference.SharedPreferenceUtils;
 
 public class DataSaverReceiver extends BroadcastReceiver implements SharedPreferences.OnSharedPreferenceChangeListener {
 

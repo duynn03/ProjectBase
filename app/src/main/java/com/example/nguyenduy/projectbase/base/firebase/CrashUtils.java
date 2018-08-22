@@ -7,8 +7,8 @@ import com.crashlytics.android.Crashlytics;
 import com.example.nguyenduy.projectbase.application.MyApplication;
 import com.example.nguyenduy.projectbase.utils.Constants;
 import com.example.nguyenduy.projectbase.utils.LogUtils;
-import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
-import com.example.nguyenduy.projectbase.utils.data.SharedPreference.UserInformation;
+import com.example.nguyenduy.projectbase.base.sharedPreference.SharedPreferenceUtils;
+import com.example.nguyenduy.projectbase.base.sharedPreference.UserInformation;
 import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
 
 import io.fabric.sdk.android.Fabric;

@@ -102,6 +102,7 @@
     <!--label background task-->
     <string name="drawer_layout_menu_label_background_task">Background task</string>
     <string name="drawer_layout_menu_thread">Thread</string>
+    <string name="drawer_layout_menu_service">Service</string>
     <!--label other-->
     <string name="drawer_layout_menu_label_other">Other</string>
     <string name="drawer_layout_menu_share">Share</string>
@@ -115,9 +116,9 @@
         <item>Broadcast</item>
         <item>Firebase</item>
         <item>AppCenter</item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item />
+        <item />
+        <item />
         <item>Navigation bottom</item>
         <item>Notification</item>
         <item>Snackbar</item>
@@ -132,7 +133,9 @@
         <item>Room</item>
         <item>LiveData</item>
         <item>ViewModel</item>
-        <item></item>
+        <item>Thread</item>
+        <item>Service</item>
+        <item />
     </string-array>
 
     <!--toolbar-->
@@ -141,6 +144,39 @@
 
     <!--base activity-->
     <string name="base_activity_dialog_loading_message_loading">Loading...</string>
+
+    <!--Screen SharePreference Setting-->
+    <string name="pref_sync_server_title">Sync Server Title</string>
+    <string name="pref_sync_server_summary">Sync Server Summary</string>
+    <!--Title-->
+    <string name="pref_title">Title</string>
+    <string name="pref_title_checkbox_title">Checkbox Title</string>
+    <string name="pref_title_checkbox_summary">Checkbox Summary</string>
+    <string name="pref_title_preference_title">Preference Title</string>
+    <string name="pref_title_preference_summary">Preference Summary</string>
+    <!--subscreen-->
+    <string name="pref_subscreen_title">Subscreen Title</string>
+    <string name="pref_subscreen_summary">Subscreen Summary</string>
+    <string name="pref_subscreen_list_preference_title">List Preference Title</string>
+    <string name="pref_subscreen_list_preference_summary">List Preference Summary</string>
+    <string name="pref_subscreen_preference_screen_1_title">Preference Screen 1 Title</string>
+    <string name="pref_subscreen_preference_screen_1_summary">Preference Screen 1 Title</string>
+    <string name="pref_subscreen_ringtone_title">RingTone Title</string>
+    <string name="pref_subscreen_ringtone_summary">RingTone Summary</string>
+    <!--header-->
+    <string name="pref_header_activity_title">Header Title</string>
+    <string name="pref_header_activity_summary">Header Summary</string>
+    <string name="pref_header_fragment_1_title">Header 1 Title</string>
+    <string name="pref_header_fragment_1_summary">Header 1 Summary</string>
+    <string name="pref_header_fragment_1_content_title">Header 1 Content Title</string>
+    <string name="pref_header_fragment_1_content_summary">Header 1 Content Summary</string>
+    <string name="pref_header_fragment_2_title">Header 2 Title</string>
+    <string name="pref_header_fragment_2_summary">Header 2 Summary</string>
+    <string name="pref_header_fragment_2_content_title">Header 2 Content Title</string>
+    <string name="pref_header_fragment_2_content_summary">Header 2 Content Summary</string>
+    <!--intent-->
+    <string name="pref_intent_title">Intent Title</string>
+    <string name="pref_intent_summary">Intent Summary</string>
 
     <!--navigation bottom-->
     <!--title toolbar, nếu không có title thì để là rỗng-->

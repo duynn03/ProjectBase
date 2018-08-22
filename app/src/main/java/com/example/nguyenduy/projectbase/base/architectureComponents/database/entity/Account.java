@@ -2,25 +2,19 @@ package com.example.nguyenduy.projectbase.base.architectureComponents.database.e
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 
-@Entity(tableName = "Book",
-        foreignKeys = @ForeignKey(
-                entity = User.class,
-                parentColumns = "id",
-                childColumns = "user_id",
-                onDelete = ForeignKey.CASCADE,
-                onUpdate = ForeignKey.CASCADE))
-public class Book {
+@Entity(tableName = "Account")
+public class Account {
 
-    public Book() {
+    public Account() {
+
     }
 
     @Ignore
-    public Book(String title, int userId) {
-        this.title = title;
+    public Account(String name, int userId) {
+        this.name = name;
         this.userId = userId;
     }
 
@@ -28,8 +22,8 @@ public class Book {
     @ColumnInfo(name = "id")
     private int id;
 
-    @ColumnInfo(name = "title")
-    private String title;
+    @ColumnInfo(name = "name")
+    public String name;
 
     @ColumnInfo(name = "user_id")
     private int userId;
@@ -42,12 +36,12 @@ public class Book {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getUserId() {
@@ -61,8 +55,8 @@ public class Book {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        if (null != title) {
-            builder.append("title: " + title);
+        if (null != name) {
+            builder.append("name: " + name);
         }
         builder.append(", userId: " + userId);
         return builder.toString();

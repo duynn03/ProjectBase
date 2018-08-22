@@ -8,8 +8,8 @@ import android.widget.TextView;
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.IBasePresenter;
 import com.example.nguyenduy.projectbase.utils.Constants;
-import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
-import com.example.nguyenduy.projectbase.utils.data.SharedPreference.UserInformation;
+import com.example.nguyenduy.projectbase.base.sharedPreference.SharedPreferenceUtils;
+import com.example.nguyenduy.projectbase.base.sharedPreference.UserInformation;
 import com.example.nguyenduy.projectbase.utils.method.ViewUtils;
 
 public abstract class BaseActivityWithHeaderUserDrawerLayout<P extends IBasePresenter> extends BaseActivityWithDrawerLayout<P> implements SharedPreferences.OnSharedPreferenceChangeListener {

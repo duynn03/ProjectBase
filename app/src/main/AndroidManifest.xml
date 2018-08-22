@@ -84,12 +84,39 @@
         <!--notification-->
         <activity
             android:name=".base.notification.startActivity.RegularActivity"
-            android:parentActivityName=".screen.main2.MainActivity" />
+            android:parentActivityName=".screen.main2.MainActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower
+            https://developer.android.com/training/implementing-navigation/ancestral#SpecifyParent-->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".screen.main2.MainActivity" />
+        </activity>
         <activity
             android:name=".base.notification.startActivity.SpecialActivity"
             android:excludeFromRecents="true"
             android:launchMode="singleTask"
             android:taskAffinity="" />
+        <!--sharedPreference-->
+        <activity
+            android:name=".screen.main2.sharedpreference.settingActivity.SettingsActivity"
+            android:parentActivityName=".screen.main2.MainActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower
+            https://developer.android.com/training/implementing-navigation/ancestral#SpecifyParent-->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".screen.main2.MainActivity" />
+        </activity>
+        <!--android:parentActivityName=".screen.main2.sharedpreference.settingActivity.SettingsActivity"-->
+        <!-- Parent activity meta-data to support 4.0 and lower
+           https://developer.android.com/training/implementing-navigation/ancestral#SpecifyParent-->
+       <!-- <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".screen.main2.sharedpreference.settingActivity.SettingsActivity" />-->
+        <activity
+            android:name=".screen.main2.sharedpreference.settingActivity.header.SettingHeaderActivity"
+            >
+
+        </activity>
 
         <!-- Firebase Cloud Message -->
         <service android:name=".base.firebase.FCM.FCMService">

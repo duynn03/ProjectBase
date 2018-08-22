@@ -12,6 +12,7 @@ import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.dra
 import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.liveData.LiveDataFragment;
 import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.room.RoomFragment;
 import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.viewModel.ViewModelFragment;
+import com.example.nguyenduy.projectbase.screen.main2.backgroundTask.service.ServiceFragment;
 import com.example.nguyenduy.projectbase.screen.main2.backgroundTask.thread.ThreadFragment;
 import com.example.nguyenduy.projectbase.screen.main2.broadcast.BroadcastFragment;
 import com.example.nguyenduy.projectbase.screen.main2.database.RealmFragment;
@@ -31,8 +32,8 @@ import com.example.nguyenduy.projectbase.screen.main2.permission.PermissionFragm
 import com.example.nguyenduy.projectbase.screen.main2.sharedpreference.SharedPreferenceFragment;
 import com.example.nguyenduy.projectbase.screen.main2.toolbar.CollapsingToolbarActivity;
 import com.example.nguyenduy.projectbase.screen.main2.toolbar.CollapsingToolbarCustomBehaviorActivity;
-import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
-import com.example.nguyenduy.projectbase.utils.data.SharedPreference.UserInformation;
+import com.example.nguyenduy.projectbase.base.sharedPreference.SharedPreferenceUtils;
+import com.example.nguyenduy.projectbase.base.sharedPreference.UserInformation;
 
 public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPresenter> implements IMainView, OptionMenuUtils.IOptionMenuListener {
 
@@ -178,6 +179,9 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
                 break;
             case R.id.menu_thread:
                 replaceFragment(new ThreadFragment(), false);
+                break;
+            case R.id.menu_service:
+                replaceFragment(new ServiceFragment(), false);
                 break;
             case R.id.menu_share:
                 showToast("menu_share");

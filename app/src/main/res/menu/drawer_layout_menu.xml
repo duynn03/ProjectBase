@@ -165,6 +165,10 @@
                     android:id="@+id/menu_thread"
                     android:icon="@drawable/ic_menu_share"
                     android:title="@string/drawer_layout_menu_thread" />
+                <item
+                    android:id="@+id/menu_service"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_service" />
             </group>
         </menu>
     </item>

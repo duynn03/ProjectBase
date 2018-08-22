@@ -7,7 +7,7 @@ import com.example.nguyenduy.projectbase.base.appCenter.AppCenterUtils;
 import com.example.nguyenduy.projectbase.base.firebase.FireBaseUtils;
 import com.example.nguyenduy.projectbase.base.notification.channel.NotificationChannelUtils;
 import com.example.nguyenduy.projectbase.database.Database;
-import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
+import com.example.nguyenduy.projectbase.base.sharedPreference.SharedPreferenceUtils;
 
 public class MyApplication extends MultiDexApplication {
 

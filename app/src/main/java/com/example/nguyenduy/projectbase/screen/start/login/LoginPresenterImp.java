@@ -1,8 +1,8 @@
 package com.example.nguyenduy.projectbase.screen.start.login;
 
 import com.example.nguyenduy.projectbase.base.BasePresenterImp;
-import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
-import com.example.nguyenduy.projectbase.utils.data.SharedPreference.UserInformation;
+import com.example.nguyenduy.projectbase.base.sharedPreference.SharedPreferenceUtils;
+import com.example.nguyenduy.projectbase.base.sharedPreference.UserInformation;
 
 class LoginPresenterImp extends BasePresenterImp<ILoginView> implements ILoginPresenter {
 

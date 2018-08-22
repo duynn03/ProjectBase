@@ -31,10 +31,29 @@
 
     <Button
         android:id="@+id/btn_number"
+        style="@style/Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_unregister_change_data_share_prefrence"
         android:layout_centerHorizontal="true"
         android:text="0" />
+
+    <Button
+        android:id="@+id/btn_open_setting_activity_shared_preference"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_number"
+        android:layout_centerHorizontal="true"
+        android:text="Open Setting Activity" />
+
+    <Button
+        android:id="@+id/btn_open_setting_fragment_shared_preference"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_open_setting_activity_shared_preference"
+        android:layout_centerHorizontal="true"
+        android:text="Open Setting Fragment" />
 
 </RelativeLayout>

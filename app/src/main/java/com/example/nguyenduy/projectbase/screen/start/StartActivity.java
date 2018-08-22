@@ -4,7 +4,7 @@ import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.BaseActivity;
 import com.example.nguyenduy.projectbase.screen.main.MainActivity;
 import com.example.nguyenduy.projectbase.screen.start.login.LoginFragment;
-import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
+import com.example.nguyenduy.projectbase.base.sharedPreference.SharedPreferenceUtils;
 
 public class StartActivity extends BaseActivity<IStartActivityPresenter> implements IStartActivityView {
 

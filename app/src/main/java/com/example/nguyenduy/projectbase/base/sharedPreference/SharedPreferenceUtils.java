@@ -1,4 +1,4 @@
-package com.example.nguyenduy.projectbase.utils.data.SharedPreference;
+package com.example.nguyenduy.projectbase.base.sharedPreference;
 
 import android.content.Context;
 import android.content.SharedPreferences;
