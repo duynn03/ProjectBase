@@ -9,9 +9,7 @@
         android:title="@string/pref_sync_server_title" />
 
     <!--Title https://developer.android.com/guide/topics/ui/settings#Titles-->
-    <android.support.v7.preference.PreferenceCategory
-        android:key="@string/pref_key_title"
-        android:title="@string/pref_title">
+    <android.support.v7.preference.PreferenceCategory android:title="@string/pref_title">
         <android.support.v7.preference.SwitchPreferenceCompat
             android:defaultValue="true"
             android:key="@string/pref_key_title_switch"
@@ -29,19 +27,26 @@
             android:key="@string/pref_key_title_checkbox"
             android:summary="@string/pref_title_checkbox_summary"
             android:title="@string/pref_title_checkbox_title" />
+        <!--https://developer.android.com/reference/android/support/v7/preference/DialogPreference-->
+        <com.example.nguyenduy.projectbase.screen.main2.sharedpreference.settingFragment.dialog.CustomDialogPreference
+            android:defaultValue="false"
+            android:dialogIcon="@android:drawable/ic_dialog_alert"
+            android:dialogMessage="Dialog Message Dialog Message Dialog Message Dialog Message Dialog Message Dialog Message Dialog Message"
+            android:dialogTitle="Dialog Title"
+            android:key="@string/pref_key_title_dialog"
+            android:negativeButtonText="Cancel"
+            android:positiveButtonText="Ok"
+            android:summary="@string/pref_title_dialog_summary"
+            android:title="@string/pref_title_dialog_title" />
     </android.support.v7.preference.PreferenceCategory>
 
     <android.support.v7.preference.PreferenceCategory android:title="Other Title">
         <!-- subscreen https://developer.android.com/guide/topics/ui/settings#Subscreens-->
         <android.support.v7.preference.PreferenceScreen
-            android:key="@string/pref_key_sub_screen"
-            android:persistent="false"
             android:summary="@string/pref_subscreen_summary"
             android:title="@string/pref_subscreen_title">
             <!-- opens another nested subscreen -->
             <android.support.v7.preference.PreferenceScreen
-                android:key="@string/pref_key_sub_screen_preference_screen_1"
-                android:persistent="false"
                 android:summary="@string/pref_subscreen_preference_screen_1_summary"
                 android:title="@string/pref_subscreen_preference_screen_1_title" />
         </android.support.v7.preference.PreferenceScreen>
@@ -49,7 +54,6 @@
         <!--header https://developer.android.com/guide/topics/ui/settings#PreferenceHeaders-->
         <!--Fix bug https://stackoverflow.com/questions/33855789/android-how-to-start-an-activity-from-preference-header-->
         <android.support.v7.preference.PreferenceScreen
-            android:key="@string/pref_key_header"
             android:summary="@string/pref_header_activity_summary"
             android:title="@string/pref_header_activity_title">
             <intent
@@ -100,7 +104,7 @@
         <Preference android:title="Layout (TODO)" />
         <Preference
             android:persistent="true"
-            android:title="Persistent (TODO)" />
+            android:title="Persistent: có lưu value vào storage không?" />
         <Preference
             android:shouldDisableView="true"
             android:title="shouldDisableView (TODO)" />

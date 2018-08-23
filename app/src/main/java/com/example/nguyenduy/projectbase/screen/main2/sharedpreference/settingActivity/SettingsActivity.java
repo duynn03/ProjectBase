@@ -13,6 +13,7 @@ import com.example.nguyenduy.projectbase.utils.method.ResourceUtils;
 public class SettingsActivity extends PreferenceActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     private static final String TAG = MethodUtils.getTagClass(SettingsActivity.class);
+
     private SharedPreferences sharedPref;
 
     @Override

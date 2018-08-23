@@ -15,7 +15,6 @@
 
     <!--Title https://developer.android.com/guide/topics/ui/settings#Titles-->
     <PreferenceCategory
-        android:key="@string/pref_key_title"
         android:title="@string/pref_title">
         <CheckBoxPreference
             android:defaultValue="false"
@@ -52,7 +51,6 @@
         <!--header https://developer.android.com/guide/topics/ui/settings#PreferenceHeaders-->
         <!--Fix bug https://stackoverflow.com/questions/33855789/android-how-to-start-an-activity-from-preference-header-->
         <PreferenceScreen
-            android:key="@string/pref_key_header"
             android:summary="@string/pref_header_activity_summary"
             android:title="@string/pref_header_activity_title">
             <intent
