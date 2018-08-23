@@ -8,7 +8,6 @@ import com.example.nguyenduy.projectbase.base.BaseFragment;
 import com.example.nguyenduy.projectbase.base.IBasePresenter;
 import com.example.nguyenduy.projectbase.base.sharedPreference.SharedPreferenceUtils;
 import com.example.nguyenduy.projectbase.screen.main2.sharedpreference.settingActivity.SettingsActivity;
-import com.example.nguyenduy.projectbase.screen.main2.sharedpreference.settingActivity.header.SettingHeaderActivity;
 import com.example.nguyenduy.projectbase.screen.main2.sharedpreference.settingFragment.SettingsFragment;
 import com.example.nguyenduy.projectbase.utils.method.ViewUtils;
 
@@ -79,7 +78,7 @@ public class SharedPreferenceFragment extends BaseFragment<ISharedPreferencePres
 
     @OnClick(R.id.btn_open_setting_activity_shared_preference)
     public void onClickButtonSettingActivitySharedPreference() {
-        getRootActivity().startActivity(SettingHeaderActivity.class, null);
+        getRootActivity().startActivity(SettingsActivity.class, null);
     }
 
     @OnClick(R.id.btn_open_setting_fragment_shared_preference)

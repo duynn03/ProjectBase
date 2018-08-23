@@ -1,60 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<android.support.v7.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!--Xem full các attribute ở đây: https://developer.android.com/reference/android/preference/Preference-->
     <CheckBoxPreference
         android:defaultValue="true"
-        android:key="SYNC_SERVER"
+        android:key="@string/pref_key_sync_server"
         android:summary="@string/pref_sync_server_summary"
         android:title="@string/pref_sync_server_title" />
 
-    <!--<ListPreference
-        android:key="SUBSCREEN_LIST_PREFERENCE"
-        android:summary="@string/pref_subscreen_list_preference_summary"
-        android:title="@string/pref_subscreen_list_preference_title" />-->
-
     <!--Title https://developer.android.com/guide/topics/ui/settings#Titles-->
-    <PreferenceCategory
-        android:key="TITLE"
+    <android.support.v7.preference.PreferenceCategory
+        android:key="@string/pref_key_title"
         android:title="@string/pref_title">
-        <CheckBoxPreference
+        <android.support.v7.preference.SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="@string/pref_key_title_switch"
+            android:summary="@string/pref_title_switch_summary"
+            android:title="@string/pref_title_switch_title" />
+        <android.support.v7.preference.EditTextPreference
+            android:defaultValue="Default value"
+            android:dialogMessage="Dialog Message"
+            android:key="@string/pref_key_title_edit_text"
+            android:summary="@string/pref_title_edit_text_summary"
+            android:title="@string/pref_title_edit_text_title" />
+        <!--https://developer.android.com/reference/android/support/v7/preference/CheckBoxPreference-->
+        <android.support.v7.preference.CheckBoxPreference
             android:defaultValue="false"
-            android:key="TITLE_CHECKBOX"
+            android:key="@string/pref_key_title_checkbox"
             android:summary="@string/pref_title_checkbox_summary"
             android:title="@string/pref_title_checkbox_title" />
-        <Preference
-            android:dependency="TITLE_CHECKBOX"
-            android:key="TITLE_PREFERENCE"
-            android:summary="@string/pref_title_preference_title"
-            android:title="@string/pref_title_preference_summary" />
-    </PreferenceCategory>
+    </android.support.v7.preference.PreferenceCategory>
 
-    <!-- subscreen https://developer.android.com/guide/topics/ui/settings#Subscreens-->
-    <PreferenceScreen
-        android:key="SUBSCREEN"
-        android:persistent="false"
-        android:summary="@string/pref_subscreen_summary"
-        android:title="@string/pref_subscreen_title">
-        <!-- opens another nested subscreen -->
-        <PreferenceScreen
-            android:key="SUBSCREEN_PREFERENCE_SCREEN_1"
+    <android.support.v7.preference.PreferenceCategory android:title="Other Title">
+        <!-- subscreen https://developer.android.com/guide/topics/ui/settings#Subscreens-->
+        <android.support.v7.preference.PreferenceScreen
+            android:key="@string/pref_key_sub_screen"
             android:persistent="false"
-            android:summary="@string/pref_subscreen_preference_screen_1_summary"
-            android:title="@string/pref_subscreen_preference_screen_1_title" />
-<!--        <RingtonePreference
-            android:key="SUBSCREEN_RINGTONE"
-            android:ringtoneType="notification"
-            android:summary="@string/pref_subscreen_ringtone_summary"
-            android:title="@string/pref_subscreen_ringtone_title" />-->
-    </PreferenceScreen>
+            android:summary="@string/pref_subscreen_summary"
+            android:title="@string/pref_subscreen_title">
+            <!-- opens another nested subscreen -->
+            <android.support.v7.preference.PreferenceScreen
+                android:key="@string/pref_key_sub_screen_preference_screen_1"
+                android:persistent="false"
+                android:summary="@string/pref_subscreen_preference_screen_1_summary"
+                android:title="@string/pref_subscreen_preference_screen_1_title" />
+        </android.support.v7.preference.PreferenceScreen>
 
-    <!--intent https://developer.android.com/guide/topics/ui/settings#Intents-->
-    <Preference
-        android:summary="@string/pref_intent_summary"
-        android:title="@string/pref_intent_title">
-        <intent
-            android:action="android.intent.action.VIEW"
-            android:data="https://www.google.com" />
-    </Preference>
+        <!--header https://developer.android.com/guide/topics/ui/settings#PreferenceHeaders-->
+        <!--Fix bug https://stackoverflow.com/questions/33855789/android-how-to-start-an-activity-from-preference-header-->
+        <android.support.v7.preference.PreferenceScreen
+            android:key="@string/pref_key_header"
+            android:summary="@string/pref_header_activity_summary"
+            android:title="@string/pref_header_activity_title">
+            <intent
+                android:action="ActionCustom"
+                android:targetClass=".screen.main2.sharedpreference.settingActivity.header.SettingHeaderActivity" />
+        </android.support.v7.preference.PreferenceScreen>
 
-</PreferenceScreen>
+        <!--intent https://developer.android.com/guide/topics/ui/settings#Intents-->
+        <Preference
+            android:summary="@string/pref_intent_summary"
+            android:title="@string/pref_intent_title">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://www.google.com" />
+        </Preference>
+    </android.support.v7.preference.PreferenceCategory>
+
+    <!--Xem full các attribute ở đây:
+    https://developer.android.com/reference/android/preference/Preference
+    https://developer.android.com/reference/android/support/v7/preference/package-summary-->
+    <android.support.v7.preference.PreferenceCategory android:title="Attribute">
+        <Preference android:title="Title" />
+        <Preference
+            android:singleLineTitle="false"
+            android:title="singleLineTitle singleLineTitle singleLineTitle singleLineTitle singleLineTitle singleLineTitle singleLineTitle"
+            tools:targetApi="o" />
+        <Preference
+            android:summary="Summary"
+            android:title="Summary" />
+        <Preference
+            android:icon="@drawable/ic_splash"
+            android:iconSpaceReserved="true"
+            android:title="Icon/IconSpaceReserved"
+            tools:targetApi="o" />
+        <Preference
+            android:enabled="false"
+            android:title="Enabled/Disable" />
+        <Preference
+            android:summary="Được apply nếu value không tìm được trong storage"
+            android:title="defaultValue" />
+        <android.support.v7.preference.CheckBoxPreference
+            android:defaultValue="false"
+            android:key="checkboxKey"
+            android:title="check box Dependency" />
+        <Preference
+            android:dependency="checkboxKey"
+            android:title="Dependency" />
+        <Preference android:title="Layout (TODO)" />
+        <Preference
+            android:persistent="true"
+            android:title="Persistent (TODO)" />
+        <Preference
+            android:shouldDisableView="true"
+            android:title="shouldDisableView (TODO)" />
+        <Preference android:title="widgetLayout (TODO)" />
+    </android.support.v7.preference.PreferenceCategory>
+</android.support.v7.preference.PreferenceScreen>

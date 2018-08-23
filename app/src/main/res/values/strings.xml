@@ -146,12 +146,32 @@
     <string name="base_activity_dialog_loading_message_loading">Loading...</string>
 
     <!--Screen SharePreference Setting-->
+    <!--key-->
+    <string name="pref_key_sync_server" translatable="false">SYNC_SERVER</string>
+    <string name="pref_key_title" translatable="false">TITLE</string>
+    <string name="pref_key_title_checkbox" translatable="false">TITLE_CHECKBOX</string>
+    <string name="pref_key_title_switch" translatable="false">TITLE_SWITCH</string>
+    <string name="pref_key_title_edit_text" translatable="false">TITLE_EDIT_TEXT</string>
+    <string name="pref_key_title_preference" translatable="false">TITLE_PREFERENCE</string>
+    <string name="pref_key_sub_screen" translatable="false">SUBSCREEN</string>
+    <string name="pref_key_sub_screen_preference_screen_1" translatable="false">SUBSCREEN_PREFERENCE_SCREEN_1</string>
+    <string name="pref_key_sub_screen_ringstone" translatable="false">SUBSCREEN_RINGTONE</string>
+    <string name="pref_key_header" translatable="false">HEADER</string>
+    <!--extra intent-->
+    <string name="pref_extra_key" translatable="false">key</string>
+    <string name="pref_extra_value_header_1" translatable="false">header_1</string>
+    <string name="pref_extra_value_header_2" translatable="false">header_2</string>
+
     <string name="pref_sync_server_title">Sync Server Title</string>
     <string name="pref_sync_server_summary">Sync Server Summary</string>
     <!--Title-->
     <string name="pref_title">Title</string>
     <string name="pref_title_checkbox_title">Checkbox Title</string>
     <string name="pref_title_checkbox_summary">Checkbox Summary</string>
+    <string name="pref_title_switch_title">Switch Title</string>
+    <string name="pref_title_switch_summary">Switch Summary</string>
+    <string name="pref_title_edit_text_title">Edit Text Title</string>
+    <string name="pref_title_edit_text_summary">Edit Text Summary</string>
     <string name="pref_title_preference_title">Preference Title</string>
     <string name="pref_title_preference_summary">Preference Summary</string>
     <!--subscreen-->

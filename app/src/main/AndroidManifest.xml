@@ -99,23 +99,33 @@
         <!--sharedPreference-->
         <activity
             android:name=".screen.main2.sharedpreference.settingActivity.SettingsActivity"
+            android:exported="true"
             android:parentActivityName=".screen.main2.MainActivity">
             <!-- Parent activity meta-data to support 4.0 and lower
             https://developer.android.com/training/implementing-navigation/ancestral#SpecifyParent-->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".screen.main2.MainActivity" />
+            <!--https://developer.android.com/guide/topics/ui/settings#NetworkUsage-->
+            <intent-filter>
+                <action android:name="android.intent.action.MANAGE_NETWORK_USAGE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
-        <!--android:parentActivityName=".screen.main2.sharedpreference.settingActivity.SettingsActivity"-->
-        <!-- Parent activity meta-data to support 4.0 and lower
-           https://developer.android.com/training/implementing-navigation/ancestral#SpecifyParent-->
-       <!-- <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".screen.main2.sharedpreference.settingActivity.SettingsActivity" />-->
+
         <activity
             android:name=".screen.main2.sharedpreference.settingActivity.header.SettingHeaderActivity"
-            >
-
+            android:exported="true"
+            android:parentActivityName=".screen.main2.sharedpreference.settingActivity.SettingsActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower
+               https://developer.android.com/training/implementing-navigation/ancestral#SpecifyParent-->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".screen.main2.sharedpreference.settingActivity.SettingsActivity" />
+            <intent-filter>
+                <action android:name="ActionCustom" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
 
         <!-- Firebase Cloud Message -->
