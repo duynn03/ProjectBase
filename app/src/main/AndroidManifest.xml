@@ -99,7 +99,8 @@
         <!--sharedPreference-->
         <activity
             android:name=".screen.main2.sharedpreference.settingActivity.SettingsActivity"
-            android:exported="true"
+            android:exported="false"
+            android:theme="@style/SharedPreferenceTheme"
             android:parentActivityName=".screen.main2.MainActivity">
             <!-- Parent activity meta-data to support 4.0 and lower
             https://developer.android.com/training/implementing-navigation/ancestral#SpecifyParent-->
@@ -107,6 +108,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".screen.main2.MainActivity" />
             <!--https://developer.android.com/guide/topics/ui/settings#NetworkUsage-->
+            <!--có thêm mục View App Settings trong App Infor của mục Settings-->
             <intent-filter>
                 <action android:name="android.intent.action.MANAGE_NETWORK_USAGE" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -116,12 +118,15 @@
         <activity
             android:name=".screen.main2.sharedpreference.settingActivity.header.SettingHeaderActivity"
             android:exported="true"
+            android:theme="@style/SharedPreferenceTheme"
             android:parentActivityName=".screen.main2.sharedpreference.settingActivity.SettingsActivity">
             <!-- Parent activity meta-data to support 4.0 and lower
                https://developer.android.com/training/implementing-navigation/ancestral#SpecifyParent-->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".screen.main2.sharedpreference.settingActivity.SettingsActivity" />
+            <!--https://developer.android.com/guide/topics/ui/settings#NetworkUsage-->
+            <!--có thêm mục View App Settings trong App Infor của mục Settings-->
             <intent-filter>
                 <action android:name="ActionCustom" />
                 <category android:name="android.intent.category.DEFAULT" />

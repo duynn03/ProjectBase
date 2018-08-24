@@ -66,5 +66,10 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://www.google.com" />
         </Preference>
+
+        <!--sync system-->
+        <Preference android:title="Sync Settings">
+            <intent android:action="android.settings.SYNC_SETTINGS" />
+        </Preference>
     </PreferenceCategory>
 </PreferenceScreen>

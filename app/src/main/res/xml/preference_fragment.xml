@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:asp="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <CheckBoxPreference
@@ -9,24 +11,17 @@
         android:title="@string/pref_sync_server_title" />
 
     <!--Title https://developer.android.com/guide/topics/ui/settings#Titles-->
+    <!--https://developer.android.com/reference/android/support/v7/preference/PreferenceCategory-->
     <android.support.v7.preference.PreferenceCategory android:title="@string/pref_title">
+        <!--https://developer.android.com/reference/android/support/v7/preference/SwitchPreferenceCompat-->
         <android.support.v7.preference.SwitchPreferenceCompat
             android:defaultValue="true"
             android:key="@string/pref_key_title_switch"
             android:summary="@string/pref_title_switch_summary"
-            android:title="@string/pref_title_switch_title" />
-        <android.support.v7.preference.EditTextPreference
-            android:defaultValue="Default value"
-            android:dialogMessage="Dialog Message"
-            android:key="@string/pref_key_title_edit_text"
-            android:summary="@string/pref_title_edit_text_summary"
-            android:title="@string/pref_title_edit_text_title" />
-        <!--https://developer.android.com/reference/android/support/v7/preference/CheckBoxPreference-->
-        <android.support.v7.preference.CheckBoxPreference
-            android:defaultValue="false"
-            android:key="@string/pref_key_title_checkbox"
-            android:summary="@string/pref_title_checkbox_summary"
-            android:title="@string/pref_title_checkbox_title" />
+            android:switchTextOff="Off"
+            android:switchTextOn="On"
+            android:title="@string/pref_title_switch_title"
+            app:showText="true" />
         <!--https://developer.android.com/reference/android/support/v7/preference/DialogPreference-->
         <com.example.nguyenduy.projectbase.screen.main2.sharedpreference.settingFragment.dialog.CustomDialogPreference
             android:defaultValue="false"
@@ -38,6 +33,74 @@
             android:positiveButtonText="Ok"
             android:summary="@string/pref_title_dialog_summary"
             android:title="@string/pref_title_dialog_title" />
+        <!--TimePicker-->
+        <com.example.nguyenduy.projectbase.screen.main2.sharedpreference.settingFragment.custom.TimePickerPreference
+            android:defaultValue="90"
+            android:key="@string/pref_key_title_dialog_time_picker"
+            android:title="@string/pref_title_dialog_time_picker_title"/>
+
+        <!--https://developer.android.com/reference/android/support/v7/preference/PreferenceDialogFragmentCompat-->
+        <Preference android:title="PreferenceDialogFragmentCompat (TODO)" />
+        <!--https://developer.android.com/reference/android/support/v7/preference/EditTextPreference-->
+        <android.support.v7.preference.EditTextPreference
+            android:capitalize="words"
+            android:defaultValue="Default value"
+            android:dialogMessage="Dialog Message"
+            android:dialogTitle="@string/pref_title_edit_text_title"
+            android:inputType="textCapWords"
+            android:key="@string/pref_key_title_edit_text"
+            android:maxLines="1"
+            android:negativeButtonText="Cancel"
+            android:positiveButtonText="Ok"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="@string/pref_title_edit_text_summary"
+            android:title="@string/pref_title_edit_text_title" />
+        <!--https://developer.android.com/reference/android/support/v7/preference/EditTextPreferenceDialogFragmentCompat-->
+        <Preference android:title="EditTextPreferenceDialogFragmentCompat (TODO)" />
+        <!--https://developer.android.com/reference/android/support/v7/preference/ListPreference-->
+        <android.support.v7.preference.ListPreference
+            android:defaultValue="-1"
+            android:entries="@array/pref_title_list_titles"
+            android:entryValues="@array/pref_title_list_values"
+            android:key="@string/pref_key_title_list"
+            android:negativeButtonText="@null"
+            android:positiveButtonText="@null"
+            android:title="@string/pref_title_list_title_dialog" />
+        <!--https://developer.android.com/reference/android/support/v7/preference/ListPreferenceDialogFragmentCompat-->
+        <Preference android:title="ListPreferenceDialogFragmentCompat (TODO)" />
+        <!--https://developer.android.com/reference/android/support/v7/preference/MultiSelectListPreferenceDialogFragmentCompat-->
+        <android.support.v14.preference.MultiSelectListPreference
+            android:dialogTitle="@string/pref_title_multi_list_title_dialog"
+            android:entries="@array/pref_title_list_titles"
+            android:entryValues="@array/pref_title_list_values"
+            android:key="@string/pref_key_title_multi_list"
+            android:negativeButtonText="Cancel"
+            android:positiveButtonText="Ok"
+            android:title="@string/pref_title_multi_list_title_dialog" />
+        <!--https://developer.android.com/reference/android/support/v7/preference/DropDownPreference-->
+        <android.support.v7.preference.DropDownPreference
+            android:entries="@array/pref_title_list_titles"
+            android:entryValues="@array/pref_title_list_values"
+            android:key="@string/pref_key_title_dropdown"
+            android:title="@string/pref_title_dropdown_title" />
+        <!--https://developer.android.com/reference/android/support/v7/preference/CheckBoxPreference-->
+        <android.support.v7.preference.CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/pref_key_title_checkbox"
+            android:summary="@string/pref_title_checkbox_summary"
+            android:title="@string/pref_title_checkbox_title" />
+        <!--https://developer.android.com/reference/android/support/v7/preference/SeekBarPreference-->
+        <android.support.v7.preference.SeekBarPreference
+            android:defaultValue="10"
+            android:key="@string/pref_key_title_seekbar"
+            android:max="100"
+            android:title="@string/pref_title_seekbar_title"
+            asp:min="0" />
+        <!--https://developer.android.com/reference/android/support/v7/preference/Preference-->
+        <Preference android:title="Preference" />
+        <!--https://developer.android.com/reference/android/support/v7/preference/PreferenceGroup-->
+        <Preference android:title="PreferenceGroup (TODO)" />
     </android.support.v7.preference.PreferenceCategory>
 
     <android.support.v7.preference.PreferenceCategory android:title="Other Title">
@@ -109,5 +172,8 @@
             android:shouldDisableView="true"
             android:title="shouldDisableView (TODO)" />
         <Preference android:title="widgetLayout (TODO)" />
+        <Preference android:title="recycleEnabled (TODO)" />
+        <Preference android:title="Order (TODO)" />
+        <Preference android:title="selectable (TODO)" />
     </android.support.v7.preference.PreferenceCategory>
 </android.support.v7.preference.PreferenceScreen>
