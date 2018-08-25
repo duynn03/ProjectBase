@@ -33,12 +33,13 @@
             android:positiveButtonText="Ok"
             android:summary="@string/pref_title_dialog_summary"
             android:title="@string/pref_title_dialog_title" />
-        <!--TimePicker-->
+        <!--TimePicker https://medium.com/@JakobUlbrich/building-a-settings-screen-for-android-part-3-ae9793fd31ec-->
         <com.example.nguyenduy.projectbase.screen.main2.sharedpreference.settingFragment.custom.TimePickerPreference
             android:defaultValue="90"
             android:key="@string/pref_key_title_dialog_time_picker"
-            android:title="@string/pref_title_dialog_time_picker_title"/>
-
+            android:negativeButtonText="Cancel"
+            android:positiveButtonText="Ok"
+            android:title="@string/pref_title_dialog_time_picker_title" />
         <!--https://developer.android.com/reference/android/support/v7/preference/PreferenceDialogFragmentCompat-->
         <Preference android:title="PreferenceDialogFragmentCompat (TODO)" />
         <!--https://developer.android.com/reference/android/support/v7/preference/EditTextPreference-->
@@ -131,6 +132,10 @@
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="https://www.google.com" />
+        </Preference>
+        <!--sync system-->
+        <Preference android:title="Sync Settings">
+            <intent android:action="android.settings.SYNC_SETTINGS" />
         </Preference>
     </android.support.v7.preference.PreferenceCategory>
 

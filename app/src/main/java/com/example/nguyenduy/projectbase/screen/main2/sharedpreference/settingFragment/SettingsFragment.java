@@ -6,6 +6,8 @@ import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceFragmentCompat;
 
 import com.example.nguyenduy.projectbase.R;
+import com.example.nguyenduy.projectbase.screen.main2.sharedpreference.settingFragment.custom.TimePickerPreference;
+import com.example.nguyenduy.projectbase.screen.main2.sharedpreference.settingFragment.custom.TimePickerPreferenceDialogFragmentCompat;
 import com.example.nguyenduy.projectbase.screen.main2.sharedpreference.settingFragment.dialog.CustomDialogPreference;
 import com.example.nguyenduy.projectbase.screen.main2.sharedpreference.settingFragment.dialog.CustomPreferenceDialogFragmentCompat;
 
@@ -30,6 +32,11 @@ public class SettingsFragment extends PreferenceFragmentCompat {
             DialogFragment dialogFragment = CustomPreferenceDialogFragmentCompat.newInstance(preference.getKey());
             dialogFragment.setTargetFragment(this, 0);
             dialogFragment.show(getFragmentManager(), null);
-        } else super.onDisplayPreferenceDialog(preference);
+        } else if (preference instanceof TimePickerPreference) {
+            DialogFragment dialogFragment = TimePickerPreferenceDialogFragmentCompat.newInstance(preference.getKey());
+            dialogFragment.setTargetFragment(this, 0);
+            dialogFragment.show(getFragmentManager(), null);
+        } else
+            super.onDisplayPreferenceDialog(preference);
     }
 }
