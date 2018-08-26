@@ -58,14 +58,14 @@ public class DialogFragment extends BaseFragment<IDialogPresenter> implements ID
                 .setOnCancelListener(new DialogInterface.OnCancelListener() {
                     @Override
                     public void onCancel(DialogInterface dialog) {
-                        showToast("On Cancel Listener");
+                        showToast("On Cancel ListenerDataBindingActivity");
                     }
                 })
                 // event này vào bất cứ khi nào dialog bị tắt đi (kể cả khi click Button cancel lẫn Button OK, hoặc click ra ngoài để tắt dialog)
                 .setOnDismissListener(new DialogInterface.OnDismissListener() {
                     @Override
                     public void onDismiss(DialogInterface dialog) {
-                        showToast("On Dismiss Listener");
+                        showToast("On Dismiss ListenerDataBindingActivity");
                     }
                 })
                 // event user nhập input from keyboard

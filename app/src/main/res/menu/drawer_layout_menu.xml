@@ -143,6 +143,10 @@
                     android:icon="@drawable/ic_menu_share"
                     android:title="@string/drawer_layout_menu_dragger" />
                 <item
+                    android:id="@+id/menu_data_binding"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_data_binding" />
+                <item
                     android:id="@+id/menu_room"
                     android:icon="@drawable/ic_menu_share"
                     android:title="@string/drawer_layout_menu_room" />

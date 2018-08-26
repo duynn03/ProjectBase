@@ -114,10 +114,9 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".screen.main2.sharedpreference.settingActivity.header.SettingHeaderActivity"
-            android:exported="true"
+            android:exported="false"
             android:theme="@style/SharedPreferenceTheme"
             android:parentActivityName=".screen.main2.sharedpreference.settingActivity.SettingsActivity">
             <!-- Parent activity meta-data to support 4.0 and lower
@@ -132,6 +131,8 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <!--data binding-->
+        <activity android:name=".screen.main2.architectureComponents.dataBinding.activity.DataBindingActivity" />
 
         <!-- Firebase Cloud Message -->
         <service android:name=".base.firebase.FCM.FCMService">

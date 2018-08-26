@@ -96,6 +96,7 @@
     <!--label structure-->
     <string name="drawer_layout_menu_label_architecture_components">Architecture Components</string>
     <string name="drawer_layout_menu_dragger">Dragger</string>
+    <string name="drawer_layout_menu_data_binding">Data Binding</string>
     <string name="drawer_layout_menu_room">Room</string>
     <string name="drawer_layout_menu_live_data">LiveData</string>
     <string name="drawer_layout_menu_view_model">ViewModel</string>
@@ -130,6 +131,7 @@
         <item>Geofence</item>
         <item>Detect Activity of User</item>
         <item>Dragger</item>
+        <item>Data Binding</item>
         <item>Room</item>
         <item>LiveData</item>
         <item>ViewModel</item>

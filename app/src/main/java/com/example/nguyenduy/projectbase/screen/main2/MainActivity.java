@@ -8,6 +8,7 @@ import com.example.nguyenduy.projectbase.base.drawerlayout.BaseActivityWithHeade
 import com.example.nguyenduy.projectbase.base.drawerlayout.OptionMenuUtils;
 import com.example.nguyenduy.projectbase.screen.main2.appbar.appbarBottom.AppbarBottomActivity;
 import com.example.nguyenduy.projectbase.screen.main2.appcenter.AppCenterFragment;
+import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.dataBinding.DataBindingFragment;
 import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.dragger.DraggerFragment;
 import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.liveData.LiveDataFragment;
 import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.room.RoomFragment;
@@ -167,6 +168,9 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
                 break;
             case R.id.menu_dragger:
                 replaceFragment(new DraggerFragment(), false);
+                break;
+            case R.id.menu_data_binding:
+                replaceFragment(new DataBindingFragment(), false);
                 break;
             case R.id.menu_room:
                 replaceFragment(new RoomFragment(), false);

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <!--        <import type="android.util.SparseArray" />
+
+                <import type="java.util.Map" />
+
+                <import type="java.util.List" />
+
+                <variable
+                    name="list"
+                    type="List<String>" />
+
+                <variable
+                    name="sparse"
+                    type="SparseArray<String>" />
+
+                <variable
+                    name="map"
+                    type="Map<String, String>" />
+
+                <variable
+                    name="index"
+                    type="int" />
+
+                <variable
+                    name="key"
+                    type="String" />-->
+
+        <variable
+            name="user"
+            type="com.example.nguyenduy.projectbase.screen.main2.architectureComponents.dataBinding.activity.User" />
+
+        <variable
+            name="activity"
+            type="com.example.nguyenduy.projectbase.screen.main2.architectureComponents.dataBinding.activity.DataBindingActivity" />
+
+        <variable
+            name="userObservableField"
+            type="com.example.nguyenduy.projectbase.screen.main2.architectureComponents.dataBinding.activity.UserObservableField" />
+
+        <variable
+            name="userObservableObject"
+            type="com.example.nguyenduy.projectbase.screen.main2.architectureComponents.dataBinding.activity.UserObservableObject" />
+    </data>
+
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/root_activity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            style="@style/TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Activity Data Binding" />
+
+ <!--       <TextView
+            android:id="@+id/tv_data_binding_list"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/tv_data_binding_first_name"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            tools:text="@{list[index]}" />
+
+        <TextView
+            android:id="@+id/tv_data_binding_sparse_array"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_data_binding_list"
+            android:layout_centerInParent="true"
+            tools:text="@{sparse[index]}" />
+
+        &lt;!&ndash;Có thể sử dụng map[key] hoặc {map.key}&ndash;&gt;
+        <TextView
+            android:id="@+id/tv_data_binding_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_data_binding_sparse_array"
+            android:layout_centerInParent="true"
+            tools:text="@{map[key]}" />-->
+
+        <TextView
+            android:id="@+id/tv_data_binding_first_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            tools:text="@{user.firstName, default=Null}"
+            android:text="@{user.firstName, default=Null}" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Binding Event Method Reference"
+            style="@style/Button"
+            android:id="@+id/btn_data_binding_method_reference"
+            android:onClick="@{activity.onClickButtonMethodReference}"
+            android:layout_below="@+id/tv_data_binding_first_name"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/btn_data_binding_listener_binding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Binding Event Listener Binding"
+            style="@style/Button"
+            android:onClick="@{() -> activity.onClickButtonListenerBinding(user)}"
+            android:layout_below="@+id/btn_data_binding_method_reference"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/btn_data_binding_listener_binding_expression"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Binding Event Listener Binding Expression"
+            style="@style/Button"
+            android:onClick="@{(view) -> activity.isUserDuy(user) ? activity.onClickButtonMethodReference(view) : activity.onClickButtonListenerBinding(user)}"
+            android:layout_below="@+id/btn_data_binding_listener_binding"
+            android:layout_centerHorizontal="true" />
+
+        <!--<include layout="@layout/name"
+            bind:user="@{user}"/>-->
+
+        <TextView
+            android:id="@+id/tv_obsverable_field_first_name"
+            android:layout_below="@+id/btn_data_binding_listener_binding_expression"
+            style="@style/TextView"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@{userObservableField.firstName + userObservableField.age, default=Null}" />
+
+        <Button
+            android:id="@+id/btn_change_user_first_name_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change User First Name Observable Field"
+            style="@style/Button"
+            android:onClick="@{() -> activity.onClickButtonChangeFirstNameObservableFieldUser(userObservableField)}"
+            android:layout_below="@+id/tv_obsverable_field_first_name"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/tv_obsverable_object_first_name"
+            android:layout_below="@+id/btn_change_user_first_name_field"
+            style="@style/TextView"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@{userObservableObject.firstName, default=Null}" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change User First Name Observable Object"
+            style="@style/Button"
+            android:onClick="@{() -> activity.onClickButtonChangeFirstNameObservableObjectUser(userObservableObject)}"
+            android:layout_below="@+id/tv_obsverable_object_first_name"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</layout>
