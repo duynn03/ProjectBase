@@ -1,6 +1,7 @@
 package com.example.nguyenduy.projectbase.utils.method;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.IdRes;
@@ -36,6 +37,13 @@ public class ViewUtils {
         Glide.with(MyApplication.getAppContext())
                 .load(urlImage)
                 .apply(new RequestOptions().placeholder(idPlaceholder))
+                .into(view);
+    }
+
+    public static void setImage(ImageView view, String urlImage, Drawable drawable) {
+        Glide.with(MyApplication.getAppContext())
+                .load(urlImage)
+                .apply(new RequestOptions().placeholder(drawable))
                 .into(view);
     }
 

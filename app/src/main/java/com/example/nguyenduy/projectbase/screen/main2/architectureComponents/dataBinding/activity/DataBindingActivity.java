@@ -1,17 +1,21 @@
 package com.example.nguyenduy.projectbase.screen.main2.architectureComponents.dataBinding.activity;
 
+import android.databinding.BindingAdapter;
 import android.databinding.DataBindingUtil;
 import android.databinding.ObservableField;
 import android.databinding.ObservableInt;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.application.MyApplication;
 import com.example.nguyenduy.projectbase.databinding.ActivityDataBindingBinding;
+import com.example.nguyenduy.projectbase.utils.method.ViewUtils;
 
 public class DataBindingActivity extends AppCompatActivity {
 
@@ -60,5 +64,18 @@ public class DataBindingActivity extends AppCompatActivity {
 
     public void onClickButtonChangeFirstNameObservableObjectUser(UserObservableObject userObservableObject) {
         userObservableObject.setFirstName(userObservableObject.getFirstName() + " Changed");
+    }
+
+    @BindingAdapter("android:paddingLeft")
+    public static void setPaddingLeft(View view, int padding) {
+        view.setPadding(padding,
+                view.getPaddingTop(),
+                view.getPaddingRight(),
+                view.getPaddingBottom());
+    }
+
+    @BindingAdapter({"imageUrl", "error"})
+    public static void loadImage(ImageView view, String url, Drawable error) {
+        ViewUtils.setImage(view, url, error);
     }
 }
