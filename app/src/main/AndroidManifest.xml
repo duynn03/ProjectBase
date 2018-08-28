@@ -100,8 +100,8 @@
         <activity
             android:name=".screen.main2.sharedpreference.settingActivity.SettingsActivity"
             android:exported="false"
-            android:theme="@style/SharedPreferenceTheme"
-            android:parentActivityName=".screen.main2.MainActivity">
+            android:parentActivityName=".screen.main2.MainActivity"
+            android:theme="@style/SharedPreferenceTheme">
             <!-- Parent activity meta-data to support 4.0 and lower
             https://developer.android.com/training/implementing-navigation/ancestral#SpecifyParent-->
             <meta-data
@@ -117,8 +117,8 @@
         <activity
             android:name=".screen.main2.sharedpreference.settingActivity.header.SettingHeaderActivity"
             android:exported="false"
-            android:theme="@style/SharedPreferenceTheme"
-            android:parentActivityName=".screen.main2.sharedpreference.settingActivity.SettingsActivity">
+            android:parentActivityName=".screen.main2.sharedpreference.settingActivity.SettingsActivity"
+            android:theme="@style/SharedPreferenceTheme">
             <!-- Parent activity meta-data to support 4.0 and lower
                https://developer.android.com/training/implementing-navigation/ancestral#SpecifyParent-->
             <meta-data
@@ -133,6 +133,7 @@
         </activity>
         <!--data binding-->
         <activity android:name=".screen.main2.architectureComponents.dataBinding.activity.DataBindingActivity" />
+        <activity android:name=".screen.main2.architectureComponents.lifecycle.LifecycleActivity" />
 
         <!-- Firebase Cloud Message -->
         <service android:name=".base.firebase.FCM.FCMService">

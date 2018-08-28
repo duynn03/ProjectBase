@@ -7,7 +7,9 @@ import android.databinding.ObservableInt;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -44,6 +46,12 @@ public class DataBindingActivity extends AppCompatActivity {
         userObservableObject.setFirstName("DuyObservableObject");
         userObservableObject.setLastName("NguyenObservableObject");
         binding.setUserObservableObject(userObservableObject);
+
+        // binding logic setter
+        int colorDataBindingSetter = ContextCompat.getColor(this, R.color.colorPrimary);
+        binding.setColorDataBindingSetter(colorDataBindingSetter);
+        // binding logic load image
+        binding.setImageUrl("https://images.pexels.com/photos/457702/pexels-photo-457702.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
     }
 
     public void onClickButtonMethodReference(View view) {
@@ -74,8 +82,10 @@ public class DataBindingActivity extends AppCompatActivity {
                 view.getPaddingBottom());
     }
 
-    @BindingAdapter({"imageUrl", "error"})
-    public static void loadImage(ImageView view, String url, Drawable error) {
-        ViewUtils.setImage(view, url, error);
+    /*requireAll: false nghĩa là không yêu cầu tất cả các attribute*/
+    @BindingAdapter(value = {"imageUrl", "placeHolder"}, requireAll = false)
+    public static void loadImage(ImageView view, String url, Drawable placeHolder) {
+        if (TextUtils.isEmpty(url)) view.setImageDrawable(placeHolder);
+        else ViewUtils.setImage(view, url, placeHolder);
     }
 }

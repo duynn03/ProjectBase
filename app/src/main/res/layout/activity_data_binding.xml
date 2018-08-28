@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!--class="com.example.nguyenduy.projectbase.utils.dataBinding.ActivityDataBindingBinding"-->
     <data>
@@ -45,6 +46,14 @@
         <variable
             name="userObservableObject"
             type="com.example.nguyenduy.projectbase.screen.main2.architectureComponents.dataBinding.activity.UserObservableObject" />
+
+        <variable
+            name="colorDataBindingSetter"
+            type="Integer" />
+
+        <variable
+            name="imageUrl"
+            type="String" />
     </data>
 
     <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
@@ -158,6 +167,7 @@
             android:text="@{userObservableObject.firstName, default=Null}" />
 
         <Button
+            android:id="@+id/btn_change_user_first_name_object"
             style="@style/Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -166,9 +176,32 @@
             android:onClick="@{() -> activity.onClickButtonChangeFirstNameObservableObjectUser(userObservableObject)}"
             android:text="Change User First Name Observable Object" />
 
+        <TextView
+            android:id="@+id/tv_binding_logic"
+            style="@style/TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_change_user_first_name_object"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Binding Logic" />
+
+        <com.example.nguyenduy.projectbase.screen.main2.architectureComponents.dataBinding.activity.BindingLogicView
+            android:id="@+id/bdv_binding_adapter_logic"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/tv_binding_logic"
+            android:layout_centerHorizontal="true"
+            app:color="@{colorDataBindingSetter}" />
+
+        <!--binding adapter-->
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            image />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bdv_binding_adapter_logic"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            app:imageUrl="@{imageUrl}"
+            app:placeHolder="@{@drawable/ic_splash}" />
     </RelativeLayout>
 </layout>

@@ -10,6 +10,7 @@ import com.example.nguyenduy.projectbase.screen.main2.appbar.appbarBottom.Appbar
 import com.example.nguyenduy.projectbase.screen.main2.appcenter.AppCenterFragment;
 import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.dataBinding.DataBindingFragment;
 import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.dragger.DraggerFragment;
+import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.lifecycle.LifecycleFragment;
 import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.liveData.LiveDataFragment;
 import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.room.RoomFragment;
 import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.viewModel.ViewModelFragment;
@@ -171,6 +172,9 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
                 break;
             case R.id.menu_data_binding:
                 replaceFragment(new DataBindingFragment(), false);
+                break;
+            case R.id.menu_lifecycle:
+                replaceFragment(new LifecycleFragment(), false);
                 break;
             case R.id.menu_room:
                 replaceFragment(new RoomFragment(), false);

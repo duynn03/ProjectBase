@@ -123,8 +123,6 @@ dependencies {
 
     /*multidex for android before < 5.0*/
     implementation 'com.android.support:multidex:1.0.3'
-    /*data binding*/
-    /*apt 'com.android.databinding:compiler:1.0-rc0*/
     //inject view
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
