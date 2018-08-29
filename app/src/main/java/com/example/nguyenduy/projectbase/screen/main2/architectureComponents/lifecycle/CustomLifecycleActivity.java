@@ -15,7 +15,6 @@ public class CustomLifecycleActivity extends AppCompatActivity implements Lifecy
     public static final String TAG = MethodUtils.getTagClass(CustomLifecycleActivity.class);
 
     private LifecycleRegistry lifecycleRegistry;
-    private MyLifecycleObserver lifecycleObserver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +25,7 @@ public class CustomLifecycleActivity extends AppCompatActivity implements Lifecy
         lifecycleRegistry = new LifecycleRegistry(this);
         lifecycleRegistry.markState(Lifecycle.State.CREATED);
 
-        lifecycleObserver = new MyLifecycleObserver(getLifecycle());
+        MyLifecycleObserver lifecycleObserver = new MyLifecycleObserver(getLifecycle());
         getLifecycle().addObserver(lifecycleObserver);
     }
 

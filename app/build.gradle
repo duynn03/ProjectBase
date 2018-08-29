@@ -176,6 +176,7 @@ dependencies {
     implementation "android.arch.paging:rxjava2:$pagingRoomVersion"
     // ViewModel and LiveData
     implementation "android.arch.lifecycle:extensions:$architectureComponentVersion"
+    implementation "android.arch.lifecycle:common-java8:$architectureComponentVersion"
     // WorkManager
     def workManagerVersion = "1.0.0-alpha06"
     implementation "android.arch.work:work-runtime:$workManagerVersion"
