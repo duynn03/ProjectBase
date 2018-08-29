@@ -1,17 +1,14 @@
 package com.example.nguyenduy.projectbase.screen.main2.architectureComponents.lifecycle;
 
-import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.LifecycleOwner;
-import android.arch.lifecycle.LifecycleRegistry;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.nguyenduy.projectbase.utils.LogUtils;
+import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
 
-public class LifecycleActivity extends AppCompatActivity implements LifecycleOwner {
+public class LifecycleActivity extends AppCompatActivity {
 
     public static final String TAG = MethodUtils.getTagClass(LifecycleActivity.class);
 
@@ -42,7 +39,14 @@ public class LifecycleActivity extends AppCompatActivity implements LifecycleOwn
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        observer = new MyLifecycleObserver(this, getLifecycle(), location -> {
+        setContentView(R.layout.activity_lifecycle);
+
+        // lifecycle
+        observer = new MyLifecycleObserver(getLifecycle());
+        getLifecycle().addObserver(observer);
+
+
+        /*observer = new MyLifecycleObserver(this, getLifecycle(), location -> {
             // update UI
             LogUtils.i(TAG + "onCreate(): update UI");
         });
@@ -50,6 +54,6 @@ public class LifecycleActivity extends AppCompatActivity implements LifecycleOwn
             if (result) {
                 observer.enable();
             }
-        });
+        });*/
     }
 }
