@@ -12,34 +12,10 @@ public class MyLifecycleObserver implements LifecycleObserver {
     public static final String TAG = MethodUtils.getTagClass(MyLifecycleObserver.class);
 
     private Lifecycle mLifecycle;
-    private boolean enabled = false;
 
     public MyLifecycleObserver(Lifecycle lifecycle) {
         mLifecycle = lifecycle;
     }
-/*
-    @OnLifecycleEvent(Lifecycle.Event.ON_START)
-    public void connectListener() {
-        // connect
-        if (enabled) {
-            LogUtils.i(TAG + "connectListener(): ");
-        }
-    }
-
-    public void enable() {
-        enabled = true;
-        // connect if not connected
-        if (mLifecycle.getCurrentState().isAtLeast(Lifecycle.State.STARTED)) {
-
-        }
-    }
-
-    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
-    public void disconnectListener() {
-        // disconnect if connected
-        LogUtils.i(TAG + "disconnectListener(): ");
-    }*/
-    // myLifecycleOwner.getLifecycle().addObserver(new MyLifecycleObserver());
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     public void onCreate() {

@@ -13,12 +13,21 @@
         android:text="Fragment Lifecycle" />
 
     <Button
-        android:id="@+id/btn_open_activity_lifecycle"
+        android:id="@+id/btn_open_activity_lifecycle_default"
         style="@style/Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:text="Open Lifecycle Activity" />
+        android:text="Open Lifecycle Default Activity " />
+
+    <Button
+        android:id="@+id/btn_open_activity_lifecycle_custom"
+        style="@style/Button"
+        android:layout_below="@+id/btn_open_activity_lifecycle_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Open Lifecycle Custom Activity" />
 
 </RelativeLayout>

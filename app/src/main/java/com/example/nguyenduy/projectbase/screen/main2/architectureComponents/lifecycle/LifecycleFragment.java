@@ -39,8 +39,13 @@ public class LifecycleFragment extends BaseFragment<ILifecyclePresenter> impleme
     }
 
 
-    @OnClick(R.id.btn_open_activity_lifecycle)
-    public void onClickButtonOpenActivityDataBinding() {
-        (getRootActivity()).startActivity(LifecycleActivity.class, null, null);
+    @OnClick(R.id.btn_open_activity_lifecycle_default)
+    public void onClickButtonOpenActivityLifecycleDefault() {
+        (getRootActivity()).startActivity(LifecycleDefaultActivity.class, null, null);
+    }
+
+    @OnClick(R.id.btn_open_activity_lifecycle_custom)
+    public void onClickButtonOpenActivityLifecycleCustom() {
+        (getRootActivity()).startActivity(CustomLifecycleActivity.class, null, null);
     }
 }
