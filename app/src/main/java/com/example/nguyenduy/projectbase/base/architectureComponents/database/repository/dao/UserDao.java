@@ -1,5 +1,6 @@
 package com.example.nguyenduy.projectbase.base.architectureComponents.database.repository.dao;
 
+import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Query;
 
@@ -40,5 +41,9 @@ public interface UserDao extends BaseDao<User> {
 
     @Query("DELETE FROM User")
     void deleteAll();
+
+    // nên ghi hết các field, không nên dùng *
+    @Query("SELECT * FROM User")
+    LiveData<List<User>> getAllUserLiveData();
 
 }

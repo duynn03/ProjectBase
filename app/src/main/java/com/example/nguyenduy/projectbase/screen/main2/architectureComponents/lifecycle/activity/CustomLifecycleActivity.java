@@ -1,4 +1,4 @@
-package com.example.nguyenduy.projectbase.screen.main2.architectureComponents.lifecycle;
+package com.example.nguyenduy.projectbase.screen.main2.architectureComponents.lifecycle.activity;
 
 import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.LifecycleOwner;

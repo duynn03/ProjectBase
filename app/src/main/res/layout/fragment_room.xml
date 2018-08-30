@@ -151,8 +151,17 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/btn_relation_ship_many_to_many_get_list_repo"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="100dp"
             android:text="One To Many - Get List User and Account" />
+
+        <TextView
+            android:id="@+id/tv_live_data"
+            style="@style/TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_relation_ship_one_to_many_get_list_user_and_account"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="100dp"
+            android:text="LiveData" />
 
     </RelativeLayout>
 </ScrollView>

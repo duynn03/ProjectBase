@@ -133,8 +133,9 @@
         </activity>
         <!--data binding-->
         <activity android:name=".screen.main2.architectureComponents.dataBinding.activity.DataBindingActivity" />
-        <activity android:name=".screen.main2.architectureComponents.lifecycle.LifecycleDefaultActivity" />
-        <activity android:name=".screen.main2.architectureComponents.lifecycle.CustomLifecycleActivity" />
+        <activity android:name=".screen.main2.architectureComponents.lifecycle.activity.LifecycleDefaultActivity" />
+        <activity android:name=".screen.main2.architectureComponents.lifecycle.activity.CustomLifecycleActivity" />
+        <activity android:name=".screen.main2.architectureComponents.liveData.activity.LiveDataActivity" />
 
         <!-- Firebase Cloud Message -->
         <service android:name=".base.firebase.FCM.FCMService">

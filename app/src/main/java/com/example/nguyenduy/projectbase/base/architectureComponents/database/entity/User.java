@@ -72,7 +72,7 @@ public class User {
     }
 
     public String getFullName() {
-        return fullName;
+        return firstName + " " + lastName;
     }
 
     public void setFullName(String fullName) {

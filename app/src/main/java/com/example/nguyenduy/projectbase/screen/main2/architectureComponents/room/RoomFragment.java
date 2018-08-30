@@ -1,5 +1,9 @@
 package com.example.nguyenduy.projectbase.screen.main2.architectureComponents.room;
 
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
+import android.widget.TextView;
+
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.BaseFragment;
 import com.example.nguyenduy.projectbase.base.IBasePresenter;
@@ -12,12 +16,16 @@ import com.example.nguyenduy.projectbase.base.architectureComponents.database.en
 import com.example.nguyenduy.projectbase.base.architectureComponents.database.repository.dao.UserAndAccountDao;
 import com.example.nguyenduy.projectbase.base.architectureComponents.database.repository.dao.UserAndRepoDao;
 import com.example.nguyenduy.projectbase.base.architectureComponents.database.repository.dao.UserDao;
+import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.room.livedata.UserViewModel;
 import com.example.nguyenduy.projectbase.utils.LogUtils;
 import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.Nullable;
+
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class RoomFragment extends BaseFragment<IRoomPresenter> implements IRoomView {
@@ -27,6 +35,10 @@ public class RoomFragment extends BaseFragment<IRoomPresenter> implements IRoomV
     private UserDao userDao;
     private UserAndRepoDao userAndRepoDao;
     private UserAndAccountDao userAndAccountDao;
+
+    @BindView(R.id.tv_live_data)
+    TextView tvLiveData;
+    UserViewModel userViewModel;
 
     @Override
     public int getIdLayout() {
@@ -48,6 +60,8 @@ public class RoomFragment extends BaseFragment<IRoomPresenter> implements IRoomV
         userDao = AppDatabase.getInstance().userDao();
         userAndRepoDao = AppDatabase.getInstance().userRepoDao();
         userAndAccountDao = AppDatabase.getInstance().userAndAccountDao();
+
+        userViewModel = ViewModelProviders.of(this).get(UserViewModel.class);
     }
 
     @Override
@@ -57,7 +71,18 @@ public class RoomFragment extends BaseFragment<IRoomPresenter> implements IRoomV
 
     @Override
     public void prepareComplete() {
-
+        // live data
+        userViewModel.getUsers().observe(this, new Observer<List<User>>() {
+            @Override
+            public void onChanged(@Nullable List<User> users) {
+                String value = "";
+                for (User user : users) {
+                    value += ", " + user.getFullName();
+                }
+                tvLiveData.setText(value);
+                LogUtils.i(TAG + "onChanged(): " + value);
+            }
+        });
     }
 
     @OnClick(R.id.btn_get_list_data)

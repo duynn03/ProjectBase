@@ -3,6 +3,8 @@ package com.example.nguyenduy.projectbase.screen.main2.architectureComponents.li
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.BaseFragment;
 import com.example.nguyenduy.projectbase.base.IBasePresenter;
+import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.lifecycle.activity.CustomLifecycleActivity;
+import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.lifecycle.activity.LifecycleDefaultActivity;
 
 import butterknife.OnClick;
 

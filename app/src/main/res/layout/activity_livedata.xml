@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/root_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,15 +9,23 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Fragment Live Data" />
+        android:text="Activity LiveData" />
 
-    <Button
-        android:id="@+id/btn_open_activity_live_data"
-        style="@style/Button"
+    <TextView
+        android:id="@+id/tv_live_data_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:text="Open Activity Live Data" />
+        android:text="" />
+
+    <Button
+        android:id="@+id/btn_live_data_update_data"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_live_data_name"
+        android:layout_centerHorizontal="true"
+        android:text="Update Data" />
 
 </RelativeLayout>
