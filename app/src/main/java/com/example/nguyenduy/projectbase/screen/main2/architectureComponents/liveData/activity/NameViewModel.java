@@ -1,4 +1,4 @@
-package com.example.nguyenduy.projectbase.screen.main2.architectureComponents.liveData;
+package com.example.nguyenduy.projectbase.screen.main2.architectureComponents.liveData.activity;
 
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
@@ -10,7 +10,7 @@ public class NameViewModel extends ViewModel {
 
     public MutableLiveData<String> getCurrentName() {
         if (mCurrentName == null) {
-            mCurrentName = new MutableLiveData<String>();
+            mCurrentName = new MutableLiveData<>();
         }
         return mCurrentName;
     }
