@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!--class="com.example.nguyenduy.projectbase.utils.dataBinding.ActivityDataBindingBinding"-->
@@ -54,154 +55,198 @@
         <variable
             name="imageUrl"
             type="String" />
+
+        <variable
+            name="twoWayBinding"
+            type="com.example.nguyenduy.projectbase.screen.main2.architectureComponents.dataBinding.activity.twowayBinding.TwoWayBinding" />
+
+        <variable
+            name="customTwoWayBinding"
+            type="com.example.nguyenduy.projectbase.screen.main2.architectureComponents.dataBinding.activity.twowayBinding.CustomTwoWayBinding" />
     </data>
 
-    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/root_activity"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <TextView
-            style="@style/TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:text="Activity Data Binding" />
+        <RelativeLayout
+            android:id="@+id/root_activity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <!--       <TextView
-                   android:id="@+id/tv_data_binding_list"
-                   android:layout_width="wrap_content"
-                   android:layout_below="@+id/tv_data_binding_first_name"
-                   android:layout_height="wrap_content"
-                   android:layout_centerInParent="true"
-                   tools:text="@{list[index]}" />
+            <TextView
+                style="@style/TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:text="Activity Data Binding" />
 
-               <TextView
-                   android:id="@+id/tv_data_binding_sparse_array"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_below="@+id/tv_data_binding_list"
-                   android:layout_centerInParent="true"
-                   tools:text="@{sparse[index]}" />
+            <!--       <TextView
+                       android:id="@+id/tv_data_binding_list"
+                       android:layout_width="wrap_content"
+                       android:layout_below="@+id/tv_data_binding_first_name"
+                       android:layout_height="wrap_content"
+                       android:layout_centerInParent="true"
+                       tools:text="@{list[index]}" />
 
-               &lt;!&ndash;Có thể sử dụng map[key] hoặc {map.key}&ndash;&gt;
-               <TextView
-                   android:id="@+id/tv_data_binding_map"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_below="@+id/tv_data_binding_sparse_array"
-                   android:layout_centerInParent="true"
-                   tools:text="@{map[key]}" />-->
+                   <TextView
+                       android:id="@+id/tv_data_binding_sparse_array"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_below="@+id/tv_data_binding_list"
+                       android:layout_centerInParent="true"
+                       tools:text="@{sparse[index]}" />
 
-        <TextView
-            android:id="@+id/tv_data_binding_first_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="50dp"
-            android:text="@{user.firstName, default=Null}"
-            tools:text="@{user.firstName, default=Null}" />
+                   &lt;!&ndash;Có thể sử dụng map[key] hoặc {map.key}&ndash;&gt;
+                   <TextView
+                       android:id="@+id/tv_data_binding_map"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_below="@+id/tv_data_binding_sparse_array"
+                       android:layout_centerInParent="true"
+                       tools:text="@{map[key]}" />-->
 
-        <Button
-            android:id="@+id/btn_data_binding_method_reference"
-            style="@style/Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_data_binding_first_name"
-            android:layout_centerHorizontal="true"
-            android:onClick="@{activity.onClickButtonMethodReference}"
-            android:text="Binding Event Method Reference" />
+            <TextView
+                android:id="@+id/tv_data_binding_first_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:text="@{user.firstName, default=Null}"
+                tools:text="@{user.firstName, default=Null}" />
 
-        <Button
-            android:id="@+id/btn_data_binding_listener_binding"
-            style="@style/Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_data_binding_method_reference"
-            android:layout_centerHorizontal="true"
-            android:onClick="@{() -> activity.onClickButtonListenerBinding(user)}"
-            android:text="Binding Event Listener Binding" />
+            <Button
+                android:id="@+id/btn_data_binding_method_reference"
+                style="@style/Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_data_binding_first_name"
+                android:layout_centerHorizontal="true"
+                android:onClick="@{activity::onClickButtonMethodReference}"
+                android:text="Binding Event Method Reference" />
 
-        <Button
-            android:id="@+id/btn_data_binding_listener_binding_expression"
-            style="@style/Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_data_binding_listener_binding"
-            android:layout_centerHorizontal="true"
-            android:onClick="@{(view) -> activity.isUserDuy(user) ? activity.onClickButtonMethodReference(view) : activity.onClickButtonListenerBinding(user)}"
-            android:text="Binding Event Listener Binding Expression" />
+            <Button
+                android:id="@+id/btn_data_binding_listener_binding"
+                style="@style/Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_data_binding_method_reference"
+                android:layout_centerHorizontal="true"
+                android:onClick="@{() -> activity.onClickButtonListenerBinding(user)}"
+                android:text="Binding Event Listener Binding" />
 
-        <!--<include layout="@layout/name"
-            bind:user="@{user}"/>-->
+            <Button
+                android:id="@+id/btn_data_binding_listener_binding_expression"
+                style="@style/Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_data_binding_listener_binding"
+                android:layout_centerHorizontal="true"
+                android:onClick="@{(view) -> activity.isUserDuy(user) ? activity.onClickButtonMethodReference(view) : activity.onClickButtonListenerBinding(user)}"
+                android:text="Binding Event Listener Binding Expression" />
 
-        <TextView
-            android:id="@+id/tv_obsverable_field_first_name"
-            style="@style/TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_data_binding_listener_binding_expression"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:text="@{userObservableField.firstName + userObservableField.age, default=Null}" />
+            <!--<include layout="@layout/name"
+                bind:user="@{user}"/>-->
 
-        <Button
-            android:id="@+id/btn_change_user_first_name_field"
-            style="@style/Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_obsverable_field_first_name"
-            android:layout_centerHorizontal="true"
-            android:onClick="@{() -> activity.onClickButtonChangeFirstNameObservableFieldUser(userObservableField)}"
-            android:text="Change User First Name Observable Field" />
+            <TextView
+                android:id="@+id/tv_obsverable_field_first_name"
+                style="@style/TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_data_binding_listener_binding_expression"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:text="@{userObservableField.firstName + userObservableField.age, default=Null}" />
 
-        <TextView
-            android:id="@+id/tv_obsverable_object_first_name"
-            style="@style/TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_change_user_first_name_field"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:text="@{userObservableObject.firstName, default=Null}" />
+            <Button
+                android:id="@+id/btn_change_user_first_name_field"
+                style="@style/Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_obsverable_field_first_name"
+                android:layout_centerHorizontal="true"
+                android:onClick="@{() -> activity.onClickButtonChangeFirstNameObservableFieldUser(userObservableField)}"
+                android:text="Change User First Name Observable Field" />
 
-        <Button
-            android:id="@+id/btn_change_user_first_name_object"
-            style="@style/Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_obsverable_object_first_name"
-            android:layout_centerHorizontal="true"
-            android:onClick="@{() -> activity.onClickButtonChangeFirstNameObservableObjectUser(userObservableObject)}"
-            android:text="Change User First Name Observable Object" />
+            <TextView
+                android:id="@+id/tv_obsverable_object_first_name"
+                style="@style/TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_change_user_first_name_field"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:text="@{userObservableObject.firstName, default=Null}" />
 
-        <TextView
-            android:id="@+id/tv_binding_logic"
-            style="@style/TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_change_user_first_name_object"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:text="Binding Logic" />
+            <Button
+                android:id="@+id/btn_change_user_first_name_object"
+                style="@style/Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_obsverable_object_first_name"
+                android:layout_centerHorizontal="true"
+                android:onClick="@{() -> activity.onClickButtonChangeFirstNameObservableObjectUser(userObservableObject)}"
+                android:text="Change User First Name Observable Object" />
 
-        <com.example.nguyenduy.projectbase.screen.main2.architectureComponents.dataBinding.activity.BindingLogicView
-            android:id="@+id/bdv_binding_adapter_logic"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_below="@+id/tv_binding_logic"
-            android:layout_centerHorizontal="true"
-            app:color="@{colorDataBindingSetter}" />
+            <TextView
+                android:id="@+id/tv_binding_logic"
+                style="@style/TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_change_user_first_name_object"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:text="Binding Logic" />
 
-        <!--binding adapter-->
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/bdv_binding_adapter_logic"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            app:imageUrl="@{imageUrl}"
-            app:placeHolder="@{@drawable/ic_splash}" />
-    </RelativeLayout>
+            <com.example.nguyenduy.projectbase.screen.main2.architectureComponents.dataBinding.activity.BindingLogicView
+                android:id="@+id/bdv_binding_adapter_logic"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/tv_binding_logic"
+                android:layout_centerHorizontal="true"
+                app:color="@{colorDataBindingSetter}" />
+
+            <!--binding adapter-->
+            <ImageView
+                android:id="@+id/im_binding_adapter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bdv_binding_adapter_logic"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                app:imageUrl="@{imageUrl}"
+                app:placeHolder="@{@drawable/ic_splash}" />
+
+            <!--two way binding-->
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rememberMeCheckBox"
+                android:layout_below="@+id/im_binding_adapter"
+                android:layout_centerHorizontal="true"
+                android:checked="@={twoWayBinding.isCheckTwoWay}" />
+
+            <TextView
+                android:id="@+id/tv_value_checkbox"
+                style="@style/TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rememberMeCheckBox"
+                android:layout_centerHorizontal="true"
+                android:text="@{String.valueOf(twoWayBinding.isCheckTwoWay), default=Null}"
+                tools:text="Value Checkbox" />
+
+            <!--TODO-->
+            <!--<EditText
+                android:layout_below="@+id/tv_value_checkbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="0"
+                app:realValue="@={customTwoWayBinding.number}" /> -->
+
+        </RelativeLayout>
+    </ScrollView>
 </layout>

@@ -17,9 +17,12 @@ import android.widget.Toast;
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.application.MyApplication;
 import com.example.nguyenduy.projectbase.databinding.ActivityDataBindingBinding;
+import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.dataBinding.activity.twowayBinding.TwoWayBinding;
 import com.example.nguyenduy.projectbase.utils.method.ViewUtils;
 
 public class DataBindingActivity extends AppCompatActivity {
+
+    private TwoWayBinding twoWayBinding;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -52,6 +55,13 @@ public class DataBindingActivity extends AppCompatActivity {
         binding.setColorDataBindingSetter(colorDataBindingSetter);
         // binding logic load image
         binding.setImageUrl("https://images.pexels.com/photos/457702/pexels-photo-457702.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+
+        // two way binding
+        twoWayBinding = new TwoWayBinding();
+        binding.setTwoWayBinding(twoWayBinding);
+        // custom two way binding TODO
+        /*CustomTwoWayBinding customTwoWayBinding = new CustomTwoWayBinding();
+        binding.setCustomTwoWayBinding(customTwoWayBinding);*/
     }
 
     public void onClickButtonMethodReference(View view) {
