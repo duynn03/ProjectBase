@@ -1,26 +1,13 @@
 package com.example.nguyenduy.projectbase.screen.main2.architectureComponents.viewModel;
 
-import android.arch.lifecycle.ViewModelProviders;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.BaseFragment;
 import com.example.nguyenduy.projectbase.base.IBasePresenter;
+import com.example.nguyenduy.projectbase.screen.main2.architectureComponents.viewModel.activity.ViewModelActivity;
+
+import butterknife.OnClick;
 
 public class ViewModelFragment extends BaseFragment<IViewModelPresenter> implements IViewModelView {
-
-    private ViewModelViewModel viewModel;
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        /*viewModel = ViewModelProviders.of(this).get(ViewModelViewModel.class);
-
-        viewModel.getUser().observe(this, user -> {
-            // update UI
-        });*/
-    }
 
     @Override
     public int getIdLayout() {
@@ -51,4 +38,10 @@ public class ViewModelFragment extends BaseFragment<IViewModelPresenter> impleme
     public void prepareComplete() {
 
     }
+
+    @OnClick(R.id.btn_open_activity_view_model)
+    public void onClickButtonOpenSettingViewModel() {
+        (getRootActivity()).startActivity(ViewModelActivity.class, null, null);
+    }
+
 }

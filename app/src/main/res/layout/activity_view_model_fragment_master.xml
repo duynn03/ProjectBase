@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/root_fragment"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_light">
 
     <TextView
         style="@style/TextView"
@@ -10,15 +11,25 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Fragment View Model" />
+        android:text="Fragment Master" />
 
     <Button
-        android:id="@+id/btn_open_activity_view_model"
+        android:id="@+id/btn_increment_number"
         style="@style/Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:text="Open Activity" />
+        android:text="Increase Number" />
+
+
+    <TextView
+        android:id="@+id/tv_number"
+        style="@style/TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_increment_number"
+        android:layout_centerHorizontal="true"
+        android:text="0" />
 
 </RelativeLayout>

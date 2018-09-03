@@ -131,11 +131,12 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <!--data binding-->
+        <!--architecture component-->
         <activity android:name=".screen.main2.architectureComponents.dataBinding.activity.DataBindingActivity" />
         <activity android:name=".screen.main2.architectureComponents.lifecycle.activity.LifecycleDefaultActivity" />
         <activity android:name=".screen.main2.architectureComponents.lifecycle.activity.CustomLifecycleActivity" />
         <activity android:name=".screen.main2.architectureComponents.liveData.activity.LiveDataActivity" />
+        <activity android:name=".screen.main2.architectureComponents.viewModel.activity.ViewModelActivity" />
 
         <!-- Firebase Cloud Message -->
         <service android:name=".base.firebase.FCM.FCMService">

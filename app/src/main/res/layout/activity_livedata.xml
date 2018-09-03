@@ -28,4 +28,47 @@
         android:layout_centerHorizontal="true"
         android:text="Update Data" />
 
+    <TextView
+        android:id="@+id/tv_live_data_tranformdata_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_live_data_update_data"
+        android:layout_centerHorizontal="true"
+        android:text="Tranform Data" />
+
+    <TextView
+        android:id="@+id/tv_live_data_tranformdata_switchmap_user_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_live_data_tranformdata_map"
+        android:layout_centerHorizontal="true"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/tv_live_data_tranformdata_switchmap_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_live_data_tranformdata_switchmap_user_id"
+        android:layout_centerHorizontal="true"
+        android:text="User name" />
+
+    <Button
+        android:id="@+id/btn_live_data_tranformdata_switchmap_increase_user_id"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_live_data_tranformdata_switchmap_user_name"
+        android:layout_centerHorizontal="true"
+        android:text="Increase user id" />
+
+    <Button
+        android:id="@+id/btn_live_data_merge_multiple_live_data"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_live_data_tranformdata_switchmap_increase_user_id"
+        android:layout_centerHorizontal="true"
+        android:text="Merge LiveData - Add user" />
+
+
 </RelativeLayout>

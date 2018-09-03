@@ -14,6 +14,4 @@ public class NameViewModel extends ViewModel {
         }
         return mCurrentName;
     }
-
-// Rest of the ViewModel...
 }

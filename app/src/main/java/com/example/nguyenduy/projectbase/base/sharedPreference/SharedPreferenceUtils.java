@@ -207,4 +207,14 @@ public class SharedPreferenceUtils {
     public int getStatusDataSaver() {
         return getValue(Constants.SharedPreference.DATA_SAVER, DataSaverUtils.NOT_ACTIVE_NETWORK_METERED);
     }
+
+    private void setNumberIncrease(int number) {
+        setValue(Constants.SharedPreference.NUMBER_INCREASE, number);
+    }
+
+    public int getNumberIncrease() {
+        int number = getValue(Constants.SharedPreference.NUMBER_INCREASE, 0);
+        setNumberIncrease(number + 1);
+        return number;
+    }
 }
