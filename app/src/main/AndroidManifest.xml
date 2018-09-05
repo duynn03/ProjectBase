@@ -220,7 +220,10 @@
             android:name=".base.backgroundTask.service.BindService"
             android:exported="false" />
         <service
-            android:name=".base.backgroundTask.service.TestIntentService"
+            android:name=".base.backgroundTask.service.BackgroundService"
+            android:exported="false" />
+        <service
+            android:name=".base.backgroundTask.service.ForegroundService"
             android:exported="false" />
 
     </application>

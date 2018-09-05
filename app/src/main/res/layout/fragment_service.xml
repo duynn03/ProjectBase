@@ -12,4 +12,31 @@
         android:layout_marginTop="20dp"
         android:text="Fragment Service" />
 
+    <Button
+        android:id="@+id/btn_start_background_service"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Start Background Service" />
+
+    <Button
+        android:id="@+id/btn_start_foreground_service"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_start_background_service"
+        android:layout_centerHorizontal="true"
+        android:text="Start Foreground Service" />
+
+    <Button
+        android:id="@+id/btn_stop_foreground_service"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_start_foreground_service"
+        android:layout_centerHorizontal="true"
+        android:text="Stop Foreground Service" />
+
 </RelativeLayout>

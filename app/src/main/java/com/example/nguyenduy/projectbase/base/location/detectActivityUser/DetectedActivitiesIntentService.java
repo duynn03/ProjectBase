@@ -13,7 +13,7 @@ import org.greenrobot.eventbus.EventBus;
 import java.util.List;
 
 /**
- * TestIntentService for handling incoming intents that are generated as a result of requesting
+ * BackgroundService for handling incoming intents that are generated as a result of requesting
  * activity updates using
  * {@link com.google.android.gms.location.ActivityRecognitionApi#requestActivityUpdates}.
  */

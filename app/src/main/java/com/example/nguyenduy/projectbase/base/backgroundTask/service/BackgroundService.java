@@ -8,11 +8,12 @@ import com.example.nguyenduy.projectbase.utils.LogUtils;
 import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
 
 
-public class TestIntentService extends IntentService {
+public class BackgroundService extends IntentService {
 
-    private static final String TAG = MethodUtils.getTagClass(TestIntentService.class);
+    private static final String TAG = MethodUtils.getTagClass(BackgroundService.class);
+    public static final String DATA = "DATA";
 
-    public TestIntentService() {
+    public BackgroundService() {
         super(TAG);
         LogUtils.i(TAG + "Contructor");
     }
@@ -33,12 +34,15 @@ public class TestIntentService extends IntentService {
     // có thể download file, ...
     @Override
     protected void onHandleIntent(@Nullable Intent intent) {
+
         LogUtils.i(TAG + "onHandleIntent()");
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            // Restore interrupt status.
-            Thread.currentThread().interrupt();
+        // Gets data from the incoming Intent
+        if (null != intent) {
+            String data = intent.getStringExtra(DATA);
+            LogUtils.d(TAG + "onHandleIntent(): data:" + data);
+            // Do work here, based on the contents of dataString
+            // call stopSelf(); để top service
+
         }
     }
 
