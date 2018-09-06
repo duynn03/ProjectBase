@@ -7,10 +7,4 @@ class SignUpPresenterImp extends BasePresenterImp<ISignUpView> implements ISignU
     SignUpPresenterImp(ISignUpView view) {
         super(view);
     }
-
-
-    @Override
-    public void signUp() {
-
-    }
 }

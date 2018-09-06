@@ -20,6 +20,10 @@ public class ResourceUtils {
         return getResource().getString(id);
     }
 
+    public static int getInt(int id) {
+        return Integer.parseInt(getResource().getString(id));
+    }
+
     public static String[] getStringArray(int id) {
         return getResource().getStringArray(id);
     }

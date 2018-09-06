@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.multidex.MultiDexApplication;
 
 import com.example.nguyenduy.projectbase.base.appCenter.AppCenterUtils;
+import com.example.nguyenduy.projectbase.base.architectureComponents.database.AppDatabase;
 import com.example.nguyenduy.projectbase.base.firebase.FireBaseUtils;
 import com.example.nguyenduy.projectbase.base.notification.channel.NotificationChannelUtils;
 import com.example.nguyenduy.projectbase.database.Database;
@@ -24,6 +25,8 @@ public class MyApplication extends MultiDexApplication {
         SharedPreferenceUtils.getInstance().init();
         new NotificationChannelUtils(this).init();
         Database.configDefault(this);
+        // create Room database
+        AppDatabase.getInstance();
     }
 
     public static MyApplication getInstance() {

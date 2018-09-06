@@ -1,27 +1,17 @@
 package com.example.nguyenduy.projectbase.screen.start.login;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.database.Cursor;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Bundle;
-import android.provider.MediaStore;
-import android.support.annotation.Nullable;
 
-import com.example.nguyenduy.projectbase.screen.main.MainActivity;
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.BaseFragment;
 import com.example.nguyenduy.projectbase.base.IBasePresenter;
-import com.example.nguyenduy.projectbase.base.firebase.FireBaseUtils;
-import com.example.nguyenduy.projectbase.utils.permission.BasePermission;
-import com.example.nguyenduy.projectbase.utils.permission.PermissionUtils;
-
-import java.util.List;
+import com.example.nguyenduy.projectbase.screen.main.MainActivity;
+import com.example.nguyenduy.projectbase.screen.start.ForgotPassword.ForgotPasswordFragment;
+import com.example.nguyenduy.projectbase.screen.start.SignUp.SignUpFragment;
 
 import butterknife.OnClick;
 
-public class LoginFragment extends BaseFragment<ILoginPresenter> implements ILoginView{
+public class LoginFragment extends BaseFragment<ILoginPresenter> implements ILoginView {
 
     @Override
     public int getIdLayout() {
@@ -68,12 +58,12 @@ public class LoginFragment extends BaseFragment<ILoginPresenter> implements ILog
 
     @OnClick(R.id.btn_forgot_password)
     public void onClickForgotPassword() {
-
+        getRootActivity().replaceFragment(new ForgotPasswordFragment(), true);
     }
 
     @OnClick(R.id.btn_sign_up)
     public void onClickSignUp() {
-
+        getRootActivity().replaceFragment(new SignUpFragment(), true);
     }
 
 }

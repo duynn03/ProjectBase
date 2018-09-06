@@ -4,5 +4,4 @@ import com.example.nguyenduy.projectbase.base.IBasePresenter;
 
 interface ISignUpPresenter extends IBasePresenter {
 
-    void signUp();
 }

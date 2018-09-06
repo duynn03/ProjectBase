@@ -66,7 +66,7 @@ public abstract class BaseActivityWithHeaderUserDrawerLayout<P extends IBasePres
             clearUserInformation();
             return;
         }
-        setName(user.getUsername());
+        setName(user.getName());
         setEmail(user.getEmail());
         setAvatar(user.getAvatarUrl());
     }

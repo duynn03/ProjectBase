@@ -36,6 +36,8 @@ public class ForegroundService extends Service {
         if (null == intent) return START_STICKY;
 
         LogUtils.i(TAG + "onStartCommand(): Action: " + intent.getAction());
+
+        /*note: cần thêm perrmission <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> */
         // Id of startForeground phải khác 0
         startForeground(ONGOING_NOTIFICATION_ID, createNotificationForegroundService());
         // có thể remove notification (nhưng không stop service)

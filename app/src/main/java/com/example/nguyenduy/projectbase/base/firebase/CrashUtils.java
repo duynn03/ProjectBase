@@ -50,7 +50,7 @@ public class CrashUtils implements SharedPreferences.OnSharedPreferenceChangeLis
             return;
         }
         setUserId(user.getId());
-        setUserName(user.getUsername());
+        setUserName(user.getName());
         setUserEmail(user.getEmail());
         LogUtils.i(TAG + "updateUserInformation(): " + user.toString());
     }

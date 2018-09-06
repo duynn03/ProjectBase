@@ -9,6 +9,12 @@
     <!--toolbar-->
     <item name="ic_menu_help" type="drawable">@android:drawable/ic_menu_help</item>
     <item name="ic_menu" type="drawable">@android:drawable/ic_menu_add</item>
+    <!--login screen-->
+    <item name="ic_name" type="drawable">@android:drawable/ic_input_delete</item>
+    <item name="ic_email" type="drawable">@android:drawable/ic_dialog_email</item>
+    <item name="ic_password" type="drawable">@android:drawable/ic_lock_lock</item>
+    <item name="ic_phone_number" type="drawable">@android:drawable/ic_menu_call</item>
+    <item name="ic_birth_day" type="drawable">@android:drawable/ic_menu_my_calendar</item>
     <!--Notification play media-->
     <item name="ic_notification_prev" type="drawable">@android:drawable/ic_media_previous</item>
     <item name="ic_notification_next" type="drawable">@android:drawable/ic_media_next</item>

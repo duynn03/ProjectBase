@@ -28,6 +28,9 @@
     <!--notification-->
     <uses-permission android:name="android.permission.VIBRATE" />
 
+    <!--foreground service-->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
     <uses-feature
         android:name="android.hardware.sensor.accelerometer"
         android:required="true" />
@@ -43,11 +46,11 @@
         <activity
             android:name=".screen.SplashActivity"
             android:theme="@style/AppTheme.FullStatusBar.Launcher">
-            <!--<intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
         </activity>
         <activity
             android:name=".screen.start.crash.CrashActivity"
@@ -61,11 +64,11 @@
         <activity
             android:name=".screen.main2.MainActivity"
             android:theme="@style/AppTheme.FullStatusBar">
-            <intent-filter>
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
             <!--register change network-->
             <!--<intent-filter>
                 <action android:name="android.intent.action.MANAGE_NETWORK_USAGE" />
@@ -214,18 +217,17 @@
         <!--Xem thêm các attribute khai báo service
         https://developer.android.com/guide/topics/manifest/service-element-->
         <service
-            android:name=".base.backgroundTask.service.StartedService"
-            android:exported="false" />
-        <service
-            android:name=".base.backgroundTask.service.BindService"
-            android:exported="false" />
-        <service
             android:name=".base.backgroundTask.service.BackgroundService"
             android:exported="false" />
         <service
             android:name=".base.backgroundTask.service.ForegroundService"
             android:exported="false" />
-
+        <service
+            android:name=".base.backgroundTask.service.bindService.BindServiceBinder"
+            android:exported="false" />
+        <service
+            android:name=".base.backgroundTask.service.bindService.BindServiceMessenger"
+            android:exported="false" />
     </application>
 
 </manifest>

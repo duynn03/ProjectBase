@@ -39,4 +39,31 @@
         android:layout_centerHorizontal="true"
         android:text="Stop Foreground Service" />
 
+    <Button
+        android:id="@+id/btn_get_data_from_bind_service_binder"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_stop_foreground_service"
+        android:layout_centerHorizontal="true"
+        android:text="Get Data From Bind Service Binder" />
+
+    <Button
+        android:id="@+id/btn_send_message_to_service_messenger"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_stop_foreground_service"
+        android:layout_centerHorizontal="true"
+        android:text="Send Message to Service Messenger" />
+
+    <Button
+        android:id="@+id/btn_check_service_running"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_send_message_to_service_messenger"
+        android:layout_centerHorizontal="true"
+        android:text="Check Service Running" />
+
 </RelativeLayout>

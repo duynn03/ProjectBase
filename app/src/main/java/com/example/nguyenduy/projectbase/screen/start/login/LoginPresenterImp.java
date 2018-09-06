@@ -14,7 +14,7 @@ class LoginPresenterImp extends BasePresenterImp<ILoginView> implements ILoginPr
     public void login() {
         UserInformation user = new UserInformation()
                 .setId("123")
-                .setUsername("Nguyễn Ngọc Duy")
+                .setName("Nguyễn Ngọc Duy")
                 .setEmail("duynn03@gmail.com");
         SharedPreferenceUtils.getInstance().setUserInformation(user);
     }

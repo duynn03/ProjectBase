@@ -177,7 +177,7 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
 
     public void hideDialogLoading() {
         if (isShowDialogLoading()) {
-            loadingDialog.hide();
+            loadingDialog.dismiss();
         }
     }
 

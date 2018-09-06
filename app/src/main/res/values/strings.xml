@@ -238,8 +238,34 @@
     </string-array>
 
     <!--screen fragment login-->
+    <string name="hint_name">Full Name</string>
     <string name="hint_email">Email</string>
     <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="hint_phone_number">Phone Number</string>
+    <string name="hint_birth_day">BirthDay</string>
+    <!--condition form-->
+    <string name="name_length_min" translatable="false">3</string>
+    <string name="name_length_max" translatable="false">30</string>
+    <string name="email_length_min" translatable="false">6</string>
+    <string name="email_length_max" translatable="false">30</string>
+    <string name="password_length_min" translatable="false">8</string>
+    <string name="password_length_max" translatable="false">15</string>
+    <string name="phone_length_min" translatable="false">8</string>
+    <string name="phone_length_max" translatable="false">15</string>
+    <!--message-->
+    <string name="name_empty">Full Name Not Empty</string>
+    <string name="name_invalid">Full Name Invalid</string>
+    <string name="email_empty">Email Not Empty</string>
+    <string name="email_invalid">Email Invalid</string>
+    <string name="password_empty">Password Not Empty</string>
+    <string name="password_invalid">Password Invalid</string>
+    <string name="confirm_password_invalid">Confirm Password Invalid</string>
+    <string name="phone_number_empty">Phone Number Not Empty</string>
+    <string name="phone_number_invalid">Phone Number Invalid</string>
+    <string name="birthday_empty">BirthDay Not Empty</string>
+    <string name="birthday_invalid">BirthDay Invalid</string>
+    <string name="signup_success">Signup success!</string>
 
     <!--common-->
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula sem a malesuada rhoncus. Pellentesque ut dolor a dui porttitor porta lacinia non libero. Nunc volutpat arcu quis quam convallis molestie. Etiam ac tristique sem, id commodo justo. Phasellus congue tincidunt lectus, at dignissim ligula maximus eu. Quisque interdum nunc eget tellus bibendum suscipit. Phasellus feugiat ultricies posuere. Nullam porta accumsan velit, ut rutrum massa fermentum eu. Nunc ac bibendum nunc. Mauris eu ultricies ipsum. Ut id dolor dui. Pellentesque dictum dui vel tempus maximus. Vivamus non nisi quis libero scelerisque pretium. Ut eu tristique justo. Sed pellentesque placerat quam, ut ultricies turpis feugiat a. Aliquam a volutpat risus.Praesent at lectus semper, suscipit elit in, facilisis massa. Phasellus sed vestibulum ante, a euismod sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin tincidunt orci augue, a porta odio lacinia eu. Nunc in congue risus. Maecenas commodo nibh ac enim fermentum, eu sagittis massa blandit. Vestibulum elementum massa nec dapibus mollis. Etiam porta, est sit amet aliquet porta, odio elit finibus risus, id rutrum purus mi non ipsum. Nulla viverra nec enim sed venenatis.Maecenas mattis, erat et viverra euismod, neque diam porttitor tellus, in fringilla metus est id augue. Nunc at metus cursus, porttitor nisi vitae, congue diam. Curabitur ligula massa, ullamcorper eget scelerisque vel, pharetra ac sapien. Ut auctor luctus ultricies. Nullam semper tortor ac elementum luctus. In et tempus ex. Praesent sodales, dolor id volutpat elementum, ligula enim euismod odio, maximus sodales magna neque nec neque. Curabitur pretium nisl neque, consequat aliquet dui tincidunt ac. Vivamus augue nunc, aliquet eu ex a, ultrices aliquam lorem. Duis nibh lectus, ultricies vel iaculis sit amet, imperdiet id sapien. Duis scelerisque sodales metus eu rutrum. Suspendisse posuere nisi ac magna consequat, eu vestibulum ipsum venenatis. Suspendisse auctor nisi nec leo venenatis tristique.Praesent tincidunt lorem sit amet mi consequat cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent vitae blandit sapien. Curabitur est sapien, lobortis sit amet facilisis vel, faucibus eu quam. Nam tempus libero at tellus tempor laoreet. Pellentesque quam lorem, tincidunt in molestie eget, dictum vel risus. Nunc gravida convallis mattis.</string>

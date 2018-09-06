@@ -3,8 +3,11 @@ package com.example.nguyenduy.projectbase.base.sharedPreference;
 public class UserInformation {
 
     private String id;
-    private String username;
+    private String name;
     private String email;
+    private String password;
+    private String phoneNumber;
+    private String birthDay;
     private String avatarUrl;
 
     public UserInformation() {
@@ -19,12 +22,12 @@ public class UserInformation {
         return this;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public UserInformation setUsername(String username) {
-        this.username = username;
+    public UserInformation setName(String name) {
+        this.name = name;
         return this;
     }
 
@@ -34,6 +37,33 @@ public class UserInformation {
 
     public UserInformation setEmail(String email) {
         this.email = email;
+        return this;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public UserInformation setPassword(String password) {
+        this.password = password;
+        return this;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public UserInformation setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+        return this;
+    }
+
+    public String getBirthDay() {
+        return birthDay;
+    }
+
+    public UserInformation setBirthDay(String birthDay) {
+        this.birthDay = birthDay;
         return this;
     }
 
@@ -48,6 +78,6 @@ public class UserInformation {
 
     @Override
     public String toString() {
-        return "UserInformation: id = " + id + " UserName = " + username + " Email = " + email;
+        return "UserInformation: id = " + id + " UserName = " + name + " Email = " + email;
     }
 }

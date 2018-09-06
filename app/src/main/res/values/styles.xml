@@ -68,41 +68,84 @@
         <item name="helperTextEnabled">true</item>
     </style>
 
-    <style name="InputFilledBoxEmail" parent="InputFilledBox">
-        <item name="hintEnabled">true</item>
-        <item name="android:hint">@string/hint_email</item>
-        <item name="errorEnabled">true</item>
-        <!--        <item name="helperTextEnabled">true</item>-->
+    <style name="InputFilledBoxName" parent="InputFilledBox">
         <item name="counterEnabled">true</item>
-        <item name="counterMaxLength">20</item>
+        <item name="counterMaxLength">@string/name_length_max</item>
     </style>
 
-    <style name="AutoCompleteTextViewEmail">
-        <item name="android:inputType">textEmailAddress</item>
-        <item name="android:lines">1</item>
+    <style name="InputFilledBoxEmail" parent="InputFilledBox">
+        <item name="counterEnabled">true</item>
+        <item name="counterMaxLength">@string/email_length_max</item>
     </style>
 
     <style name="InputFilledBoxPassword" parent="InputFilledBox">
-        <item name="hintEnabled">true</item>
-        <item name="android:hint">@string/hint_password</item>
-        <item name="errorEnabled">true</item>
         <item name="counterEnabled">true</item>
-        <item name="counterMaxLength">16</item>
-        <item name="android:imeOptions">actionDone</item>
+        <item name="counterMaxLength">@string/password_length_max</item>
         <item name="passwordToggleEnabled">true</item>
-        <item name="passwordToggleDrawable">@drawable/ic_launcher_background</item>
+        <item name="passwordToggleDrawable">@drawable/ic_menu_help</item>
     </style>
 
-    <style name="EditTextPassword">
-        <item name="android:inputType">textPassword</item>
-        <item name="android:lines">1</item>
-    </style>
+    <style name="InputFilledBoxConfirmPassword" parent="InputFilledBoxPassword"></style>
 
-    <style name="InputOutlineBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+    <style name="InputOutlineBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <!-- boxCornerRadiusTopLeft
          boxCornerRadiusTopRight
          boxCornerRadiusBottomLeft
          boxCornerRadiusBottomRight-->
+        <item name="hintEnabled">true</item>
+        <item name="errorEnabled">true</item>
+        <item name="helperTextEnabled">true</item>
+    </style>
+
+    <style name="InputOutlineBoxPhoneNumber" parent="InputOutlineBox">
+
+    </style>
+
+    <style name="InputOutlineBoxBirthDay" parent="InputOutlineBox">
+
+    </style>
+
+    <style name="TextInputEditText">
+        <item name="android:drawablePadding">10dp</item>
+    </style>
+
+    <style name="TextInputEditTextName" parent="TextInputEditText">
+        <item name="android:drawableStart">@drawable/ic_name</item>
+        <item name="android:inputType">text</item>
+        <item name="android:lines">1</item>
+        <item name="android:hint">@string/hint_name</item>
+    </style>
+
+    <style name="TextInputEditTextEmail" parent="TextInputEditText">
+        <item name="android:drawableStart">@drawable/ic_email</item>
+        <item name="android:inputType">textEmailAddress</item>
+        <item name="android:lines">1</item>
+        <item name="android:hint">@string/hint_email</item>
+    </style>
+
+    <style name="TextInputEditTextPassword" parent="TextInputEditText">
+        <item name="android:drawableStart">@drawable/ic_password</item>
+        <item name="android:inputType">textPassword</item>
+        <item name="android:lines">1</item>
+        <item name="android:hint">@string/hint_password</item>
+    </style>
+
+    <style name="TextInputEditTextConfirmPassword" parent="TextInputEditTextPassword">
+        <item name="android:hint">@string/hint_confirm_password</item>
+    </style>
+
+    <style name="TextInputEditTextPhoneNumber" parent="TextInputEditText">
+        <item name="android:drawableStart">@drawable/ic_phone_number</item>
+        <item name="android:inputType">phone</item>
+        <item name="android:lines">1</item>
+        <item name="android:hint">@string/hint_phone_number</item>
+    </style>
+
+    <style name="TextInputEditTextBirthDay" parent="TextInputEditText">
+        <item name="android:drawableStart">@drawable/ic_birth_day</item>
+        <item name="android:inputType">date</item>
+        <item name="android:lines">1</item>
+        <item name="android:hint">@string/hint_birth_day</item>
     </style>
 
     <style name="ScrollView">
