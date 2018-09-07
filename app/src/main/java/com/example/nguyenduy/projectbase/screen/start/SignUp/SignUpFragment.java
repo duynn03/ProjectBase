@@ -107,24 +107,27 @@ public class SignUpFragment extends BaseFragment<ISignUpPresenter> implements IS
 
         if (formValidator.isValidateFormSignUp(name, email, password, confirmPassword, phoneNumber, birthDay,
                 tilName, tilEmail, tilPassword, tilConfirmPassword, tilPhoneNumber, tilBirthday)) {
-            firebaseAuth.signUpEmailAndPassword(getRootActivity(), new UserInformation()
-                    .setName(name)
-                    .setEmail(email)
-                    .setPassword(password)
-                    .setPhoneNumber(phoneNumber)
-                    .setBirthDay(birthDay)
-            ).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                @Override
-                public void onSuccess(AuthResult authResult) {
-                    formValidator.showSuccess(ResourceUtils.getString(R.string.signup_success) + " with email: " + firebaseAuth.getUser().getEmail());
-                    onClickButtonLogin();
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    LogUtils.d(TAG + "onClickButtonSignUp() :failure, Exception: " + e.getMessage());
-                }
-            });
+            firebaseAuth.signUpEmailAndPassword(
+                    getRootActivity(),
+                    new UserInformation()
+                            .setName(name)
+                            .setEmail(email)
+                            .setPassword(password)
+                            .setPhoneNumber(phoneNumber)
+                            .setBirthDay(birthDay),
+                    new OnSuccessListener<AuthResult>() {
+                        @Override
+                        public void onSuccess(AuthResult authResult) {
+                            formValidator.showSuccess(ResourceUtils.getString(R.string.signup_success) + " with email: " + firebaseAuth.getUser().getEmail());
+                            onClickButtonLogin();
+                        }
+                    },
+                    new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            LogUtils.d(TAG + "onClickButtonSignUp() :failure, Exception: " + e.getMessage());
+                        }
+                    });
         }
     }
 

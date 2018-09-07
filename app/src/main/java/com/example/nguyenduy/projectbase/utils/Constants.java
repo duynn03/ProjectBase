@@ -18,5 +18,8 @@ public class Constants {
         public static final int REQUEST_CODE_PERMISSION = 1;
         public static final int START_ACTIVITY_CRASH = 2;
         public static final int REQUEST_CHECK_SETTINGS_LOCATION = 3;
+        public static final int REQUEST_CHECK_SETTINGS_WIRELESS = 4;
+        public static final int REQUEST_CHECK_SETTINGS_WIFI = 5;
+        public static final int REQUEST_CHECK_SETTINGS_MOBILE = 6;
     }
 }

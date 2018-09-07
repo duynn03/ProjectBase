@@ -23,6 +23,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.nguyenduy.projectbase.R;
+import com.example.nguyenduy.projectbase.base.broadcast.system.network.ConnectionInternetUtils;
 import com.example.nguyenduy.projectbase.base.firebase.FireBaseUtils;
 import com.example.nguyenduy.projectbase.base.location.LocationSetting;
 import com.example.nguyenduy.projectbase.utils.LogUtils;
@@ -195,6 +196,7 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         LocationSetting.onActivityResult(requestCode, resultCode, data);
+        ConnectionInternetUtils.onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
     }
 

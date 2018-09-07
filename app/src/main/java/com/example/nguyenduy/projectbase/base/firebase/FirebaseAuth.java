@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.support.annotation.NonNull;
 
 import com.example.nguyenduy.projectbase.base.BaseActivity;
+import com.example.nguyenduy.projectbase.base.broadcast.system.network.ConnectionInternetUtils;
 import com.example.nguyenduy.projectbase.base.sharedPreference.UserInformation;
 import com.example.nguyenduy.projectbase.utils.LogUtils;
 import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
@@ -37,17 +38,25 @@ public class FirebaseAuth {
         return mAuth.getCurrentUser();
     }
 
-    public Task<AuthResult> signUpEmailAndPassword(BaseActivity activity, UserInformation user) {
-        // check setting internet
-
-        activity.showDialogLoading();
-        return mAuth.createUserWithEmailAndPassword(user.getEmail(), user.getPassword())
-                .addOnCompleteListener(activity, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        activity.hideDialogLoading();
-                    }
-                });
+    public void signUpEmailAndPassword(BaseActivity activity, UserInformation user,
+                                       OnSuccessListener<AuthResult> onSuccessListener,
+                                       OnFailureListener onFailureListener) {
+        ConnectionInternetUtils.isConnectInternet(activity, new ConnectionInternetUtils.CallbackConnectionInternetListener() {
+            @Override
+            public void onResult(boolean isConnectInternet) {
+                if (!isConnectInternet) return;
+                activity.showDialogLoading();
+                mAuth.createUserWithEmailAndPassword(user.getEmail(), user.getPassword())
+                        .addOnCompleteListener(activity, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                activity.hideDialogLoading();
+                            }
+                        })
+                        .addOnSuccessListener(onSuccessListener)
+                        .addOnFailureListener(onFailureListener);
+            }
+        });
     }
 
     public void signInEmailAndPassword(Activity activity, String email, String password) {

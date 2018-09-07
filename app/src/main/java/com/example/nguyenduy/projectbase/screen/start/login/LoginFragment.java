@@ -5,7 +5,7 @@ import android.content.Intent;
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.BaseFragment;
 import com.example.nguyenduy.projectbase.base.IBasePresenter;
-import com.example.nguyenduy.projectbase.screen.main.MainActivity;
+import com.example.nguyenduy.projectbase.screen.main2.MainActivity;
 import com.example.nguyenduy.projectbase.screen.start.ForgotPassword.ForgotPasswordFragment;
 import com.example.nguyenduy.projectbase.screen.start.SignUp.SignUpFragment;
 
