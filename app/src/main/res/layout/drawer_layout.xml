@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <include
+        layout="@layout/drawer_layout_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- android:fitsSystemWindows="true"to ensure the contents of the drawer don’t overlay the status bar and other system windows.--><!--app:headerLayout="@layout/drawer_layout_header"
+            app:menu="@menu/activity_drawer_layout_menu" -->
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true" />
+
+</android.support.v4.widget.DrawerLayout>

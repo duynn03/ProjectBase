@@ -10,6 +10,17 @@ import com.example.nguyenduy.projectbase.utils.permission.BasePermission.Permiss
 
 public class PermissionUtils {
 
+    public static void checkPermissionFireBaseAnalytic(Activity activity, CallbackPermissionListener listener) {
+        BasePermission.checkPermission(
+                new PermissionBuilder(
+                        activity,
+                        listener,
+                        Manifest.permission.INTERNET,
+                        Manifest.permission.ACCESS_NETWORK_STATE,
+                        Manifest.permission.WAKE_LOCK)
+                        .setReason(ResourceUtils.getString(R.string.permission_msg_reason_firebase_analytic)));
+    }
+
     public static void checkPermissionInternet(Activity activity, CallbackPermissionListener listener) {
         BasePermission.checkPermission(
                 new PermissionBuilder(
@@ -23,8 +34,32 @@ public class PermissionUtils {
                 new PermissionBuilder(
                         activity,
                         listener,
-                        Manifest.permission.ACCESS_FINE_LOCATION)
-                        .setReason(ResourceUtils.getString(R.string.permission_msg_reason_location)));
+                        Manifest.permission.ACCESS_FINE_LOCATION,
+                        Manifest.permission.ACCESS_COARSE_LOCATION)
+                        .setReason(ResourceUtils.getString(R.string.permission_msg_reason_location))
+                        .setMessageReject(ResourceUtils.getString(R.string.permission_msg_reject_location)));
+    }
+
+    public static void checkPermissionSMS(Activity activity, CallbackPermissionListener listener) {
+        BasePermission.checkPermission(
+                new PermissionBuilder(
+                        activity,
+                        listener,
+                        Manifest.permission.SEND_SMS,
+                        Manifest.permission.READ_SMS)
+                        .setReason(ResourceUtils.getString(R.string.permission_msg_reason_sms))
+                        .setMessageReject(ResourceUtils.getString(R.string.permission_msg_reject_sms)));
+    }
+
+    public static void checkPermissionNetwork(Activity activity, CallbackPermissionListener listener) {
+        BasePermission.checkPermission(
+                new PermissionBuilder(
+                        activity,
+                        listener,
+                        Manifest.permission.INTERNET,
+                        Manifest.permission.ACCESS_NETWORK_STATE)
+                        .setReason(ResourceUtils.getString(R.string.permission_msg_reason_access_network_state))
+                        .setMessageReject(ResourceUtils.getString(R.string.permission_msg_reject_access_network_state)));
     }
 
     public static void checkPermissionWriteExternalStorage(Activity activity, CallbackPermissionListener listener) {

@@ -6,6 +6,10 @@ import java.util.List;
 
 public class MethodUtils {
 
+    public static String getTagClass(Class clazz) {
+        return clazz.getSimpleName() + ": ";
+    }
+
     public static boolean isEmpty(List<?> objects) {
         if (null == objects || objects.isEmpty()) {
             return true;

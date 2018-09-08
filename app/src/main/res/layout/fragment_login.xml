@@ -1,87 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/root_fragment"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ScrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Fragment Login"
-        android:textSize="@dimen/font_size_text_22dp" />
-
-    <Button
-        android:id="@+id/btn_forgot_password"
+    <RelativeLayout
+        android:id="@+id/root_fragment"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentTop="true"
-        android:text="Forgot Password" />
+        style="@style/ViewRoot"
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btn_register_change_data_share_prefrence"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_forgot_password"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:text="register change data share prefrence" />
+        <ImageView
+            style="@style/Image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:src="@mipmap/ic_launcher" />
 
-    <Button
-        android:id="@+id/btn_unregister_change_data_share_prefrence"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_register_change_data_share_prefrence"
-        android:layout_centerHorizontal="true"
-        android:text="unregister change data share prefrence" />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_email"
+            style="@style/InputFilledBoxEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_centerInParent="true"
+            android:nextFocusForward="@+id/til_password">
 
-    <Button
-        android:id="@+id/btn_number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_unregister_change_data_share_prefrence"
-        android:layout_centerHorizontal="true"
-        android:text="0" />
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/tiet_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextInputEditTextEmail" />
+        </android.support.design.widget.TextInputLayout>
 
-    <Button
-        android:id="@+id/btn_sign_up"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@+id/tv_login"
-        android:text="Sign Up" />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_password"
+            style="@style/InputFilledBoxPassword"
+            android:layout_width="match_parent"
+            android:layout_alignLeft="@+id/til_email"
+            android:layout_alignRight="@+id/til_email"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/til_email">
 
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50dp"
-        android:text="Login" />
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/tiet_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                style="@style/TextInputEditTextPassword" />
+        </android.support.design.widget.TextInputLayout>
 
-    <Button
-        android:id="@+id/btn_Permission_gallery"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btn_login"
-        android:layout_alignParentRight="true"
-        android:text="Get Gallery" />
+        <Button
+            android:id="@+id/btn_forgot_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Button"
+            android:layout_below="@+id/til_password"
+            android:layout_alignRight="@+id/til_email"
+            android:text="Forgot Password" />
 
-    <Button
-        android:id="@+id/btn_Permission_write_file_and_location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btn_Permission_gallery"
-        android:layout_alignParentRight="true"
-        android:text="Get write file and location" />
+        <Button
+            android:id="@+id/btn_sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Button"
+            android:layout_below="@+id/til_password"
+            android:layout_alignLeft="@+id/til_email"
+            android:text="Sign Up" />
 
-    <Button
-        android:id="@+id/btn_generate_crash"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btn_Permission_write_file_and_location"
-        android:layout_alignParentRight="true"
-        android:text="Crash" />
+        <Button
+            android:id="@+id/btn_login"
+            style="@style/Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_forgot_password"
+            android:text="Login" />
+    </RelativeLayout>
 
-</RelativeLayout>
+</ScrollView>

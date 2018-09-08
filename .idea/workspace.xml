@@ -10,10 +10,486 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4573f7e5-f288-444c-99de-022b1202d20c" name="Default" comment="">
+    <list default="true" id="b28fe9f2-e14c-4638-8a45-1a24635d21c5" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/schemas/com.example.nguyenduy.projectbase.base.architectureComponents.database.AppDatabase/1.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/schemas/com.example.nguyenduy.projectbase.base.architectureComponents.database.AppDatabase/2.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/ic_launcher-web.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/AppCenterConstants.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/architectureComponents/database/AppDatabase.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/architectureComponents/database/ConverterTypeDatabase.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/architectureComponents/database/DatabaseConstants.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/architectureComponents/database/dto/UserAndAccountDto.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/architectureComponents/database/dto/UserAndBookDto.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/architectureComponents/database/dto/UserDto.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/architectureComponents/database/entity/Account.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/architectureComponents/database/entity/Address.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/architectureComponents/database/entity/Book.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/architectureComponents/database/entity/Repo.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/architectureComponents/database/entity/User.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/architectureComponents/database/entity/UserAndRepo.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/architectureComponents/database/repository/api/NetworkBoundResource.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/architectureComponents/database/repository/api/Resource.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/architectureComponents/database/repository/api/UserRepository.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/architectureComponents/database/repository/dao/AccountDao.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/architectureComponents/database/repository/dao/BaseDao.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/architectureComponents/database/repository/dao/BookDao.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/architectureComponents/database/repository/dao/RepoDao.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/architectureComponents/database/repository/dao/UserAndAccountDao.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/architectureComponents/database/repository/dao/UserAndRepoDao.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/architectureComponents/database/repository/dao/UserDao.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/architectureComponents/service/Webservice.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/backgroundTask/service/BackgroundService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/backgroundTask/service/ForegroundService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/backgroundTask/service/ServiceUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/backgroundTask/service/bindService/BindServiceBinder.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/backgroundTask/service/bindService/BindServiceMessenger.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/backgroundTask/thread/PhotoDecodeRunnable.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/backgroundTask/thread/PhotoManager.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/custom/global/GlobalBroadcastUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/custom/global/GlobalReceiver.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/custom/local/LocalBroadcastUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/custom/local/LocalReceiver.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/custom/order/callback/FinalOrderReceiver.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/custom/order/callback/Order3Receiver.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/custom/order/callback/Order4Receiver.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/custom/order/callback/OrderCallbackBroadcastUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/custom/order/normal/Order1Receiver.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/custom/order/normal/Order2Receiver.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/custom/order/normal/OrderNormalBroadcastUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/custom/permission/PermissionBroadcastUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/custom/permission/PermissionReceiver.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/system/BootReceiver.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/system/airplane/AirplaneReceiver.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/system/airplane/AirplaneUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/system/network/ConnectionInternetUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/system/network/DataSaverReceiver.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/system/network/DataSaverUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/system/network/NetworkReceiver.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/system/network/NetworkUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/system/screen/ScreenReceiver.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/broadcast/system/screen/ScreenUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/drawerlayout/BaseActivityWithDrawerLayout.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/drawerlayout/BaseActivityWithHeaderUserDrawerLayout.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/drawerlayout/DrawerLayoutUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/drawerlayout/DrawerLayoutView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/drawerlayout/ItemCounterDrawerLayout.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/drawerlayout/OptionMenuUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/FirebaseAuthen.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/PerformanceUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/location/LocationSetting.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/location/LocationUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/location/ReceiveLocationUpdate.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/location/convertLocation/ConvertLocationConstants.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/location/convertLocation/ConvertLocationUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/location/convertLocation/FetchAddressIntentService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/location/detectActivityUser/DetectActivityUserConstants.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/location/detectActivityUser/DetectActivityUserUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/location/detectActivityUser/DetectedActivitiesIntentService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/location/geofencing/GeofenceConstans.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/location/geofencing/GeofenceErrorMessages.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/location/geofencing/GeofenceTransitionsIntentService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/location/geofencing/GeofenceUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/navigation/navigationBottom/BaseFragmentWithNavigationBottom.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/navigation/navigationBottom/BottomNavigationBehavior.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/navigation/navigationBottom/NavigationBottomUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/navigation/snackbar/SnackBarBuilder.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/navigation/snackbar/SnackBarUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/notification/NotificationReceiver.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/notification/NotificationUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/notification/action/ReplyActionReceiver.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/notification/action/ReplyActionUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/notification/channel/NotificationChannelUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/notification/startActivity/RegularActivity.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/notification/startActivity/SpecialActivity.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/sharedPreference/UserInformation.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/view/coordinatorLayout/AvatarImageBehavior.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/appbar/appbarBottom/AppbarBottomActivity.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/appbar/appbarBottom/AppbarBottomPresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/appbar/appbarBottom/IAppbarBottomPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/appbar/appbarBottom/IAppbarBottomView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/appcenter/AppCenterFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/appcenter/AppCenterPresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/appcenter/IAppCenterPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/appcenter/IAppCenterView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/dataBinding/DataBindingFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/dataBinding/DataBindingPresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/dataBinding/IDataBindingPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/dataBinding/IDataBindingView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/dataBinding/activity/BindingLogicView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/dataBinding/activity/DataBindingActivity.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/dataBinding/activity/User.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/dataBinding/activity/UserObservableField.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/dataBinding/activity/UserObservableObject.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/dataBinding/activity/twowayBinding/CustomEditText.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/dataBinding/activity/twowayBinding/CustomTwoWayBinding.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/dataBinding/activity/twowayBinding/TwoWayBinding.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/dragger/DraggerFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/dragger/DraggerPresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/dragger/IDraggerPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/dragger/IDraggerView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/dragger/component/VehicleComponent.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/dragger/component/vehicleModule/VehicleModule.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/dragger/component/vehicleModule/provide/Motor.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/dragger/component/vehicleModule/provide/Vehicle.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/lifecycle/ILifecyclePresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/lifecycle/ILifecycleView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/lifecycle/LifecycleFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/lifecycle/LifecyclePresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/lifecycle/activity/CustomLifecycleActivity.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/lifecycle/activity/LifecycleDefaultActivity.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/lifecycle/activity/MyLifecycleObserver.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/liveData/ILiveDataPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/liveData/ILiveDataView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/liveData/LiveDataFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/liveData/LiveDataPresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/liveData/activity/ExtendLiveData.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/liveData/activity/LiveDataActivity.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/liveData/activity/NameViewModel.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/liveData/activity/ShareLiveData.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/room/IRoomPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/room/IRoomView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/room/RoomFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/room/RoomPresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/room/livedata/UserViewModel.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/viewModel/IViewModelPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/viewModel/IViewModelView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/viewModel/ViewModelFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/viewModel/ViewModelPresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/viewModel/activity/MyViewModel.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/viewModel/activity/ViewModelActivity.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/viewModel/activity/shareDataMultiFragment/DetailFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/viewModel/activity/shareDataMultiFragment/MasterFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/architectureComponents/viewModel/activity/shareDataMultiFragment/SharedViewModel.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/backgroundTask/service/IServicePresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/backgroundTask/service/IServiceView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/backgroundTask/service/ServiceFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/backgroundTask/service/ServicePresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/backgroundTask/thread/IThreadPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/backgroundTask/thread/IThreadView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/backgroundTask/thread/ThreadFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/backgroundTask/thread/ThreadPresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/broadcast/BroadcastFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/broadcast/BroadcastPresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/broadcast/IBroadcastPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/broadcast/IBroadcastView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/database/IRealmPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/database/IRealmView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/database/RealmFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/database/RealmPresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/firebase/FirebaseFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/firebase/FirebasePresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/firebase/IFirebasePresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/firebase/IFirebaseView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/home/HomeFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/home/HomePresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/home/IHomePresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/home/IHomeView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/listener/handshake/HandshakeFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/listener/handshake/HandshakePresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/listener/handshake/IHandshakePresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/listener/handshake/IHandshakeView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/listener/network/FragmentNetwork.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/listener/network/INetworkPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/listener/network/INetworkView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/listener/network/NetworkPresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/location/detectActivityUser/DetectActivityUserFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/location/detectActivityUser/DetectActivityUserPresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/location/detectActivityUser/IDetectActivityUserPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/location/detectActivityUser/IDetectActivityUserView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/location/geofence/GeofenceFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/location/geofence/GeofencePresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/location/geofence/IGeofencePresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/location/geofence/IGeofenceView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/location/location/ILocationPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/location/location/ILocationView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/location/location/LocationFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/location/location/LocationPresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/dialog/DialogFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/dialog/DialogPresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/dialog/IDialogPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/dialog/IDialogView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/navigationBottom/INavigationBottomPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/navigationBottom/INavigationBottomView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/navigationBottom/NavigationBottomFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/navigationBottom/NavigationBottomPresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/navigationBottom/handshake/HandshakeNavigationBottomFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/navigationBottom/handshake/HandshakeNavigationBottomPresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/navigationBottom/handshake/IHandshakeNavigationBottomPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/navigationBottom/handshake/IHandshakeNavigationBottomView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/navigationBottom/home/HomeNavigationBottomFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/navigationBottom/home/HomeNavigationBottomPresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/navigationBottom/home/IHomeNavigationBottomPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/navigationBottom/home/IHomeNavigationBottomView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/navigationBottom/notification/INotificationNavigationBottomPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/navigationBottom/notification/INotificationNavigationBottomView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/navigationBottom/notification/NotificationNavigationBottomFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/navigationBottom/notification/NotificationNavigationBottomPresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/notification/INotificationPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/notification/INotificationView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/notification/NotificationNavigationFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/notification/NotificationPresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/snackbar/ISnackBarPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/snackbar/ISnackBarView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/snackbar/SnackBarFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/navigation/snackbar/SnackBarPresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/notification/INotificationPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/notification/INotificationView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/notification/NotificationFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/notification/NotificationPresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/permission/IPermissionPresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/permission/IPermissionView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/permission/PermissionFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/permission/PermissionPresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/sharedpreference/ISharedPreferencePresenter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/sharedpreference/ISharedPreferenceView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/sharedpreference/SharedPreferenceFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/sharedpreference/SharedPreferencePresenterImp.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/sharedpreference/settingActivity/BasePreferenceActivity.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/sharedpreference/settingActivity/SettingsActivity.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/sharedpreference/settingActivity/customPreference/CustomDialogPreference.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/sharedpreference/settingActivity/customPreference/CustomPreferenceDataStore.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/sharedpreference/settingActivity/customPreference/SavedState.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/sharedpreference/settingActivity/header/BasePreferenceFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/sharedpreference/settingActivity/header/SettingHeaderActivity.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/sharedpreference/settingActivity/header/SettingHeaderFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/sharedpreference/settingFragment/SettingsFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/sharedpreference/settingFragment/custom/TimePickerPreference.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/sharedpreference/settingFragment/custom/TimePickerPreferenceDialogFragmentCompat.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/sharedpreference/settingFragment/dialog/CustomDialogPreference.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/sharedpreference/settingFragment/dialog/CustomPreferenceDialogFragmentCompat.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/toolbar/CollapsingToolbarActivity.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/toolbar/CollapsingToolbarCustomBehaviorActivity.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/FormValidator.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/method/SystemUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/method/UnitUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_splash.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_splash.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v21/ic_menu_camera.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v21/ic_menu_gallery.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v21/ic_menu_manage.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v21/ic_menu_send.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v21/ic_menu_share.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v21/ic_menu_slideshow.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_splash.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_splash.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/ic_splash.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/background_drawer_layout_header.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/quila.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/quila2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_appbar_bottom.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_collapsing_toolbar_custom_behavior.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_data_binding.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_drawer_layout.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_drawer_layout_collapsing_toolbar.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_lifecycle.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_livedata.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_view_model.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_view_model_fragment_detail.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_view_model_fragment_master.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/drawer_layout.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/drawer_layout_app_bar.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/drawer_layout_collapsing_toolbar.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/drawer_layout_collapsing_toolbar_app_bar.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/drawer_layout_collapsing_toolbar_content.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/drawer_layout_content.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/drawer_layout_fragment_content.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/drawer_layout_header.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/drawer_layout_menu_counter.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_appcenter.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_broadcast.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_coordinator_layout.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_data_binding.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_detect_activity_user.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_dialog.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_dialog_custom.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_dragger.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_geofence.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_handshake.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_lifecycle.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_live_data.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_location.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_navigation_bottom.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_navigation_bottom_hand_shake.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_navigation_bottom_home.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_navigation_bottom_notification.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_network.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_notification.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_notification_activity_regular.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_notification_activity_special.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_notification_custom_layout_collapsed.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_notification_custom_layout_expaned.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_notification_navigation.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_permission.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_realm.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_room.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_service.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_sharedpreference.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_snack_bar.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_thread.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_view_model.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/preference_custom_dialog.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/preference_custom_time_picker.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/menu/drawer_layout_menu.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/menu/navigation_bottom.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/menu/option_menu.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values/attrs_collapsing_toolbar_custom_behavior.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values/generate_icon.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/xml/preference_activity.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/xml/preference_activity_header.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/xml/preference_activity_header_fragment_1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/xml/preference_activity_header_fragment_2.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/xml/preference_fragment.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sh.exe.stackdump" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_common_1_1_0_jar.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_common_1_1_0_jar.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_2.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_solver_1_1_2_jar.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_multidex_1_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_crashlytics_sdk_android_beta_1_2_9.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_27_1_1_jar.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_transition_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_crashlytics_sdk_android_answers_1_4_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_crashlytics_sdk_android_answers_1_4_2.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_crashlytics_sdk_android_crashlytics_2_9_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_crashlytics_sdk_android_crashlytics_2_9_4.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_crashlytics_sdk_android_crashlytics_core_2_6_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_crashlytics_sdk_android_crashlytics_core_2_6_3.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_getkeepsafe_relinker_relinker_1_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_getkeepsafe_relinker_relinker_1_2_2.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_gifdecoder_4_7_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_gifdecoder_4_7_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_glide_4_7_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_glide_4_7_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_identifier_15_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_identifier_15_0_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_base_15_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_base_15_0_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_15_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_15_0_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_base_16_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_base_16_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_stats_15_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_stats_15_0_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_15_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_15_0_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_analytics_16_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_analytics_16_0_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_analytics_impl_16_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_analytics_impl_16_1_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_common_16_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_common_16_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_core_16_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_core_16_0_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_iid_interop_16_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_iid_interop_16_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_measurement_connector_16_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_measurement_connector_16_0_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_measurement_connector_impl_16_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_measurement_connector_impl_16_0_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_butterknife_8_8_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_butterknife_8_8_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_makeramen_roundedimageview_2_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_makeramen_roundedimageview_2_3_0.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_microsoft_appcenter_appcenter_1_6_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_microsoft_appcenter_appcenter_1_6_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_microsoft_appcenter_appcenter_analytics_1_6_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_microsoft_appcenter_appcenter_analytics_1_6_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_microsoft_appcenter_appcenter_crashes_1_6_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_microsoft_appcenter_appcenter_crashes_1_6_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_microsoft_appcenter_appcenter_distribute_1_6_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_microsoft_appcenter_appcenter_distribute_1_6_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_microsoft_appcenter_appcenter_push_1_6_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_microsoft_appcenter_appcenter_push_1_6_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_fabric_sdk_android_fabric_1_4_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_fabric_sdk_android_fabric_1_4_3.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_realm_android_adapters_2_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_realm_android_adapters_2_1_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_realm_realm_android_library_5_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_realm_realm_android_library_5_3_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
+      <change beforePath="$PROJECT_DIR$/app/proguard-rules.pro" afterPath="$PROJECT_DIR$/app/proguard-rules.pro" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/application/MyApplication.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/application/MyApplication.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/BaseActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/BaseActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/BaseFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/BaseFragment.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/AnalyticUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/AnalyticUtils.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/AppCenterUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/AppCenterUtils.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/CrashUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/CrashUtils.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/CustomDistributeListener.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/CustomDistributeListener.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/CustomPushListener.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/CustomPushListener.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/DistributeUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/DistributeUtils.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/PushUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/PushUtils.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/customView/RecyclerViewNoScroll.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/view/RecyclerViewNoScroll.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/AnalyticUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/AnalyticUtils.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/CrashUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/CrashUtils.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/FCM/FCMService.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/FCM/FCMService.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/FCM/FCMUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/FCM/FCMUtils.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/FCM/GooglePlayService.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/FCM/GooglePlayService.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/FCM/TopicUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/FCM/TopicUtils.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/FireBaseIdUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/InstanceIdUtils.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/FireBaseUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/FireBaseUtils.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/service/ServiceSticky.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/SplashActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/SplashActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/IMainPresenter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/IMainPresenter.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/IMainView.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/IMainView.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/MainActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/MainPresenterImp.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/main/MainPresenterImp.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/ForgotPassword/ForgotPasswordFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/ForgotPassword/ForgotPasswordFragment.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/ForgotPassword/ForgotPasswordPresenterImp.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/ForgotPassword/ForgotPasswordPresenterImp.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/ForgotPassword/IForgotPasswordPresenter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/ForgotPassword/IForgotPasswordPresenter.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/ForgotPassword/IForgotPasswordView.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/ForgotPassword/IForgotPasswordView.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/IStartActivityPresenter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/IStartActivityPresenter.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/IStartActivityView.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/IStartActivityView.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/SignUp/ISignUpPresenter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/SignUp/ISignUpPresenter.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/SignUp/ISignUpView.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/SignUp/ISignUpView.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/SignUp/SignUpFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/SignUp/SignUpFragment.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/SignUp/SignUpPresenterImp.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/SignUp/SignUpPresenterImp.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/StartActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/StartActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/StartActivityPresenterImp.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/StartActivityPresenterImp.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/crash/CrashActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/crash/CrashActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/crash/CrashPresenterImp.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/crash/CrashPresenterImp.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/crash/ICrashPresenter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/crash/ICrashPresenter.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/crash/ICrashView.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/crash/ICrashView.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/login/ILoginPresenter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/login/ILoginPresenter.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/login/ILoginView.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/login/ILoginView.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/login/LoginFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/login/LoginFragment.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/login/LoginPresenterImp.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/screen/start/login/LoginPresenterImp.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/Constants.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/Constants.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/LogUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/LogUtils.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/ValidateForm.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/data/SharedPreference/SharedPreferenceUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/sharedPreference/SharedPreferenceUtils.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/data/SharedPreference/UserInformation.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/method/MethodContextUtils.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/method/MethodUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/method/MethodUtils.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/method/ResourceUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/method/ResourceUtils.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/method/SDKUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/method/SDKUtils.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/method/ViewUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/method/ViewUtils.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/method/WindowUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/method/WindowUtils.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/permission/BasePermission.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/permission/BasePermission.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/permission/PermissionUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/permission/PermissionUtils.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/launch_screen.xml" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/launch_screen.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_crash.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_crash.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_firebase.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_start.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_start.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_forgot_password.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_forgot_password.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_sign_up.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_sign_up.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" afterPath="$PROJECT_DIR$/gradle.properties" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,56 +512,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="DistributeUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/DistributeUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-              <folding>
-                <element signature="e#424#469#0" expanded="true" />
-                <element signature="e#501#542#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AppCenterUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/AppCenterUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="29" column="39" lean-forward="false" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomPushListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/CustomPushListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="41" column="63" lean-forward="false" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="642">
-              <caret line="47" column="25" lean-forward="false" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomDistributeListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/CustomDistributeListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="38" column="24" lean-forward="false" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
+            <state relative-caret-position="250">
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding>
-                <element signature="e#1396#1483#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -94,19 +527,32 @@
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+            <state relative-caret-position="504">
+              <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CrashUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/CrashUtils.java">
+      <file leaf-file-name="proguard-rules.pro" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/proguard-rules.pro">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="43" />
+            <state relative-caret-position="420">
+              <caret line="20" column="38" lean-forward="false" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DistributeUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/DistributeUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="36" />
+              <folding>
+                <element signature="e#425#470#0" expanded="true" />
+                <element signature="e#502#543#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -6175,7 +6621,214 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ProjectBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectBase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectBase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectBase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectBase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectBase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectBase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectBase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectBase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectBase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
+              <item name="projectbase" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectBase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
+              <item name="projectbase" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectBase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
+              <item name="projectbase" type="462c0819:PsiDirectoryNode" />
+              <item name="base" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectBase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
+              <item name="projectbase" type="462c0819:PsiDirectoryNode" />
+              <item name="base" type="462c0819:PsiDirectoryNode" />
+              <item name="firebase" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectBase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
+              <item name="projectbase" type="462c0819:PsiDirectoryNode" />
+              <item name="base" type="462c0819:PsiDirectoryNode" />
+              <item name="sharedPreference" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectBase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
+              <item name="projectbase" type="462c0819:PsiDirectoryNode" />
+              <item name="screen" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectBase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
+              <item name="projectbase" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectBase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
+              <item name="projectbase" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="method" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectBase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectBase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectBase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="values" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectBase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="values-v21" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -6296,323 +6949,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
-              <item name="projectbase" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
-              <item name="projectbase" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
-              <item name="projectbase" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
-              <item name="projectbase" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="appCenter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
-              <item name="projectbase" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="firebase" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
-              <item name="projectbase" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="firebase" type="462c0819:PsiDirectoryNode" />
-              <item name="FCM" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
-              <item name="projectbase" type="462c0819:PsiDirectoryNode" />
-              <item name="screen" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
-              <item name="projectbase" type="462c0819:PsiDirectoryNode" />
-              <item name="screen" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
-              <item name="projectbase" type="462c0819:PsiDirectoryNode" />
-              <item name="screen" type="462c0819:PsiDirectoryNode" />
-              <item name="start" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
-              <item name="projectbase" type="462c0819:PsiDirectoryNode" />
-              <item name="screen" type="462c0819:PsiDirectoryNode" />
-              <item name="start" type="462c0819:PsiDirectoryNode" />
-              <item name="ForgotPassword" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
-              <item name="projectbase" type="462c0819:PsiDirectoryNode" />
-              <item name="screen" type="462c0819:PsiDirectoryNode" />
-              <item name="start" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
-              <item name="projectbase" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
-              <item name="projectbase" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
-              <item name="projectbase" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="SharedPreference" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
-              <item name="projectbase" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-              <item name="method" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="nguyenduy" type="462c0819:PsiDirectoryNode" />
-              <item name="projectbase" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-              <item name="permission" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BaseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="values" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -6802,38 +7141,63 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-9" y="-9" width="2578" height="1408" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41774893" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30063966" sideWeight="0.4599567" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2533973" sideWeight="0.50743496" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20462047" sideWeight="0.5015987" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28417265" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11221122" sideWeight="0.49840128" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2533973" sideWeight="0.49256507" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13036303" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29620463" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29620463" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41774893" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30063966" sideWeight="0.4599567" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792208" sideWeight="0.5042644" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.267316" sideWeight="0.75959486" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21536796" sideWeight="0.4936034" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42965367" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792208" sideWeight="0.49573562" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.267316" sideWeight="0.75959486" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24946696" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30063966" sideWeight="0.5400433" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21536796" sideWeight="0.4936034" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42965367" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.49154392" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.41774893" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -6927,13 +7291,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-27/android.jar!/android/app/Activity.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="57" column="13" lean-forward="false" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/AnalyticUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -6946,7 +7303,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -6954,7 +7310,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -6976,12 +7331,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="11">
           <caret line="19" column="70" lean-forward="false" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
-          <folding>
-            <element signature="e#838#1287#0" expanded="false" />
-            <element signature="e#1286#1287#0" expanded="false" />
-            <element signature="e#1474#1927#0" expanded="false" />
-            <element signature="e#1926#1927#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -6989,11 +7338,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="28" column="30" lean-forward="false" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
-          <folding>
-            <element signature="docComment;method#onNewToken#0;class#FCMService#0" expanded="false" />
-            <element signature="method#handleScheduleJobData#0;class#FCMService#0" expanded="false" />
-            <element signature="docComment;method#handleFastData#0;class#FCMService#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -7036,28 +7380,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/FireBaseIdUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="16" column="54" lean-forward="false" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#704#705#0" expanded="false" />
-            <element signature="e#767#768#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/data/SharedPreference/SharedPreferenceUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="35" column="53" lean-forward="false" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
-          <folding>
-            <element signature="method#clear#0;class#SharedPreferenceUtils#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/firebase/FireBaseIdUtils.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/utils/data/SharedPreference/SharedPreferenceUtils.java" />
     <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/fabric-1.4.3.aar/565a979b8410640138e9a18b8286c122/jars/classes.jar!/io/fabric/sdk/android/Fabric.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
@@ -7100,8 +7424,6 @@
         <state relative-caret-position="153">
           <caret line="18" column="41" lean-forward="false" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
           <folding>
-            <element signature="e#1199#1200#0" expanded="false" />
-            <element signature="e#1261#1262#0" expanded="false" />
             <element signature="method#clearUserInformation#0;class#AnalyticUtils#0" expanded="false" />
           </folding>
         </state>
@@ -7166,7 +7488,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -7174,21 +7495,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1326">
           <caret line="110" column="24" lean-forward="false" selection-start-line="110" selection-start-column="16" selection-end-line="110" selection-end-column="24" />
-          <folding>
-            <element signature="method#shouldShowReasonNeedPermission#0;class#BasePermission#0" expanded="false" />
-            <element signature="method#showReasonNeedPermission#0;class#BasePermission#0" expanded="false" />
-            <element signature="e#2236#2247#0" expanded="false" />
-            <element signature="e#2249#2480#0" expanded="false" />
-            <element signature="e#2479#2480#0" expanded="false" />
-            <element signature="e#2936#2947#0" expanded="false" />
-            <element signature="e#2949#3213#0" expanded="false" />
-            <element signature="e#3212#3213#0" expanded="false" />
-            <element signature="e#3250#3273#0" expanded="false" />
-            <element signature="e#3275#3509#0" expanded="false" />
-            <element signature="e#3508#3509#0" expanded="false" />
-            <element signature="method#setReason#0;class#PermissionBuilder#0;class#BasePermission#0" expanded="false" />
-            <element signature="method#setMessageReject#0;class#PermissionBuilder#0;class#BasePermission#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -7196,10 +7502,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="538">
           <caret line="65" column="30" lean-forward="false" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="30" />
-          <folding>
-            <element signature="e#1100#1421#0" expanded="false" />
-            <element signature="e#1420#1421#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -7229,12 +7532,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1071">
           <caret line="36" column="34" lean-forward="false" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
-          <folding>
-            <element signature="e#2704#3163#0" expanded="false" />
-            <element signature="e#3162#3163#0" expanded="false" />
-            <element signature="e#5167#5802#0" expanded="false" />
-            <element signature="e#5801#5802#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -7260,18 +7558,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="87" column="37" lean-forward="false" selection-start-line="87" selection-start-column="37" selection-end-line="87" selection-end-column="37" />
-          <folding>
-            <element signature="e#2273#2795#0" expanded="false" />
-            <element signature="e#2794#2795#0" expanded="false" />
-            <element signature="e#4527#4912#0" expanded="false" />
-            <element signature="e#4911#4912#0" expanded="false" />
-            <element signature="e#5076#5465#0" expanded="false" />
-            <element signature="e#5464#5465#0" expanded="false" />
-            <element signature="e#5664#6299#0" expanded="false" />
-            <element signature="e#6298#6299#0" expanded="false" />
-            <element signature="e#6447#6888#0" expanded="false" />
-            <element signature="e#6887#6888#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -7283,13 +7570,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/generated/source/buildConfig/TTest/debug/com/example/nguyenduy/projectbase/BuildConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="43" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/generated/source/buildConfig/TTest/debug/com/example/nguyenduy/projectbase/BuildConfig.java" />
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -7302,18 +7583,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="14" column="36" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="36" />
-          <folding>
-            <element signature="e#404#405#0" expanded="false" />
-            <element signature="e#451#452#0" expanded="false" />
-            <element signature="e#496#497#0" expanded="false" />
-            <element signature="e#543#544#0" expanded="false" />
-            <element signature="e#591#592#0" expanded="false" />
-            <element signature="e#632#633#0" expanded="false" />
-            <element signature="e#676#677#0" expanded="false" />
-            <element signature="e#721#722#0" expanded="false" />
-            <element signature="e#768#769#0" expanded="false" />
-            <element signature="e#817#818#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -7321,7 +7591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -7353,26 +7622,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="41" column="63" lean-forward="false" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/DistributeUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+        <state relative-caret-position="147">
+          <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="36" />
           <folding>
-            <element signature="e#424#469#0" expanded="true" />
-            <element signature="e#501#542#0" expanded="true" />
+            <element signature="e#425#470#0" expanded="true" />
+            <element signature="e#502#543#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenduy/projectbase/base/appCenter/AppCenterUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="29" column="39" lean-forward="false" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="39" />
-          <folding />
+        <state relative-caret-position="250">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -7380,16 +7650,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="38" column="24" lean-forward="false" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
-          <folding>
-            <element signature="e#1396#1483#0" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/proguard-rules.pro">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" column="38" lean-forward="false" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+        <state relative-caret-position="504">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
           <folding />
         </state>
       </provider>

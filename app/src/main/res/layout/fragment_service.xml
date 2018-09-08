@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_fragment"
+    style="@style/ViewRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        style="@style/TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Fragment Service" />
+
+    <Button
+        android:id="@+id/btn_start_background_service"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Start Background Service" />
+
+    <Button
+        android:id="@+id/btn_start_foreground_service"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_start_background_service"
+        android:layout_centerHorizontal="true"
+        android:text="Start Foreground Service" />
+
+    <Button
+        android:id="@+id/btn_stop_foreground_service"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_start_foreground_service"
+        android:layout_centerHorizontal="true"
+        android:text="Stop Foreground Service" />
+
+    <Button
+        android:id="@+id/btn_get_data_from_bind_service_binder"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_stop_foreground_service"
+        android:layout_centerHorizontal="true"
+        android:text="Get Data From Bind Service Binder" />
+
+    <Button
+        android:id="@+id/btn_send_message_to_service_messenger"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_stop_foreground_service"
+        android:layout_centerHorizontal="true"
+        android:text="Send Message to Service Messenger" />
+
+    <Button
+        android:id="@+id/btn_check_service_running"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_send_message_to_service_messenger"
+        android:layout_centerHorizontal="true"
+        android:text="Check Service Running" />
+
+</RelativeLayout>

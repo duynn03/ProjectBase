@@ -24,7 +24,7 @@ public class LogUtils {
         Log.v(tag, message);
     }
 
-    public final static void i(String tag, String message) {
+    public final static void i(String message) {
         Log.i(tag, message);
     }
 }

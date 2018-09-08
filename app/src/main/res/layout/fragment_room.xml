@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:id="@+id/root_fragment"
+        style="@style/ViewRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            style="@style/TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Fragment Room" />
+
+        <Button
+            android:id="@+id/btn_get_list_data"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:text="Get List Data" />
+
+        <Button
+            android:id="@+id/btn_get_by_id_data"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_get_list_data"
+            android:layout_centerHorizontal="true"
+            android:text="Get By ID" />
+
+        <Button
+            android:id="@+id/btn_get_by_name_data"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_get_by_id_data"
+            android:layout_centerHorizontal="true"
+            android:text="Get By Name" />
+
+
+        <Button
+            android:id="@+id/btn_insert_data"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_get_by_name_data"
+            android:layout_centerHorizontal="true"
+            android:text="Insert Data" />
+
+        <Button
+            android:id="@+id/btn_insert_list_data"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_insert_data"
+            android:layout_centerHorizontal="true"
+            android:text="Insert List Data" />
+
+        <Button
+            android:id="@+id/btn_update_data"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_insert_list_data"
+            android:layout_centerHorizontal="true"
+            android:text="Update Data" />
+
+        <Button
+            android:id="@+id/btn_update_list_data"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_update_data"
+            android:layout_centerHorizontal="true"
+            android:text="Update List Data" />
+
+        <Button
+            android:id="@+id/btn_delete_data"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_update_list_data"
+            android:layout_centerHorizontal="true"
+            android:text="Delete Data" />
+
+        <Button
+            android:id="@+id/btn_delete_list_data"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_delete_data"
+            android:layout_centerHorizontal="true"
+            android:text="Delete List Data" />
+
+        <Button
+            android:id="@+id/btn_close_database"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_delete_list_data"
+            android:layout_centerHorizontal="true"
+            android:text="Close Database" />
+
+        <TextView
+            android:id="@+id/tv_relation_ship"
+            style="@style/TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_close_database"
+            android:layout_centerHorizontal="true"
+            android:text="Relation Ship" />
+
+        <Button
+            android:id="@+id/btn_relation_ship_many_to_many_insert"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_relation_ship"
+            android:layout_centerHorizontal="true"
+            android:text="Many To Many - Insert" />
+
+        <Button
+            android:id="@+id/btn_relation_ship_many_to_many_get_list_user"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_relation_ship_many_to_many_insert"
+            android:layout_centerHorizontal="true"
+            android:text="Many To Many - Get List User" />
+
+        <Button
+            android:id="@+id/btn_relation_ship_many_to_many_get_list_repo"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_relation_ship_many_to_many_get_list_user"
+            android:layout_centerHorizontal="true"
+            android:text="Many To Many - Get List Repo" />
+
+        <Button
+            android:id="@+id/btn_relation_ship_one_to_many_get_list_user_and_account"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_relation_ship_many_to_many_get_list_repo"
+            android:layout_centerHorizontal="true"
+            android:text="One To Many - Get List User and Account" />
+
+        <TextView
+            android:id="@+id/tv_live_data"
+            style="@style/TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_relation_ship_one_to_many_get_list_user_and_account"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="100dp"
+            android:text="LiveData" />
+
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_fragment"
+    style="@style/ViewRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        style="@style/TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Fragment SharedPreference" />
+
+    <Button
+        android:id="@+id/btn_register_change_data_share_prefrence"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Register change data SharePrefrence" />
+
+    <Button
+        android:id="@+id/btn_unregister_change_data_share_prefrence"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_register_change_data_share_prefrence"
+        android:layout_centerHorizontal="true"
+        android:text="unregister" />
+
+    <Button
+        android:id="@+id/btn_number"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_unregister_change_data_share_prefrence"
+        android:layout_centerHorizontal="true"
+        android:text="0" />
+
+    <Button
+        android:id="@+id/btn_open_setting_activity_shared_preference"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_number"
+        android:layout_centerHorizontal="true"
+        android:text="Open Setting Activity" />
+
+    <Button
+        android:id="@+id/btn_open_setting_fragment_shared_preference"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_open_setting_activity_shared_preference"
+        android:layout_centerHorizontal="true"
+        android:text="Open Setting Fragment" />
+
+</RelativeLayout>

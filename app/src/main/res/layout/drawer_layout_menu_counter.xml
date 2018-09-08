@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--https://stackoverflow.com/questions/31050603/how-to-add-notification-value-for-item-on-navigationview-for-material-design-dra-->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:textColor="@android:color/holo_red_dark" />

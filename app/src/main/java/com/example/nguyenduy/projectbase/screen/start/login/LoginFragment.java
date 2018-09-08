@@ -1,36 +1,48 @@
 package com.example.nguyenduy.projectbase.screen.start.login;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.database.Cursor;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Bundle;
-import android.provider.MediaStore;
-import android.support.annotation.Nullable;
-import android.util.Log;
-import android.widget.Button;
+import android.support.annotation.NonNull;
+import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
+import android.view.View;
 
-import com.example.nguyenduy.projectbase.screen.main.MainActivity;
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.BaseFragment;
 import com.example.nguyenduy.projectbase.base.IBasePresenter;
-import com.example.nguyenduy.projectbase.base.firebase.FireBaseUtils;
-import com.example.nguyenduy.projectbase.base.listener.HandShakeListener;
-import com.example.nguyenduy.projectbase.base.listener.HandShakeListenerUtils;
-import com.example.nguyenduy.projectbase.utils.data.SharedPreference.SharedPreferenceUtils;
-import com.example.nguyenduy.projectbase.utils.permission.BasePermission;
-import com.example.nguyenduy.projectbase.utils.permission.PermissionUtils;
-
-import java.util.List;
+import com.example.nguyenduy.projectbase.base.firebase.FirebaseAuthen;
+import com.example.nguyenduy.projectbase.base.sharedPreference.SharedPreferenceUtils;
+import com.example.nguyenduy.projectbase.screen.main.MainActivity;
+import com.example.nguyenduy.projectbase.screen.start.ForgotPassword.ForgotPasswordFragment;
+import com.example.nguyenduy.projectbase.screen.start.SignUp.SignUpFragment;
+import com.example.nguyenduy.projectbase.utils.FormValidator;
+import com.example.nguyenduy.projectbase.utils.LogUtils;
+import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
+import com.example.nguyenduy.projectbase.utils.method.ResourceUtils;
+import com.example.nguyenduy.projectbase.utils.method.ViewUtils;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.AuthResult;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class LoginFragment extends BaseFragment<ILoginPresenter> implements ILoginView, SharedPreferences.OnSharedPreferenceChangeListener, HandShakeListener.OnHandShakeListener {
+public class LoginFragment extends BaseFragment<ILoginPresenter> implements ILoginView {
 
-    private HandShakeListener mHandShakeListener;
+    public static final String TAG = MethodUtils.getTagClass(SignUpFragment.class);
+
+    private FirebaseAuthen firebaseAuthen;
+    private FormValidator formValidator;
+
+    @BindView(R.id.til_email)
+    TextInputLayout tilEmail;
+
+    @BindView(R.id.tiet_email)
+    TextInputEditText tietEmail;
+
+    @BindView(R.id.til_password)
+    TextInputLayout tilPassword;
+
+    @BindView(R.id.tiet_password)
+    TextInputEditText tietPassword;
 
     @Override
     public int getIdLayout() {
@@ -49,12 +61,18 @@ public class LoginFragment extends BaseFragment<ILoginPresenter> implements ILog
 
     @Override
     public void initComponents() {
-
+        firebaseAuthen = new FirebaseAuthen();
+        formValidator = new FormValidator();
     }
 
     @Override
     public void setEvents() {
-
+        addActionDoneEditText(tietPassword, new CallbackAddActionDoneListener() {
+            @Override
+            public void callback() {
+                onClickButtonLogin();
+            }
+        });
     }
 
     @Override
@@ -62,160 +80,51 @@ public class LoginFragment extends BaseFragment<ILoginPresenter> implements ILog
 
     }
 
-    @OnClick(R.id.btn_generate_crash)
-    public void onClickCrash() {
-        // AppCenterUtils.generateCrash();
-        FireBaseUtils.testCrash();
-    }
-
     @OnClick(R.id.btn_login)
-    public void onClickLogin() {
-        getPresenter().login();
-        startActivity(MainActivity.class);
-    }
+    public void onClickButtonLogin() {
+        String email = ViewUtils.getText(tietEmail);
+        String password = ViewUtils.getText(tietPassword);
 
-    private void startActivity(Class<?> clazz) {
-        Intent intent = new Intent(getContext(), clazz);
-        // root task
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
+        if (formValidator.isValidateFormLogin(email, password, tilEmail, tilPassword)) {
+            firebaseAuthen.signInEmailAndPassword(
+                    getRootActivity(),
+                    email,
+                    password,
+                    new OnSuccessListener<AuthResult>() {
+                        @Override
+                        public void onSuccess(AuthResult authResult) {
+                            SharedPreferenceUtils.getInstance().setUserInformation(firebaseAuthen.getUserProfile());
+                            getRootActivity().startRootActivity(MainActivity.class);
+                        }
+                    },
+                    new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            if (e.getMessage().contains("A network error (such as timeout, interrupted connection or unreachable host) has occurred."))
+                                showSnackbar(ResourceUtils.getString(R.string.msg_connection_internet_timeout), ResourceUtils.getString(R.string.msg_reconnection), new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        onClickButtonLogin();
+                                    }
+                                });
+                            else if (e.getMessage().contains("There is no user record corresponding to this identifier. The user may have been deleted.")
+                                    || e.getMessage().contains("The password is invalid or the user does not have a password.")) {
+                                formValidator.showError(tilEmail, ResourceUtils.getString(R.string.email_or_password_incorrect));
+                            }
+                            LogUtils.d(TAG + "onClickButtonLogin() :failure, Exception: " + e.getMessage());
+                        }
+                    });
+        }
     }
 
     @OnClick(R.id.btn_forgot_password)
-    public void onClickForgotPassword() {
-
+    public void onClickButtonForgotPassword() {
+        getRootActivity().replaceFragment(new ForgotPasswordFragment(), true);
     }
 
     @OnClick(R.id.btn_sign_up)
-    public void onClickSignUp() {
-
-    }
-
-    @OnClick(R.id.btn_Permission_gallery)
-    public void getGallery() {
-        PermissionUtils.checkPermissionReadExternalStorage(getActivity(), new BasePermission.CallbackPermissionListener() {
-            @Override
-            public void onResult(boolean success, List<String> permissionDenieds) {
-                if (success) {
-                    showToast("get Permission read gallery Success fragment!");
-                    getImageFromGallery();
-                } else {
-                    showToast("Not get Permission read gallery file fragment...");
-                }
-            }
-        });
-    }
-
-    private static final int PICK_PHOTO_FORM_GALLERY_FRAGMENT = 11;
-
-    private void getImageFromGallery() {
-        Intent intent;
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
-            intent = new Intent(Intent.ACTION_GET_CONTENT);
-            intent.setType("image/*");
-            startActivityForResult(intent, PICK_PHOTO_FORM_GALLERY_FRAGMENT);
-        } else {
-            intent = new Intent(Intent.ACTION_PICK,
-                    android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-            startActivityForResult(intent, PICK_PHOTO_FORM_GALLERY_FRAGMENT);
-        }
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent intentData) {
-        switch (requestCode) {
-            case PICK_PHOTO_FORM_GALLERY_FRAGMENT:
-                if (resultCode == Activity.RESULT_OK) {
-                    String linkImage = getPathLinkImage(intentData);
-                    showToast(linkImage);
-                }
-                break;
-            default:
-                super.onActivityResult(requestCode, resultCode, intentData);
-                break;
-        }
-    }
-
-    private String getPathLinkImage(Intent data) {
-        // lấy ảnh chụp
-        Uri selectedImage = data.getData();
-        String[] filePathColumn = {MediaStore.Images.Media.DATA};
-        Cursor cursor = getRootActivity().getContentResolver().query(selectedImage, filePathColumn, null, null, null);
-        String picturePath = "";
-        if (cursor != null) {
-            cursor.moveToFirst();
-            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-            picturePath = cursor.getString(columnIndex);
-            cursor.close();
-        }
-        // picturePath là link ảnh
-        return picturePath;
-    }
-
-    @OnClick(R.id.btn_Permission_write_file_and_location)
-    public void getPermissionWriteFileAndLocation() {
-        PermissionUtils.checkPermissionWriteExternalStorageAndLocation(getActivity(), new BasePermission.CallbackPermissionListener() {
-            @Override
-            public void onResult(boolean success, List<String> permissionDenieds) {
-                if (success) {
-                    showToast("get Permission write file and location Success!");
-                } else {
-                    String permission = permissionDenieds.get(0);
-                    for (int i = 1; i < permissionDenieds.size(); i++) {
-                        permission += ", " + permissionDenieds.get(i);
-                    }
-                    showToast("Not get Permission: " + permission);
-                }
-            }
-        });
-    }
-
-    @BindView(R.id.btn_number)
-    Button btnNumber;
-
-    private static final String NUMBER = "NUMBER";
-
-    @OnClick(R.id.btn_number)
-    public void onClickButtonNumber() {
-        int number = Integer.parseInt(btnNumber.getText().toString());
-        SharedPreferenceUtils.getInstance().setValue(NUMBER, number + 1);
-        btnNumber.setText(SharedPreferenceUtils.getInstance().getValue(NUMBER, -1) + "");
-    }
-
-    @OnClick(R.id.btn_register_change_data_share_prefrence)
-    public void registerOnSharedPreferenceChangeListener() {
-        SharedPreferenceUtils.getInstance().registerOnSharedPreferenceChangeListener(this);
-    }
-
-    @OnClick(R.id.btn_unregister_change_data_share_prefrence)
-    public void unRegisterOnSharedPreferenceChangeListener() {
-        SharedPreferenceUtils.getInstance().unregisterOnSharedPreferenceChangeListener(this);
-    }
-
-    @Override
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        if (!NUMBER.equals(key)) {
-            return;
-        }
-        showToast("SharedPreference of LoginFragment: key: " + key + ", value: " + SharedPreferenceUtils.getInstance().getValue(key, -1));
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        mHandShakeListener = new HandShakeListener(this);
-        HandShakeListenerUtils.getInstance().registerListener(mHandShakeListener);
-    }
-
-    @Override
-    public void onDestroy() {
-        HandShakeListenerUtils.getInstance().unregisterListener(mHandShakeListener);
-        super.onDestroy();
-    }
-
-    @Override
-    public void onShake(int count) {
-        Log.e("LoginFragment", count + "");
+    public void onClickButtonSignUp() {
+        getRootActivity().replaceFragment(new SignUpFragment(), true);
     }
 
 }

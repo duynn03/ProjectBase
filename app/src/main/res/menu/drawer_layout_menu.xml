@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <!--android:checkableBehavior="single" là single-selectable-->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/drawer_layout_menu_home" />
+        <item
+            android:id="@+id/menu_permission"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/drawer_layout_menu_permission" />
+        <item
+            android:id="@+id/menu_sharedpreference"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/drawer_layout_menu_sharedpreference" />
+        <item
+            android:id="@+id/menu_notification"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/drawer_layout_menu_notification" />
+        <item
+            android:id="@+id/menu_broadcast"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/drawer_layout_menu_broadcast" />
+    </group>
+
+    <item android:title="@string/drawer_layout_menu_label_manage_application">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_firebase"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="@string/drawer_layout_menu_firebase" />
+                <item
+                    android:id="@+id/menu_appcenter"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="@string/drawer_layout_menu_appcenter" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/drawer_layout_menu_label_toolbar">
+        <menu>
+            <item
+                android:id="@+id/menu_toolbar_collapsing"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="@string/drawer_layout_menu_toolbar_collapsing" />
+            <item
+                android:id="@+id/menu_toolbar_collapsing_custom_behavior"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="@string/drawer_layout_menu_toolbar_collapsing_custom_behavior" />
+        </menu>
+    </item>
+
+    <item android:title="@string/drawer_layout_menu_label_appbar">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_appbar_bottom"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="@string/drawer_layout_menu_appbar_bottom" />
+            </group>
+        </menu>
+    </item>
+    <item android:title="@string/drawer_layout_menu_label_navigation">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_navigation_bottom"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="@string/drawer_layout_menu_navigation_bottom" />
+                <item
+                    android:id="@+id/menu_navigation_notification"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="@string/drawer_layout_menu_navigation_notification"
+                    app:actionLayout="@layout/drawer_layout_menu_counter" />
+                <item
+                    android:id="@+id/menu_snack_bar"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="@string/drawer_layout_menu_snackbar" />
+                <item
+                    android:id="@+id/menu_dialog"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="@string/drawer_layout_menu_dialog" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/drawer_layout_menu_label_listener">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_hand_shake"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_hand_shake" />
+                <item
+                    android:id="@+id/menu_network"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_network" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/drawer_layout_menu_label_database">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_realm"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_realm" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/drawer_layout_menu_label_location">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_location"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_location" />
+                <item
+                    android:id="@+id/menu_geofence"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_geofence" />
+                <item
+                    android:id="@+id/menu_detect_activity_user"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_detect_activity_user" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/drawer_layout_menu_label_architecture_components">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_dragger"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_dragger" />
+                <item
+                    android:id="@+id/menu_data_binding"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_data_binding" />
+                <item
+                    android:id="@+id/menu_lifecycle"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_lifecycle" />
+                <item
+                    android:id="@+id/menu_room"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_room" />
+                <item
+                    android:id="@+id/menu_live_data"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_live_data" />
+                <item
+                    android:id="@+id/menu_view_model"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_view_model" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/drawer_layout_menu_label_background_task">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_thread"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_thread" />
+                <item
+                    android:id="@+id/menu_service"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_service" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/drawer_layout_menu_label_other">
+        <menu>
+            <item
+                android:id="@+id/menu_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/drawer_layout_menu_share" />
+            <item
+                android:id="@+id/menu_signout"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/drawer_layout_menu_signout" />
+        </menu>
+    </item>
+
+</menu>

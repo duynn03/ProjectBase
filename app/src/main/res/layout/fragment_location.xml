@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_fragment"
+    style="@style/ViewRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        style="@style/TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Fragment Location" />
+
+    <Button
+        android:id="@+id/btn_last_known_location"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Get Last known Location" />
+
+    <Button
+        android:id="@+id/btn_get_current_location"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_last_known_location"
+        android:layout_centerHorizontal="true"
+        android:text="Get Current Location" />
+
+    <Button
+        android:id="@+id/btn_fetch_address_location"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_get_current_location"
+        android:layout_centerHorizontal="true"
+        android:text="Fetch name address" />
+
+    <Button
+        android:id="@+id/btn_fetch_location"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_fetch_address_location"
+        android:layout_centerHorizontal="true"
+        android:text="Fetch location" />
+
+    <Button
+        android:id="@+id/btn_change_location_setting"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_fetch_location"
+        android:layout_centerHorizontal="true"
+        android:text="Check Location Setting đã bật chưa?" />
+
+    <Button
+        android:id="@+id/btn_register_update_location"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_change_location_setting"
+        android:layout_centerHorizontal="true"
+        android:text="Register Location Update" />
+
+    <Button
+        android:id="@+id/btn_unregister_update_location"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_register_update_location"
+        android:layout_centerHorizontal="true"
+        android:text="Unregister Location Update" />
+
+</RelativeLayout>

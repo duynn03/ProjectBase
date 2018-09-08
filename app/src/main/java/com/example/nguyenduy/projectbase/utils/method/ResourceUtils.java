@@ -12,11 +12,20 @@ public class ResourceUtils {
     }
 
     public static int getDimension(int id) {
+        if (id <= 0) return id;     // id có thể là match parent, ...
         return getResource().getDimensionPixelSize(id);
     }
 
     public static String getString(int id) {
         return getResource().getString(id);
+    }
+
+    public static int getInt(int id) {
+        return Integer.parseInt(getResource().getString(id));
+    }
+
+    public static String[] getStringArray(int id) {
+        return getResource().getStringArray(id);
     }
 
     public static int getColor(int id) {

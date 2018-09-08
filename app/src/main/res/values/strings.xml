@@ -7,22 +7,25 @@
     <string name="app_name_production">ProjectBase</string>
 
     <!--Permission-->
-    <string name="OK">OK</string>
-    <string name="change_setting">CHANGE SETTING</string>
     <!--Message permission-->
+    <string name="permission_msg_reason_firebase_analytic">We need that permissions to send analytic to our server.</string>
     <string name="permission_msg_reason_location">We need <b>location permission</b> to locate your position.</string>
     <string name="permission_msg_reject_location">We <b>can\'t</b> get your location <b>without location permission</b>.</string>
+    <string name="permission_msg_reason_access_network_state">We need <b>network permission</b> to access network.</string>
+    <string name="permission_msg_reject_access_network_state">We <b>can\'t</b> access network <b>without network permission</b>.</string>
     <string name="permission_msg_reason_write_external_storage">We need <b>write external storage permission</b> to write your file.</string>
     <string name="permission_msg_reject_write_external_storage">We <b>can\'t</b> write external storage <b>without permission</b>.</string>
     <string name="permission_msg_reason_read_external_storage">We need <b>read external storage permission</b> to write your file.</string>
     <string name="permission_msg_reject_read_external_storage">We <b>can\'t</b> read external storage <b>without permission</b>.</string>
+    <string name="permission_msg_reason_sms">We need <b>SMS permission</b> to locate your SMS.</string>
+    <string name="permission_msg_reject_sms">We <b>can\'t</b> get your SMS <b>without SMS permission</b>.</string>
     <string name="permission_msg_reason_read_external_storage_and_location">Chúng tôi cần permission read external storage and location để có thể tiếp tục.</string>
     <string name="permission_msg_reject_read_external_storage_and_location">Chúng tôi không thể lấy được tất cả permission nên không thể tiếp tục.</string>
 
     <!--appcenter-->
     <!--Crash-->
     <string name="activity_crash_btn_back">Back to continue</string>
-    <string name="base_activity_dialog_loading_message_loading">Loading...</string>
+    <string name="activity_crash_msg_sorry_because_crashed">Sorry because crashed. Chúng tôi sẽ fix sớm nhất có thể.</string>
     <!--Distribute-->
     <string name="appcenter_distribute_update_dialog_title">App update available</string>
     <string name="appcenter_distribute_update_dialog_message_optional">%1$s %2$s (%3$d) is available to download and install.</string>
@@ -47,8 +50,243 @@
     <string name="install_url">http...</string>
     <string name="api_url">http...</string>
 
-
     <!--firebase-->
     <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+
+    <!--drawer layout-->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <!--menu drawerlayout-->
+    <string name="drawer_layout_menu_home">Home</string>
+    <string name="drawer_layout_menu_permission">Permission</string>
+    <string name="drawer_layout_menu_sharedpreference">SharedPreference</string>
+    <string name="drawer_layout_menu_notification">Notification</string>
+    <string name="drawer_layout_menu_broadcast">Broadcast</string>
+    <!--label manage_application-->
+    <string name="drawer_layout_menu_label_manage_application">Manage Application</string>
+    <string name="drawer_layout_menu_firebase">Firebase</string>
+    <string name="drawer_layout_menu_appcenter">AppCenter</string>
+    <!--label toolbar-->
+    <string name="drawer_layout_menu_label_toolbar">Toolbar</string>
+    <string name="drawer_layout_menu_toolbar_collapsing">Toolbar Collapsing</string>
+    <string name="drawer_layout_menu_toolbar_collapsing_custom_behavior">Toolbar Collapsing Custom behavior</string>
+    <!--label appbar-->
+    <string name="drawer_layout_menu_label_appbar">Appbar</string>
+    <string name="drawer_layout_menu_appbar_bottom">Appbar Bottom</string>
+    <!--label navigation-->
+    <string name="drawer_layout_menu_label_navigation">Navigation</string>
+    <string name="drawer_layout_menu_navigation_bottom">Navigation bottom</string>
+    <string name="drawer_layout_menu_navigation_notification">Notification</string>
+    <string name="drawer_layout_menu_snackbar">Snackbar</string>
+    <string name="drawer_layout_menu_dialog">Dialog</string>
+    <!--label listener-->
+    <string name="drawer_layout_menu_label_listener">Listener</string>
+    <string name="drawer_layout_menu_hand_shake">HandShake</string>
+    <string name="drawer_layout_menu_network">Network</string>
+    <!--label database-->
+    <string name="drawer_layout_menu_label_database">Database</string>
+    <string name="drawer_layout_menu_realm">Realm</string>
+    <!--label location-->
+    <string name="drawer_layout_menu_label_location">Location</string>
+    <string name="drawer_layout_menu_location">Location</string>
+    <string name="drawer_layout_menu_geofence">Geofence</string>
+    <string name="drawer_layout_menu_detect_activity_user">Detect Activity of User</string>
+    <!--label structure-->
+    <string name="drawer_layout_menu_label_architecture_components">Architecture Components</string>
+    <string name="drawer_layout_menu_dragger">Dragger</string>
+    <string name="drawer_layout_menu_data_binding">Data Binding</string>
+    <string name="drawer_layout_menu_lifecycle">Lifecycle</string>
+    <string name="drawer_layout_menu_room">Room</string>
+    <string name="drawer_layout_menu_live_data">LiveData</string>
+    <string name="drawer_layout_menu_view_model">ViewModel</string>
+    <!--label background task-->
+    <string name="drawer_layout_menu_label_background_task">Background task</string>
+    <string name="drawer_layout_menu_thread">Thread</string>
+    <string name="drawer_layout_menu_service">Service</string>
+    <!--label other-->
+    <string name="drawer_layout_menu_label_other">Other</string>
+    <string name="drawer_layout_menu_share">Share</string>
+    <string name="drawer_layout_menu_signout">SignOut</string>
+
+    <!--title toolbar, nếu không có title thì để là rỗng-->
+    <string-array name="navigation_drawer_title_menu_toolbar">
+        <item>Home</item>
+        <item>Permission</item>
+        <item>SharedPreference</item>
+        <item>Notification</item>
+        <item>Broadcast</item>
+        <item>Firebase</item>
+        <item>AppCenter</item>
+        <item />
+        <item />
+        <item />
+        <item>Navigation bottom</item>
+        <item>Notification</item>
+        <item>Snackbar</item>
+        <item>Dialog</item>
+        <item>HandShake</item>
+        <item>Network</item>
+        <item>Realm</item>
+        <item>Location</item>
+        <item>Geofence</item>
+        <item>Detect Activity of User</item>
+        <item>Dragger</item>
+        <item>Data Binding</item>
+        <item>Lifecycle</item>
+        <item>Room</item>
+        <item>LiveData</item>
+        <item>ViewModel</item>
+        <item>Thread</item>
+        <item>Service</item>
+        <item />
+        <item />
+    </string-array>
+
+    <!--toolbar-->
+    <string name="toolbar_help">Help</string>
+    <string name="action_settings">Settings</string>
+
+    <!--base activity-->
+    <string name="base_activity_dialog_loading_message_loading">Loading...</string>
+
+    <!--Screen SharePreference Setting-->
+    <!--toolbar-->
+    <string name="pref_toolbar_title">Settings</string>
+    <!--key-->
+    <string name="pref_key_sync_server" translatable="false">SYNC_SERVER</string>
+    <string name="pref_key_title_checkbox" translatable="false">TITLE_CHECKBOX</string>
+    <string name="pref_key_title_switch" translatable="false">TITLE_SWITCH</string>
+    <string name="pref_key_title_edit_text" translatable="false">TITLE_EDIT_TEXT</string>
+    <string name="pref_key_title_dialog" translatable="false">TITLE_DIALOG</string>
+    <string name="pref_key_title_dialog_time_picker" translatable="false">TIME_PICKER</string>
+    <string name="pref_key_title_preference" translatable="false">TITLE_PREFERENCE</string>
+    <string name="pref_key_title_list" translatable="false">TITLE_LIST_PREFERENCE</string>
+    <string name="pref_key_title_multi_list" translatable="false">TITLE_MULTI_LIST_PREFERENCE</string>
+    <string name="pref_key_title_dropdown" translatable="false">TITLE_DROPDOWN</string>
+    <string name="pref_key_title_seekbar" translatable="false">TITLE_SEEKBAR</string>
+    <string name="pref_key_sub_screen" translatable="false">SUBSCREEN</string>
+    <string name="pref_key_sub_screen_preference_screen_1" translatable="false">SUBSCREEN_PREFERENCE_SCREEN_1</string>
+    <string name="pref_key_sub_screen_ringstone" translatable="false">SUBSCREEN_RINGTONE</string>
+    <!--extra intent-->
+    <string name="pref_extra_key" translatable="false">key</string>
+    <string name="pref_extra_value_header_1" translatable="false">header_1</string>
+    <string name="pref_extra_value_header_2" translatable="false">header_2</string>
+
+    <string name="pref_sync_server_title">Sync Server Title</string>
+    <string name="pref_sync_server_summary">Sync Server Summary</string>
+    <!--Title-->
+    <string name="pref_title">Title</string>
+    <string name="pref_title_checkbox_title">Checkbox Title</string>
+    <string name="pref_title_checkbox_summary">Checkbox Summary</string>
+    <string name="pref_title_switch_title">Switch Title</string>
+    <string name="pref_title_switch_summary">Switch Summary</string>
+    <string name="pref_title_edit_text_title">Edit Text Title</string>
+    <string name="pref_title_edit_text_summary">Edit Text Summary</string>
+    <string name="pref_title_preference_title">Preference Title</string>
+    <string name="pref_title_preference_summary">Preference Summary</string>
+    <string name="pref_title_dialog_title">Dialog Title</string>
+    <string name="pref_title_dialog_summary">Dialog Summary</string>
+    <string name="pref_title_dialog_time_picker_title">Time Picker Dialog Title</string>
+    <string name="pref_title_list_title_dialog">List Preference Dialog Title</string>
+    <string name="pref_title_multi_list_title_dialog">Multi List Preference Dialog Title</string>
+    <string name="pref_title_dropdown_title">Dropdown Title</string>
+    <string-array name="pref_title_list_titles">
+        <item>Title 1</item>
+        <item>Title 2</item>
+        <item>Title 3</item>
+        <item>Title 4</item>
+        <item>Title 5</item>
+    </string-array>
+    <string-array name="pref_title_list_values">
+        <item>-1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string name="pref_title_seekbar_title">Seekbar Title</string>
+    <!--subscreen-->
+    <string name="pref_subscreen_title">Subscreen Title</string>
+    <string name="pref_subscreen_summary">Subscreen Summary</string>
+    <string name="pref_subscreen_list_preference_title">List Preference Title</string>
+    <string name="pref_subscreen_list_preference_summary">List Preference Summary</string>
+    <string name="pref_subscreen_preference_screen_1_title">Preference Screen 1 Title</string>
+    <string name="pref_subscreen_preference_screen_1_summary">Preference Screen 1 Title</string>
+    <string name="pref_subscreen_ringtone_title">RingTone Title</string>
+    <string name="pref_subscreen_ringtone_summary">RingTone Summary</string>
+    <!--header-->
+    <string name="pref_header_activity_title">Header Title</string>
+    <string name="pref_header_activity_summary">Header Summary</string>
+    <string name="pref_header_fragment_1_title">Header 1 Title</string>
+    <string name="pref_header_fragment_1_summary">Header 1 Summary</string>
+    <string name="pref_header_fragment_1_content_title">Header 1 Content Title</string>
+    <string name="pref_header_fragment_1_content_summary">Header 1 Content Summary</string>
+    <string name="pref_header_fragment_2_title">Header 2 Title</string>
+    <string name="pref_header_fragment_2_summary">Header 2 Summary</string>
+    <string name="pref_header_fragment_2_content_title">Header 2 Content Title</string>
+    <string name="pref_header_fragment_2_content_summary">Header 2 Content Summary</string>
+    <!--intent-->
+    <string name="pref_intent_title">Intent Title</string>
+    <string name="pref_intent_summary">Intent Summary</string>
+
+    <!--navigation bottom-->
+    <!--title toolbar, nếu không có title thì để là rỗng-->
+    <string-array name="navigation_bottom_title_menu_toolbar">
+        <item>Home</item>
+        <item>Notification</item>
+        <item>HandShake</item>
+    </string-array>
+
+    <!--screen fragment login-->
+    <string name="hint_name">Full Name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="hint_phone_number">Phone Number</string>
+    <string name="hint_birth_day">BirthDay</string>
+    <!--condition form-->
+    <string name="name_length_min" translatable="false">3</string>
+    <string name="name_length_max" translatable="false">30</string>
+    <string name="email_length_min" translatable="false">6</string>
+    <string name="email_length_max" translatable="false">30</string>
+    <string name="password_length_min" translatable="false">6</string>
+    <string name="password_length_max" translatable="false">15</string>
+    <string name="phone_length_min" translatable="false">8</string>
+    <string name="phone_length_max" translatable="false">15</string>
+    <!--message-->
+    <string name="name_empty">Full Name Not Empty</string>
+    <string name="name_invalid">Full Name Invalid</string>
+    <string name="email_empty">Email Not Empty</string>
+    <string name="email_exist">Email Exist</string>
+    <string name="email_not_exist">Email Not Exist</string>
+    <string name="email_invalid">Email Invalid</string>
+    <string name="email_or_password_incorrect">Email Or Password InCorrect</string>
+    <string name="password_empty">Password Not Empty</string>
+    <string name="password_invalid">Password Invalid</string>
+    <string name="confirm_password_invalid">Confirm Password Invalid</string>
+    <string name="phone_number_empty">Phone Number Not Empty</string>
+    <string name="phone_number_invalid">Phone Number Invalid</string>
+    <string name="birthday_empty">BirthDay Not Empty</string>
+    <string name="birthday_invalid">BirthDay Invalid</string>
+    <string name="signup_success">Signup success!</string>
+    <string name="forgot_password_success">Forgot Password success! Let check email: </string>
+    <string name="msg_user_choose_connection_internet">Not Connection Internet! please connect internet to continue...</string>
+    <string name="msg_connection_internet_timeout">Connection Internet Time Out!</string>
+    <string name="msg_reconnection">RECONNECTION</string>
+
+    <!--dialog-->
+    <string name="dialog_signout_title">SignOut</string>
+    <string name="dialog_signout_message">Are you sure you want to signout?</string>
+    <string name="dialog_signout_positive_button">SignOut</string>
+    <!--Setting-->
+    <string name="OK">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="change_setting">CHANGE SETTING</string>
+    <string name="change_setting_mobile">Mobile</string>
+    <string name="change_setting_wifi">Wifi</string>
+
+    <!--common-->
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula sem a malesuada rhoncus. Pellentesque ut dolor a dui porttitor porta lacinia non libero. Nunc volutpat arcu quis quam convallis molestie. Etiam ac tristique sem, id commodo justo. Phasellus congue tincidunt lectus, at dignissim ligula maximus eu. Quisque interdum nunc eget tellus bibendum suscipit. Phasellus feugiat ultricies posuere. Nullam porta accumsan velit, ut rutrum massa fermentum eu. Nunc ac bibendum nunc. Mauris eu ultricies ipsum. Ut id dolor dui. Pellentesque dictum dui vel tempus maximus. Vivamus non nisi quis libero scelerisque pretium. Ut eu tristique justo. Sed pellentesque placerat quam, ut ultricies turpis feugiat a. Aliquam a volutpat risus.Praesent at lectus semper, suscipit elit in, facilisis massa. Phasellus sed vestibulum ante, a euismod sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin tincidunt orci augue, a porta odio lacinia eu. Nunc in congue risus. Maecenas commodo nibh ac enim fermentum, eu sagittis massa blandit. Vestibulum elementum massa nec dapibus mollis. Etiam porta, est sit amet aliquet porta, odio elit finibus risus, id rutrum purus mi non ipsum. Nulla viverra nec enim sed venenatis.Maecenas mattis, erat et viverra euismod, neque diam porttitor tellus, in fringilla metus est id augue. Nunc at metus cursus, porttitor nisi vitae, congue diam. Curabitur ligula massa, ullamcorper eget scelerisque vel, pharetra ac sapien. Ut auctor luctus ultricies. Nullam semper tortor ac elementum luctus. In et tempus ex. Praesent sodales, dolor id volutpat elementum, ligula enim euismod odio, maximus sodales magna neque nec neque. Curabitur pretium nisl neque, consequat aliquet dui tincidunt ac. Vivamus augue nunc, aliquet eu ex a, ultrices aliquam lorem. Duis nibh lectus, ultricies vel iaculis sit amet, imperdiet id sapien. Duis scelerisque sodales metus eu rutrum. Suspendisse posuere nisi ac magna consequat, eu vestibulum ipsum venenatis. Suspendisse auctor nisi nec leo venenatis tristique.Praesent tincidunt lorem sit amet mi consequat cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent vitae blandit sapien. Curabitur est sapien, lobortis sit amet facilisis vel, faucibus eu quam. Nam tempus libero at tellus tempor laoreet. Pellentesque quam lorem, tincidunt in molestie eget, dictum vel risus. Nunc gravida convallis mattis.</string>
+
 </resources>
 

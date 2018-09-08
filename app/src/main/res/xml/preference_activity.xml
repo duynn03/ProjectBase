@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--Xem full các attribute ở đây: https://developer.android.com/reference/android/preference/Preference-->
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="@string/pref_key_sync_server"
+        android:summary="@string/pref_sync_server_summary"
+        android:title="@string/pref_sync_server_title" />
+
+    <!--<ListPreference
+        android:key="SUBSCREEN_LIST_PREFERENCE"
+        android:summary="@string/pref_subscreen_list_preference_summary"
+        android:title="@string/pref_subscreen_list_preference_title" />-->
+
+    <!--Title https://developer.android.com/guide/topics/ui/settings#Titles-->
+    <PreferenceCategory
+        android:title="@string/pref_title">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/pref_key_title_checkbox"
+            android:summary="@string/pref_title_checkbox_summary"
+            android:title="@string/pref_title_checkbox_title" />
+        <Preference
+            android:dependency="@string/pref_key_title_checkbox"
+            android:key="@string/pref_key_title_preference"
+            android:summary="@string/pref_title_preference_title"
+            android:title="@string/pref_title_preference_summary" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Other Title">
+        <!-- subscreen https://developer.android.com/guide/topics/ui/settings#Subscreens-->
+        <PreferenceScreen
+            android:key="@string/pref_key_sub_screen"
+            android:persistent="false"
+            android:summary="@string/pref_subscreen_summary"
+            android:title="@string/pref_subscreen_title">
+            <!-- opens another nested subscreen -->
+            <PreferenceScreen
+                android:key="@string/pref_key_sub_screen_preference_screen_1"
+                android:persistent="false"
+                android:summary="@string/pref_subscreen_preference_screen_1_summary"
+                android:title="@string/pref_subscreen_preference_screen_1_title" />
+            <RingtonePreference
+                android:key="@string/pref_key_sub_screen_ringstone"
+                android:ringtoneType="notification"
+                android:summary="@string/pref_subscreen_ringtone_summary"
+                android:title="@string/pref_subscreen_ringtone_title" />
+        </PreferenceScreen>
+
+        <!--header https://developer.android.com/guide/topics/ui/settings#PreferenceHeaders-->
+        <!--Fix bug https://stackoverflow.com/questions/33855789/android-how-to-start-an-activity-from-preference-header-->
+        <PreferenceScreen
+            android:summary="@string/pref_header_activity_summary"
+            android:title="@string/pref_header_activity_title">
+            <intent
+                android:action="ActionCustom"
+                android:targetClass=".screen.main2.sharedpreference.settingActivity.header.SettingHeaderActivity" />
+        </PreferenceScreen>
+
+        <!--intent https://developer.android.com/guide/topics/ui/settings#Intents-->
+        <Preference
+            android:summary="@string/pref_intent_summary"
+            android:title="@string/pref_intent_title">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://www.google.com" />
+        </Preference>
+
+        <!--sync system-->
+        <Preference android:title="Sync Settings">
+            <intent android:action="android.settings.SYNC_SETTINGS" />
+        </Preference>
+    </PreferenceCategory>
+</PreferenceScreen>
