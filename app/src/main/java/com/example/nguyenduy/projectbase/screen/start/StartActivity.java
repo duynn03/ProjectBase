@@ -2,7 +2,7 @@ package com.example.nguyenduy.projectbase.screen.start;
 
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.BaseActivity;
-import com.example.nguyenduy.projectbase.base.sharedPreference.SharedPreferenceUtils;
+import com.example.nguyenduy.projectbase.screen.SplashActivity;
 import com.example.nguyenduy.projectbase.screen.main.MainActivity;
 import com.example.nguyenduy.projectbase.screen.start.login.LoginFragment;
 
@@ -35,14 +35,10 @@ public class StartActivity extends BaseActivity<IStartActivityPresenter> impleme
 
     @Override
     public void prepareComplete() {
-        if (isUserLogin())
+        if (SplashActivity.isUserLogin())
             startRootActivity(MainActivity.class);
         else
             addFragment(new LoginFragment(), false);
-    }
-
-    private boolean isUserLogin() {
-        return SharedPreferenceUtils.getInstance().getUserInformation() != null;
     }
 }
 

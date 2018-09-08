@@ -45,24 +45,20 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".screen.SplashActivity"
-            android:theme="@style/AppTheme.FullStatusBar.Launcher">
+            android:theme="@style/AppTheme.Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".screen.start.crash.CrashActivity"
-            android:theme="@style/AppTheme.FullStatusBar" />
-        <activity
-            android:name=".screen.main.MainActivity"
-            android:theme="@style/AppTheme.FullStatusBar" />
+        <activity android:name=".screen.start.crash.CrashActivity" />
         <activity
             android:name=".screen.start.StartActivity"
-            android:theme="@style/AppTheme.FullStatusBar" />
+            android:screenOrientation="portrait" />
+
         <activity
-            android:name=".screen.main2.MainActivity"
+            android:name=".screen.main.MainActivity"
             android:theme="@style/AppTheme.FullStatusBar">
             <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -76,23 +72,23 @@
             </intent-filter>-->
         </activity>
         <activity
-            android:name=".screen.main2.toolbar.CollapsingToolbarActivity"
+            android:name=".screen.main.toolbar.CollapsingToolbarActivity"
             android:theme="@style/AppTheme.FullStatusBar" />
         <activity
-            android:name=".screen.main2.toolbar.CollapsingToolbarCustomBehaviorActivity"
+            android:name=".screen.main.toolbar.CollapsingToolbarCustomBehaviorActivity"
             android:theme="@style/AppTheme.FullStatusBar" />
         <activity
-            android:name=".screen.main2.appbar.appbarBottom.AppbarBottomActivity"
+            android:name=".screen.main.appbar.appbarBottom.AppbarBottomActivity"
             android:theme="@style/AppTheme.FullStatusBar" />
         <!--notification-->
         <activity
             android:name=".base.notification.startActivity.RegularActivity"
-            android:parentActivityName=".screen.main2.MainActivity">
+            android:parentActivityName=".screen.main.MainActivity">
             <!-- Parent activity meta-data to support 4.0 and lower
             https://developer.android.com/training/implementing-navigation/ancestral#SpecifyParent-->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".screen.main2.MainActivity" />
+                android:value=".screen.main.MainActivity" />
         </activity>
         <activity
             android:name=".base.notification.startActivity.SpecialActivity"
@@ -101,15 +97,15 @@
             android:taskAffinity="" />
         <!--sharedPreference-->
         <activity
-            android:name=".screen.main2.sharedpreference.settingActivity.SettingsActivity"
+            android:name=".screen.main.sharedpreference.settingActivity.SettingsActivity"
             android:exported="false"
-            android:parentActivityName=".screen.main2.MainActivity"
+            android:parentActivityName=".screen.main.MainActivity"
             android:theme="@style/SharedPreferenceTheme">
             <!-- Parent activity meta-data to support 4.0 and lower
             https://developer.android.com/training/implementing-navigation/ancestral#SpecifyParent-->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".screen.main2.MainActivity" />
+                android:value=".screen.main.MainActivity" />
             <!--https://developer.android.com/guide/topics/ui/settings#NetworkUsage-->
             <!--có thêm mục View App Settings trong App Infor của mục Settings-->
             <intent-filter>
@@ -118,15 +114,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".screen.main2.sharedpreference.settingActivity.header.SettingHeaderActivity"
+            android:name=".screen.main.sharedpreference.settingActivity.header.SettingHeaderActivity"
             android:exported="false"
-            android:parentActivityName=".screen.main2.sharedpreference.settingActivity.SettingsActivity"
+            android:parentActivityName=".screen.main.sharedpreference.settingActivity.SettingsActivity"
             android:theme="@style/SharedPreferenceTheme">
             <!-- Parent activity meta-data to support 4.0 and lower
                https://developer.android.com/training/implementing-navigation/ancestral#SpecifyParent-->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".screen.main2.sharedpreference.settingActivity.SettingsActivity" />
+                android:value=".screen.main.sharedpreference.settingActivity.SettingsActivity" />
             <!--https://developer.android.com/guide/topics/ui/settings#NetworkUsage-->
             <!--có thêm mục View App Settings trong App Infor của mục Settings-->
             <intent-filter>
@@ -135,11 +131,11 @@
             </intent-filter>
         </activity>
         <!--architecture component-->
-        <activity android:name=".screen.main2.architectureComponents.dataBinding.activity.DataBindingActivity" />
-        <activity android:name=".screen.main2.architectureComponents.lifecycle.activity.LifecycleDefaultActivity" />
-        <activity android:name=".screen.main2.architectureComponents.lifecycle.activity.CustomLifecycleActivity" />
-        <activity android:name=".screen.main2.architectureComponents.liveData.activity.LiveDataActivity" />
-        <activity android:name=".screen.main2.architectureComponents.viewModel.activity.ViewModelActivity" />
+        <activity android:name=".screen.main.architectureComponents.dataBinding.activity.DataBindingActivity" />
+        <activity android:name=".screen.main.architectureComponents.lifecycle.activity.LifecycleDefaultActivity" />
+        <activity android:name=".screen.main.architectureComponents.lifecycle.activity.CustomLifecycleActivity" />
+        <activity android:name=".screen.main.architectureComponents.liveData.activity.LiveDataActivity" />
+        <activity android:name=".screen.main.architectureComponents.viewModel.activity.ViewModelActivity" />
 
         <!-- Firebase Cloud Message -->
         <service android:name=".base.firebase.FCM.FCMService">

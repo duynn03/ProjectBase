@@ -2,7 +2,7 @@
 <preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
     <!--mỗi header là 1 fragment-->
     <header
-        android:fragment="com.example.nguyenduy.projectbase.screen.main2.sharedpreference.settingActivity.header.SettingHeaderFragment"
+        android:fragment="com.example.nguyenduy.projectbase.screen.main.sharedpreference.settingActivity.header.SettingHeaderFragment"
         android:summary="@string/pref_header_fragment_1_summary"
         android:title="@string/pref_header_fragment_1_title">
         <!-- key/value pairs can be included as arguments for the fragment. -->
@@ -11,7 +11,7 @@
             android:value="@string/pref_extra_value_header_1" />
     </header>
     <header
-        android:fragment="com.example.nguyenduy.projectbase.screen.main2.sharedpreference.settingActivity.header.SettingHeaderFragment"
+        android:fragment="com.example.nguyenduy.projectbase.screen.main.sharedpreference.settingActivity.header.SettingHeaderFragment"
         android:summary="@string/pref_header_fragment_2_summary"
         android:title="@string/pref_header_fragment_2_title">
         <!-- key/value pairs can be included as arguments for the fragment. -->

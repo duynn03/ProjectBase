@@ -4,10 +4,11 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.TextInputLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -17,7 +18,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -26,6 +26,7 @@ import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.broadcast.system.network.ConnectionInternetUtils;
 import com.example.nguyenduy.projectbase.base.firebase.FireBaseUtils;
 import com.example.nguyenduy.projectbase.base.location.LocationSetting;
+import com.example.nguyenduy.projectbase.base.navigation.snackbar.SnackBarBuilder;
 import com.example.nguyenduy.projectbase.utils.LogUtils;
 import com.example.nguyenduy.projectbase.utils.method.ResourceUtils;
 import com.example.nguyenduy.projectbase.utils.method.SDKUtils;
@@ -46,7 +47,7 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
     private P mPresenter;
     private Unbinder bindView;
     private Intent mIntent;
-    private ViewGroup mRootView;
+    private ViewGroup mRootViewLayout;
     private ProgressDialog loadingDialog;
 
     @SuppressLint("NewApi")
@@ -79,7 +80,7 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
     }
 
     private void initRootView() {
-        mRootView = findViewById(getIdRootView());
+        mRootViewLayout = findViewById(getIdRootView());
     }
 
     private int getIdRootView() {
@@ -96,8 +97,8 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
         if (null == mPresenter) {
             mPresenter = initPresenter();
         }
-        initEditText();
         initLoadingDialog();
+        initKeyboard();
     }
 
     private void initLoadingDialog() {
@@ -106,45 +107,23 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
         loadingDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
     }
 
-    private void initEditText() {
-        // setNotFocusWhenClickOutSideEditText(getIdRootView());
-        // hidden keyboard of edit text when activity start
-        //  this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+    private void initKeyboard() {
+        hideSoftKeyboard();
     }
 
-    private void setNotFocusWhenClickOutSideEditText(int viewId) {
-        if (viewId <= 0) return;
-        View view = findViewById(viewId);
-        // Set up touch listener for non-text box views to hide keyboard.
-        if (!(view instanceof EditText || view instanceof TextInputLayout)) {
-            view.setOnTouchListener(new View.OnTouchListener() {
-                @Override
-                public boolean onTouch(View v, MotionEvent event) {
-                    hideSoftKeyboard();
-                    return false;
-                }
-            });
-        }
-
-        //If a layout container, iterate over children and seed recursion.
-        if (view instanceof ViewGroup) {
-            for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++) {
-                View innerView = ((ViewGroup) view).getChildAt(i);
-                setNotFocusWhenClickOutSideEditText(innerView.getId());
-            }
-        }
-    }
-
+    /*https://stackoverflow.com/questions/1109022/close-hide-the-android-soft-keyboard*/
     private void hideSoftKeyboard() {
-        hideSoftKeyboard(this.getCurrentFocus());
+        //Find the currently focused view, so we can grab the correct window token from it.
+        View view = this.getCurrentFocus();
+        if (null == view) {
+            view = new View(this);
+        }
+        hideSoftKeyboard(view);
     }
 
     public void hideSoftKeyboard(View view) {
-        if (null != view) {
-            InputMethodManager inputManager = (InputMethodManager) this.getSystemService(Activity.INPUT_METHOD_SERVICE);
-            inputManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
-        }
+        InputMethodManager inputManager = (InputMethodManager) this.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
     public void showSoftKeyboard(View view) {
@@ -154,8 +133,31 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
         }
     }
 
+    /* ẩn keyboard when click outside EditText https://stackoverflow.com/questions/6677969/tap-outside-edittext-to-lose-focus*/
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (ev.getAction() == MotionEvent.ACTION_DOWN) {
+            View view = getCurrentFocus();
+            if (view != null && view instanceof EditText) {
+                Rect outRect = new Rect();
+                view.getGlobalVisibleRect(outRect);
+                int rawX = (int) ev.getRawX();
+                int rawY = (int) ev.getRawY();
+                if (!outRect.contains(rawX, rawY)) {
+                    view.clearFocus();
+                    hideSoftKeyboard();
+                }
+            }
+        }
+        return super.dispatchTouchEvent(ev);
+    }
+
     public void showToast(String msg) {
         Toast.makeText(BaseActivity.this, msg, Toast.LENGTH_SHORT).show();
+    }
+
+    public void showSnackbar(String message, String action, View.OnClickListener listener) {
+        new SnackBarBuilder(mRootViewLayout).setText(message).setAction(action, listener).setDuration(Snackbar.LENGTH_SHORT).build().show();
     }
 
     public P getPresenter() {
@@ -163,11 +165,11 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
     }
 
     public void hiddenContentLayout() {
-        ViewUtils.setVisibility(mRootView, View.INVISIBLE);
+        ViewUtils.setVisibility(mRootViewLayout, View.INVISIBLE);
     }
 
     public void showContentLayout() {
-        ViewUtils.setVisibility(mRootView, View.VISIBLE);
+        ViewUtils.setVisibility(mRootViewLayout, View.VISIBLE);
     }
 
     public void showDialogLoading() {
@@ -290,6 +292,7 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
             transaction.addToBackStack(fragment.getClass().getSimpleName());
         }
         transaction.commit();
+        initKeyboard();
     }
 
     public void replaceFragment(Fragment fragment, boolean isAddToBackStack) {
@@ -299,6 +302,7 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
             transaction.addToBackStack(fragment.getClass().getSimpleName());
         }
         transaction.commit();
+        initKeyboard();
     }
 
     public int getCountBackStack() {

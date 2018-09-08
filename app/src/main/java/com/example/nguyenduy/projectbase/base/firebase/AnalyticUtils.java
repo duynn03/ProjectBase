@@ -5,10 +5,10 @@ import android.content.SharedPreferences;
 import android.support.annotation.Keep;
 import android.support.annotation.RequiresPermission;
 
-import com.example.nguyenduy.projectbase.utils.Constants;
-import com.example.nguyenduy.projectbase.utils.LogUtils;
 import com.example.nguyenduy.projectbase.base.sharedPreference.SharedPreferenceUtils;
 import com.example.nguyenduy.projectbase.base.sharedPreference.UserInformation;
+import com.example.nguyenduy.projectbase.utils.Constants;
+import com.example.nguyenduy.projectbase.utils.LogUtils;
 import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
@@ -25,8 +25,8 @@ public class AnalyticUtils implements SharedPreferences.OnSharedPreferenceChange
     public AnalyticUtils(Context context) {
         mAnalytics = FirebaseAnalytics.getInstance(context);
         enableAnalyticsCollection();
-        SharedPreferenceUtils.getInstance().registerOnSharedPreferenceChangeListener(this);
         updateUserInformation();
+        SharedPreferenceUtils.getInstance().registerOnSharedPreferenceChangeListener(this);
     }
 
     private void enableAnalyticsCollection() {

@@ -8,9 +8,4 @@ class ForgotPasswordPresenterImp extends BasePresenterImp<IForgotPasswordView> i
         super(view);
     }
 
-
-    @Override
-    public void forgotPassword() {
-
-    }
 }

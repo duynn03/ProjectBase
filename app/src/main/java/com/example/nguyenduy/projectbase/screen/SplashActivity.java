@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.nguyenduy.projectbase.base.appCenter.AppCenterUtils;
 import com.example.nguyenduy.projectbase.base.appCenter.CrashUtils;
+import com.example.nguyenduy.projectbase.base.firebase.FirebaseAuthen;
 import com.example.nguyenduy.projectbase.base.sharedPreference.SharedPreferenceUtils;
 import com.example.nguyenduy.projectbase.screen.main.MainActivity;
 import com.example.nguyenduy.projectbase.screen.start.StartActivity;
@@ -58,9 +59,8 @@ public class SplashActivity extends AppCompatActivity {
         finish();
     }
 
-    // TODO
-    private boolean isUserLogin() {
-        return SharedPreferenceUtils.getInstance().getUserInformation() != null;
+    public static boolean isUserLogin() {
+        return SharedPreferenceUtils.getInstance().getUserInformation() != null && new FirebaseAuthen().getUser() != null;
     }
 
     @SuppressLint("NewApi")

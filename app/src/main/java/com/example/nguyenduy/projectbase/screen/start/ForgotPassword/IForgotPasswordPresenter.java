@@ -4,5 +4,4 @@ import com.example.nguyenduy.projectbase.base.IBasePresenter;
 
 interface IForgotPasswordPresenter extends IBasePresenter {
 
-    void forgotPassword();
 }

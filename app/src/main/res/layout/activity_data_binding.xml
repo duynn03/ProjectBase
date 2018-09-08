@@ -34,19 +34,19 @@
 
         <variable
             name="user"
-            type="com.example.nguyenduy.projectbase.screen.main2.architectureComponents.dataBinding.activity.User" />
+            type="com.example.nguyenduy.projectbase.screen.main.architectureComponents.dataBinding.activity.User" />
 
         <variable
             name="activity"
-            type="com.example.nguyenduy.projectbase.screen.main2.architectureComponents.dataBinding.activity.DataBindingActivity" />
+            type="com.example.nguyenduy.projectbase.screen.main.architectureComponents.dataBinding.activity.DataBindingActivity" />
 
         <variable
             name="userObservableField"
-            type="com.example.nguyenduy.projectbase.screen.main2.architectureComponents.dataBinding.activity.UserObservableField" />
+            type="com.example.nguyenduy.projectbase.screen.main.architectureComponents.dataBinding.activity.UserObservableField" />
 
         <variable
             name="userObservableObject"
-            type="com.example.nguyenduy.projectbase.screen.main2.architectureComponents.dataBinding.activity.UserObservableObject" />
+            type="com.example.nguyenduy.projectbase.screen.main.architectureComponents.dataBinding.activity.UserObservableObject" />
 
         <variable
             name="colorDataBindingSetter"
@@ -58,11 +58,11 @@
 
         <variable
             name="twoWayBinding"
-            type="com.example.nguyenduy.projectbase.screen.main2.architectureComponents.dataBinding.activity.twowayBinding.TwoWayBinding" />
+            type="com.example.nguyenduy.projectbase.screen.main.architectureComponents.dataBinding.activity.twowayBinding.TwoWayBinding" />
 
         <variable
             name="customTwoWayBinding"
-            type="com.example.nguyenduy.projectbase.screen.main2.architectureComponents.dataBinding.activity.twowayBinding.CustomTwoWayBinding" />
+            type="com.example.nguyenduy.projectbase.screen.main.architectureComponents.dataBinding.activity.twowayBinding.CustomTwoWayBinding" />
     </data>
 
     <ScrollView
@@ -72,6 +72,7 @@
 
         <RelativeLayout
             android:id="@+id/root_activity"
+            style="@style/ViewRoot"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -200,7 +201,7 @@
                 android:layout_marginTop="20dp"
                 android:text="Binding Logic" />
 
-            <com.example.nguyenduy.projectbase.screen.main2.architectureComponents.dataBinding.activity.BindingLogicView
+            <com.example.nguyenduy.projectbase.screen.main.architectureComponents.dataBinding.activity.BindingLogicView
                 android:id="@+id/bdv_binding_adapter_logic"
                 android:layout_width="100dp"
                 android:layout_height="50dp"

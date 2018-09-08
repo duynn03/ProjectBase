@@ -3,11 +3,12 @@ package com.example.nguyenduy.projectbase.screen.start.SignUp;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
+import android.view.View;
 
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.BaseFragment;
 import com.example.nguyenduy.projectbase.base.IBasePresenter;
-import com.example.nguyenduy.projectbase.base.firebase.FirebaseAuth;
+import com.example.nguyenduy.projectbase.base.firebase.FirebaseAuthen;
 import com.example.nguyenduy.projectbase.base.sharedPreference.UserInformation;
 import com.example.nguyenduy.projectbase.screen.start.ForgotPassword.ForgotPasswordFragment;
 import com.example.nguyenduy.projectbase.utils.FormValidator;
@@ -17,7 +18,6 @@ import com.example.nguyenduy.projectbase.utils.method.ResourceUtils;
 import com.example.nguyenduy.projectbase.utils.method.ViewUtils;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.AuthResult;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -26,7 +26,7 @@ public class SignUpFragment extends BaseFragment<ISignUpPresenter> implements IS
 
     public static final String TAG = MethodUtils.getTagClass(SignUpFragment.class);
 
-    private FirebaseAuth firebaseAuth;
+    private FirebaseAuthen firebaseAuthen;
     private FormValidator formValidator;
 
     @BindView(R.id.til_name)
@@ -82,13 +82,18 @@ public class SignUpFragment extends BaseFragment<ISignUpPresenter> implements IS
 
     @Override
     public void initComponents() {
-        firebaseAuth = new FirebaseAuth();
+        firebaseAuthen = new FirebaseAuthen();
         formValidator = new FormValidator();
     }
 
     @Override
     public void setEvents() {
-
+        addActionDoneEditText(tietBirthday, new CallbackAddActionDoneListener() {
+            @Override
+            public void callback() {
+                onClickButtonSignUp();
+            }
+        });
     }
 
     @Override
@@ -107,7 +112,7 @@ public class SignUpFragment extends BaseFragment<ISignUpPresenter> implements IS
 
         if (formValidator.isValidateFormSignUp(name, email, password, confirmPassword, phoneNumber, birthDay,
                 tilName, tilEmail, tilPassword, tilConfirmPassword, tilPhoneNumber, tilBirthday)) {
-            firebaseAuth.signUpEmailAndPassword(
+            firebaseAuthen.signUpEmailAndPassword(
                     getRootActivity(),
                     new UserInformation()
                             .setName(name)
@@ -115,19 +120,38 @@ public class SignUpFragment extends BaseFragment<ISignUpPresenter> implements IS
                             .setPassword(password)
                             .setPhoneNumber(phoneNumber)
                             .setBirthDay(birthDay),
-                    new OnSuccessListener<AuthResult>() {
+                    new OnFailureListener() {
                         @Override
-                        public void onSuccess(AuthResult authResult) {
-                            formValidator.showSuccess(ResourceUtils.getString(R.string.signup_success) + " with email: " + firebaseAuth.getUser().getEmail());
+                        public void onFailure(@NonNull Exception e) {
+                            if (e.getMessage().contains("A network error (such as timeout, interrupted connection or unreachable host) has occurred."))
+                                showSnackbar(ResourceUtils.getString(R.string.msg_connection_internet_timeout), ResourceUtils.getString(R.string.msg_reconnection), new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        onClickButtonSignUp();
+                                    }
+                                });
+                            else if (e.getMessage().contains("The email address is already in use by another account.")) {
+                                formValidator.showError(tilEmail, ResourceUtils.getString(R.string.email_exist));
+                            }
+                            LogUtils.d(TAG + "onClickButtonSignUp() :failure, Exception: " + e.getMessage());
+                        }
+                    },
+                    new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            formValidator.showSuccess(ResourceUtils.getString(R.string.signup_success) + " with email: " + firebaseAuthen.getUser().getEmail());
                             onClickButtonLogin();
                         }
                     },
                     new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
+                            if (e.getMessage().contains("A network error (such as timeout, interrupted connection or unreachable host) has occurred."))
+                                showSnackbar(ResourceUtils.getString(R.string.msg_connection_internet_timeout), null, null);
                             LogUtils.d(TAG + "onClickButtonSignUp() :failure, Exception: " + e.getMessage());
                         }
-                    });
+                    }
+            );
         }
     }
 

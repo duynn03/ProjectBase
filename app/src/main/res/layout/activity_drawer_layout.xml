@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/root_activity"
+    style="@style/ViewRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,22 +10,5 @@
         layout="@layout/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
-    <Button
-        android:id="@+id/btn_logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:text="Logout" />
-
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50dp"
-        android:text="Login"
-        android:visibility="invisible" />
 
 </android.support.design.widget.CoordinatorLayout>

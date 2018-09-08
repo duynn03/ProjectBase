@@ -51,6 +51,13 @@ public class FormValidator {
         return true;
     }
 
+    public boolean isValidateFormForgotPassWord(String email, TextInputLayout tilEmail) {
+        if (!isValidEmail(email, tilEmail)) {
+            return false;
+        }
+        return true;
+    }
+
     private boolean isValidFullName(String fullName, TextInputLayout tilName) {
         if (TextUtils.isEmpty(fullName)) {
             showError(tilName, ResourceUtils.getString(R.string.name_empty));
@@ -140,12 +147,7 @@ public class FormValidator {
         return true;
     }
 
-    /*public boolean isValidateFormForgotPassWord(String email) {
-        if (!isValidEmail(email)) {
-            return false;
-        }
-        return true;
-    }
+    /*
 
     public boolean isValidateFormEditProfileChangePassword(String oldPassword, String newPassword, String confirmNewPassword) {
         if (!isValidOldPassword(oldPassword)) {
@@ -261,7 +263,7 @@ public class FormValidator {
          return true;
      }
  */
-    private void showError(TextInputLayout textInputLayout, String message) {
+    public void showError(TextInputLayout textInputLayout, String message) {
         if (!TextUtils.isEmpty(message)) {
             textInputLayout.setError(message);
             textInputLayout.setErrorEnabled(true);

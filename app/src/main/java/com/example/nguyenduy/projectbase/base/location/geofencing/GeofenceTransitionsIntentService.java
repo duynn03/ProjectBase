@@ -14,8 +14,8 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
 
 import com.example.nguyenduy.projectbase.R;
-import com.example.nguyenduy.projectbase.screen.main2.MainActivity;
-import com.example.nguyenduy.projectbase.screen.main2.location.geofence.GeofenceFragment;
+import com.example.nguyenduy.projectbase.screen.main.MainActivity;
+import com.example.nguyenduy.projectbase.screen.main.location.geofence.GeofenceFragment;
 import com.example.nguyenduy.projectbase.utils.LogUtils;
 import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
 import com.google.android.gms.location.Geofence;

@@ -1,19 +1,22 @@
 package com.example.nguyenduy.projectbase.base;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.Toast;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.nguyenduy.projectbase.R;
+import com.example.nguyenduy.projectbase.base.navigation.snackbar.SnackBarBuilder;
 import com.example.nguyenduy.projectbase.utils.method.ViewUtils;
 
 import butterknife.ButterKnife;
@@ -69,20 +72,23 @@ public abstract class BaseFragment<P extends IBasePresenter> extends Fragment im
         if (null == mPresenter) {
             mPresenter = initPresenter();
         }
-        initEditText();
+        initKeyboard();
     }
 
-    private void initEditText() {
+    private void initKeyboard() {
         hideSoftKeyboard();
     }
 
-    public void hideSoftKeyboard() {
-        final InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(getView().getWindowToken(), 0);
+    private void hideSoftKeyboard() {
+        getRootActivity().hideSoftKeyboard(getView().getRootView());
     }
 
     public void showToast(String msg) {
-        Toast.makeText(getContext(), msg, Toast.LENGTH_SHORT).show();
+        getRootActivity().showToast(msg);
+    }
+
+    public void showSnackbar(String message, String action, View.OnClickListener listener) {
+        new SnackBarBuilder(mRootViewLayout).setText(message).setAction(action, listener).setDuration(Snackbar.LENGTH_SHORT).build().show();
     }
 
     public P getPresenter() {
@@ -97,6 +103,22 @@ public abstract class BaseFragment<P extends IBasePresenter> extends Fragment im
         ViewUtils.setVisibility(mRootViewLayout, View.VISIBLE);
     }
 
+    public interface CallbackAddActionDoneListener {
+        void callback();
+    }
+
+    public void addActionDoneEditText(EditText view, CallbackAddActionDoneListener listener) {
+        view.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    listener.callback();
+                }
+                return false;
+            }
+        });
+    }
+
     public <A extends BaseActivity> A getRootActivity() {
         FragmentActivity activity = getActivity();
         return activity == null ? null : (A) activity;
@@ -109,6 +131,7 @@ public abstract class BaseFragment<P extends IBasePresenter> extends Fragment im
             transaction.addToBackStack(fragment.getClass().getSimpleName());
         }
         transaction.commit();
+        initKeyboard();
     }
 
     public void replaceFragment(Fragment fragment, boolean isAddToBackStack) {
@@ -118,6 +141,7 @@ public abstract class BaseFragment<P extends IBasePresenter> extends Fragment im
             transaction.addToBackStack(fragment.getClass().getSimpleName());
         }
         transaction.commit();
+        initKeyboard();
     }
 
     public void showProgress() {

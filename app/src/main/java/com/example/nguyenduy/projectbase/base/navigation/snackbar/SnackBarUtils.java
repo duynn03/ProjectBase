@@ -7,7 +7,6 @@ import android.view.View;
 import com.example.nguyenduy.projectbase.R;
 
 public class SnackBarUtils {
-    // can show, dismiss, isShown
 
     public static void showSnackBarInTopActivity(Activity activity) {
         new SnackBarBuilder(activity.getWindow().getDecorView().findViewById(android.R.id.content)).setText("Record has deleted (Show in Activity)").build().show();

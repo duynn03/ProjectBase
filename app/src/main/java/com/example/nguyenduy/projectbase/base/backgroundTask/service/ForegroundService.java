@@ -10,7 +10,7 @@ import android.support.v4.app.NotificationCompat;
 
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.notification.channel.NotificationChannelUtils;
-import com.example.nguyenduy.projectbase.screen.main2.MainActivity;
+import com.example.nguyenduy.projectbase.screen.main.MainActivity;
 import com.example.nguyenduy.projectbase.utils.LogUtils;
 import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
 

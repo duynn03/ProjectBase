@@ -1,12 +1,15 @@
 package com.example.nguyenduy.projectbase.base.broadcast.system.network;
 
 import android.app.AlertDialog;
+import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.provider.Settings;
 
 import com.example.nguyenduy.projectbase.R;
 import com.example.nguyenduy.projectbase.base.BaseActivity;
+import com.example.nguyenduy.projectbase.utils.LogUtils;
+import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
 import com.example.nguyenduy.projectbase.utils.method.ResourceUtils;
 import com.example.nguyenduy.projectbase.utils.method.SystemUtils;
 
@@ -15,6 +18,8 @@ import static com.example.nguyenduy.projectbase.utils.Constants.IntentCommon.REQ
 import static com.example.nguyenduy.projectbase.utils.Constants.IntentCommon.REQUEST_CHECK_SETTINGS_WIRELESS;
 
 public class ConnectionInternetUtils {
+
+    private static final String TAG = MethodUtils.getTagClass(ConnectionInternetUtils.class);
 
     public static CallbackConnectionInternetListener mListener;
 
@@ -62,7 +67,7 @@ public class ConnectionInternetUtils {
                 .show();
     }
 
-    private static void openSettingNetwork(BaseActivity activity) {
+    private static void openSettingWireless(BaseActivity activity) {
         Intent intent = new Intent(Settings.ACTION_WIRELESS_SETTINGS);
         activity.startActivityForResult(intent, REQUEST_CHECK_SETTINGS_WIRELESS);
     }
@@ -73,8 +78,15 @@ public class ConnectionInternetUtils {
     }
 
     private static void openSettingMobile(BaseActivity activity) {
-        Intent intent = new Intent(Settings.ACTION_NETWORK_OPERATOR_SETTINGS);
-        activity.startActivityForResult(intent, REQUEST_CHECK_SETTINGS_MOBILE);
+        try {
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.setClassName("com.android.settings", "com.android.settings.Settings$DataUsageSummaryActivity");
+            activity.startActivityForResult(intent, REQUEST_CHECK_SETTINGS_MOBILE);
+        } catch (ActivityNotFoundException e) {
+            LogUtils.e(TAG + "Data settings usage Activity is not present");
+            Intent intent = new Intent(Settings.ACTION_DATA_ROAMING_SETTINGS);
+            activity.startActivityForResult(intent, REQUEST_CHECK_SETTINGS_MOBILE);
+        }
     }
 
     public static void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -83,10 +95,12 @@ public class ConnectionInternetUtils {
                 mListener.onResult(SystemUtils.isNetworkOnline());
                 break;
             case REQUEST_CHECK_SETTINGS_WIFI:
-                mListener.onResult(SystemUtils.isWifiConnected());
+                mListener.onResult(SystemUtils.isNetworkOnline());
+                //mListener.onResult(SystemUtils.isWifiConnected());
                 break;
             case REQUEST_CHECK_SETTINGS_MOBILE:
-                mListener.onResult(SystemUtils.isMobileConnected());
+                mListener.onResult(SystemUtils.isNetworkOnline());
+                //mListener.onResult(SystemUtils.isMobileConnected());
                 break;
         }
     }
