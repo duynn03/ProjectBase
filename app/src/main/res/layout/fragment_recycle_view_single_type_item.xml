@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.example.nguyenduy.projectbase.base.architectureComponents.database.entity.User" />
+
+        <variable
+            name="listener"
+            type="com.example.nguyenduy.projectbase.screen.main.listView.recycleView.RecycleViewFragment.ItemUserAdapterListener" />
+
+    </data>
+
+    <RelativeLayout android:layout_width="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_height="wrap_content">
+
+        <include
+            layout="@layout/fragment_recycle_view_single_type_sub_item"
+            app:content="@{item.firstName}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:onClickContent="@{() -> listener.onItemClick(item.firstName)}"
+            app:onClickTitle="@{() -> listener.onItemClick(`FirstName`)}"
+            app:title="@{`FirstName: `}" />
+
+        <include
+            layout="@layout/fragment_recycle_view_single_type_sub_item"
+            app:content="@{item.lastName}"
+            app:title="@{`LastName: `}"
+            app:onClickContent="@{() -> listener.onItemClick(item.lastName)}"
+            app:onClickTitle="@{() -> listener.onItemClick(`LastName`)}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+</layout>

@@ -22,16 +22,6 @@ public class DataBindingFragment extends BaseFragment<IDataBindingPresenter> imp
 
     private FragmentDataBindingBinding binding;
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // binding activity
-        // binding = DataBindingUtil.setContentView(getRootActivity(), R.layout.fragment_data_binding);
-
-        // get view
-        // ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
-    }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

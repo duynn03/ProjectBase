@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="content"
+            type="String" />
+
+        <variable
+            name="onClickTitle"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="onClickContent"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_item_recycle_view_single_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{onClickTitle}"
+            android:text="@{title, default=Null}"
+            tools:text="title: " />
+
+        <TextView
+            android:id="@+id/item_recycle_view_sub_item_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{onClickContent}"
+            android:text="@{content, default=Null}"
+            android:layout_toRightOf="@+id/tv_item_recycle_view_single_item"
+            tools:text="content" />
+
+    </RelativeLayout>
+</layout>
