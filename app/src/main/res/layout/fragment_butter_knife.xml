@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_fragment"
+    style="@style/ViewRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        style="@style/TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Fragment ButterKnife" />
+
+    <TextView
+        android:id="@+id/tv_bindview_single"
+        style="@style/TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        tools:text="BindView Single" />
+
+    <TextView
+        android:id="@+id/tv_bindview_multi_view_1"
+        style="@style/TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_bindview_single"
+        android:layout_centerHorizontal="true"
+        tools:text="BindView Multi View 1" />
+
+    <TextView
+        android:id="@+id/tv_bindview_multi_view_2"
+        style="@style/TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_bindview_multi_view_1"
+        android:layout_centerHorizontal="true"
+        tools:text="BindView Multi View 2" />
+
+    <TextView
+        android:id="@+id/tv_bindview_multi_view_3"
+        style="@style/TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_bindview_multi_view_2"
+        android:layout_centerHorizontal="true"
+        tools:text="BindView Multi View 3" />
+
+    <Button
+        android:id="@+id/btn_bindclick"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_bindview_multi_view_3"
+        android:layout_centerHorizontal="true"
+        android:text="Bind Click" />
+</RelativeLayout>

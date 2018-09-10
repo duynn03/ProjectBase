@@ -147,6 +147,10 @@
                     android:icon="@drawable/ic_menu_share"
                     android:title="@string/drawer_layout_menu_data_binding" />
                 <item
+                    android:id="@+id/menu_butter_knife"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_butter_knife" />
+                <item
                     android:id="@+id/menu_lifecycle"
                     android:icon="@drawable/ic_menu_share"
                     android:title="@string/drawer_layout_menu_lifecycle" />

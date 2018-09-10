@@ -40,6 +40,7 @@ import com.example.nguyenduy.projectbase.screen.main.toolbar.CollapsingToolbarAc
 import com.example.nguyenduy.projectbase.screen.main.toolbar.CollapsingToolbarCustomBehaviorActivity;
 import com.example.nguyenduy.projectbase.screen.start.StartActivity;
 import com.example.nguyenduy.projectbase.utils.method.ResourceUtils;
+import com.example.nguyenduy.projectbase.screen.main.architectureComponents.butterKnife.ButterKnifeFragment;
 
 public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPresenter> implements IMainView, OptionMenuUtils.IOptionMenuListener {
 
@@ -176,6 +177,9 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
                 break;
             case R.id.menu_data_binding:
                 replaceFragment(new DataBindingFragment(), false);
+                break;
+            case R.id.menu_butter_knife:
+                replaceFragment(new ButterKnifeFragment(), false);
                 break;
             case R.id.menu_lifecycle:
                 replaceFragment(new LifecycleFragment(), false);
