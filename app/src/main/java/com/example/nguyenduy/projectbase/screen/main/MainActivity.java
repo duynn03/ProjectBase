@@ -25,6 +25,7 @@ import com.example.nguyenduy.projectbase.screen.main.broadcast.BroadcastFragment
 import com.example.nguyenduy.projectbase.screen.main.database.RealmFragment;
 import com.example.nguyenduy.projectbase.screen.main.firebase.FirebaseFragment;
 import com.example.nguyenduy.projectbase.screen.main.home.HomeFragment;
+import com.example.nguyenduy.projectbase.screen.main.listView.recycleView.RecycleViewFragment;
 import com.example.nguyenduy.projectbase.screen.main.listener.handshake.HandshakeFragment;
 import com.example.nguyenduy.projectbase.screen.main.listener.network.FragmentNetwork;
 import com.example.nguyenduy.projectbase.screen.main.location.detectActivityUser.DetectActivityUserFragment;
@@ -198,6 +199,9 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
                 break;
             case R.id.menu_service:
                 replaceFragment(new ServiceFragment(), false);
+                break;
+            case R.id.menu_recycle:
+                replaceFragment(new RecycleViewFragment(), false);
                 break;
             case R.id.menu_share:
                 showToast("menu_share");

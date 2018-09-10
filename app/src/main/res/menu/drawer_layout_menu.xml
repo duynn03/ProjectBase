@@ -185,6 +185,17 @@
         </menu>
     </item>
 
+    <item android:title="@string/drawer_layout_menu_label_list_view">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_recycle"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_recycle_view" />
+            </group>
+        </menu>
+    </item>
+
     <item android:title="@string/drawer_layout_menu_label_other">
         <menu>
             <item

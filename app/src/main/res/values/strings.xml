@@ -104,6 +104,9 @@
     <string name="drawer_layout_menu_label_background_task">Background task</string>
     <string name="drawer_layout_menu_thread">Thread</string>
     <string name="drawer_layout_menu_service">Service</string>
+    <!--label list view-->
+    <string name="drawer_layout_menu_label_list_view">ListView</string>
+    <string name="drawer_layout_menu_recycle_view">RecycleView</string>
     <!--label other-->
     <string name="drawer_layout_menu_label_other">Other</string>
     <string name="drawer_layout_menu_share">Share</string>
@@ -140,6 +143,7 @@
         <item>ViewModel</item>
         <item>Thread</item>
         <item>Service</item>
+        <item>RecycleView</item>
         <item />
         <item />
     </string-array>
