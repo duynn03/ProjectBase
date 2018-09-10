@@ -95,6 +95,7 @@
     <string name="drawer_layout_menu_label_architecture_components">Architecture Components</string>
     <string name="drawer_layout_menu_dragger">Dragger</string>
     <string name="drawer_layout_menu_data_binding">Data Binding</string>
+    <string name="drawer_layout_menu_butter_knife">ButterKnife</string>
     <string name="drawer_layout_menu_lifecycle">Lifecycle</string>
     <string name="drawer_layout_menu_room">Room</string>
     <string name="drawer_layout_menu_live_data">LiveData</string>
@@ -132,6 +133,7 @@
         <item>Detect Activity of User</item>
         <item>Dragger</item>
         <item>Data Binding</item>
+        <item>ButterKnife</item>
         <item>Lifecycle</item>
         <item>Room</item>
         <item>LiveData</item>

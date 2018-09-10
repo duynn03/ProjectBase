@@ -12,6 +12,7 @@ import com.example.nguyenduy.projectbase.base.firebase.FirebaseAuthen;
 import com.example.nguyenduy.projectbase.base.sharedPreference.SharedPreferenceUtils;
 import com.example.nguyenduy.projectbase.screen.main.appbar.appbarBottom.AppbarBottomActivity;
 import com.example.nguyenduy.projectbase.screen.main.appcenter.AppCenterFragment;
+import com.example.nguyenduy.projectbase.screen.main.architectureComponents.butterKnife.ButterKnifeFragment;
 import com.example.nguyenduy.projectbase.screen.main.architectureComponents.dataBinding.DataBindingFragment;
 import com.example.nguyenduy.projectbase.screen.main.architectureComponents.dragger.DraggerFragment;
 import com.example.nguyenduy.projectbase.screen.main.architectureComponents.lifecycle.LifecycleFragment;
@@ -176,6 +177,9 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
                 break;
             case R.id.menu_data_binding:
                 replaceFragment(new DataBindingFragment(), false);
+                break;
+            case R.id.menu_butter_knife:
+                replaceFragment(new ButterKnifeFragment(), false);
                 break;
             case R.id.menu_lifecycle:
                 replaceFragment(new LifecycleFragment(), false);
