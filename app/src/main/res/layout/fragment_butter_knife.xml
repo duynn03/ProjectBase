@@ -50,4 +50,13 @@
         android:layout_centerHorizontal="true"
         tools:text="BindView Multi View 3" />
 
+    <Button
+        android:id="@+id/btn_bindclick"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_bindview_multi_view_3"
+        android:layout_centerHorizontal="true"
+        android:text="Bind Click" />
+
 </RelativeLayout>

@@ -15,6 +15,8 @@ import javax.annotation.Nullable;
 
 import butterknife.BindView;
 import butterknife.BindViews;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class ButterKnifeFragment extends BaseFragment<IButterKnifePresenter> implements IButterKnifeView {
 
@@ -23,12 +25,24 @@ public class ButterKnifeFragment extends BaseFragment<IButterKnifePresenter> imp
     @BindView(R.id.tv_bindview_single)
     TextView tvBindViewSingle;
 
-    @Nullable
+    @Nullable // Optional
     @BindView(R.id.tv_bindview_single)
     TextView tvNull;
 
     @BindViews({R.id.tv_bindview_multi_view_1, R.id.tv_bindview_multi_view_2, R.id.tv_bindview_multi_view_3})
     List<TextView> tvBindMultiViews;
+
+    // bind Resource
+    //@BindBool()
+    //@BindInt()
+    //@BindFloat()
+    //@BindString()
+    //@BindArray()
+
+    //@BindColor()
+    //@BindBitmap()
+    //@BindDimen()
+    //@BindDrawable()
 
     @Override
     public int getIdLayout() {
@@ -47,17 +61,21 @@ public class ButterKnifeFragment extends BaseFragment<IButterKnifePresenter> imp
 
     @Override
     public void initComponents() {
+
         ViewUtils.setText(tvBindViewSingle, "Bind View Single");
         if (null == tvNull) {
-            LogUtils.i(TAG + "BindView TextView Null");
+            LogUtils.i(TAG + "Bind View TextView Null");
         }
 
-        ButterKnife.Action<TextView> FOR_EMPTRY_PASSWORD = new ButterKnife.Action<TextView>() {
+        /*MultiView*/
+        ButterKnife.Action<TextView> applyTextForMultiView = new ButterKnife.Action<TextView>() {
             @Override
             public void apply(TextView textView, int index) {
-                textView.setText("Password should not be blank");
+                textView.setText("Bind View Multi View " + (index + 1));
             }
         };
+        ButterKnife.apply(tvBindMultiViews, applyTextForMultiView);
+
     }
 
     @Override
@@ -69,4 +87,17 @@ public class ButterKnifeFragment extends BaseFragment<IButterKnifePresenter> imp
     public void prepareComplete() {
 
     }
+
+    @OnClick(R.id.btn_bindclick)
+    // private void onClickButtonBindClick(View view)
+    // private void onClickButtonBindClick(Button buton)
+    public void onClickButtonBindClick() {
+        showToast("onClickButtonBindClick");
+    }
+
+ /*   //@OnItemLongClick
+    @OnItemClick(R.id.tweet_list)
+    private void onItemClickList(int position) {
+        // React to tweet click.
+    }*/
 }
