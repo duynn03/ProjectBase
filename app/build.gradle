@@ -1,7 +1,9 @@
 apply plugin: 'com.android.application'
 apply plugin: 'realm-android'
+/*firebase*/
 apply plugin: 'io.fabric'
 apply plugin: 'com.google.firebase.firebase-perf'
+/*butterKnife*/
 
 android {
     /*config signature*/
@@ -181,6 +183,7 @@ dependencies {
     implementation "android.arch.work:work-runtime:$workManagerVersion"
     // optional - Firebase JobDispatcher support
     implementation "android.arch.work:work-firebase:$workManagerVersion"
+
     /*butterKnife*/
     def butterKnifeVersion = "8.8.1"
     implementation "com.jakewharton:butterknife:$butterKnifeVersion"

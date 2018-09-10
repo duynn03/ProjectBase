@@ -13,7 +13,6 @@ import com.example.nguyenduy.projectbase.utils.method.ViewUtils;
 
 import java.util.List;
 
-
 import butterknife.BindView;
 import butterknife.BindViews;
 import butterknife.ButterKnife;
@@ -66,7 +65,6 @@ public class ButterKnifeFragment extends BaseFragment<IButterKnifePresenter> imp
         ViewUtils.setText(tvBindViewSingle, "Bind View Single");
 
         if (null == tvNull) {
-            LogUtils.i(TAG + "BindView TextView Null");
             LogUtils.i(TAG + "Bind View TextView Null");
         }
 
@@ -87,6 +85,7 @@ public class ButterKnifeFragment extends BaseFragment<IButterKnifePresenter> imp
 
     @Override
     public void prepareComplete() {
+
     }
 
     @OnClick(R.id.btn_bindclick)
@@ -96,7 +95,7 @@ public class ButterKnifeFragment extends BaseFragment<IButterKnifePresenter> imp
         showToast("onClickButtonBindClick");
     }
 
-     //@OnItemLongClick
+    //@OnItemLongClick
 //    @OnItemClick(R.id.tweet_list)
 //    private void onItemClickList(int position) {
 //        // React to tweet click.
