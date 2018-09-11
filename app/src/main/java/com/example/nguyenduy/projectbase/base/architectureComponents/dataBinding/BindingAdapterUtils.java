@@ -23,7 +23,7 @@ public class BindingAdapterUtils {
         else ViewUtils.setImage(view, url, placeHolder);
     }
 
-    @BindingAdapter(value = "layout_width")
+    @BindingAdapter(value = "android:layout_width")
     public static void setWidth(View view, int widthDesign) {
         LogUtils.d(TAG + "setWidth: " + widthDesign);
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
@@ -33,7 +33,7 @@ public class BindingAdapterUtils {
                 layoutParams.height);
     }
 
-    @BindingAdapter(value = "layout_height")
+    @BindingAdapter(value = "android:layout_height")
     public static void setHeight(View view, int heightDesign) {
         LogUtils.d(TAG + "setHeight: " + heightDesign);
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
@@ -43,7 +43,7 @@ public class BindingAdapterUtils {
                 WindowUtils.convertHeight(heightDesign));
     }
 
-    @BindingAdapter(value = "paddingLeft")
+    @BindingAdapter(value = "android:paddingLeft")
     public static void setPaddingLeft(View view, int paddingDesign) {
         LogUtils.d(TAG + "setPaddingLeft: " + paddingDesign);
         ViewUtils.setPaddingNormal(
@@ -54,7 +54,7 @@ public class BindingAdapterUtils {
                 view.getPaddingBottom());
     }
 
-    @BindingAdapter(value = "paddingRight")
+    @BindingAdapter(value = "android:paddingRight")
     public static void setPaddingRight(View view, int paddingDesign) {
         LogUtils.d(TAG + "setPaddingRight: " + paddingDesign);
         ViewUtils.setPaddingNormal(
@@ -65,7 +65,7 @@ public class BindingAdapterUtils {
                 view.getPaddingBottom());
     }
 
-    @BindingAdapter(value = "paddingBottom")
+    @BindingAdapter(value = "android:paddingBottom")
     public static void setPaddingBottom(View view, int paddingDesign) {
         LogUtils.d(TAG + "setPaddingBottom: " + paddingDesign);
         ViewUtils.setPaddingNormal(
@@ -76,7 +76,7 @@ public class BindingAdapterUtils {
                 WindowUtils.convertHeight(paddingDesign));
     }
 
-    @BindingAdapter(value = "paddingTop")
+    @BindingAdapter(value = "android:paddingTop")
     public static void setPaddingTop(View view, int paddingDesign) {
         LogUtils.d(TAG + "setPaddingTop: " + paddingDesign);
         ViewUtils.setPaddingNormal(
@@ -87,7 +87,7 @@ public class BindingAdapterUtils {
                 view.getPaddingBottom());
     }
 
-    @BindingAdapter(value = "padding")
+    @BindingAdapter(value = "android:padding")
     public static void setPadding(View view, int paddingDesign) {
         LogUtils.d(TAG + "setPadding: " + paddingDesign);
         ViewUtils.setPaddingNormal(
@@ -98,7 +98,7 @@ public class BindingAdapterUtils {
                 WindowUtils.convertHeight(paddingDesign));
     }
 
-    @BindingAdapter(value = "paddingTopExcludeStatusBar")
+    @BindingAdapter(value = "android:paddingTopExcludeStatusBar")
     public static void setPaddingTopExcludeStatusBar(View view, int paddingDesign) {
         LogUtils.d(TAG + "setPaddingTopExcludeStatusBar: " + paddingDesign);
         ViewUtils.setPaddingNormal(
@@ -109,7 +109,7 @@ public class BindingAdapterUtils {
                 view.getPaddingBottom());
     }
 
-    @BindingAdapter(value = "paddingTopIncludeStatusBar")
+    @BindingAdapter(value = "android:paddingTopIncludeStatusBar")
     public static void setPaddingTopIncludeStatusBar(View view, int paddingDesign) {
         LogUtils.d(TAG + "setPaddingTopIncludeStatusBar: " + paddingDesign);
         ViewUtils.setPaddingNormal(
@@ -120,7 +120,7 @@ public class BindingAdapterUtils {
                 view.getPaddingBottom());
     }
 
-    @BindingAdapter(value = "layout_marginLeft")
+    @BindingAdapter(value = "android:layout_marginLeft")
     public static void setLayoutMarginLeft(View view, int marginDesign) {
         LogUtils.d(TAG + "setLayoutMarginLeft: " + marginDesign);
         ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
@@ -132,7 +132,7 @@ public class BindingAdapterUtils {
                 layoutParams.bottomMargin);
     }
 
-    @BindingAdapter(value = "layout_marginRight")
+    @BindingAdapter(value = "android:layout_marginRight")
     public static void setLayoutMarginRight(View view, int marginDesign) {
         LogUtils.d(TAG + "setLayoutMarginRight: " + marginDesign);
         ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
@@ -144,7 +144,7 @@ public class BindingAdapterUtils {
                 layoutParams.bottomMargin);
     }
 
-    @BindingAdapter(value = "layout_marginBottom")
+    @BindingAdapter(value = "android:layout_marginBottom")
     public static void setLayoutMarginBottom(View view, int marginDesign) {
         LogUtils.d(TAG + "setLayoutMarginBottom: " + marginDesign);
         ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
@@ -156,7 +156,7 @@ public class BindingAdapterUtils {
                 WindowUtils.convertHeight(marginDesign));
     }
 
-    @BindingAdapter(value = "layout_marginTop")
+    @BindingAdapter(value = "android:layout_marginTop")
     public static void setLayoutMarginTop(View view, int marginDesign) {
         LogUtils.d(TAG + "setLayoutMarginTop: " + marginDesign);
         ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
@@ -168,7 +168,7 @@ public class BindingAdapterUtils {
                 layoutParams.bottomMargin);
     }
 
-    @BindingAdapter(value = "layout_margin")
+    @BindingAdapter(value = "android:layout_margin")
     public static void setLayoutMargin(View view, int marginDesign) {
         LogUtils.d(TAG + "setLayoutMargin: " + marginDesign);
         ViewUtils.setMarginNormal(
@@ -179,7 +179,7 @@ public class BindingAdapterUtils {
                 WindowUtils.convertHeight(marginDesign));
     }
 
-    @BindingAdapter(value = "layout_marginTopExcludeStatusBar")
+    @BindingAdapter(value = "android:layout_marginTopExcludeStatusBar")
     public static void setLayoutMarginTopExcludeStatusBar(View view, int marginDesign) {
         LogUtils.d(TAG + "setLayoutMarginTopExcludeStatusBar: " + marginDesign);
         ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
@@ -191,7 +191,7 @@ public class BindingAdapterUtils {
                 layoutParams.bottomMargin);
     }
 
-    @BindingAdapter(value = "layout_marginTopIncludeStatusBar")
+    @BindingAdapter(value = "android:layout_marginTopIncludeStatusBar")
     public static void setLayoutMarginTopIncludeStatusBar(View view, int marginDesign) {
         LogUtils.d(TAG + "setLayoutMarginTopIncludeStatusBar: " + marginDesign);
         ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();

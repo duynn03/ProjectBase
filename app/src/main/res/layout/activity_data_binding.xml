@@ -213,15 +213,13 @@
             <ImageView
                 android:id="@+id/im_binding_adapter"
                 style="@style/Image"
+                android:layout_width="@{150, default=wrap_content}"
+                android:layout_height="@{150, default=wrap_content}"
                 android:layout_below="@+id/bdv_binding_adapter_logic"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
                 app:imageUrl="@{imageUrl}"
-                app:layout_height="@{70}"
-                app:layout_width="@{70}"
-                app:placeHolder="@{@drawable/ic_splash}"
-                tools:layout_height="70dp"
-                tools:layout_width="70dp" />
+                app:placeHolder="@{@drawable/ic_splash}" />
 
             <TextView
                 android:id="@+id/tv_padding"
@@ -229,10 +227,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/im_binding_adapter"
+                android:layout_marginLeft="@{30, default=`30dp`}"
                 android:background="@android:color/holo_blue_bright"
-                android:text="Padding Left Adapter"
-                app:layout_marginLeft="@{30}"
-                tools:layout_marginLeft="30dp" />
+                android:text="Padding Left Adapter" />
 
             <!--two way binding-->
             <CheckBox
