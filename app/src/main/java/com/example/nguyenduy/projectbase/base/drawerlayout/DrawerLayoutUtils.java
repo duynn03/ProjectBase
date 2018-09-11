@@ -69,17 +69,17 @@ public class DrawerLayoutUtils implements NavigationView.OnNavigationItemSelecte
     }
 
     private void initViews() {
-        // add header
+        // addItem header
         if (hasHeaderDrawerLayout()) {
             mNavigation.addHeaderView(ViewUtils.createView(mActivity, mListener.getIdHeaderDrawerLayout()));
         }
-        // add menu
+        // addItem menu
         mNavigation.inflateMenu(mListener.getIdMenuDrawerLayout());
         new DrawerLayoutView().setViewMenu();
     }
 
     private void initComponents() {
-        // add Toolbar vào app
+        // addItem Toolbar vào app
         mActivity.setSupportActionBar(mToolbar);
         // init toggle
         ActionBarDrawerToggle mToggle = new ActionBarDrawerToggle(mActivity, mDrawerLayout, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);

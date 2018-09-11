@@ -17,7 +17,7 @@ public class UserRepository {
 //        this.executor = executor;
 //    }
 //
-//    // add error network ở đây: https://developer.android.com/jetpack/docs/guide#addendum
+//    // addItem error network ở đây: https://developer.android.com/jetpack/docs/guide#addendum
 //    public LiveData<User> getUserByID(String userId) {
 //        LiveData<User> cached = userCache.get(userId);
 //        if (cached != null) {

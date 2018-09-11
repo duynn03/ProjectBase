@@ -165,8 +165,8 @@ public class LiveDataActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.btn_live_data_merge_multiple_live_data:
                 long id = AppDatabase.getInstance().userDao().insert(new User("Nguyen", "Duy Insert Merge Multiple Live Data " + SharedPreferenceUtils.getInstance().getNumberIncrease(), new Address("Tố Hữu", "Hà đông", "Hà Nội", 20)));
-                Toast.makeText(this, "Live Data - add user: id: " + (id >= 1 ? id : "null"), Toast.LENGTH_SHORT).show();
-                LogUtils.i(TAG + "Live Data - add user: id: " + (id >= 1 ? id : "null"));
+                Toast.makeText(this, "Live Data - addItem user: id: " + (id >= 1 ? id : "null"), Toast.LENGTH_SHORT).show();
+                LogUtils.i(TAG + "Live Data - addItem user: id: " + (id >= 1 ? id : "null"));
                 break;
         }
     }

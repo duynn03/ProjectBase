@@ -44,6 +44,9 @@ public class User {
     @Ignore
     private String fullName;
 
+    @Ignore
+    private String avatarUrl;
+
     @Embedded(prefix = "home_")
     private Address address;
 
@@ -85,6 +88,15 @@ public class User {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public User setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
+        return this;
     }
 
     @Override

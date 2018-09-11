@@ -6,6 +6,4 @@ public interface IRecycleViewAdapter {
 
     @LayoutRes
     int getIdLayout(int viewType);
-
-    BaseRecycleViewAdapter.BaseListener getListener();
 }

@@ -124,7 +124,7 @@ public class CrashUtils implements SharedPreferences.OnSharedPreferenceChangeLis
     /**
      * Có tối đa là 64 key/value. Nếu quá thì không lưu nữa
      * Mỗi cặp key-value có max size là 1KB
-     * Có thể dùng add key để track last UI action.
+     * Có thể dùng addItem key để track last UI action.
      *
      * @param key
      * @param value

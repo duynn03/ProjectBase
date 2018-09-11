@@ -48,10 +48,10 @@ public class DetectActivityUserFragment extends BaseFragment<IDetectActivityUser
         transitions.add(detectActivityUserUtils.createTransition(DetectedActivity.ON_FOOT, ActivityTransition.ACTIVITY_TRANSITION_EXIT));
         transitions.add(detectActivityUserUtils.createTransition(DetectedActivity.STILL, ActivityTransition.ACTIVITY_TRANSITION_ENTER));
         transitions.add(detectActivityUserUtils.createTransition(DetectedActivity.STILL, ActivityTransition.ACTIVITY_TRANSITION_EXIT));
-         /*transitions.add(detectActivityUserUtils.createTransition(DetectedActivity.UNKNOWN, ActivityTransition.ACTIVITY_TRANSITION_ENTER));
-        transitions.add(detectActivityUserUtils.createTransition(DetectedActivity.UNKNOWN, ActivityTransition.ACTIVITY_TRANSITION_EXIT));
-        transitions.add(detectActivityUserUtils.createTransition(DetectedActivity.TILTING, ActivityTransition.ACTIVITY_TRANSITION_ENTER));
-        transitions.add(detectActivityUserUtils.createTransition(DetectedActivity.TILTING, ActivityTransition.ACTIVITY_TRANSITION_EXIT));*/
+         /*transitions.addItem(detectActivityUserUtils.createTransition(DetectedActivity.UNKNOWN, ActivityTransition.ACTIVITY_TRANSITION_ENTER));
+        transitions.addItem(detectActivityUserUtils.createTransition(DetectedActivity.UNKNOWN, ActivityTransition.ACTIVITY_TRANSITION_EXIT));
+        transitions.addItem(detectActivityUserUtils.createTransition(DetectedActivity.TILTING, ActivityTransition.ACTIVITY_TRANSITION_ENTER));
+        transitions.addItem(detectActivityUserUtils.createTransition(DetectedActivity.TILTING, ActivityTransition.ACTIVITY_TRANSITION_EXIT));*/
         transitions.add(detectActivityUserUtils.createTransition(DetectedActivity.WALKING, ActivityTransition.ACTIVITY_TRANSITION_ENTER));
         transitions.add(detectActivityUserUtils.createTransition(DetectedActivity.WALKING, ActivityTransition.ACTIVITY_TRANSITION_EXIT));
         transitions.add(detectActivityUserUtils.createTransition(DetectedActivity.RUNNING, ActivityTransition.ACTIVITY_TRANSITION_ENTER));

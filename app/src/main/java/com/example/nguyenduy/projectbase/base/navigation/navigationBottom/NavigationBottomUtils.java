@@ -49,7 +49,7 @@ public class NavigationBottomUtils implements BottomNavigationView.OnNavigationI
     }
 
     private void initViews() {
-        // add menu
+        // addItem menu
         mNavigation.inflateMenu(mListener.getIdMenuNavigationBottom());
         attachBehavior();
     }

@@ -6,16 +6,21 @@
         <variable
             name="adapterSingleType"
             type="android.support.v7.widget.RecyclerView.Adapter" />
+
+        <variable
+            name="adapterMultiType"
+            type="android.support.v7.widget.RecyclerView.Adapter" />
     </data>
 
-    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/root_fragment"
         style="@style/ViewRoot"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/tv_title_fragment_recycle_view"
             style="@style/TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -23,16 +28,44 @@
             android:layout_marginTop="20dp"
             android:text="Fragment RecycleView" />
 
+        <TextView
+            android:id="@+id/tv_recycle_view_single_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title_fragment_recycle_view"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="RecycleView Single Type" />
+
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_single_item"
+            android:id="@+id/rv_single_type"
             style="@style/RecycleViewLinear"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_recycle_view_single_type"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:layout_marginTop="50dp"
             app:adapter="@{adapterSingleType}"
             tools:listitem="@layout/fragment_recycle_view_single_type_item" />
+
+        <TextView
+            android:id="@+id/tv_recycle_view_multi_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rv_single_type"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="RecycleView Multi Type" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_multi_type"
+            style="@style/RecycleViewLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_recycle_view_multi_type"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            app:adapter="@{adapterMultiType}" />
 
     </RelativeLayout>
 

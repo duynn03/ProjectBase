@@ -6,7 +6,7 @@ import android.support.v7.widget.RecyclerView;
 
 public class BaseViewHolder<T extends ViewDataBinding> extends RecyclerView.ViewHolder {
 
-    protected final T mBinding;
+    private final T mBinding;
 
     public BaseViewHolder(@NonNull T binding) {
         super(binding.getRoot());
@@ -16,4 +16,5 @@ public class BaseViewHolder<T extends ViewDataBinding> extends RecyclerView.View
     public T getBinding() {
         return mBinding;
     }
+
 }

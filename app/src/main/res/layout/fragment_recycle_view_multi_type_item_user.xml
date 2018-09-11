@@ -9,7 +9,7 @@
 
         <variable
             name="listener"
-            type="com.example.nguyenduy.projectbase.screen.main.listView.recycleView.RecycleViewFragment.SingleTypeAdapterListener" />
+            type="com.example.nguyenduy.projectbase.screen.main.listView.recycleView.RecycleViewFragment.MultiTypeAdapterListener" />
 
     </data>
 
@@ -22,8 +22,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:content="@{item.firstName}"
-            app:onClickContent="@{() -> listener.onItemClick(item.firstName)}"
-            app:onClickTitle="@{() -> listener.onItemClick(`FirstName`)}"
+            app:onClickContent="@{() -> listener.onItemClickUser(item.firstName)}"
+            app:onClickTitle="@{() -> listener.onItemClickUser(`FirstName`)}"
             app:title="@{`FirstName: `}" />
 
         <include
@@ -32,9 +32,17 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             app:content="@{item.lastName}"
-            app:onClickContent="@{() -> listener.onItemClick(item.lastName)}"
-            app:onClickTitle="@{() -> listener.onItemClick(`LastName`)}"
+            app:onClickContent="@{() -> listener.onItemClickUser(item.lastName)}"
+            app:onClickTitle="@{() -> listener.onItemClickUser(`LastName`)}"
             app:title="@{`LastName: `}" />
+
+        <ImageView
+            style="@style/ImageAvatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            app:imageUrl="@{item.avatarUrl}"
+            app:placeHolder="@{@drawable/ic_splash}" />
 
     </RelativeLayout>
 </layout>

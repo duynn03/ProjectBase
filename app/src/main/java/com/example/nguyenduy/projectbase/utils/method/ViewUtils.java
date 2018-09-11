@@ -60,7 +60,7 @@ public class ViewUtils {
     }
 
     // width, height normal
-    private static void setWidthHeightNormal(View view, int width, int height) {
+    public static void setWidthHeightNormal(View view, int width, int height) {
         ViewGroup.LayoutParams params = view.getLayoutParams();
         params.width = width;
         params.height = height;
@@ -75,15 +75,23 @@ public class ViewUtils {
         setWidthHeightNormal(
                 view,
                 WindowUtils.convertWidth(ResourceUtils.getDimension(widthDesign)),
-                WindowUtils.convertHeightExcludeStatusBar(ResourceUtils.getDimension(heightDesign)));
+                WindowUtils.convertHeight(ResourceUtils.getDimension(heightDesign)));
     }
 
-    // widthDesign, heightDesign bao gồm cả statusbar
+    /*topDesign include statusbar*/
     public static void setWidthHeightIncludeStatusBar(View view, int widthDesign, int heightDesign) {
         setWidthHeightNormal(
                 view,
                 WindowUtils.convertWidth(ResourceUtils.getDimension(widthDesign)),
                 WindowUtils.convertHeightIncludeStatusBar(ResourceUtils.getDimension(heightDesign)));
+    }
+
+    /*topDesign exclude statusbar*/
+    public static void setWidthHeightExcludeStatusBar(View view, int widthDesign, int heightDesign) {
+        setWidthHeightNormal(
+                view,
+                WindowUtils.convertWidth(ResourceUtils.getDimension(widthDesign)),
+                WindowUtils.convertHeightExcludeStatusBar(ResourceUtils.getDimension(heightDesign)));
     }
 
     public static void setWidthHeightImage(ImageView view, int widthDesign, int heightDesign) {
@@ -94,7 +102,7 @@ public class ViewUtils {
         );
     }
 
-    private static void setMarginNormal(View view, int left, int top, int right, int bottom) {
+    public static void setMarginNormal(View view, int left, int top, int right, int bottom) {
         ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
         params.setMargins(left, top, right, bottom);
         view.setLayoutParams(params);
@@ -135,7 +143,7 @@ public class ViewUtils {
         );
     }
 
-    private static void setPaddingNormal(View view, int left, int top, int right, int bottom) {
+    public static void setPaddingNormal(View view, int left, int top, int right, int bottom) {
         view.setPadding(left, top, right, bottom);
         view.requestLayout();
     }

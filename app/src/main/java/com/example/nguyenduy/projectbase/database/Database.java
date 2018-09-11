@@ -29,7 +29,7 @@ public class Database {
         realm.beginTransaction();
         final Dog managedDog = realm.copyToRealm(dog); // Persist unmanaged objects
         Person person = realm.createObject(Person.class); // Create managed objects directly
-        person.getDogs().add(managedDog);
+        person.getDogs().addItem(managedDog);
         realm.commitTransaction();
 
 

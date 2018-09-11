@@ -67,7 +67,7 @@ public class NotificationUtils {
                 .setSmallIcon(R.drawable.ic_splash)
                 .setContentTitle("Text MultiLine")
                 .setContentText(smallText)
-                /*Add tối đa 6 line, nếu add nhiều hơn 6 line thì 6 line đầu sẽ hiển thị*/
+                /*Add tối đa 6 line, nếu addItem nhiều hơn 6 line thì 6 line đầu sẽ hiển thị*/
                 .setStyle(new NotificationCompat.InboxStyle()
                         .addLine("Line 1 Line 1 Line 1 Line 1  Line 1 Line 1 Line 1 Line 1 Line 1 Line 1 Line 1")
                         .addLine("Line 2 Line 2 Line 2 Line 2  Line 2 Line 2 Line 2 Line 2 Line 2 Line 2 Line 2")
@@ -455,7 +455,7 @@ public class NotificationUtils {
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             return PendingIntent.getActivity(mContext, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         } else {
-            // Create the TaskStackBuilder and add the intent, which inflates the back stack
+            // Create the TaskStackBuilder and addItem the intent, which inflates the back stack
             TaskStackBuilder stackBuilder = TaskStackBuilder.create(mContext).addNextIntentWithParentStack(intent);
             // Get the PendingIntent containing the entire back stack
             return stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);

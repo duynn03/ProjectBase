@@ -41,7 +41,7 @@ public class GeofenceUtils {
         client = LocationServices.getGeofencingClient(mActivity);
     }
 
-    /*add tối đa 100 geofence*/
+    /*addItem tối đa 100 geofence*/
     public Geofence createGeofence(double latitude, double longitude, String requestId) {
         return new Geofence.Builder()
                 // Set the request ID of the geofence. This is a string to identify this geofence.

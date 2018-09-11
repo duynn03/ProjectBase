@@ -91,11 +91,4 @@ public class DataBindingActivity extends AppCompatActivity {
                 view.getPaddingRight(),
                 view.getPaddingBottom());
     }
-
-    /*requireAll: false nghĩa là không yêu cầu tất cả các attribute*/
-    @BindingAdapter(value = {"imageUrl", "placeHolder"}, requireAll = false)
-    public static void loadImage(ImageView view, String url, Drawable placeHolder) {
-        if (TextUtils.isEmpty(url)) view.setImageDrawable(placeHolder);
-        else ViewUtils.setImage(view, url, placeHolder);
-    }
 }
