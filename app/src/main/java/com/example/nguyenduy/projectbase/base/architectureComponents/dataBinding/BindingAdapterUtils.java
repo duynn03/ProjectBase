@@ -23,6 +23,17 @@ public class BindingAdapterUtils {
         else ViewUtils.setImage(view, url, placeHolder);
     }
 
+    @BindingAdapter(value = "android:layout_width_height_image")
+    public static void setWidthHeightImage(ImageView view, int widthDesign, int heightDesign) {
+        LogUtils.d(TAG + "setWidthHeightImage: widthDesign: " + widthDesign + " ,heightDesign: " + heightDesign);
+        int heightActual = WindowUtils.convertHeight(heightDesign);
+        ViewUtils.setWidthHeightNormal(
+                view,
+                heightActual * widthDesign / heightDesign,
+                heightActual
+        );
+    }
+
     @BindingAdapter(value = "android:layout_width")
     public static void setWidth(View view, int widthDesign) {
         LogUtils.d(TAG + "setWidth: " + widthDesign);
@@ -41,6 +52,26 @@ public class BindingAdapterUtils {
                 view,
                 layoutParams.width,
                 WindowUtils.convertHeight(heightDesign));
+    }
+
+    @BindingAdapter(value = "android:layout_heightIncludeStatusBar")
+    public static void setHeightIncludeStatusBar(View view, int heightDesign) {
+        LogUtils.d(TAG + "setHeightIncludeStatusBar: " + heightDesign);
+        ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+        ViewUtils.setWidthHeightNormal(
+                view,
+                layoutParams.width,
+                WindowUtils.convertHeightIncludeStatusBar(heightDesign));
+    }
+
+    @BindingAdapter(value = "android:layout_heightExcludeStatusBar")
+    public static void setHeightExcludeStatusBar(View view, int heightDesign) {
+        LogUtils.d(TAG + "setHeightExcludeStatusBar: " + heightDesign);
+        ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+        ViewUtils.setWidthHeightNormal(
+                view,
+                layoutParams.width,
+                WindowUtils.convertHeightExcludeStatusBar(heightDesign));
     }
 
     @BindingAdapter(value = "android:paddingLeft")

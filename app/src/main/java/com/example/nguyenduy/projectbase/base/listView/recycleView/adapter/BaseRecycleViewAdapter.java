@@ -9,10 +9,12 @@ import android.view.ViewGroup;
 
 import com.example.nguyenduy.projectbase.BR;
 import com.example.nguyenduy.projectbase.base.listView.recycleView.BaseViewHolder;
+import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/*https://github.com/markzhai/DataBindingAdapter*/
 public abstract class BaseRecycleViewAdapter<T> extends RecyclerView.Adapter<BaseViewHolder> implements IRecycleViewAdapter {
 
     private Context mContext;
@@ -47,7 +49,15 @@ public abstract class BaseRecycleViewAdapter<T> extends RecyclerView.Adapter<Bas
     }
 
     @Override
+    public void onViewRecycled(@NonNull BaseViewHolder holder) {
+        super.onViewRecycled(holder);
+        // https://stackoverflow.com/questions/27743339/strange-behaviour-of-images-in-recyclerview
+        // holder.imgSlidingIcon.setImageDrawable(null);
+    }
+
+    @Override
     public int getItemCount() {
+        if (MethodUtils.isEmpty(mItems)) return 0;
         return mItems.size();
     }
 }

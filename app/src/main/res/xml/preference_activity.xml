@@ -55,7 +55,7 @@
             android:title="@string/pref_header_activity_title">
             <intent
                 android:action="ActionCustom"
-                android:targetClass=".screen.main2.sharedpreference.settingActivity.header.SettingHeaderActivity" />
+                android:targetClass=".screen.main.sharedpreference.settingActivity.header.SettingHeaderActivity" />
         </PreferenceScreen>
 
         <!--intent https://developer.android.com/guide/topics/ui/settings#Intents-->

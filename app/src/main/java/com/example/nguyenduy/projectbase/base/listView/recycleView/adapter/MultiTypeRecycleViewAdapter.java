@@ -43,7 +43,6 @@ public class MultiTypeRecycleViewAdapter extends BaseRecycleViewAdapter<Object> 
         mItems.add(item);
         mViewTypes.add(viewType);
         notifyItemInserted(mItems.size() - 1);
-        // notifyItemInserted(0);
     }
 
     public void addItem(int position, Object item, int viewType) {

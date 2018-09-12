@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/root_fragment"
     style="@style/ViewRoot"
@@ -14,11 +14,12 @@
         android:layout_marginTop="20dp"
         android:text="Fragment Snackbar" />
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout
         android:id="@+id/rl_viewgroup"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_above="@+id/btn_show_snack_bar_in_top_activity" />
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@android:color/holo_blue_bright" />
 
     <Button
         android:id="@+id/btn_show_snack_bar_in_top_activity"
@@ -28,6 +29,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
         android:text="Show in Top Activity" />
+
 
     <Button
         android:id="@+id/btn_show_snack_bar_in_fragment"
@@ -97,7 +99,7 @@
         style="@style/Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_show_snack_bar_with_action"
+        android:layout_below="@+id/btn_show_snack_bar_with_icon"
         android:layout_centerHorizontal="true"
         android:text="FloatingActionButton with activity" />
 
@@ -108,15 +110,15 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_show_snack_bar_with_floating_action_button_in_activity"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
         android:text="FloatingActionButton with Fragment" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_in_fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|start"
-        android:layout_marginBottom="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="50dp"
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
-</android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>

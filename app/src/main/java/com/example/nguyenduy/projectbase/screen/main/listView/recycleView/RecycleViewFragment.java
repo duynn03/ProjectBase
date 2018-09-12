@@ -6,6 +6,7 @@ import android.databinding.ObservableList;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.util.ArrayMap;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,15 +20,23 @@ import com.example.nguyenduy.projectbase.base.listView.recycleView.RecycleViewCo
 import com.example.nguyenduy.projectbase.base.listView.recycleView.adapter.BaseRecycleViewAdapter;
 import com.example.nguyenduy.projectbase.base.listView.recycleView.adapter.MultiTypeRecycleViewAdapter;
 import com.example.nguyenduy.projectbase.base.listView.recycleView.adapter.SingleTypeRecycleViewAdapter;
+import com.example.nguyenduy.projectbase.base.listView.swipe.SwipeUtils;
+import com.example.nguyenduy.projectbase.base.sharedPreference.SharedPreferenceUtils;
 import com.example.nguyenduy.projectbase.databinding.FragmentRecycleViewBinding;
 
 import java.util.Map;
+
+import butterknife.OnClick;
 
 public class RecycleViewFragment extends BaseFragment<IRecycleViewPresenter> implements IRecycleViewView {
 
     private FragmentRecycleViewBinding binding;
 
     private ObservableList<User> users;
+
+    private SingleTypeRecycleViewAdapter<User> adapterSingleType;
+
+    private MultiTypeRecycleViewAdapter adapterMultiType;
 
     @Nullable
     @Override
@@ -55,6 +64,7 @@ public class RecycleViewFragment extends BaseFragment<IRecycleViewPresenter> imp
     @Override
     public void initComponents() {
         initUser();
+        initRecycleView();
         initSingleTypeRecycleView();
         initMultiTypeRecycleView();
     }
@@ -68,8 +78,20 @@ public class RecycleViewFragment extends BaseFragment<IRecycleViewPresenter> imp
         users.add(new User("firstName 5", "lastName 5", new Address()).setAvatarUrl("https://www.w3schools.com/w3css/img_forest.jpg"));
     }
 
+
+    private void initRecycleView() {
+        // use this setting to improve performance if you know that changes
+        // set khi các item không thay đổi về size và count
+        //mRecyclerView.setHasFixedSize(true);
+
+        RecyclerView rvSingleType = (RecyclerView) findViewById(R.id.rv_single_type);
+        new SwipeUtils(rvSingleType);
+        RecyclerView rvMultiType = (RecyclerView) findViewById(R.id.rv_multi_type);
+        new SwipeUtils(rvMultiType);
+    }
+
     private void initSingleTypeRecycleView() {
-        SingleTypeRecycleViewAdapter<User> adapterSingleType = new SingleTypeRecycleViewAdapter<>(
+        adapterSingleType = new SingleTypeRecycleViewAdapter<>(
                 getContext(),
                 R.layout.fragment_recycle_view_single_type_item,
                 new SingleTypeAdapterListener());
@@ -83,7 +105,7 @@ public class RecycleViewFragment extends BaseFragment<IRecycleViewPresenter> imp
         viewTypeAndLayout.put(RecycleViewConstants.Type.ITEM, R.layout.fragment_recycle_view_multi_type_item_item);
         viewTypeAndLayout.put(RecycleViewConstants.Type.USER, R.layout.fragment_recycle_view_multi_type_item_user);
 
-        MultiTypeRecycleViewAdapter adapterMultiType = new MultiTypeRecycleViewAdapter(
+        adapterMultiType = new MultiTypeRecycleViewAdapter(
                 getContext(),
                 viewTypeAndLayout,
                 new MultiTypeAdapterListener());
@@ -116,4 +138,25 @@ public class RecycleViewFragment extends BaseFragment<IRecycleViewPresenter> imp
     public void prepareComplete() {
 
     }
+
+    @OnClick(R.id.fab_add_item_single_type)
+    public void onClickButtonAddItemSingleType() {
+        int position = adapterSingleType.addItem(
+                new User("Insert: " + SharedPreferenceUtils.getInstance().getNumberIncrease(),
+                        "Insert: " + SharedPreferenceUtils.getInstance().getNumberIncrease(),
+                        new Address()).setAvatarUrl("https://images.pexels.com/photos/457702/pexels-photo-457702.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"));
+
+        showSnackbar("Add success Item Single Type With Position: " + position, "UNDO", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                adapterSingleType.removeItem(position);
+            }
+        });
+    }
+
+    @OnClick(R.id.fab_add_item_multi_type)
+    public void onClickButtonAddItemMultiType() {
+
+    }
+
 }

@@ -1,6 +1,6 @@
 package com.example.nguyenduy.projectbase.screen.main.navigation.snackbar;
 
-import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.view.View;
 import android.widget.RelativeLayout;
 
@@ -45,10 +45,7 @@ public class SnackBarFragment extends BaseFragment<ISnackBarPresenter> implement
     }
 
     @BindView(R.id.root_fragment)
-    CoordinatorLayout rootView;
-
-    @BindView(R.id.rl_viewgroup)
-    RelativeLayout viewGroup;
+    RelativeLayout rootView;
 
     @OnClick(R.id.btn_show_snack_bar_in_top_activity)
     public void onClickButtonShowSnackBarInTopActivity() {
@@ -59,6 +56,9 @@ public class SnackBarFragment extends BaseFragment<ISnackBarPresenter> implement
     public void onClickButtonShowSnackBarInFragment() {
         SnackBarUtils.showSnackBarInViewGroup(rootView);
     }
+
+    @BindView(R.id.rl_viewgroup)
+    RelativeLayout viewGroup;
 
     @OnClick(R.id.btn_show_snack_bar_in_view_group)
     public void onClickButtonShowSnackBarInViewGroup() {
@@ -95,10 +95,13 @@ public class SnackBarFragment extends BaseFragment<ISnackBarPresenter> implement
         SnackBarUtils.showSnackBarWithFloatingActionButtonInActivity(getRootActivity().findViewById(R.id.fab_create));
     }
 
+    @BindView(R.id.fab_in_fragment)
+    FloatingActionButton fabInFragment;
+
+    // TODO
     @OnClick(R.id.btn_show_snack_bar_with_floating_action_button_in_fragment)
     public void onClickButtonShowSnackBarWithFloatingActionButtonInFragment() {
-        // SnackBarUtils.showSnackBarInViewGroup(rootView);
-        SnackBarUtils.showSnackBarWithFloatingActionButtonInFragment(getRootActivity());
+        SnackBarUtils.showSnackBarWithFloatingActionButtonInFragment(fabInFragment);
     }
 
     @Override

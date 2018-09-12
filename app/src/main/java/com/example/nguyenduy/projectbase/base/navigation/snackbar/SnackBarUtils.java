@@ -13,7 +13,7 @@ public class SnackBarUtils {
     }
 
     public static void showSnackBarInViewGroup(View viewParent) {
-        new SnackBarBuilder(viewParent).setText("Record has deleted (Show in Fragment/ViewGroup)").build().show();
+        new SnackBarBuilder(viewParent).setText("Record has deleted (Show in Fragment Or ViewGroup)").build().show();
     }
 
     public static void showSnackBarNoAutoDismiss(Activity activity) {
@@ -54,8 +54,8 @@ public class SnackBarUtils {
         new SnackBarBuilder(floatingView).setText("SnackBar with FloatingButton In Activity").build().show();
     }
 
-    public static void showSnackBarWithFloatingActionButtonInFragment(Activity activity) {
-        new SnackBarBuilder(activity.getCurrentFocus()).setText("SnackBar with FloatingButton In Fragment").build()
+    public static void showSnackBarWithFloatingActionButtonInFragment(View viewParent) {
+        new SnackBarBuilder(viewParent).setText("SnackBar with FloatingButton In Fragment").build()
                 .show();
     }
 

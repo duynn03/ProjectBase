@@ -23,7 +23,7 @@
             android:title="@string/pref_title_switch_title"
             app:showText="true" />
         <!--https://developer.android.com/reference/android/support/v7/preference/DialogPreference-->
-        <com.example.nguyenduy.projectbase.screen.main2.sharedpreference.settingFragment.dialog.CustomDialogPreference
+        <com.example.nguyenduy.projectbase.screen.main.sharedpreference.settingFragment.dialog.CustomDialogPreference
             android:defaultValue="false"
             android:dialogIcon="@android:drawable/ic_dialog_alert"
             android:dialogMessage="Dialog Message Dialog Message Dialog Message Dialog Message Dialog Message Dialog Message Dialog Message"
@@ -34,7 +34,7 @@
             android:summary="@string/pref_title_dialog_summary"
             android:title="@string/pref_title_dialog_title" />
         <!--TimePicker https://medium.com/@JakobUlbrich/building-a-settings-screen-for-android-part-3-ae9793fd31ec-->
-        <com.example.nguyenduy.projectbase.screen.main2.sharedpreference.settingFragment.custom.TimePickerPreference
+        <com.example.nguyenduy.projectbase.screen.main.sharedpreference.settingFragment.custom.TimePickerPreference
             android:defaultValue="90"
             android:key="@string/pref_key_title_dialog_time_picker"
             android:negativeButtonText="Cancel"
@@ -122,7 +122,7 @@
             android:title="@string/pref_header_activity_title">
             <intent
                 android:action="ActionCustom"
-                android:targetClass=".screen.main2.sharedpreference.settingActivity.header.SettingHeaderActivity" />
+                android:targetClass=".screen.main.sharedpreference.settingActivity.header.SettingHeaderActivity" />
         </android.support.v7.preference.PreferenceScreen>
 
         <!--intent https://developer.android.com/guide/topics/ui/settings#Intents-->

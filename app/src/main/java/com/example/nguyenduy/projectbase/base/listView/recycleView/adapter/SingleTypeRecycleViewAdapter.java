@@ -18,14 +18,16 @@ public class SingleTypeRecycleViewAdapter<T> extends BaseRecycleViewAdapter<T> {
         return mIdLayoutRes;
     }
 
-    public void addItem(T item) {
-        mItems.add(item);
-        notifyItemInserted(mItems.size() - 1);
+    /* remove position*/
+    public int addItem(T item) {
+        return addItem(mItems.size(), item);
     }
 
-    public void addItem(int position, T item) {
+    public int addItem(int position, T item) {
+        if (position > mItems.size()) position = mItems.size() - 1;
         mItems.add(position, item);
         notifyItemInserted(position);
+        return position;
     }
 
     public void setItems(List<T> items) {
@@ -34,9 +36,12 @@ public class SingleTypeRecycleViewAdapter<T> extends BaseRecycleViewAdapter<T> {
         notifyDataSetChanged();
     }
 
+    /*https://stackoverflow.com/questions/32886781/recyclerview-insert-remove-animation-deletes-unwanted-object/32890849#32890849*/
     public void removeItem(int position) {
+        if (position >= mItems.size()) return;
         mItems.remove(position);
         notifyItemRemoved(position);
+        notifyItemRangeChanged(position, getItemCount());
     }
 
     public void removeItem(T item) {
