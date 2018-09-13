@@ -14,7 +14,11 @@ import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
 import java.util.ArrayList;
 import java.util.List;
 
+/*fix bug image load sai: https://stackoverflow.com/questions/27743339/strange-behaviour-of-images-in-recyclerview*/
+
 /*https://github.com/markzhai/DataBindingAdapter*/
+
+/*có thể add animation item vào recycleView: https://github.com/wasabeef/recyclerview-animators*/
 public abstract class BaseRecycleViewAdapter<T> extends RecyclerView.Adapter<BaseViewHolder> implements IRecycleViewAdapter {
 
     private Context mContext;
@@ -46,13 +50,6 @@ public abstract class BaseRecycleViewAdapter<T> extends RecyclerView.Adapter<Bas
         holder.getBinding().setVariable(BR.item, mItems.get(position));
         holder.getBinding().setVariable(BR.listener, mListener);
         holder.getBinding().executePendingBindings();
-    }
-
-    @Override
-    public void onViewRecycled(@NonNull BaseViewHolder holder) {
-        super.onViewRecycled(holder);
-        // https://stackoverflow.com/questions/27743339/strange-behaviour-of-images-in-recyclerview
-        // holder.imgSlidingIcon.setImageDrawable(null);
     }
 
     @Override

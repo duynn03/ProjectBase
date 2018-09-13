@@ -5,7 +5,7 @@
 
         <variable
             name="adapterSingleType"
-            type="android.support.v7.widget.RecyclerView.Adapter" />
+            type="com.example.nguyenduy.projectbase.base.listView.recycleView.adapter.SingleTypeRecycleViewAdapter" />
 
         <variable
             name="adapterMultiType"
@@ -46,23 +46,36 @@
             android:layout_marginLeft="20dp"
             app:srcCompat="@android:drawable/ic_menu_add" />
 
-        <!--Có thể sử dụng các Manager khác nhau hoặc custom lại manager: https://developer.android.com/guide/topics/ui/layout/recyclerview#modifying-layout-->
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_single_type"
-            style="@style/RecycleViewLinear"
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/srl_single_type"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/fab_add_item_single_type"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            app:adapter="@{adapterSingleType}"
-            tools:listitem="@layout/fragment_recycle_view_single_type_item" />
+            android:layout_below="@+id/fab_add_item_single_type">
+
+            <!--Có thể sử dụng các Manager khác nhau hoặc custom lại manager: https://developer.android.com/guide/topics/ui/layout/recyclerview#modifying-layout-->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_single_type"
+                style="@style/RecycleViewLinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:adapter="@{adapterSingleType}"
+                app:bgColorSwipeLeft="@{@color/colorPrimary}"
+                app:bgColorSwipeRight="@{@color/colorAccent}"
+                app:dragListener="@{(source, destination) -> adapterSingleType.onItemDragged(source, destination)}"
+                app:drawableSwipeLeft="@{@drawable/ic_menu_help}"
+                app:drawableSwipeRight="@{@drawable/ic_menu}"
+                app:listenerSwipeLeft="@{(position) -> adapterSingleType.onItemSwipedLeft(position)}"
+                app:listenerSwipeRight="@{(position) -> adapterSingleType.onItemSwipedRight(position)}"
+                tools:listitem="@layout/fragment_recycle_view_single_type_item" />
+        </android.support.v4.widget.SwipeRefreshLayout>
 
         <TextView
             android:id="@+id/tv_recycle_view_multi_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/rv_single_type"
+            android:layout_below="@+id/srl_single_type"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:text="RecycleView Multi Type" />

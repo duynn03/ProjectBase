@@ -7,6 +7,8 @@ import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 
+import com.example.nguyenduy.projectbase.base.listView.recycleView.ObjectSingleType;
+
 @Entity(tableName = "User",
         indices = {
                 // Unique
@@ -19,7 +21,7 @@ import android.arch.persistence.room.PrimaryKey;
                 )
         }
 )
-public class User {
+public class User extends ObjectSingleType {
 
     public User() {
     }

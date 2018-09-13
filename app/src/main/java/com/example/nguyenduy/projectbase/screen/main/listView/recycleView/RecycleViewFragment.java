@@ -6,6 +6,7 @@ import android.databinding.ObservableList;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.util.ArrayMap;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,12 +21,12 @@ import com.example.nguyenduy.projectbase.base.listView.recycleView.RecycleViewCo
 import com.example.nguyenduy.projectbase.base.listView.recycleView.adapter.BaseRecycleViewAdapter;
 import com.example.nguyenduy.projectbase.base.listView.recycleView.adapter.MultiTypeRecycleViewAdapter;
 import com.example.nguyenduy.projectbase.base.listView.recycleView.adapter.SingleTypeRecycleViewAdapter;
-import com.example.nguyenduy.projectbase.base.listView.swipe.SwipeUtils;
 import com.example.nguyenduy.projectbase.base.sharedPreference.SharedPreferenceUtils;
 import com.example.nguyenduy.projectbase.databinding.FragmentRecycleViewBinding;
 
 import java.util.Map;
 
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class RecycleViewFragment extends BaseFragment<IRecycleViewPresenter> implements IRecycleViewView {
@@ -78,21 +79,27 @@ public class RecycleViewFragment extends BaseFragment<IRecycleViewPresenter> imp
         users.add(new User("firstName 5", "lastName 5", new Address()).setAvatarUrl("https://www.w3schools.com/w3css/img_forest.jpg"));
     }
 
+    @BindView(R.id.srl_single_type)
+    SwipeRefreshLayout srlSingleType;
 
     private void initRecycleView() {
+        RecyclerView rvSingleType = (RecyclerView) findViewById(R.id.rv_single_type);
         // use this setting to improve performance if you know that changes
         // set khi các item không thay đổi về size và count
-        //mRecyclerView.setHasFixedSize(true);
-
-        RecyclerView rvSingleType = (RecyclerView) findViewById(R.id.rv_single_type);
-        new SwipeUtils(rvSingleType);
-        RecyclerView rvMultiType = (RecyclerView) findViewById(R.id.rv_multi_type);
-        new SwipeUtils(rvMultiType);
+        //rvSingleType.setHasFixedSize(true);
+/*        srlSingleType.setColorSchemeResources(R.color.colorAccent);
+        srlSingleType.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // TODO
+                srlSingleType.setRefreshing(false);
+            }
+        });*/
     }
 
     private void initSingleTypeRecycleView() {
         adapterSingleType = new SingleTypeRecycleViewAdapter<>(
-                getContext(),
+                getRootActivity(),
                 R.layout.fragment_recycle_view_single_type_item,
                 new SingleTypeAdapterListener());
         adapterSingleType.setItems(users);
