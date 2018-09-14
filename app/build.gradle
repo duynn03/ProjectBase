@@ -78,24 +78,28 @@ android {
             applicationIdSuffix ".uat"
             versionNameSuffix " Uat"
             dimension "mode"
+            buildConfigField 'String', 'BASE_URL', '"http://localhost:8080"'
         }
         Product {
             manifestPlaceholders = [applicationLabel: APP_NAME_PRODUCTION]
             dimension "mode"
             applicationIdSuffix ".product"
             versionNameSuffix " Product"
+            buildConfigField 'String', 'BASE_URL', '"http://localhost:8080"'
         }
         Develop {
             manifestPlaceholders = [applicationLabel: APP_NAME_DEVELOP]
             applicationIdSuffix ".develop"
             versionNameSuffix " Develop"
             dimension "mode"
+            buildConfigField 'String', 'BASE_URL', '"http://192.168.35.144:8080"'
         }
         TTest {
             manifestPlaceholders = [applicationLabel: APP_NAME_TEST]
             applicationIdSuffix ".test"
             versionNameSuffix " Test"
             dimension "mode"
+            buildConfigField 'String', 'BASE_URL', '"http://localhost:8080"'
         }
     }
     compileOptions {
@@ -140,6 +144,7 @@ dependencies {
 
     // api
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
 
     // Dagger
     def daggerVersion = '2.11'

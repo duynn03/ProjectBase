@@ -5,7 +5,7 @@
 
         <variable
             name="item"
-            type="com.example.nguyenduy.projectbase.base.architectureComponents.database.entity.User" />
+            type="com.example.nguyenduy.projectbase.base.retrofit.Account" />
 
         <variable
             name="listener"
@@ -21,20 +21,20 @@
             layout="@layout/fragment_recycle_view_single_type_sub_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:content="@{item.firstName}"
-            app:onClickContent="@{() -> listener.onItemClick(item.firstName)}"
-            app:onClickTitle="@{() -> listener.onItemClick(`FirstName`)}"
-            app:title="@{`FirstName: `}" />
+            app:content="@{item.fullname}"
+            app:onClickContent="@{() -> listener.onItemClick(item.fullname)}"
+            app:onClickTitle="@{() -> listener.onItemClick(`FullName`)}"
+            app:title="@{`FullName: `}" />
 
         <include
             layout="@layout/fragment_recycle_view_single_type_sub_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            app:content="@{item.lastName}"
-            app:onClickContent="@{() -> listener.onItemClick(item.lastName)}"
-            app:onClickTitle="@{() -> listener.onItemClick(`LastName`)}"
-            app:title="@{`LastName: `}" />
+            app:content="@{item.username}"
+            app:onClickContent="@{() -> listener.onItemClick(item.username)}"
+            app:onClickTitle="@{() -> listener.onItemClick(`UserName`)}"
+            app:title="@{`UserName: `}" />
 
     </RelativeLayout>
 </layout>

@@ -21,23 +21,34 @@ import com.example.nguyenduy.projectbase.base.listView.recycleView.RecycleViewCo
 import com.example.nguyenduy.projectbase.base.listView.recycleView.adapter.BaseRecycleViewAdapter;
 import com.example.nguyenduy.projectbase.base.listView.recycleView.adapter.MultiTypeRecycleViewAdapter;
 import com.example.nguyenduy.projectbase.base.listView.recycleView.adapter.SingleTypeRecycleViewAdapter;
-import com.example.nguyenduy.projectbase.base.sharedPreference.SharedPreferenceUtils;
+import com.example.nguyenduy.projectbase.base.retrofit.Account;
+import com.example.nguyenduy.projectbase.base.retrofit.AccountApi;
+import com.example.nguyenduy.projectbase.base.retrofit.BaseRetrofit;
 import com.example.nguyenduy.projectbase.databinding.FragmentRecycleViewBinding;
+import com.example.nguyenduy.projectbase.utils.LogUtils;
+import com.example.nguyenduy.projectbase.utils.method.MethodUtils;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import retrofit2.Call;
 
 public class RecycleViewFragment extends BaseFragment<IRecycleViewPresenter> implements IRecycleViewView {
 
+    private static final String TAG = MethodUtils.getTagClass(RecycleViewFragment.class);
+
     private FragmentRecycleViewBinding binding;
 
-    private ObservableList<User> users;
+    private SingleTypeRecycleViewAdapter<Account> adapterSingleType;
 
-    private SingleTypeRecycleViewAdapter<User> adapterSingleType;
+    private List<Account> accounts;
 
     private MultiTypeRecycleViewAdapter adapterMultiType;
+
+    private ObservableList<User> users;
 
     @Nullable
     @Override
@@ -64,19 +75,14 @@ public class RecycleViewFragment extends BaseFragment<IRecycleViewPresenter> imp
 
     @Override
     public void initComponents() {
-        initUser();
-        initRecycleView();
-        initSingleTypeRecycleView();
-        initMultiTypeRecycleView();
-    }
 
-    private void initUser() {
-        users = new ObservableArrayList<>();
-        users.add(new User("firstName 1", "lastName 1", new Address()).setAvatarUrl("https://images.pexels.com/photos/457702/pexels-photo-457702.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"));
-        users.add(new User("firstName 2", "lastName 2", new Address()).setAvatarUrl("https://www.w3schools.com/w3css/img_lights.jpg"));
-        users.add(new User("firstName 3", "lastName 3", new Address()).setAvatarUrl("https://www.w3schools.com/w3css/img_snowtops.jpg"));
-        users.add(new User("firstName 4", "lastName 4", new Address()).setAvatarUrl("https://www.w3schools.com/w3css/img_nature.jpg"));
-        users.add(new User("firstName 5", "lastName 5", new Address()).setAvatarUrl("https://www.w3schools.com/w3css/img_forest.jpg"));
+        initRecycleView();
+
+        initAccount();
+        initSingleTypeRecycleView();
+
+        initUser();
+        initMultiTypeRecycleView();
     }
 
     @BindView(R.id.srl_single_type)
@@ -87,6 +93,7 @@ public class RecycleViewFragment extends BaseFragment<IRecycleViewPresenter> imp
         // use this setting to improve performance if you know that changes
         // set khi các item không thay đổi về size và count
         //rvSingleType.setHasFixedSize(true);
+        
 /*        srlSingleType.setColorSchemeResources(R.color.colorAccent);
         srlSingleType.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -97,13 +104,38 @@ public class RecycleViewFragment extends BaseFragment<IRecycleViewPresenter> imp
         });*/
     }
 
+    private void initAccount() {
+        accounts = new ArrayList<>();
+        new AccountApi().getAccounts(getRootActivity(), new BaseRetrofit.IGetListener<Account>() {
+            @Override
+            public void onResponse(List<Account> items) {
+                adapterSingleType.setItems(items);
+            }
+
+            @Override
+            public void onFailure(Call<List<Account>> call, Throwable throwable) {
+                showToast("Lỗi call API");
+                LogUtils.e(TAG + "Exception: " + throwable.getMessage());
+            }
+        });
+    }
+
     private void initSingleTypeRecycleView() {
         adapterSingleType = new SingleTypeRecycleViewAdapter<>(
                 getRootActivity(),
                 R.layout.fragment_recycle_view_single_type_item,
                 new SingleTypeAdapterListener());
-        adapterSingleType.setItems(users);
+        adapterSingleType.setItems(accounts);
         binding.setAdapterSingleType(adapterSingleType);
+    }
+
+    private void initUser() {
+        users = new ObservableArrayList<>();
+        users.add(new User("firstName 1", "lastName 1", new Address()).setAvatarUrl("https://images.pexels.com/photos/457702/pexels-photo-457702.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"));
+        users.add(new User("firstName 2", "lastName 2", new Address()).setAvatarUrl("https://www.w3schools.com/w3css/img_lights.jpg"));
+        users.add(new User("firstName 3", "lastName 3", new Address()).setAvatarUrl("https://www.w3schools.com/w3css/img_snowtops.jpg"));
+        users.add(new User("firstName 4", "lastName 4", new Address()).setAvatarUrl("https://www.w3schools.com/w3css/img_nature.jpg"));
+        users.add(new User("firstName 5", "lastName 5", new Address()).setAvatarUrl("https://www.w3schools.com/w3css/img_forest.jpg"));
     }
 
     private void initMultiTypeRecycleView() {
@@ -148,7 +180,7 @@ public class RecycleViewFragment extends BaseFragment<IRecycleViewPresenter> imp
 
     @OnClick(R.id.fab_add_item_single_type)
     public void onClickButtonAddItemSingleType() {
-        int position = adapterSingleType.addItem(
+       /* int position = adapterSingleType.addItem(
                 new User("Insert: " + SharedPreferenceUtils.getInstance().getNumberIncrease(),
                         "Insert: " + SharedPreferenceUtils.getInstance().getNumberIncrease(),
                         new Address()).setAvatarUrl("https://images.pexels.com/photos/457702/pexels-photo-457702.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"));
@@ -158,7 +190,7 @@ public class RecycleViewFragment extends BaseFragment<IRecycleViewPresenter> imp
             public void onClick(View v) {
                 adapterSingleType.removeItem(position);
             }
-        });
+        });*/
     }
 
     @OnClick(R.id.fab_add_item_multi_type)
