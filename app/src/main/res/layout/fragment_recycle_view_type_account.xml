@@ -5,11 +5,11 @@
 
         <variable
             name="item"
-            type="com.example.nguyenduy.projectbase.base.retrofit.Account" />
+            type="com.example.nguyenduy.projectbase.base.retrofit.model.Account" />
 
         <variable
             name="listener"
-            type="com.example.nguyenduy.projectbase.screen.main.listView.recycleView.RecycleViewFragment.SingleTypeAdapterListener" />
+            type="com.example.nguyenduy.projectbase.screen.main.listView.recycleView.adapter.AccountAdapter.AccountListener" />
 
     </data>
 
@@ -21,8 +21,8 @@
             layout="@layout/fragment_recycle_view_single_type_sub_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:content="@{item.fullname}"
-            app:onClickContent="@{() -> listener.onItemClick(item.fullname)}"
+            app:content="@{item.fullName}"
+            app:onClickContent="@{() -> listener.onItemClick(item.fullName)}"
             app:onClickTitle="@{() -> listener.onItemClick(`FullName`)}"
             app:title="@{`FullName: `}" />
 
@@ -31,8 +31,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            app:content="@{item.username}"
-            app:onClickContent="@{() -> listener.onItemClick(item.username)}"
+            app:content="@{item.userName}"
+            app:onClickContent="@{() -> listener.onItemClick(item.userName)}"
             app:onClickTitle="@{() -> listener.onItemClick(`UserName`)}"
             app:title="@{`UserName: `}" />
 

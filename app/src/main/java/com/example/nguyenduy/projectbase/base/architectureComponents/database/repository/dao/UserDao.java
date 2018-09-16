@@ -48,4 +48,5 @@ public interface UserDao extends BaseDao<User> {
 
     @Query("SELECT * FROM User WHERE id == :id")
     LiveData<User> getByIDLiveData(int id);
+
 }

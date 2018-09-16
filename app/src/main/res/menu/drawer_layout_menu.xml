@@ -166,6 +166,10 @@
                     android:id="@+id/menu_view_model"
                     android:icon="@drawable/ic_menu_share"
                     android:title="@string/drawer_layout_menu_view_model" />
+                <item
+                    android:id="@+id/menu_paging"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_paging" />
             </group>
         </menu>
     </item>

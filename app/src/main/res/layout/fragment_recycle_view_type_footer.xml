@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.example.nguyenduy.projectbase.base.listView.recycleView.RecycleViewConstants.Status" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="int" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl_footer_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="@{10, default=`10dp`}">
+
+        <TextView
+            android:id="@+id/tv_not_result"
+            style="@style/TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="No result found"
+            android:visibility="@{item == Status.NOT_RESULT ? View.VISIBLE : View.GONE, default=`visible`}" />
+
+        <ProgressBar
+            android:id="@+id/pb_loading_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:visibility="@{item == Status.LOADING_RESULT || item == Status.AVAILABLE_RESULT ? View.VISIBLE : View.GONE, default=`visible`}" />
+
+    </RelativeLayout>
+</layout>

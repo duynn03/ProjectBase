@@ -100,6 +100,7 @@
     <string name="drawer_layout_menu_room">Room</string>
     <string name="drawer_layout_menu_live_data">LiveData</string>
     <string name="drawer_layout_menu_view_model">ViewModel</string>
+    <string name="drawer_layout_menu_paging">Paging</string>
     <!--label background task-->
     <string name="drawer_layout_menu_label_background_task">Background task</string>
     <string name="drawer_layout_menu_thread">Thread</string>

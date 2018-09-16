@@ -6,4 +6,5 @@ public interface IRecycleViewAdapter {
 
     @LayoutRes
     int getIdLayout(int viewType);
+
 }

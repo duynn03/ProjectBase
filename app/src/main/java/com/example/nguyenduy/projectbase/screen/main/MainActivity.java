@@ -17,6 +17,7 @@ import com.example.nguyenduy.projectbase.screen.main.architectureComponents.data
 import com.example.nguyenduy.projectbase.screen.main.architectureComponents.dragger.DraggerFragment;
 import com.example.nguyenduy.projectbase.screen.main.architectureComponents.lifecycle.LifecycleFragment;
 import com.example.nguyenduy.projectbase.screen.main.architectureComponents.liveData.LiveDataFragment;
+import com.example.nguyenduy.projectbase.screen.main.architectureComponents.paging.PagingFragment;
 import com.example.nguyenduy.projectbase.screen.main.architectureComponents.room.RoomFragment;
 import com.example.nguyenduy.projectbase.screen.main.architectureComponents.viewModel.ViewModelFragment;
 import com.example.nguyenduy.projectbase.screen.main.backgroundTask.service.ServiceFragment;
@@ -193,6 +194,9 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
                 break;
             case R.id.menu_view_model:
                 replaceFragment(new ViewModelFragment(), false);
+                break;
+            case R.id.menu_paging:
+                replaceFragment(new PagingFragment(), false);
                 break;
             case R.id.menu_thread:
                 replaceFragment(new ThreadFragment(), false);
