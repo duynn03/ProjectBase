@@ -108,6 +108,9 @@
     <!--label list view-->
     <string name="drawer_layout_menu_label_list_view">ListView</string>
     <string name="drawer_layout_menu_recycle_view">RecycleView</string>
+    <!--label network-->
+    <string name="drawer_layout_menu_label_network">Network</string>
+    <string name="drawer_layout_menu_retrofit">Retrofit</string>
     <!--label other-->
     <string name="drawer_layout_menu_label_other">Other</string>
     <string name="drawer_layout_menu_share">Share</string>

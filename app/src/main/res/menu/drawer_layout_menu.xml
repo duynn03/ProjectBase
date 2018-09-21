@@ -200,6 +200,17 @@
         </menu>
     </item>
 
+    <item android:title="@string/drawer_layout_menu_label_network">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_retrofit"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/drawer_layout_menu_retrofit" />
+            </group>
+        </menu>
+    </item>
+
     <item android:title="@string/drawer_layout_menu_label_other">
         <menu>
             <item

@@ -38,6 +38,7 @@ import com.example.nguyenduy.projectbase.screen.main.navigation.notification.Not
 import com.example.nguyenduy.projectbase.screen.main.navigation.snackbar.SnackBarFragment;
 import com.example.nguyenduy.projectbase.screen.main.notification.NotificationFragment;
 import com.example.nguyenduy.projectbase.screen.main.permission.PermissionFragment;
+import com.example.nguyenduy.projectbase.screen.main.retrofit.RetrofitFragment;
 import com.example.nguyenduy.projectbase.screen.main.sharedpreference.SharedPreferenceFragment;
 import com.example.nguyenduy.projectbase.screen.main.toolbar.CollapsingToolbarActivity;
 import com.example.nguyenduy.projectbase.screen.main.toolbar.CollapsingToolbarCustomBehaviorActivity;
@@ -206,6 +207,9 @@ public class MainActivity extends BaseActivityWithHeaderUserDrawerLayout<IMainPr
                 break;
             case R.id.menu_recycle:
                 replaceFragment(new RecycleViewFragment(), false);
+                break;
+            case R.id.menu_retrofit:
+                replaceFragment(new RetrofitFragment(), false);
                 break;
             case R.id.menu_share:
                 showToast("menu_share");
